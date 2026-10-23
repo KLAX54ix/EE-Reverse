@@ -1,0 +1,214 @@
+// program=eslib.dll imageBase=10000000
+// specs=[estextui::isvalid, estextui::isabletoinput, estextui::settextui, estextui::getownertype]
+
+// =========================================================
+// esTextUI::IsValid
+// entry=1006db70
+// signature=int IsValid(esTextUI * this)
+// bodyBytes=44
+// =========================================================
+
+/* public: int __thiscall esTextUI::IsValid(void)const  */
+
+int __thiscall esTextUI::IsValid(esTextUI *this)
+
+{
+  uint local_8;
+  
+                    /* 0x6db70  9831  ?IsValid@esTextUI@@QBEHXZ */
+  local_8 = (uint)(*(int *)(this + 0xdc) != 0);
+  return local_8;
+}
+
+
+
+// =========================================================
+// esTextUI::GetOwnerType
+// entry=1006dba0
+// signature=ushort GetOwnerType(esTextUI * this)
+// bodyBytes=21
+// =========================================================
+
+/* public: unsigned short __thiscall esTextUI::GetOwnerType(void)const  */
+
+ushort __thiscall esTextUI::GetOwnerType(esTextUI *this)
+
+{
+                    /* 0x6dba0  7490  ?GetOwnerType@esTextUI@@QBEGXZ */
+  return *(ushort *)(this + 0xe0);
+}
+
+
+
+// =========================================================
+// esTextUI::SetTextUI
+// entry=1047eb80
+// signature=int SetTextUI(esTextUI * this, esObject * param_1)
+// bodyBytes=539
+// =========================================================
+
+/* public: int __thiscall esTextUI::SetTextUI(class esObject *) */
+
+int __thiscall esTextUI::SetTextUI(esTextUI *this,esObject *param_1)
+
+{
+  wchar_t *pwVar1;
+  int iVar2;
+  undefined4 uVar3;
+  esFrameTable *peVar4;
+  esTextBox *peVar5;
+  esFormulaBox *peVar6;
+  esObject *local_24;
+  esObject *local_1c;
+  esObject *local_18;
+  esTextLine *local_10;
+  ushort local_8;
+  
+                    /* 0x47eb80  13070  ?SetTextUI@esTextUI@@QAEHPAVesObject@@@Z */
+  local_8 = 0;
+  local_18 = (esObject *)0x0;
+  if (param_1 != (esObject *)0x0) {
+    pwVar1 = esTopTable::ID();
+    iVar2 = (**(code **)(*(int *)param_1 + 8))(pwVar1);
+    if (iVar2 == 0) {
+      uVar3 = FUN_10362d50();
+      iVar2 = (**(code **)(*(int *)param_1 + 8))(uVar3);
+      if (iVar2 == 0) {
+        local_18 = param_1;
+      }
+      else {
+        local_18 = esObject::GetAboveObject(param_1,2);
+      }
+    }
+    else {
+      local_18 = esObject::GetAboveObject(param_1,2);
+    }
+    local_8 = esLineHead::GetFontIndex((esLineHead *)param_1);
+  }
+  iVar2 = SetUIOwner(this,local_18,local_8);
+  if (iVar2 == 0) {
+    return 0;
+  }
+  if (*(int *)(this + 0xdc) == 0) {
+    return 1;
+  }
+  local_10 = (esTextLine *)0x0;
+  if (local_8 < 0x106) {
+    if (local_8 == 0x105) {
+      peVar6 = GetFB(this);
+      if (peVar6 != (esFormulaBox *)0x0) {
+        local_10 = *(esTextLine **)(peVar6 + 0x14);
+      }
+      goto LAB_1047ed61;
+    }
+    if (local_8 == 7) {
+      peVar5 = GetTB(this);
+      if (peVar5 != (esTextBox *)0x0) {
+        local_10 = *(esTextLine **)(peVar5 + 0x14);
+      }
+      goto LAB_1047ed61;
+    }
+    if (local_8 != 0x90) goto LAB_1047ed61;
+    if (param_1 == (esObject *)0x0) {
+LAB_1047eceb:
+      local_24 = (esObject *)0x0;
+    }
+    else {
+      uVar3 = FUN_10362d50();
+      iVar2 = (**(code **)(*(int *)param_1 + 8))(uVar3);
+      if (iVar2 == 0) goto LAB_1047eceb;
+      local_24 = param_1;
+    }
+    if (local_24 != (esObject *)0x0) {
+      local_10 = *(esTextLine **)(*(int *)(local_24 + 0x1c) + 0x14);
+    }
+    goto LAB_1047ed61;
+  }
+  if (local_8 == 0x180) {
+    peVar4 = GetFT(this);
+    if (peVar4 != (esFrameTable *)0x0) {
+      local_10 = *(esTextLine **)(*(int *)(peVar4 + 0x38) + 0x14);
+    }
+    goto LAB_1047ed61;
+  }
+  if (local_8 != 0x380) goto LAB_1047ed61;
+  if (param_1 == (esObject *)0x0) {
+LAB_1047eca2:
+    local_1c = (esObject *)0x0;
+  }
+  else {
+    pwVar1 = esTopTable::ID();
+    iVar2 = (**(code **)(*(int *)param_1 + 8))(pwVar1);
+    if (iVar2 == 0) goto LAB_1047eca2;
+    local_1c = param_1;
+  }
+  if (local_1c != (esObject *)0x0) {
+    local_10 = *(esTextLine **)(*(int *)(local_1c + 0x38) + 0x14);
+  }
+LAB_1047ed61:
+  if (local_10 != (esTextLine *)0x0) {
+    esSelector::OnsetTextUI((esSelector *)(this + 0x14),local_10);
+    UpdateSelInfo(this,0,1);
+    return 1;
+  }
+  SetTextUI(this,(esObject *)0x0);
+  return 0;
+}
+
+
+
+// =========================================================
+// esTextUI::IsAbleToInput
+// entry=1049a0f0
+// signature=int IsAbleToInput(esTextUI * this, uint param_1)
+// bodyBytes=178
+// =========================================================
+
+/* public: int __thiscall esTextUI::IsAbleToInput(unsigned int) */
+
+int __thiscall esTextUI::IsAbleToInput(esTextUI *this,uint param_1)
+
+{
+  int iVar1;
+  eSS eVar2;
+  esTextLine *peVar3;
+  ID2D1Geometry *pIVar4;
+  
+                    /* 0x49a0f0  9035  ?IsAbleToInput@esTextUI@@QAEHI@Z */
+  if (*(int *)(this + 0xdc) == 0) {
+    iVar1 = 0;
+  }
+  else {
+    eVar2 = GetSelState(this);
+    if ((1 << ((byte)eVar2 & 0x1f) & param_1) == 0) {
+      iVar1 = 0;
+    }
+    else {
+      peVar3 = GetCaretOwner(this);
+      if (peVar3 == (esTextLine *)0x0) {
+        iVar1 = 0;
+      }
+      else {
+        iVar1 = (**(code **)(*(int *)peVar3 + 0x74))(1);
+        if (iVar1 == 0) {
+          iVar1 = eaProject::GetActiveFrame((eaProject *)(this + 0x14));
+          if (((iVar1 != 0) &&
+              (pIVar4 = D2DGeometry::operator_struct_ID2D1Geometry_((D2DGeometry *)(iVar1 + 4)),
+              pIVar4 != (ID2D1Geometry *)peVar3)) &&
+             (iVar1 = (**(code **)(*(int *)pIVar4 + 0x74))(1), iVar1 != 0)) {
+            return 0;
+          }
+          iVar1 = 1;
+        }
+        else {
+          iVar1 = 0;
+        }
+      }
+    }
+  }
+  return iVar1;
+}
+
+
+
+// matched=4 dumped=4

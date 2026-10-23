@@ -1,0 +1,2897 @@
+// program=zoro.dll imageBase=10000000
+// specs=[zmemory, zstream, zfileserializer, zfile::, zarchive]
+
+// =========================================================
+// zMemory::operator_unsigned_char*
+// entry=10005b40
+// signature=uchar * operator_unsigned_char*(zMemory * this)
+// bodyBytes=17
+// =========================================================
+
+/* public: __thiscall zMemory::operator unsigned char *(void) */
+
+uchar * __thiscall zMemory::operator_unsigned_char_(zMemory *this)
+
+{
+                    /* 0x5b40  495  ??BzMemory@@QAEPAEXZ
+                       0x5b40  496  ??BzMemory@@QAEPAXXZ
+                       0x5b40  497  ??BzMemory@@QBEPBXXZ
+                       0x5b40  642  ?Back@?$zItem@VzDataItem@@@@QBEPAVzDataItem@@XZ
+                       0x5b40  643  ?Back@?$zItem@VzStringItem@@@@QBEPAVzStringItem@@XZ
+                       0x5b40  644  ?Back@?$zItem@VzXmlAttribute@@@@QBEPAVzXmlAttribute@@XZ
+                       0x5b40  797  ?GetBufferObj@zArchive@@QAEPAVzBaseBuffer@@XZ
+                       0x5b40  798  ?GetBufferSize@?$zSharedBuffer@E@@QBEIXZ
+                       0x5b40  799  ?GetBufferSize@?$zSharedBuffer@_W@@QBEIXZ
+                       0x5b40  806  ?GetColumCount@sqTable@@QBEHXZ
+                       0x5b40  808  ?GetCount@?$zArrayBase@PAD@@QBEIXZ
+                       0x5b40  809  ?GetCount@?$zArrayBase@PAVthread@std@@@@QBEIXZ
+                       0x5b40  810  ?GetCount@?$zArrayBase@PA_W@@QBEIXZ
+                       0x5b40  815  ?GetData@zMemory@@QBEPAEXZ
+                       0x5b40  816  ?GetData@zSharedMemory@@QBEPAXXZ
+                       0x5b40  833  ?GetHead@?$zList@VzDataItem@@@@QBEPAVzDataItem@@XZ
+                       0x5b40  834  ?GetHead@?$zList@VzStringItem@@@@QBEPAVzStringItem@@XZ
+                       0x5b40  835  ?GetHead@?$zList@VzXmlAttribute@@@@QBEPAVzXmlAttribute@@XZ
+                       0x5b40  838  ?GetHeadPosition@zWstrList@@QBEPAU__zPos@@XZ
+                       0x5b40  1010  ?Lock@zMemory@@UAEPAXXZ */
+  return *(uchar **)(this + 8);
+}
+
+
+
+// =========================================================
+// zMemory::operator[]
+// entry=1000abb0
+// signature=uchar * operator[](zMemory * this, int param_1)
+// bodyBytes=22
+// =========================================================
+
+/* public: unsigned char & __thiscall zMemory::operator[](int) */
+
+uchar * __thiscall zMemory::operator[](zMemory *this,int param_1)
+
+{
+                    /* 0xabb0  485  ??AzMemory@@QAEAAEH@Z */
+  return (uchar *)(*(int *)(this + 8) + param_1);
+}
+
+
+
+// =========================================================
+// zMemory::Unlock
+// entry=1000abd0
+// signature=int Unlock(zMemory * this)
+// bodyBytes=16
+// =========================================================
+
+/* public: virtual int __thiscall zMemory::Unlock(void) */
+
+int __thiscall zMemory::Unlock(zMemory *this)
+
+{
+                    /* 0xabd0  1277  ?Unlock@zMemory@@UAEHXZ */
+  return 1;
+}
+
+
+
+// =========================================================
+// zMemory::GetPosition
+// entry=1000abe0
+// signature=long GetPosition(zMemory * this)
+// bodyBytes=17
+// =========================================================
+
+/* public: virtual long __thiscall zMemory::GetPosition(void)const  */
+
+long __thiscall zMemory::GetPosition(zMemory *this)
+
+{
+                    /* 0xabe0  878  ?GetPosition@zMemory@@UBEJXZ
+                       0xabe0  879  ?GetPosition@zSharedMemory@@UBEJXZ
+                       0xabe0  1399  ?length@zDataItem@@QBEIXZ
+                       0xabe0  1400  ?length@zStringItem@@QBEHXZ */
+  return *(long *)(this + 0x14);
+}
+
+
+
+// =========================================================
+// zMemory::`default_constructor_closure'
+// entry=1000ac00
+// signature=void `default_constructor_closure'(zMemory * this)
+// bodyBytes=24
+// =========================================================
+
+/* public: void __thiscall zMemory::`default constructor closure'(void) */
+
+void __thiscall zMemory::_default_constructor_closure_(zMemory *this)
+
+{
+                    /* 0xac00  590  ??_FzMemory@@QAEXXZ */
+  zMemory(this,0x100);
+  return;
+}
+
+
+
+// =========================================================
+// zFile::~zFile
+// entry=1000afb0
+// signature=void ~zFile(zFile * this)
+// bodyBytes=78
+// =========================================================
+
+/* public: virtual __thiscall zFile::~zFile(void) */
+
+void __thiscall zFile::~zFile(zFile *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0xafb0  255  ??1zFile@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5d0;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  Close(this);
+  zBaseBuffer::~zBaseBuffer((zBaseBuffer *)this);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zFile::zFile
+// entry=1000b000
+// signature=undefined zFile(zFile * this, zFile * param_1)
+// bodyBytes=61
+// =========================================================
+
+/* public: __thiscall zFile::zFile(class zFile const &) */
+
+zFile * __thiscall zFile::zFile(zFile *this,zFile *param_1)
+
+{
+                    /* 0xb000  88  ??0zFile@@QAE@ABV0@@Z */
+  zBaseBuffer::zBaseBuffer((zBaseBuffer *)this,(zBaseBuffer *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  return this;
+}
+
+
+
+// =========================================================
+// zFile::operator=
+// entry=1000b040
+// signature=zFile * operator=(zFile * this, zFile * param_1)
+// bodyBytes=52
+// =========================================================
+
+/* public: class zFile & __thiscall zFile::operator=(class zFile const &) */
+
+zFile * __thiscall zFile::operator=(zFile *this,zFile *param_1)
+
+{
+                    /* 0xb040  340  ??4zFile@@QAEAAV0@ABV0@@Z */
+  zAppLange::operator=((zAppLange *)this,(zAppLange *)param_1);
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::zStream
+// entry=1000bf70
+// signature=undefined zStream(zStream * this, int param_1)
+// bodyBytes=34
+// =========================================================
+
+/* public: __thiscall zStream::zStream(int) */
+
+zStream * __thiscall zStream::zStream(zStream *this,int param_1)
+
+{
+                    /* 0xbf70  147  ??0zStream@@QAE@H@Z */
+  *(undefined ***)this = vftable;
+  *(int *)(this + 4) = param_1;
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::~zStream
+// entry=1000bfa0
+// signature=void ~zStream(zStream * this)
+// bodyBytes=20
+// =========================================================
+
+/* public: virtual __thiscall zStream::~zStream(void) */
+
+void __thiscall zStream::~zStream(zStream *this)
+
+{
+                    /* 0xbfa0  269  ??1zStream@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  return;
+}
+
+
+
+// =========================================================
+// zStream::IsStoring
+// entry=1000bfc0
+// signature=int IsStoring(zStream * this)
+// bodyBytes=41
+// =========================================================
+
+/* public: int __thiscall zStream::IsStoring(void) */
+
+int __thiscall zStream::IsStoring(zStream *this)
+
+{
+  uint local_8;
+  
+                    /* 0xbfc0  981  ?IsStoring@zStream@@QAEHXZ */
+  local_8 = (uint)(*(int *)(this + 4) == 0);
+  return local_8;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000bff0
+// signature=zStream * operator<<(zStream * this, char param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(char) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,char param_1)
+
+{
+                    /* 0xbff0  435  ??6zStream@@QAEAAV0@D@Z
+                       0xbff0  436  ??6zStream@@QAEAAV0@E@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,1);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000c020
+// signature=zStream * operator<<(zStream * this, short param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(short) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,short param_1)
+
+{
+                    /* 0xc020  437  ??6zStream@@QAEAAV0@F@Z
+                       0xc020  438  ??6zStream@@QAEAAV0@G@Z
+                       0xc020  446  ??6zStream@@QAEAAV0@_W@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,2);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000c050
+// signature=zStream * operator<<(zStream * this, int param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(int) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,int param_1)
+
+{
+                    /* 0xc050  439  ??6zStream@@QAEAAV0@H@Z
+                       0xc050  440  ??6zStream@@QAEAAV0@I@Z
+                       0xc050  441  ??6zStream@@QAEAAV0@J@Z
+                       0xc050  442  ??6zStream@@QAEAAV0@K@Z
+                       0xc050  443  ??6zStream@@QAEAAV0@M@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,4);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000c080
+// signature=zStream * operator<<(zStream * this, double param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(double) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,double param_1)
+
+{
+                    /* 0xc080  444  ??6zStream@@QAEAAV0@N@Z
+                       0xc080  445  ??6zStream@@QAEAAV0@_J@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,8);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000c0b0
+// signature=zStream * operator<<(zStream * this, tagPOINT * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(struct tagPOINT &) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,tagPOINT *param_1)
+
+{
+                    /* 0xc0b0  430  ??6zStream@@QAEAAV0@AAUtagPOINT@@@Z
+                       0xc0b0  433  ??6zStream@@QAEAAV0@AAUtagSIZE@@@Z */
+  (**(code **)(*(int *)this + 8))(param_1,8);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator>>
+// entry=1000c0e0
+// signature=zStream * operator>>(zStream * this, double * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator>>(double &) */
+
+zStream * __thiscall zStream::operator>>(zStream *this,double *param_1)
+
+{
+                    /* 0xc0e0  414  ??5zStream@@QAEAAV0@AAN@Z
+                       0xc0e0  415  ??5zStream@@QAEAAV0@AAUtagPOINT@@@Z
+                       0xc0e0  418  ??5zStream@@QAEAAV0@AAUtagSIZE@@@Z
+                       0xc0e0  420  ??5zStream@@QAEAAV0@AA_J@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,8);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000c110
+// signature=zStream * operator<<(zStream * this, tagRECT * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(struct tagRECT &) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,tagRECT *param_1)
+
+{
+                    /* 0xc110  431  ??6zStream@@QAEAAV0@AAUtagRECT@@@Z
+                       0xc110  432  ??6zStream@@QAEAAV0@AAUtagRECTF@@@Z */
+  (**(code **)(*(int *)this + 8))(param_1,0x10);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator>>
+// entry=1000c140
+// signature=zStream * operator>>(zStream * this, tagRECT * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator>>(struct tagRECT &) */
+
+zStream * __thiscall zStream::operator>>(zStream *this,tagRECT *param_1)
+
+{
+                    /* 0xc140  416  ??5zStream@@QAEAAV0@AAUtagRECT@@@Z
+                       0xc140  417  ??5zStream@@QAEAAV0@AAUtagRECTF@@@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,0x10);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::WriteByte
+// entry=1000c170
+// signature=void WriteByte(zStream * this, uchar param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::WriteByte(unsigned char) */
+
+void __thiscall zStream::WriteByte(zStream *this,uchar param_1)
+
+{
+                    /* 0xc170  1301  ?WriteByte@zStream@@QAEXE@Z
+                       0xc170  1302  ?WriteChar@zStream@@QAEXD@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,1);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::WriteChar
+// entry=1000c190
+// signature=void WriteChar(zStream * this, wchar_t param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::WriteChar(wchar_t) */
+
+void __thiscall zStream::WriteChar(zStream *this,wchar_t param_1)
+
+{
+                    /* 0xc190  1303  ?WriteChar@zStream@@QAEX_W@Z
+                       0xc190  1307  ?WriteInt16@zStream@@QAEXF@Z
+                       0xc190  1310  ?WriteShort@zStream@@QAEXF@Z
+                       0xc190  1316  ?WriteWord@zStream@@QAEXG@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,2);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::WriteDWord
+// entry=1000c1b0
+// signature=void WriteDWord(zStream * this, ulong param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::WriteDWord(unsigned long) */
+
+void __thiscall zStream::WriteDWord(zStream *this,ulong param_1)
+
+{
+                    /* 0xc1b0  1304  ?WriteDWord@zStream@@QAEXK@Z
+                       0xc1b0  1306  ?WriteFloat@zStream@@QAEXM@Z
+                       0xc1b0  1308  ?WriteInt32@zStream@@QAEXH@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,4);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::WriteDouble
+// entry=1000c1d0
+// signature=void WriteDouble(zStream * this, double param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::WriteDouble(double) */
+
+void __thiscall zStream::WriteDouble(zStream *this,double param_1)
+
+{
+                    /* 0xc1d0  1305  ?WriteDouble@zStream@@QAEXN@Z
+                       0xc1d0  1309  ?WriteInt64@zStream@@QAEX_J@Z */
+  (**(code **)(*(int *)this + 8))(&param_1,8);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::WriteText
+// entry=1000c1f0
+// signature=void WriteText(zStream * this, char * param_1, int param_2)
+// bodyBytes=90
+// =========================================================
+
+/* public: void __thiscall zStream::WriteText(char const *,int) */
+
+void __thiscall zStream::WriteText(zStream *this,char *param_1,int param_2)
+
+{
+  char cVar1;
+  char *local_c;
+  
+                    /* 0xc1f0  1313  ?WriteText@zStream@@QAEXPBDH@Z */
+  if (param_2 < 0) {
+    local_c = param_1;
+    do {
+      cVar1 = *local_c;
+      local_c = local_c + 1;
+    } while (cVar1 != '\0');
+    param_2 = (int)local_c - (int)(param_1 + 1);
+  }
+  (**(code **)(*(int *)this + 8))(param_1,param_2);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::WriteText
+// entry=1000c250
+// signature=void WriteText(zStream * this, wchar_t * param_1, int param_2)
+// bodyBytes=55
+// =========================================================
+
+/* public: void __thiscall zStream::WriteText(wchar_t const *,int) */
+
+void __thiscall zStream::WriteText(zStream *this,wchar_t *param_1,int param_2)
+
+{
+                    /* 0xc250  1314  ?WriteText@zStream@@QAEXPB_WH@Z */
+  if (param_2 < 0) {
+    param_2 = lstrlenW(param_1);
+  }
+  (**(code **)(*(int *)this + 8))(param_1,param_2 << 1);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::EndLine
+// entry=1000c290
+// signature=void EndLine(zStream * this, int param_1)
+// bodyBytes=61
+// =========================================================
+
+/* public: void __thiscall zStream::EndLine(int) */
+
+void __thiscall zStream::EndLine(zStream *this,int param_1)
+
+{
+                    /* 0xc290  738  ?EndLine@zStream@@QAEXH@Z */
+  if (param_1 == 0) {
+    (**(code **)(*(int *)this + 8))(&_endline,2);
+  }
+  else {
+    (**(code **)(*(int *)this + 8))(&_wendline,4);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zStream::operator>>
+// entry=1000c2d0
+// signature=zStream * operator>>(zStream * this, char * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator>>(char &) */
+
+zStream * __thiscall zStream::operator>>(zStream *this,char *param_1)
+
+{
+                    /* 0xc2d0  405  ??5zStream@@QAEAAV0@AAD@Z
+                       0xc2d0  406  ??5zStream@@QAEAAV0@AAE@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,1);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator>>
+// entry=1000c300
+// signature=zStream * operator>>(zStream * this, short * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator>>(short &) */
+
+zStream * __thiscall zStream::operator>>(zStream *this,short *param_1)
+
+{
+                    /* 0xc300  407  ??5zStream@@QAEAAV0@AAF@Z
+                       0xc300  408  ??5zStream@@QAEAAV0@AAG@Z
+                       0xc300  421  ??5zStream@@QAEAAV0@AA_W@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,2);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator>>
+// entry=1000c330
+// signature=zStream * operator>>(zStream * this, int * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator>>(int &) */
+
+zStream * __thiscall zStream::operator>>(zStream *this,int *param_1)
+
+{
+                    /* 0xc330  409  ??5zStream@@QAEAAV0@AAH@Z
+                       0xc330  410  ??5zStream@@QAEAAV0@AAI@Z
+                       0xc330  411  ??5zStream@@QAEAAV0@AAJ@Z
+                       0xc330  412  ??5zStream@@QAEAAV0@AAK@Z
+                       0xc330  413  ??5zStream@@QAEAAV0@AAM@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,4);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::ReadByte
+// entry=1000c360
+// signature=uchar ReadByte(zStream * this)
+// bodyBytes=35
+// =========================================================
+
+/* public: unsigned char __thiscall zStream::ReadByte(void) */
+
+uchar __thiscall zStream::ReadByte(zStream *this)
+
+{
+  uchar local_5;
+  
+                    /* 0xc360  1077  ?ReadByte@zStream@@QAEEXZ */
+  (**(code **)(*(int *)this + 0xc))(&local_5,1);
+  return local_5;
+}
+
+
+
+// =========================================================
+// zStream::ReadInt16
+// entry=1000c390
+// signature=short ReadInt16(zStream * this)
+// bodyBytes=36
+// =========================================================
+
+/* public: short __thiscall zStream::ReadInt16(void) */
+
+short __thiscall zStream::ReadInt16(zStream *this)
+
+{
+  short local_8 [2];
+  
+                    /* 0xc390  1085  ?ReadInt16@zStream@@QAEFXZ
+                       0xc390  1095  ?ReadWord@zStream@@QAEGXZ */
+  (**(code **)(*(int *)this + 0xc))(local_8,2);
+  return local_8[0];
+}
+
+
+
+// =========================================================
+// zStream::ReadDWord
+// entry=1000c3c0
+// signature=ulong ReadDWord(zStream * this)
+// bodyBytes=35
+// =========================================================
+
+/* public: unsigned long __thiscall zStream::ReadDWord(void) */
+
+ulong __thiscall zStream::ReadDWord(zStream *this)
+
+{
+  ulong local_c;
+  zStream *local_8;
+  
+                    /* 0xc3c0  1080  ?ReadDWord@zStream@@QAEKXZ
+                       0xc3c0  1086  ?ReadInt32@zStream@@QAEHXZ */
+  local_8 = this;
+  (**(code **)(*(int *)this + 0xc))(&local_c,4);
+  return local_c;
+}
+
+
+
+// =========================================================
+// zStream::ReadFloat
+// entry=1000c3f0
+// signature=float ReadFloat(zStream * this)
+// bodyBytes=35
+// =========================================================
+
+/* public: float __thiscall zStream::ReadFloat(void) */
+
+float __thiscall zStream::ReadFloat(zStream *this)
+
+{
+  float local_c;
+  zStream *local_8;
+  
+                    /* 0xc3f0  1083  ?ReadFloat@zStream@@QAEMXZ */
+  local_8 = this;
+  (**(code **)(*(int *)this + 0xc))(&local_c,4);
+  return local_c;
+}
+
+
+
+// =========================================================
+// zStream::ReadByte
+// entry=1000c420
+// signature=void ReadByte(zStream * this, uchar * param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::ReadByte(unsigned char &) */
+
+void __thiscall zStream::ReadByte(zStream *this,uchar *param_1)
+
+{
+                    /* 0xc420  1078  ?ReadByte@zStream@@QAEXAAE@Z
+                       0xc420  1079  ?ReadChar@zStream@@QAEXAAD@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,1);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::ReadShort
+// entry=1000c440
+// signature=void ReadShort(zStream * this, short * param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::ReadShort(short &) */
+
+void __thiscall zStream::ReadShort(zStream *this,short *param_1)
+
+{
+                    /* 0xc440  1090  ?ReadShort@zStream@@QAEXAAF@Z
+                       0xc440  1094  ?ReadWChar@zStream@@QAEXAA_W@Z
+                       0xc440  1096  ?ReadWord@zStream@@QAEXAAG@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,2);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::ReadDWord
+// entry=1000c460
+// signature=void ReadDWord(zStream * this, ulong * param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::ReadDWord(unsigned long &) */
+
+void __thiscall zStream::ReadDWord(zStream *this,ulong *param_1)
+
+{
+                    /* 0xc460  1081  ?ReadDWord@zStream@@QAEXAAK@Z
+                       0xc460  1084  ?ReadFloat@zStream@@QAEXAAM@Z
+                       0xc460  1087  ?ReadInt32@zStream@@QAEXAAH@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,4);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::ReadDouble
+// entry=1000c480
+// signature=void ReadDouble(zStream * this, double * param_1)
+// bodyBytes=32
+// =========================================================
+
+/* public: void __thiscall zStream::ReadDouble(double &) */
+
+void __thiscall zStream::ReadDouble(zStream *this,double *param_1)
+
+{
+                    /* 0xc480  1082  ?ReadDouble@zStream@@QAEXAAN@Z
+                       0xc480  1088  ?ReadInt64@zStream@@QAEXAA_J@Z */
+  (**(code **)(*(int *)this + 0xc))(param_1,8);
+  return;
+}
+
+
+
+// =========================================================
+// zStream::zStream
+// entry=1000c4a0
+// signature=undefined zStream(zStream * this, zStream * param_1)
+// bodyBytes=37
+// =========================================================
+
+/* public: __thiscall zStream::zStream(class zStream const &) */
+
+zStream * __thiscall zStream::zStream(zStream *this,zStream *param_1)
+
+{
+                    /* 0xc4a0  146  ??0zStream@@QAE@ABV0@@Z */
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  return this;
+}
+
+
+
+// =========================================================
+// zArchive::GetBufferSize
+// entry=1000c580
+// signature=uint GetBufferSize(zArchive * this)
+// bodyBytes=56
+// =========================================================
+
+/* public: unsigned int __thiscall zArchive::GetBufferSize(void)const  */
+
+uint __thiscall zArchive::GetBufferSize(zArchive *this)
+
+{
+  uint local_c;
+  
+                    /* 0xc580  802  ?GetBufferSize@zArchive@@QBEIXZ */
+  if (*(int *)(this + 8) == 0) {
+    local_c = 0;
+  }
+  else {
+    local_c = (**(code **)(**(int **)(this + 8) + 4))();
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// zArchive::zArchive
+// entry=1000c5c0
+// signature=undefined zArchive(zArchive * this, zArchive * param_1)
+// bodyBytes=61
+// =========================================================
+
+/* public: __thiscall zArchive::zArchive(class zArchive const &) */
+
+zArchive * __thiscall zArchive::zArchive(zArchive *this,zArchive *param_1)
+
+{
+                    /* 0xc5c0  67  ??0zArchive@@QAE@ABV0@@Z */
+  zStream::zStream((zStream *)this,(zStream *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  return this;
+}
+
+
+
+// =========================================================
+// zArchive::operator=
+// entry=1000c600
+// signature=zArchive * operator=(zArchive * this, zArchive * param_1)
+// bodyBytes=52
+// =========================================================
+
+/* public: class zArchive & __thiscall zArchive::operator=(class zArchive const &) */
+
+zArchive * __thiscall zArchive::operator=(zArchive *this,zArchive *param_1)
+
+{
+                    /* 0xc600  327  ??4zArchive@@QAEAAV0@ABV0@@Z */
+  zMutex::operator=((zMutex *)this,(zMutex *)param_1);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  return this;
+}
+
+
+
+// =========================================================
+// zFileSerializer::zFileSerializer
+// entry=1000c6f0
+// signature=undefined zFileSerializer(zFileSerializer * this, zFileSerializer * param_1)
+// bodyBytes=109
+// =========================================================
+
+/* public: __thiscall zFileSerializer::zFileSerializer(class zFileSerializer const &) */
+
+zFileSerializer * __thiscall
+zFileSerializer::zFileSerializer(zFileSerializer *this,zFileSerializer *param_1)
+
+{
+                    /* 0xc6f0  91  ??0zFileSerializer@@QAE@ABV0@@Z */
+  zStream::zStream((zStream *)this,(zStream *)param_1);
+  *(undefined ***)this = vftable;
+  zFile::zFile((zFile *)(this + 8),(zFile *)(param_1 + 8));
+  *(undefined4 *)(this + 0x14) = *(undefined4 *)(param_1 + 0x14);
+  *(undefined4 *)(this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)(this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  *(undefined4 *)(this + 0x20) = *(undefined4 *)(param_1 + 0x20);
+  *(undefined4 *)(this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  return this;
+}
+
+
+
+// =========================================================
+// zFileSerializer::operator=
+// entry=1000c760
+// signature=zFileSerializer * operator=(zFileSerializer * this, zFileSerializer * param_1)
+// bodyBytes=100
+// =========================================================
+
+/* public: class zFileSerializer & __thiscall zFileSerializer::operator=(class zFileSerializer const
+   &) */
+
+zFileSerializer * __thiscall
+zFileSerializer::operator=(zFileSerializer *this,zFileSerializer *param_1)
+
+{
+                    /* 0xc760  341  ??4zFileSerializer@@QAEAAV0@ABV0@@Z */
+  zMutex::operator=((zMutex *)this,(zMutex *)param_1);
+  zFile::operator=((zFile *)(this + 8),(zFile *)(param_1 + 8));
+  *(undefined4 *)(this + 0x14) = *(undefined4 *)(param_1 + 0x14);
+  *(undefined4 *)(this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)(this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  *(undefined4 *)(this + 0x20) = *(undefined4 *)(param_1 + 0x20);
+  *(undefined4 *)(this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::WriteStringLength
+// entry=1000c880
+// signature=void WriteStringLength(zStream * this, int param_1, int param_2)
+// bodyBytes=165
+// =========================================================
+
+/* protected: void __thiscall zStream::WriteStringLength(int,int) */
+
+void __thiscall zStream::WriteStringLength(zStream *this,int param_1,int param_2)
+
+{
+                    /* 0xc880  1312  ?WriteStringLength@zStream@@IAEXHH@Z */
+  if (param_2 != 0) {
+    WriteByte(this,0xff);
+    WriteChar(this,L'\xfffe');
+  }
+  if (param_1 < 0xff) {
+    WriteByte(this,(uchar)param_1);
+  }
+  else if (param_1 < 0xfffe) {
+    WriteByte(this,0xff);
+    WriteChar(this,(wchar_t)param_1);
+  }
+  else if (param_1 < 0xfffffff) {
+    WriteByte(this,0xff);
+    WriteChar(this,L'\xffff');
+    WriteDWord(this,param_1);
+  }
+  else {
+    WriteDWord(this,0xffffffff);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zStream::ReadStringLength
+// entry=1000c930
+// signature=int ReadStringLength(zStream * this, int * param_1)
+// bodyBytes=175
+// =========================================================
+
+/* protected: int __thiscall zStream::ReadStringLength(int &) */
+
+int __thiscall zStream::ReadStringLength(zStream *this,int *param_1)
+
+{
+  uint local_14;
+  zStream *local_10;
+  ushort local_c [3];
+  byte local_5;
+  
+                    /* 0xc930  1091  ?ReadStringLength@zStream@@IAEHAAH@Z */
+  *param_1 = 0;
+  local_10 = this;
+  ReadByte(this,&local_5);
+  if (local_5 < 0xff) {
+    local_14 = (uint)local_5;
+  }
+  else {
+    ReadShort(local_10,(short *)local_c);
+    if (local_c[0] == 0xfffe) {
+      *param_1 = 1;
+      ReadByte(local_10,&local_5);
+      if (local_5 != 0xff) {
+        return (uint)local_5;
+      }
+      ReadShort(local_10,(short *)local_c);
+    }
+    if (local_c[0] < 0xffff) {
+      local_14 = (uint)local_c[0];
+    }
+    else {
+      ReadDWord(local_10,&local_14);
+      if (0x7ffffffe < local_14) {
+        local_14 = 0xffffffff;
+      }
+    }
+  }
+  return local_14;
+}
+
+
+
+// =========================================================
+// zStream::operator<<
+// entry=1000c9e0
+// signature=zStream * operator<<(zStream * this, zMemory * param_1)
+// bodyBytes=80
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator<<(class zMemory &) */
+
+zStream * __thiscall zStream::operator<<(zStream *this,zMemory *param_1)
+
+{
+  ulong uVar1;
+  uchar *puVar2;
+  
+                    /* 0xc9e0  434  ??6zStream@@QAEAAV0@AAVzMemory@@@Z */
+  uVar1 = (**(code **)(*(int *)param_1 + 4))();
+  WriteDWord(this,uVar1);
+  if (0 < (int)uVar1) {
+    puVar2 = zMemory::GetBuffer(param_1,0);
+    (**(code **)(*(int *)this + 8))(puVar2,uVar1);
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// zStream::operator>>
+// entry=1000ca30
+// signature=zStream * operator>>(zStream * this, zMemory * param_1)
+// bodyBytes=75
+// =========================================================
+
+/* public: class zStream & __thiscall zStream::operator>>(class zMemory &) */
+
+zStream * __thiscall zStream::operator>>(zStream *this,zMemory *param_1)
+
+{
+  ulong uVar1;
+  uchar *puVar2;
+  
+                    /* 0xca30  419  ??5zStream@@QAEAAV0@AAVzMemory@@@Z */
+  uVar1 = ReadDWord(this);
+  if ((int)uVar1 < 1) {
+    zMemory::Clear(param_1);
+  }
+  else {
+    puVar2 = zMemory::GetBuffer(param_1,uVar1);
+    (**(code **)(*(int *)this + 0xc))(puVar2,uVar1);
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// zArchive::zArchive
+// entry=1000ca80
+// signature=undefined zArchive(zArchive * this, zBaseBuffer * param_1, int param_2, int param_3)
+// bodyBytes=150
+// =========================================================
+
+/* public: __thiscall zArchive::zArchive(class zBaseBuffer *,int,int) */
+
+zArchive * __thiscall
+zArchive::zArchive(zArchive *this,zBaseBuffer *param_1,int param_2,int param_3)
+
+{
+  uint uVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0xca80  68  ??0zArchive@@QAE@PAVzBaseBuffer@@HH@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a8e8;
+  local_10 = ExceptionList;
+  uVar1 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  zStream::zStream((zStream *)this,param_2);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(zBaseBuffer **)(this + 8) = param_1;
+  *(undefined4 *)(this + 0xc) = 0;
+  if ((param_3 != 0) && (*(int *)(this + 8) != 0)) {
+    (**(code **)(**(int **)(this + 8) + 0xc))(0,0,uVar1);
+  }
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zArchive::~zArchive
+// entry=1000cb20
+// signature=void ~zArchive(zArchive * this)
+// bodyBytes=78
+// =========================================================
+
+/* public: virtual __thiscall zArchive::~zArchive(void) */
+
+void __thiscall zArchive::~zArchive(zArchive *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0xcb20  245  ??1zArchive@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5d0;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  Close(this);
+  zStream::~zStream((zStream *)this);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zArchive::Close
+// entry=1000cb70
+// signature=void Close(zArchive * this)
+// bodyBytes=30
+// =========================================================
+
+/* public: virtual void __thiscall zArchive::Close(void) */
+
+void __thiscall zArchive::Close(zArchive *this)
+
+{
+                    /* 0xcb70  675  ?Close@zArchive@@UAEXXZ */
+  if (*(int *)(this + 8) != 0) {
+    *(undefined4 *)(this + 8) = 0;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zArchive::Write
+// entry=1000cb90
+// signature=long Write(zArchive * this, void * param_1, ulong param_2)
+// bodyBytes=66
+// =========================================================
+
+/* public: virtual long __thiscall zArchive::Write(void const *,unsigned long) */
+
+long __thiscall zArchive::Write(zArchive *this,void *param_1,ulong param_2)
+
+{
+  int iVar1;
+  
+                    /* 0xcb90  1293  ?Write@zArchive@@UAEJPBXK@Z */
+  if (((*(int *)(this + 8) == 0) || (param_2 == 0)) ||
+     (iVar1 = (**(code **)(**(int **)(this + 8) + 0x14))(param_1,param_2), iVar1 == 0)) {
+    param_2 = 0;
+  }
+  return param_2;
+}
+
+
+
+// =========================================================
+// zArchive::Read
+// entry=1000cbe0
+// signature=long Read(zArchive * this, void * param_1, ulong param_2)
+// bodyBytes=66
+// =========================================================
+
+/* public: virtual long __thiscall zArchive::Read(void *,unsigned long) */
+
+long __thiscall zArchive::Read(zArchive *this,void *param_1,ulong param_2)
+
+{
+  int iVar1;
+  
+                    /* 0xcbe0  1069  ?Read@zArchive@@UAEJPAXK@Z */
+  if (((*(int *)(this + 8) == 0) || (param_2 == 0)) ||
+     (iVar1 = (**(code **)(**(int **)(this + 8) + 0x10))(param_1,param_2), iVar1 == 0)) {
+    param_2 = 0;
+  }
+  return param_2;
+}
+
+
+
+// =========================================================
+// zArchive::Seek
+// entry=1000cc30
+// signature=int Seek(zArchive * this, long param_1, z_seek param_2)
+// bodyBytes=53
+// =========================================================
+
+/* public: int __thiscall zArchive::Seek(long,enum z_seek) */
+
+int __thiscall zArchive::Seek(zArchive *this,long param_1,z_seek param_2)
+
+{
+  int iVar1;
+  
+                    /* 0xcc30  1173  ?Seek@zArchive@@QAEHJW4z_seek@@@Z */
+  if (*(int *)(this + 8) == 0) {
+    iVar1 = 0;
+  }
+  else {
+    iVar1 = (**(code **)(**(int **)(this + 8) + 0xc))(param_1,param_2);
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zArchive::GetPosition
+// entry=1000cc70
+// signature=long GetPosition(zArchive * this)
+// bodyBytes=43
+// =========================================================
+
+/* public: long __thiscall zArchive::GetPosition(void)const  */
+
+long __thiscall zArchive::GetPosition(zArchive *this)
+
+{
+  long lVar1;
+  
+                    /* 0xcc70  875  ?GetPosition@zArchive@@QBEJXZ */
+  if (*(int *)(this + 8) == 0) {
+    lVar1 = 0;
+  }
+  else {
+    lVar1 = (**(code **)(**(int **)(this + 8) + 8))();
+  }
+  return lVar1;
+}
+
+
+
+// =========================================================
+// zFileSerializer::zFileSerializer
+// entry=1000cca0
+// signature=undefined zFileSerializer(zFileSerializer * this, int param_1)
+// bodyBytes=151
+// =========================================================
+
+/* public: __thiscall zFileSerializer::zFileSerializer(int) */
+
+zFileSerializer * __thiscall zFileSerializer::zFileSerializer(zFileSerializer *this,int param_1)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0xcca0  92  ??0zFileSerializer@@QAE@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a8e8;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zStream::zStream((zStream *)this,param_1);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  zFile::zFile((zFile *)(this + 8));
+  *(undefined4 *)(this + 0x14) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x1c) = 0;
+  *(undefined4 *)(this + 0x20) = 0;
+  *(undefined4 *)(this + 0x24) = 0;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zFileSerializer::zFileSerializer
+// entry=1000cd40
+// signature=undefined zFileSerializer(zFileSerializer * this, wchar_t * param_1, int param_2, ulong param_3)
+// bodyBytes=171
+// =========================================================
+
+/* public: __thiscall zFileSerializer::zFileSerializer(wchar_t const *,int,unsigned long) */
+
+zFileSerializer * __thiscall
+zFileSerializer::zFileSerializer(zFileSerializer *this,wchar_t *param_1,int param_2,ulong param_3)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0xcd40  93  ??0zFileSerializer@@QAE@PB_WHK@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a923;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zStream::zStream((zStream *)this,param_2);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  zFile::zFile((zFile *)(this + 8));
+  local_8 = CONCAT31(local_8._1_3_,1);
+  *(undefined4 *)(this + 0x14) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x1c) = 0;
+  *(undefined4 *)(this + 0x20) = 0;
+  *(undefined4 *)(this + 0x24) = 0;
+  Open(this,param_1,param_3);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zFileSerializer::~zFileSerializer
+// entry=1000cdf0
+// signature=void ~zFileSerializer(zFileSerializer * this)
+// bodyBytes=121
+// =========================================================
+
+/* public: virtual __thiscall zFileSerializer::~zFileSerializer(void) */
+
+void __thiscall zFileSerializer::~zFileSerializer(zFileSerializer *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0xcdf0  256  ??1zFileSerializer@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a940;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  Close(this);
+  if (*(int *)(this + 0x24) != 0) {
+    free(*(void **)(this + 0x24));
+  }
+  zFile::~zFile((zFile *)(this + 8));
+  zStream::~zStream((zStream *)this);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zFileSerializer::IsOpen
+// entry=1000ce70
+// signature=int IsOpen(zFileSerializer * this)
+// bodyBytes=22
+// =========================================================
+
+/* public: int __thiscall zFileSerializer::IsOpen(void)const  */
+
+int __thiscall zFileSerializer::IsOpen(zFileSerializer *this)
+
+{
+  int iVar1;
+  
+                    /* 0xce70  973  ?IsOpen@zFileSerializer@@QBEHXZ */
+  iVar1 = zFile::IsOpen((zFile *)(this + 8));
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zFileSerializer::Open
+// entry=1000ce90
+// signature=int Open(zFileSerializer * this, wchar_t * param_1, ulong param_2)
+// bodyBytes=135
+// =========================================================
+
+/* public: int __thiscall zFileSerializer::Open(wchar_t const *,unsigned long) */
+
+int __thiscall zFileSerializer::Open(zFileSerializer *this,wchar_t *param_1,ulong param_2)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  OpenFlags local_c;
+  
+                    /* 0xce90  1038  ?Open@zFileSerializer@@QAEHPB_WK@Z */
+  if (param_2 < 0x400) {
+    param_2 = 0x400;
+  }
+  *(ulong *)(this + 0x20) = param_2;
+  uVar1 = zrt_new(param_2);
+  *(undefined4 *)(this + 0x24) = uVar1;
+  *(undefined4 *)(this + 0x14) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x1c) = 0;
+  local_c = (OpenFlags)(*(int *)(this + 4) == 0);
+  iVar2 = zFile::Open((zFile *)(this + 8),param_1,local_c);
+  return iVar2;
+}
+
+
+
+// =========================================================
+// zFileSerializer::Flush
+// entry=1000cf20
+// signature=void Flush(zFileSerializer * this)
+// bodyBytes=61
+// =========================================================
+
+/* public: void __thiscall zFileSerializer::Flush(void) */
+
+void __thiscall zFileSerializer::Flush(zFileSerializer *this)
+
+{
+                    /* 0xcf20  770  ?Flush@zFileSerializer@@QAEXXZ */
+  if (*(int *)(this + 0x14) != 0) {
+    (**(code **)(*(int *)(this + 8) + 0x14))
+              (*(undefined4 *)(this + 0x24),*(undefined4 *)(this + 0x14));
+    *(undefined4 *)(this + 0x14) = 0;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zFileSerializer::Close
+// entry=1000cf60
+// signature=void Close(zFileSerializer * this)
+// bodyBytes=96
+// =========================================================
+
+/* public: virtual void __thiscall zFileSerializer::Close(void) */
+
+void __thiscall zFileSerializer::Close(zFileSerializer *this)
+
+{
+  int iVar1;
+  
+                    /* 0xcf60  677  ?Close@zFileSerializer@@UAEXXZ */
+  iVar1 = zFile::IsOpen((zFile *)(this + 8));
+  if (iVar1 != 0) {
+    if (*(int *)(this + 0x24) != 0) {
+      if (*(int *)(this + 4) == 0) {
+        Flush(this);
+      }
+      free(*(void **)(this + 0x24));
+      *(undefined4 *)(this + 0x24) = 0;
+    }
+    zFile::Close((zFile *)(this + 8));
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zFileSerializer::Write
+// entry=1000cfc0
+// signature=long Write(zFileSerializer * this, void * param_1, ulong param_2)
+// bodyBytes=231
+// =========================================================
+
+/* public: virtual long __thiscall zFileSerializer::Write(void const *,unsigned long) */
+
+long __thiscall zFileSerializer::Write(zFileSerializer *this,void *param_1,ulong param_2)
+
+{
+  uint uVar1;
+  int iVar2;
+  ulong local_14;
+  void *local_10;
+  
+                    /* 0xcfc0  1297  ?Write@zFileSerializer@@UAEJPBXK@Z */
+  if ((*(int *)(this + 4) == 0) && (iVar2 = zFile::IsOpen((zFile *)(this + 8)), iVar2 != 0)) {
+    local_10 = param_1;
+    uVar1 = *(uint *)(this + 0x18);
+    *(ulong *)(this + 0x18) = param_2 + *(uint *)(this + 0x18);
+    *(uint *)(this + 0x1c) = *(int *)(this + 0x1c) + (uint)CARRY4(param_2,uVar1);
+    for (; param_2 != 0; param_2 = param_2 - local_14) {
+      if (*(int *)(this + 0x14) == *(int *)(this + 0x20)) {
+        Flush(this);
+      }
+      if (param_2 < (uint)(*(int *)(this + 0x20) - *(int *)(this + 0x14))) {
+        local_14 = param_2;
+      }
+      else {
+        local_14 = *(int *)(this + 0x20) - *(int *)(this + 0x14);
+      }
+      if (local_14 == 0) {
+        return param_2;
+      }
+      memcpy((void *)(*(int *)(this + 0x24) + *(int *)(this + 0x14)),local_10,local_14);
+      local_10 = (void *)((int)local_10 + local_14);
+      *(ulong *)(this + 0x14) = *(int *)(this + 0x14) + local_14;
+    }
+  }
+  return 0;
+}
+
+
+
+// =========================================================
+// zFileSerializer::Read
+// entry=1000d0b0
+// signature=long Read(zFileSerializer * this, void * param_1, ulong param_2)
+// bodyBytes=77
+// =========================================================
+
+/* public: virtual long __thiscall zFileSerializer::Read(void *,unsigned long) */
+
+long __thiscall zFileSerializer::Read(zFileSerializer *this,void *param_1,ulong param_2)
+
+{
+  int iVar1;
+  
+                    /* 0xd0b0  1072  ?Read@zFileSerializer@@UAEJPAXK@Z */
+  if ((*(int *)(this + 4) == 0) || (iVar1 = zFile::IsOpen((zFile *)(this + 8)), iVar1 == 0)) {
+    param_2 = 0;
+  }
+  else {
+    iVar1 = (**(code **)(*(int *)(this + 8) + 0x10))(param_1,param_2);
+    if (iVar1 == 0) {
+      param_2 = 0;
+    }
+  }
+  return param_2;
+}
+
+
+
+// =========================================================
+// zFileSerializer::Seek
+// entry=1000d100
+// signature=long Seek(zFileSerializer * this, long param_1, z_seek param_2)
+// bodyBytes=46
+// =========================================================
+
+/* public: virtual long __thiscall zFileSerializer::Seek(long,enum z_seek) */
+
+long __thiscall zFileSerializer::Seek(zFileSerializer *this,long param_1,z_seek param_2)
+
+{
+  long lVar1;
+  
+                    /* 0xd100  1175  ?Seek@zFileSerializer@@UAEJJW4z_seek@@@Z */
+  Flush(this);
+  lVar1 = (**(code **)(*(int *)(this + 8) + 0xc))(param_1,param_2);
+  return lVar1;
+}
+
+
+
+// =========================================================
+// zFileSerializer::GetPosition
+// entry=1000d130
+// signature=long GetPosition(zFileSerializer * this)
+// bodyBytes=34
+// =========================================================
+
+/* public: virtual long __thiscall zFileSerializer::GetPosition(void) */
+
+long __thiscall zFileSerializer::GetPosition(zFileSerializer *this)
+
+{
+  int iVar1;
+  
+                    /* 0xd130  877  ?GetPosition@zFileSerializer@@UAEJXZ */
+  iVar1 = (**(code **)(*(int *)(this + 8) + 8))();
+  return iVar1 + *(int *)(this + 0x14);
+}
+
+
+
+// =========================================================
+// zFile::zFile
+// entry=10017050
+// signature=undefined zFile(zFile * this)
+// bodyBytes=51
+// =========================================================
+
+/* public: __thiscall zFile::zFile(void) */
+
+zFile * __thiscall zFile::zFile(zFile *this)
+
+{
+                    /* 0x17050  90  ??0zFile@@QAE@XZ */
+  zBaseBuffer::zBaseBuffer((zBaseBuffer *)this);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = 0xffffffff;
+  *(undefined4 *)(this + 8) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zFile::zFile
+// entry=10017090
+// signature=undefined zFile(zFile * this, wchar_t * param_1, OpenFlags param_2)
+// bodyBytes=115
+// =========================================================
+
+/* public: __thiscall zFile::zFile(wchar_t const *,enum zFile::OpenFlags) */
+
+zFile * __thiscall zFile::zFile(zFile *this,wchar_t *param_1,OpenFlags param_2)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x17090  89  ??0zFile@@QAE@PB_WW4OpenFlags@0@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002ade8;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zBaseBuffer::zBaseBuffer((zBaseBuffer *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 8) = 0;
+  Open(this,param_1,param_2);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zFile::Open
+// entry=10017110
+// signature=int Open(zFile * this, wchar_t * param_1, OpenFlags param_2)
+// bodyBytes=157
+// =========================================================
+
+/* public: int __thiscall zFile::Open(wchar_t const *,enum zFile::OpenFlags) */
+
+int __thiscall zFile::Open(zFile *this,wchar_t *param_1,OpenFlags param_2)
+
+{
+  HANDLE pvVar1;
+  DWORD local_c;
+  DWORD local_8;
+  
+                    /* 0x17110  1037  ?Open@zFile@@QAEHPB_WW4OpenFlags@1@@Z */
+  if (param_2 == 0) {
+    local_c = 0x80000000;
+    local_8 = 3;
+  }
+  else if (param_2 == 1) {
+    local_c = 0x40000000;
+    local_8 = 2;
+  }
+  else {
+    local_c = 0xc0000000;
+    local_8 = 3;
+  }
+  pvVar1 = CreateFileW(param_1,local_c,0,(LPSECURITY_ATTRIBUTES)0x0,local_8,0,(HANDLE)0x0);
+  *(HANDLE *)(this + 4) = pvVar1;
+  return (uint)(pvVar1 != (HANDLE)0xffffffff);
+}
+
+
+
+// =========================================================
+// zFile::IsOpen
+// entry=100171b0
+// signature=int IsOpen(zFile * this)
+// bodyBytes=41
+// =========================================================
+
+/* public: int __thiscall zFile::IsOpen(void)const  */
+
+int __thiscall zFile::IsOpen(zFile *this)
+
+{
+  uint local_8;
+  
+                    /* 0x171b0  972  ?IsOpen@zFile@@QBEHXZ */
+  local_8 = (uint)(*(int *)(this + 4) != -1);
+  return local_8;
+}
+
+
+
+// =========================================================
+// zFile::Read
+// entry=100171e0
+// signature=int Read(zFile * this, void * param_1, uint param_2)
+// bodyBytes=94
+// =========================================================
+
+/* public: virtual int __thiscall zFile::Read(void *,unsigned int) */
+
+int __thiscall zFile::Read(zFile *this,void *param_1,uint param_2)
+
+{
+  uint local_10;
+  uint local_c;
+  zFile *local_8;
+  
+                    /* 0x171e0  1071  ?Read@zFile@@UAEHPAXI@Z */
+  if (param_1 == (void *)0x0) {
+    local_c = 0xffffffff;
+  }
+  else if (*(int *)(this + 4) == 0) {
+    local_c = 0xffffffff;
+  }
+  else {
+    local_8 = this;
+    ReadFile(*(HANDLE *)(this + 4),param_1,param_2,&local_10,(LPOVERLAPPED)0x0);
+    local_c = (uint)(local_10 == param_2);
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// zFile::Write
+// entry=10017240
+// signature=int Write(zFile * this, void * param_1, uint param_2)
+// bodyBytes=82
+// =========================================================
+
+/* public: virtual int __thiscall zFile::Write(void const *,unsigned int) */
+
+int __thiscall zFile::Write(zFile *this,void *param_1,uint param_2)
+
+{
+  int iVar1;
+  uint local_c;
+  zFile *local_8;
+  
+                    /* 0x17240  1296  ?Write@zFile@@UAEHPBXI@Z */
+  if (*(int *)(this + 4) == 0) {
+    iVar1 = 0;
+  }
+  else {
+    local_8 = this;
+    WriteFile(*(HANDLE *)(this + 4),param_1,param_2,&local_c,(LPOVERLAPPED)0x0);
+    if (local_c == param_2) {
+      *(undefined4 *)(local_8 + 8) = 1;
+      iVar1 = 1;
+    }
+    else {
+      iVar1 = 0;
+    }
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zFile::WriteWStr
+// entry=100172a0
+// signature=int WriteWStr(zFile * this, wchar_t * param_1)
+// bodyBytes=226
+// =========================================================
+
+/* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
+/* public: int __thiscall zFile::WriteWStr(wchar_t const *) */
+
+int __thiscall zFile::WriteWStr(zFile *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  long lVar2;
+  int iVar3;
+  wchar_t *local_100c;
+  char local_1008 [4096];
+  uint local_8;
+  
+                    /* 0x172a0  1315  ?WriteWStr@zFile@@QAEHPB_W@Z */
+  local_8 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 4) != 0) {
+    local_100c = param_1;
+    do {
+      wVar1 = *local_100c;
+      local_100c = local_100c + 1;
+    } while (wVar1 != L'\0');
+    lVar2 = wchar_to_utf8(param_1,(int)local_100c - (int)(param_1 + 1) >> 1,local_1008,0xfff,0);
+    (**(code **)(*(int *)this + 0x14))(local_1008,lVar2);
+  }
+  iVar3 = __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return iVar3;
+}
+
+
+
+// =========================================================
+// zFile::FlushFileBuffers
+// entry=10017390
+// signature=void FlushFileBuffers(zFile * this)
+// bodyBytes=24
+// =========================================================
+
+/* public: void __thiscall zFile::FlushFileBuffers(void) */
+
+void __thiscall zFile::FlushFileBuffers(zFile *this)
+
+{
+                    /* 0x17390  772  ?FlushFileBuffers@zFile@@QAEXXZ */
+  ::FlushFileBuffers(*(HANDLE *)(this + 4));
+  return;
+}
+
+
+
+// =========================================================
+// zFile::WriteStr
+// entry=100173b0
+// signature=int WriteStr(zFile * this, char * param_1)
+// bodyBytes=97
+// =========================================================
+
+/* public: int __thiscall zFile::WriteStr(char const *) */
+
+int __thiscall zFile::WriteStr(zFile *this,char *param_1)
+
+{
+  char cVar1;
+  int iVar2;
+  char *local_c;
+  
+                    /* 0x173b0  1311  ?WriteStr@zFile@@QAEHPBD@Z */
+  if (*(int *)(this + 4) == 0) {
+    iVar2 = 0;
+  }
+  else {
+    local_c = param_1;
+    do {
+      cVar1 = *local_c;
+      local_c = local_c + 1;
+    } while (cVar1 != '\0');
+    iVar2 = (**(code **)(*(int *)this + 0x14))(param_1,(int)local_c - (int)(param_1 + 1));
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// zFile::WriteAsUTF8
+// entry=10017420
+// signature=int WriteAsUTF8(zFile * this, wchar_t * param_1, ulong param_2)
+// bodyBytes=218
+// =========================================================
+
+/* public: int __thiscall zFile::WriteAsUTF8(wchar_t const *,unsigned long) */
+
+int __thiscall zFile::WriteAsUTF8(zFile *this,wchar_t *param_1,ulong param_2)
+
+{
+  long lVar1;
+  char *_Memory;
+  long lVar2;
+  int local_14;
+  
+                    /* 0x17420  1300  ?WriteAsUTF8@zFile@@QAEHPB_WK@Z */
+  if (param_1 == (wchar_t *)0x0) {
+    local_14 = 0;
+  }
+  else if (*(int *)(this + 4) == 0) {
+    local_14 = 0;
+  }
+  else if (*param_1 == L'\0') {
+    local_14 = 1;
+  }
+  else {
+    if (param_2 == 0) {
+      param_2 = slen(param_1);
+    }
+    local_14 = 0;
+    lVar1 = wchar_to_utf8_len(param_1,param_2,0);
+    _Memory = (char *)zrt_new(lVar1 + 1);
+    lVar2 = wchar_to_utf8(param_1,param_2,_Memory,lVar1,0);
+    if (lVar2 != 0) {
+      local_14 = (**(code **)(*(int *)this + 0x14))(_Memory,lVar1);
+    }
+    free(_Memory);
+  }
+  return local_14;
+}
+
+
+
+// =========================================================
+// zFile::SetFileSize
+// entry=10017500
+// signature=int SetFileSize(zFile * this, ulong param_1)
+// bodyBytes=83
+// =========================================================
+
+/* public: int __thiscall zFile::SetFileSize(unsigned long) */
+
+int __thiscall zFile::SetFileSize(zFile *this,ulong param_1)
+
+{
+  BOOL BVar1;
+  uint local_c;
+  
+                    /* 0x17500  1200  ?SetFileSize@zFile@@QAEHK@Z */
+  if (*(int *)(this + 4) == 0) {
+    local_c = 0;
+  }
+  else {
+    (**(code **)(*(int *)this + 0xc))(param_1,0);
+    BVar1 = SetEndOfFile(*(HANDLE *)(this + 4));
+    local_c = (uint)(BVar1 != 0);
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// zFile::GetLength
+// entry=10017560
+// signature=long GetLength(zFile * this)
+// bodyBytes=39
+// =========================================================
+
+/* public: virtual long __thiscall zFile::GetLength(void)const  */
+
+long __thiscall zFile::GetLength(zFile *this)
+
+{
+  DWORD DVar1;
+  
+                    /* 0x17560  852  ?GetLength@zFile@@UBEJXZ */
+  if (*(int *)(this + 4) == -1) {
+    DVar1 = 0;
+  }
+  else {
+    DVar1 = GetFileSize(*(HANDLE *)(this + 4),(LPDWORD)0x0);
+  }
+  return DVar1;
+}
+
+
+
+// =========================================================
+// zFile::GetPosition
+// entry=10017590
+// signature=long GetPosition(zFile * this)
+// bodyBytes=50
+// =========================================================
+
+/* public: virtual long __thiscall zFile::GetPosition(void)const  */
+
+long __thiscall zFile::GetPosition(zFile *this)
+
+{
+  DWORD DVar1;
+  undefined8 local_14;
+  zFile *local_c;
+  
+                    /* 0x17590  876  ?GetPosition@zFile@@UBEJXZ */
+  local_14 = 0;
+  local_c = this;
+  DVar1 = SetFilePointer(*(HANDLE *)(this + 4),0,(PLONG)((int)&local_14 + 4),1);
+  return DVar1;
+}
+
+
+
+// =========================================================
+// zFile::Seek
+// entry=100175d0
+// signature=int Seek(zFile * this, long param_1, z_seek param_2)
+// bodyBytes=149
+// =========================================================
+
+/* public: virtual int __thiscall zFile::Seek(long,enum z_seek) */
+
+int __thiscall zFile::Seek(zFile *this,long param_1,z_seek param_2)
+
+{
+  DWORD DVar1;
+  int local_1c [2];
+  uint local_14;
+  zFile *local_10;
+  z_seek local_c;
+  DWORD local_8;
+  
+                    /* 0x175d0  1174  ?Seek@zFile@@UAEHJW4z_seek@@@Z */
+  if (*(int *)(this + 4) == 0) {
+    local_14 = 0;
+  }
+  else {
+    local_8 = 1;
+    local_c = param_2;
+    if (param_2 == 0) {
+      local_8 = 0;
+    }
+    else if (param_2 == 1) {
+      local_8 = 1;
+    }
+    else if (param_2 == 2) {
+      local_8 = 2;
+    }
+    local_1c[0] = param_1 >> 0x1f;
+    local_10 = this;
+    DVar1 = SetFilePointer(*(HANDLE *)(this + 4),param_1,local_1c,local_8);
+    local_14 = (uint)(DVar1 != 0xffffffff);
+  }
+  return local_14;
+}
+
+
+
+// =========================================================
+// zFile::Close
+// entry=10017670
+// signature=void Close(zFile * this)
+// bodyBytes=43
+// =========================================================
+
+/* public: void __thiscall zFile::Close(void) */
+
+void __thiscall zFile::Close(zFile *this)
+
+{
+                    /* 0x17670  676  ?Close@zFile@@QAEXXZ */
+  if (*(int *)(this + 4) != -1) {
+    CloseHandle(*(HANDLE *)(this + 4));
+    *(undefined4 *)(this + 4) = 0xffffffff;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::zMemory
+// entry=1001e7e0
+// signature=undefined zMemory(zMemory * this, uint param_1)
+// bodyBytes=115
+// =========================================================
+
+/* public: __thiscall zMemory::zMemory(unsigned int) */
+
+zMemory * __thiscall zMemory::zMemory(zMemory *this,uint param_1)
+
+{
+  uint local_c;
+  
+                    /* 0x1e7e0  97  ??0zMemory@@QAE@I@Z */
+  zBaseMemory::zBaseMemory((zBaseMemory *)this);
+  *(undefined ***)this = vftable;
+  if (param_1 == 0) {
+    local_c = 0;
+  }
+  else {
+    local_c = param_1;
+  }
+  *(uint *)(this + 4) = local_c;
+  *(undefined4 *)(this + 8) = 0;
+  *(undefined4 *)(this + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x14) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zMemory::zMemory
+// entry=1001e860
+// signature=undefined zMemory(zMemory * this, uchar * param_1, uint param_2, uint param_3)
+// bodyBytes=112
+// =========================================================
+
+/* public: __thiscall zMemory::zMemory(unsigned char *,unsigned int,unsigned int) */
+
+zMemory * __thiscall zMemory::zMemory(zMemory *this,uchar *param_1,uint param_2,uint param_3)
+
+{
+  uint local_c;
+  
+                    /* 0x1e860  98  ??0zMemory@@QAE@PAEII@Z */
+  zBaseMemory::zBaseMemory((zBaseMemory *)this);
+  *(undefined ***)this = vftable;
+  if (param_3 == 0) {
+    local_c = 0;
+  }
+  else {
+    local_c = param_3;
+  }
+  *(uint *)(this + 4) = local_c;
+  *(uchar **)(this + 8) = param_1;
+  *(uint *)(this + 0xc) = param_2;
+  *(uint *)(this + 0x10) = param_2;
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x14) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zMemory::zMemory
+// entry=1001e8d0
+// signature=undefined zMemory(zMemory * this, tagBYTEDATA * param_1, uint param_2)
+// bodyBytes=120
+// =========================================================
+
+/* public: __thiscall zMemory::zMemory(struct tagBYTEDATA &,unsigned int) */
+
+zMemory * __thiscall zMemory::zMemory(zMemory *this,tagBYTEDATA *param_1,uint param_2)
+
+{
+  uint local_c;
+  
+                    /* 0x1e8d0  95  ??0zMemory@@QAE@AAUtagBYTEDATA@@I@Z */
+  zBaseMemory::zBaseMemory((zBaseMemory *)this);
+  *(undefined ***)this = vftable;
+  if (param_2 == 0) {
+    local_c = 0;
+  }
+  else {
+    local_c = param_2;
+  }
+  *(uint *)(this + 4) = local_c;
+  *(undefined4 *)(this + 8) = *(undefined4 *)param_1;
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x14) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zMemory::zMemory
+// entry=1001e950
+// signature=undefined zMemory(zMemory * this, zMemory * param_1)
+// bodyBytes=161
+// =========================================================
+
+/* public: __thiscall zMemory::zMemory(class zMemory const &) */
+
+zMemory * __thiscall zMemory::zMemory(zMemory *this,zMemory *param_1)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1e950  96  ??0zMemory@@QAE@ABV0@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002b148;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zBaseMemory::zBaseMemory((zBaseMemory *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = 0x100;
+  *(undefined4 *)(this + 8) = 0;
+  *(undefined4 *)(this + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = 0;
+  *(undefined4 *)(this + 0x14) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  CopyFrom(this,param_1);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zMemory::zMemory
+// entry=1001ea00
+// signature=undefined zMemory(zMemory * this, zMemory * param_1)
+// bodyBytes=163
+// =========================================================
+
+/* public: __thiscall zMemory::zMemory(class zMemory &&) */
+
+zMemory * __thiscall zMemory::zMemory(zMemory *this,zMemory *param_1)
+
+{
+                    /* 0x1ea00  94  ??0zMemory@@QAE@$$QAV0@@Z */
+  zBaseMemory::zBaseMemory((zBaseMemory *)this);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x18) = 0;
+  if (*(int *)(this + 8) != 0) {
+    free(*(void **)(this + 8));
+  }
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(param_1 + 8) = 0;
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)(param_1 + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  *(undefined4 *)(param_1 + 0x10) = 0;
+  *(undefined4 *)(this + 0x14) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zMemory::~zMemory
+// entry=1001eab0
+// signature=void ~zMemory(zMemory * this)
+// bodyBytes=60
+// =========================================================
+
+/* public: virtual __thiscall zMemory::~zMemory(void) */
+
+void __thiscall zMemory::~zMemory(zMemory *this)
+
+{
+                    /* 0x1eab0  257  ??1zMemory@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  if (*(int *)(this + 8) != 0) {
+    free(*(void **)(this + 8));
+  }
+  zBaseMemory::~zBaseMemory((zBaseMemory *)this);
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::AddRef
+// entry=1001eaf0
+// signature=void AddRef(zMemory * this)
+// bodyBytes=26
+// =========================================================
+
+/* public: void __thiscall zMemory::AddRef(void) */
+
+void __thiscall zMemory::AddRef(zMemory *this)
+
+{
+                    /* 0x1eaf0  611  ?AddRef@zMemory@@QAEXXZ */
+  *(int *)(this + 0x18) = *(int *)(this + 0x18) + 1;
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::Release
+// entry=1001eb10
+// signature=void Release(zMemory * this)
+// bodyBytes=81
+// =========================================================
+
+/* public: void __thiscall zMemory::Release(void) */
+
+void __thiscall zMemory::Release(zMemory *this)
+
+{
+                    /* 0x1eb10  1102  ?Release@zMemory@@QAEXXZ */
+  *(int *)(this + 0x18) = *(int *)(this + 0x18) + -1;
+  if ((*(int *)(this + 0x18) == 0) && (this != (zMemory *)0x0)) {
+    (*(code *)**(undefined4 **)this)(1);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::Zero
+// entry=1001eb70
+// signature=void Zero(zMemory * this)
+// bodyBytes=44
+// =========================================================
+
+/* public: void __thiscall zMemory::Zero(void) */
+
+void __thiscall zMemory::Zero(zMemory *this)
+
+{
+                    /* 0x1eb70  1317  ?Zero@zMemory@@QAEXXZ */
+  if (*(int *)(this + 0xc) != 0) {
+    memset(*(void **)(this + 8),0,*(size_t *)(this + 0xc));
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::Clear
+// entry=1001eba0
+// signature=void Clear(zMemory * this)
+// bodyBytes=73
+// =========================================================
+
+/* public: void __thiscall zMemory::Clear(void) */
+
+void __thiscall zMemory::Clear(zMemory *this)
+
+{
+                    /* 0x1eba0  667  ?Clear@zMemory@@QAEXXZ */
+  if (*(int *)(this + 8) != 0) {
+    free(*(void **)(this + 8));
+    *(undefined4 *)(this + 8) = 0;
+  }
+  *(undefined4 *)(this + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = 0;
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::IsEqual
+// entry=1001ebf0
+// signature=int IsEqual(zMemory * this, zMemory * param_1)
+// bodyBytes=106
+// =========================================================
+
+/* public: int __thiscall zMemory::IsEqual(class zMemory *)const  */
+
+int __thiscall zMemory::IsEqual(zMemory *this,zMemory *param_1)
+
+{
+  int iVar1;
+  uint local_c;
+  
+                    /* 0x1ebf0  964  ?IsEqual@zMemory@@QBEHPAV1@@Z */
+  if (*(int *)(param_1 + 0xc) == *(int *)(this + 0xc)) {
+    if (*(int *)(this + 0xc) == 0) {
+      local_c = 1;
+    }
+    else {
+      iVar1 = memcmp(*(void **)(this + 8),*(void **)(param_1 + 8),*(size_t *)(this + 0xc));
+      local_c = (uint)(iVar1 == 0);
+    }
+  }
+  else {
+    local_c = 0;
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// zMemory::Realloc
+// entry=1001ec60
+// signature=long Realloc(zMemory * this, uint param_1)
+// bodyBytes=85
+// =========================================================
+
+/* public: long __thiscall zMemory::Realloc(unsigned int) */
+
+long __thiscall zMemory::Realloc(zMemory *this,uint param_1)
+
+{
+  void *pvVar1;
+  
+                    /* 0x1ec60  1097  ?Realloc@zMemory@@QAEJI@Z */
+  if (param_1 != *(uint *)(this + 0xc)) {
+    if (*(uint *)(this + 0xc) < param_1) {
+      pvVar1 = realloc(*(void **)(this + 8),param_1);
+      *(void **)(this + 8) = pvVar1;
+      *(uint *)(this + 0x10) = param_1;
+    }
+    *(uint *)(this + 0xc) = param_1;
+  }
+  return *(long *)(this + 0xc);
+}
+
+
+
+// =========================================================
+// zMemory::Insert
+// entry=1001ecc0
+// signature=int Insert(zMemory * this, uint param_1, void * param_2, uint param_3)
+// bodyBytes=284
+// =========================================================
+
+/* public: int __thiscall zMemory::Insert(unsigned int,void *,unsigned int) */
+
+int __thiscall zMemory::Insert(zMemory *this,uint param_1,void *param_2,uint param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  void *pvVar3;
+  size_t _Size;
+  
+                    /* 0x1ecc0  929  ?Insert@zMemory@@QAEHIPAXI@Z */
+  if ((*(uint *)(this + 0xc) < param_1) ||
+     ((*(void **)(this + 8) <= param_2 &&
+      (param_2 <= (void *)(*(int *)(this + 8) + *(int *)(this + 0x10)))))) {
+    iVar2 = 0;
+  }
+  else {
+    _Size = *(int *)(this + 0xc) - param_1;
+    if (_Size == 0) {
+      uVar1 = *(undefined4 *)(this + 0x14);
+      *(uint *)(this + 0x14) = param_1;
+      iVar2 = (**(code **)(*(int *)this + 0x14))(param_2,param_3);
+      *(undefined4 *)(this + 0x14) = uVar1;
+    }
+    else {
+      *(uint *)(this + 0xc) = *(int *)(this + 0xc) + param_3;
+      if (*(uint *)(this + 0x10) < *(uint *)(this + 0xc)) {
+        *(int *)(this + 0x10) = *(int *)(this + 0xc) + *(int *)(this + 4);
+        pvVar3 = realloc(*(void **)(this + 8),*(size_t *)(this + 0x10));
+        *(void **)(this + 8) = pvVar3;
+      }
+      if (_Size != 0) {
+        memmove((void *)(param_1 + 1 + *(int *)(this + 8)),(void *)(*(int *)(this + 8) + param_1),
+                _Size);
+      }
+      memcpy((void *)(*(int *)(this + 8) + param_1),param_2,param_3);
+      iVar2 = 1;
+    }
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// zMemory::Read
+// entry=1001ede0
+// signature=int Read(zMemory * this, void * param_1, uint param_2)
+// bodyBytes=95
+// =========================================================
+
+/* public: virtual int __thiscall zMemory::Read(void *,unsigned int) */
+
+int __thiscall zMemory::Read(zMemory *this,void *param_1,uint param_2)
+
+{
+  int iVar1;
+  
+                    /* 0x1ede0  1073  ?Read@zMemory@@UAEHPAXI@Z */
+  if (param_2 == 0) {
+    iVar1 = 0;
+  }
+  else {
+    iVar1 = *(int *)(this + 0x14);
+    if (*(uint *)(this + 0xc) < iVar1 + param_2) {
+      iVar1 = 0;
+    }
+    else {
+      memcpy(param_1,(void *)(*(int *)(this + 8) + *(int *)(this + 0x14)),param_2);
+      *(uint *)(this + 0x14) = iVar1 + param_2;
+      iVar1 = 1;
+    }
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zMemory::Attach
+// entry=1001ee40
+// signature=int Attach(zMemory * this, uchar * param_1, uint param_2)
+// bodyBytes=87
+// =========================================================
+
+/* public: int __thiscall zMemory::Attach(unsigned char *,unsigned int) */
+
+int __thiscall zMemory::Attach(zMemory *this,uchar *param_1,uint param_2)
+
+{
+  int iVar1;
+  
+                    /* 0x1ee40  640  ?Attach@zMemory@@QAEHPAEI@Z */
+  if (param_1 == (uchar *)0x0) {
+    iVar1 = 0;
+  }
+  else {
+    if (*(int *)(this + 8) != 0) {
+      free(*(void **)(this + 8));
+    }
+    *(uchar **)(this + 8) = param_1;
+    *(uint *)(this + 0xc) = param_2;
+    *(uint *)(this + 0x10) = param_2;
+    iVar1 = 1;
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zMemory::CopyFrom
+// entry=1001eea0
+// signature=void CopyFrom(zMemory * this, zMemory * param_1)
+// bodyBytes=35
+// =========================================================
+
+/* public: void __thiscall zMemory::CopyFrom(class zMemory const &) */
+
+void __thiscall zMemory::CopyFrom(zMemory *this,zMemory *param_1)
+
+{
+                    /* 0x1eea0  695  ?CopyFrom@zMemory@@QAEXABV1@@Z */
+  CopyFrom(this,*(void **)(param_1 + 8),*(uint *)(param_1 + 0xc));
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::CopyFrom
+// entry=1001eed0
+// signature=void CopyFrom(zMemory * this, void * param_1, uint param_2)
+// bodyBytes=151
+// =========================================================
+
+/* public: void __thiscall zMemory::CopyFrom(void *,unsigned int) */
+
+void __thiscall zMemory::CopyFrom(zMemory *this,void *param_1,uint param_2)
+
+{
+  undefined4 uVar1;
+  
+                    /* 0x1eed0  696  ?CopyFrom@zMemory@@QAEXPAXI@Z */
+  if ((param_1 == (void *)0x0) || (param_2 == 0)) {
+    *(undefined4 *)(this + 0xc) = 0;
+  }
+  else {
+    if (*(uint *)(this + 0x10) < param_2) {
+      if (*(int *)(this + 8) != 0) {
+        free(*(void **)(this + 8));
+      }
+      *(uint *)(this + 0x10) = param_2;
+      uVar1 = zrt_new(*(uint *)(this + 0x10));
+      *(undefined4 *)(this + 8) = uVar1;
+    }
+    *(uint *)(this + 0xc) = param_2;
+    memcpy(*(void **)(this + 8),param_1,*(size_t *)(this + 0xc));
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::TransferFrom
+// entry=1001ef70
+// signature=void TransferFrom(zMemory * this, zMemory * param_1)
+// bodyBytes=66
+// =========================================================
+
+/* public: void __thiscall zMemory::TransferFrom(class zMemory *) */
+
+void __thiscall zMemory::TransferFrom(zMemory *this,zMemory *param_1)
+
+{
+  uint uVar1;
+  uchar *puVar2;
+  
+                    /* 0x1ef70  1253  ?TransferFrom@zMemory@@QAEXPAV1@@Z */
+  Clear(this);
+  if (param_1 != (zMemory *)0x0) {
+    uVar1 = (**(code **)(*(int *)param_1 + 4))();
+    puVar2 = Detach(param_1);
+    Attach(this,puVar2,uVar1);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::AllocWrite
+// entry=1001efc0
+// signature=uchar * AllocWrite(zMemory * this, uint param_1)
+// bodyBytes=173
+// =========================================================
+
+/* public: unsigned char * __thiscall zMemory::AllocWrite(unsigned int) */
+
+uchar * __thiscall zMemory::AllocWrite(zMemory *this,uint param_1)
+
+{
+  uchar *puVar1;
+  void *pvVar2;
+  uint uVar3;
+  undefined4 local_10;
+  
+                    /* 0x1efc0  614  ?AllocWrite@zMemory@@QAEPAEI@Z */
+  if (*(uint *)(this + 0xc) < *(uint *)(this + 0x14)) {
+    puVar1 = (uchar *)0x0;
+  }
+  else {
+    uVar3 = *(int *)(this + 0x14) + param_1;
+    if (*(uint *)(this + 0x10) < uVar3) {
+      *(uint *)(this + 0x10) = uVar3 + *(int *)(this + 4);
+      pvVar2 = realloc(*(void **)(this + 8),*(size_t *)(this + 0x10));
+      *(void **)(this + 8) = pvVar2;
+    }
+    puVar1 = (uchar *)(*(int *)(this + 8) + *(int *)(this + 0x14));
+    *(uint *)(this + 0x14) = uVar3;
+    if (*(uint *)(this + 0xc) < *(uint *)(this + 0x14)) {
+      local_10 = *(undefined4 *)(this + 0x14);
+    }
+    else {
+      local_10 = *(undefined4 *)(this + 0xc);
+    }
+    *(undefined4 *)(this + 0xc) = local_10;
+  }
+  return puVar1;
+}
+
+
+
+// =========================================================
+// zMemory::Write
+// entry=1001f070
+// signature=int Write(zMemory * this, void * param_1, uint param_2)
+// bodyBytes=189
+// =========================================================
+
+/* public: virtual int __thiscall zMemory::Write(void const *,unsigned int) */
+
+int __thiscall zMemory::Write(zMemory *this,void *param_1,uint param_2)
+
+{
+  int iVar1;
+  void *pvVar2;
+  uint uVar3;
+  undefined4 local_10;
+  
+                    /* 0x1f070  1298  ?Write@zMemory@@UAEHPBXI@Z */
+  if (*(uint *)(this + 0xc) < *(uint *)(this + 0x14)) {
+    iVar1 = 0;
+  }
+  else {
+    uVar3 = *(int *)(this + 0x14) + param_2;
+    if (*(uint *)(this + 0x10) < uVar3) {
+      *(uint *)(this + 0x10) = uVar3 + *(int *)(this + 4);
+      pvVar2 = realloc(*(void **)(this + 8),*(size_t *)(this + 0x10));
+      *(void **)(this + 8) = pvVar2;
+    }
+    memcpy((void *)(*(int *)(this + 8) + *(int *)(this + 0x14)),param_1,param_2);
+    *(uint *)(this + 0x14) = uVar3;
+    if (*(uint *)(this + 0xc) < *(uint *)(this + 0x14)) {
+      local_10 = *(undefined4 *)(this + 0x14);
+    }
+    else {
+      local_10 = *(undefined4 *)(this + 0xc);
+    }
+    *(undefined4 *)(this + 0xc) = local_10;
+    iVar1 = 1;
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zMemory::Seek
+// entry=1001f130
+// signature=int Seek(zMemory * this, long param_1, z_seek param_2)
+// bodyBytes=114
+// =========================================================
+
+/* public: virtual int __thiscall zMemory::Seek(long,enum z_seek) */
+
+int __thiscall zMemory::Seek(zMemory *this,long param_1,z_seek param_2)
+
+{
+  int iVar1;
+  long local_8;
+  
+                    /* 0x1f130  1176  ?Seek@zMemory@@UAEHJW4z_seek@@@Z
+                       0x1f130  1177  ?Seek@zSharedMemory@@UAEHJW4z_seek@@@Z */
+  if (param_2 == 0) {
+    local_8 = param_1;
+  }
+  else if (param_2 == 1) {
+    local_8 = *(int *)(this + 0x14) + param_1;
+  }
+  else {
+    if (param_2 != 2) {
+      return 0;
+    }
+    local_8 = *(int *)(this + 0xc) - param_1;
+  }
+  if ((local_8 < 0) || (*(int *)(this + 0xc) < local_8)) {
+    iVar1 = 0;
+  }
+  else {
+    *(long *)(this + 0x14) = local_8;
+    iVar1 = 1;
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zMemory::GetBuffer
+// entry=1001f1b0
+// signature=uchar * GetBuffer(zMemory * this, uint param_1)
+// bodyBytes=83
+// =========================================================
+
+/* public: unsigned char * __thiscall zMemory::GetBuffer(unsigned int) */
+
+uchar * __thiscall zMemory::GetBuffer(zMemory *this,uint param_1)
+
+{
+  void *pvVar1;
+  
+                    /* 0x1f1b0  796  ?GetBuffer@zMemory@@QAEPAEI@Z */
+  if (param_1 != 0) {
+    if (*(uint *)(this + 0x10) < param_1) {
+      *(uint *)(this + 0x10) = param_1;
+      pvVar1 = realloc(*(void **)(this + 8),*(size_t *)(this + 0x10));
+      *(void **)(this + 8) = pvVar1;
+    }
+    *(uint *)(this + 0xc) = param_1;
+  }
+  return *(uchar **)(this + 8);
+}
+
+
+
+// =========================================================
+// zMemory::Detach
+// entry=1001f210
+// signature=uchar * Detach(zMemory * this)
+// bodyBytes=65
+// =========================================================
+
+/* public: unsigned char * __thiscall zMemory::Detach(void) */
+
+uchar * __thiscall zMemory::Detach(zMemory *this)
+
+{
+  uchar *puVar1;
+  
+                    /* 0x1f210  727  ?Detach@zMemory@@QAEPAEXZ */
+  puVar1 = *(uchar **)(this + 8);
+  *(undefined4 *)(this + 8) = 0;
+  *(undefined4 *)(this + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = 0;
+  *(undefined4 *)(this + 0x14) = 0;
+  return puVar1;
+}
+
+
+
+// =========================================================
+// zMemory::Serialize
+// entry=1001f260
+// signature=void Serialize(zMemory * this, zArchive * param_1)
+// bodyBytes=293
+// =========================================================
+
+/* public: void __thiscall zMemory::Serialize(class zArchive &) */
+
+void __thiscall zMemory::Serialize(zMemory *this,zArchive *param_1)
+
+{
+  ushort uVar1;
+  int iVar2;
+  ulong uVar3;
+  undefined4 uVar4;
+  
+                    /* 0x1f260  1179  ?Serialize@zMemory@@QAEXAAVzArchive@@@Z */
+  iVar2 = zStream::IsStoring((zStream *)param_1);
+  if (iVar2 == 0) {
+    uVar1 = zStream::ReadInt16((zStream *)param_1);
+    if (uVar1 == 0xffff) {
+      uVar3 = zStream::ReadDWord((zStream *)param_1);
+      *(ulong *)(this + 0xc) = uVar3;
+    }
+    else {
+      *(uint *)(this + 0xc) = (uint)uVar1;
+    }
+    if (*(int *)(this + 8) != 0) {
+      free(*(void **)(this + 8));
+    }
+    if (*(int *)(this + 0xc) == 0) {
+      *(undefined4 *)(this + 8) = 0;
+    }
+    else {
+      uVar4 = zrt_new(*(uint *)(this + 0xc));
+      *(undefined4 *)(this + 8) = uVar4;
+      (**(code **)(*(int *)param_1 + 0xc))(*(undefined4 *)(this + 8),*(undefined4 *)(this + 0xc));
+    }
+    *(undefined4 *)(this + 0x10) = *(undefined4 *)(this + 0xc);
+  }
+  else {
+    if (*(uint *)(this + 0xc) < 0x8000) {
+      zStream::WriteChar((zStream *)param_1,*(wchar_t *)(this + 0xc));
+    }
+    else {
+      zStream::WriteChar((zStream *)param_1,L'\xffff');
+      zStream::WriteDWord((zStream *)param_1,*(ulong *)(this + 0xc));
+    }
+    if (*(int *)(this + 0xc) != 0) {
+      (**(code **)(*(int *)param_1 + 8))(*(undefined4 *)(this + 8),*(undefined4 *)(this + 0xc));
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zMemory::SetSize
+// entry=1001f390
+// signature=void SetSize(zMemory * this, uint param_1)
+// bodyBytes=174
+// =========================================================
+
+/* public: void __thiscall zMemory::SetSize(unsigned int) */
+
+void __thiscall zMemory::SetSize(zMemory *this,uint param_1)
+
+{
+  void *pvVar1;
+  
+                    /* 0x1f390  1216  ?SetSize@zMemory@@QAEXI@Z */
+  if (param_1 == 0) {
+    *(undefined4 *)(this + 0x14) = 0;
+    *(undefined4 *)(this + 0xc) = 0;
+  }
+  else {
+    if (*(uint *)(this + 0x10) < param_1) {
+      *(uint *)(this + 0x10) = param_1 + *(int *)(this + 4);
+      pvVar1 = realloc(*(void **)(this + 8),*(size_t *)(this + 0x10));
+      *(void **)(this + 8) = pvVar1;
+    }
+    if (*(uint *)(this + 0xc) < param_1) {
+      memset((void *)(*(int *)(this + 8) + *(int *)(this + 0xc)),0,param_1 - *(int *)(this + 0xc));
+    }
+    else if (param_1 < *(uint *)(this + 0x14)) {
+      *(uint *)(this + 0x14) = param_1;
+    }
+    *(uint *)(this + 0xc) = param_1;
+  }
+  return;
+}
+
+
+
+// matched=105 dumped=105

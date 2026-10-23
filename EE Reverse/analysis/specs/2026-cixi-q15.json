@@ -1,0 +1,91 @@
+{
+ "name": "2026-cixi-q15 circle R=2 right triangle CD perp AO (image orientation, y-down)",
+ "points": {
+  "A": [
+   -0.5,
+   0.8660254037844386
+  ],
+  "B": [
+   0.5,
+   0.8660254037844386
+  ],
+  "C": [
+   -0.5,
+   -0.8660254037844386
+  ],
+  "D": [
+   0.25,
+   -0.4330127018922193
+  ],
+  "O": [
+   0,
+   0
+  ]
+ },
+ "checks": [
+  {
+   "type": "midpoint",
+   "label": "O=mid(BC)",
+   "point": "O",
+   "a": "B",
+   "b": "C",
+   "tol": 1e-09
+  },
+  {
+   "type": "angle",
+   "label": "angle CAB=90",
+   "vertex": "A",
+   "a": "B",
+   "b": "C",
+   "deg": 90,
+   "tol_deg": 0.001
+  },
+  {
+   "type": "perpendicular",
+   "label": "CD perp AO",
+   "a": [
+    "C",
+    "D"
+   ],
+   "b": [
+    "A",
+    "O"
+   ],
+   "tol_deg": 0.001
+  },
+  {
+   "type": "collinear",
+   "label": "A,O,D collinear",
+   "points": [
+    "A",
+    "O",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "distance",
+   "label": "AB=2*OD",
+   "a": "A",
+   "b": "B",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "OD=0.5",
+   "a": "O",
+   "b": "D",
+   "value": 0.5,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "AC=sqrt3",
+   "a": "A",
+   "b": "C",
+   "value": 1.7320508075688772,
+   "tol_pct": 1e-06
+  }
+ ]
+}

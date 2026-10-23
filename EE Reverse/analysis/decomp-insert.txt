@@ -1,0 +1,2143 @@
+// program=eslib.dll imageBase=10000000
+// specs=[insertnewcanvas, insertcanvas, canvaslist]
+
+// =========================================================
+// esCanvasList::IsChanged
+// entry=10013a00
+// signature=int IsChanged(esCanvasList * this)
+// bodyBytes=44
+// =========================================================
+
+/* public: int __thiscall esCanvasList::IsChanged(void)const  */
+
+int __thiscall esCanvasList::IsChanged(esCanvasList *this)
+
+{
+  uint local_8;
+  
+                    /* 0x13a00  9103  ?IsChanged@esCanvasList@@QBEHXZ */
+  local_8 = (uint)((*(ushort *)(this + 0x40) & 1) != 0);
+  return local_8;
+}
+
+
+
+// =========================================================
+// esCanvasList::SetChangeFlag
+// entry=10013a30
+// signature=void SetChangeFlag(esCanvasList * this)
+// bodyBytes=28
+// =========================================================
+
+/* public: void __thiscall esCanvasList::SetChangeFlag(void) */
+
+void __thiscall esCanvasList::SetChangeFlag(esCanvasList *this)
+
+{
+                    /* 0x13a30  12529  ?SetChangeFlag@esCanvasList@@QAEXXZ */
+  *(ushort *)(this + 0x40) = *(ushort *)(this + 0x40) | 1;
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::RemoveChangeFlag
+// entry=10013a50
+// signature=void RemoveChangeFlag(esCanvasList * this)
+// bodyBytes=28
+// =========================================================
+
+/* public: void __thiscall esCanvasList::RemoveChangeFlag(void) */
+
+void __thiscall esCanvasList::RemoveChangeFlag(esCanvasList *this)
+
+{
+                    /* 0x13a50  11539  ?RemoveChangeFlag@esCanvasList@@QAEXXZ */
+  *(ushort *)(this + 0x40) = *(ushort *)(this + 0x40) & 0xfffe;
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::esCanvasList
+// entry=10013a70
+// signature=undefined esCanvasList(esCanvasList * this, esCanvasList * param_1)
+// bodyBytes=110
+// =========================================================
+
+/* public: __thiscall esCanvasList::esCanvasList(class esCanvasList const &) */
+
+esCanvasList * __thiscall esCanvasList::esCanvasList(esCanvasList *this,esCanvasList *param_1)
+
+{
+  int iVar1;
+  esCanvasList *peVar2;
+  esCanvasList *peVar3;
+  
+                    /* 0x13a70  540  ??0esCanvasList@@QAE@ABV0@@Z */
+  esGraphObject::esGraphObject((esGraphObject *)this,(esGraphObject *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x34) = *(undefined4 *)(param_1 + 0x34);
+  *(undefined4 *)(this + 0x38) = *(undefined4 *)(param_1 + 0x38);
+  *(undefined4 *)(this + 0x3c) = *(undefined4 *)(param_1 + 0x3c);
+  *(undefined2 *)(this + 0x40) = *(undefined2 *)(param_1 + 0x40);
+  peVar2 = param_1 + 0x44;
+  peVar3 = this + 0x44;
+  for (iVar1 = 0x21; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)peVar3 = *(undefined4 *)peVar2;
+    peVar2 = peVar2 + 4;
+    peVar3 = peVar3 + 4;
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// esCanvasList::operator=
+// entry=10013ae0
+// signature=esCanvasList * operator=(esCanvasList * this, esCanvasList * param_1)
+// bodyBytes=101
+// =========================================================
+
+/* public: class esCanvasList & __thiscall esCanvasList::operator=(class esCanvasList const &) */
+
+esCanvasList * __thiscall esCanvasList::operator=(esCanvasList *this,esCanvasList *param_1)
+
+{
+  int iVar1;
+  esCanvasList *peVar2;
+  esCanvasList *peVar3;
+  
+                    /* 0x13ae0  2377  ??4esCanvasList@@QAEAAV0@ABV0@@Z */
+  esGraphObject::operator=((esGraphObject *)this,(esGraphObject *)param_1);
+  *(undefined4 *)(this + 0x34) = *(undefined4 *)(param_1 + 0x34);
+  *(undefined4 *)(this + 0x38) = *(undefined4 *)(param_1 + 0x38);
+  *(undefined4 *)(this + 0x3c) = *(undefined4 *)(param_1 + 0x3c);
+  *(undefined2 *)(this + 0x40) = *(undefined2 *)(param_1 + 0x40);
+  peVar2 = param_1 + 0x44;
+  peVar3 = this + 0x44;
+  for (iVar1 = 0x21; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)peVar3 = *(undefined4 *)peVar2;
+    peVar2 = peVar2 + 4;
+    peVar3 = peVar3 + 4;
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// esPageList::GetCanvasList
+// entry=1017b520
+// signature=esCanvasList * GetCanvasList(esPageList * this)
+// bodyBytes=142
+// =========================================================
+
+/* public: class esCanvasList * __thiscall esPageList::GetCanvasList(void)const  */
+
+esCanvasList * __thiscall esPageList::GetCanvasList(esPageList *this)
+
+{
+  esDocPage *this_00;
+  esCanvasList *peVar1;
+  esFmtPage *peVar2;
+  int iVar3;
+  esBkPage *peVar4;
+  
+                    /* 0x17b520  6347  ?GetCanvasList@esPageList@@QBEPAVesCanvasList@@XZ */
+  this_00 = GetPage(this,-1);
+  if (this_00 == (esDocPage *)0x0) {
+    peVar1 = (esCanvasList *)0x0;
+  }
+  else if (*(int *)(this + 0x7c) < 4) {
+    peVar1 = (esCanvasList *)(this_00 + 0x40);
+  }
+  else {
+    if (*(int *)(this + 0x7c) == 4) {
+      peVar2 = esDocPage::GetFmtPage(this_00);
+      if (peVar2 != (esFmtPage *)0x0) {
+        return (esCanvasList *)(peVar2 + 0x18);
+      }
+    }
+    else if (*(int *)(this + 0x7c) == 8) {
+      iVar3 = GetActiveGPage(this);
+      peVar4 = esDocPage::GetBkPage(this_00,iVar3,(esMstPage *)0x0);
+      if (peVar4 != (esBkPage *)0x0) {
+        return (esCanvasList *)(peVar4 + 0x18);
+      }
+    }
+    peVar1 = (esCanvasList *)0x0;
+  }
+  return peVar1;
+}
+
+
+
+// =========================================================
+// esDocument::InsertNewCanvas
+// entry=101920e0
+// signature=int InsertNewCanvas(esDocument * this, esCanvas * param_1)
+// bodyBytes=675
+// =========================================================
+
+/* public: int __thiscall esDocument::InsertNewCanvas(class esCanvas *) */
+
+int __thiscall esDocument::InsertNewCanvas(esDocument *this,esCanvas *param_1)
+
+{
+  uint uVar1;
+  esLableBox *peVar2;
+  esDocPage *this_00;
+  int iVar3;
+  wchar_t *pwVar4;
+  ulong uVar5;
+  int iVar6;
+  esStyleList<esBlockStyle> *this_01;
+  esCvsAnchor *peVar7;
+  esTopTable *this_02;
+  esCanvas *this_03;
+  D2DMatrix *pDVar8;
+  elfLamp *peVar9;
+  elfLamp *peVar10;
+  esGrapPage *local_38;
+  undefined2 local_34;
+  esTextPage *local_24;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1920e0  8975  ?InsertNewCanvas@esDocument@@QAEHPAVesCanvas@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1053794f;
+  local_10 = ExceptionList;
+  uVar1 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  peVar2 = esDimBaseEx::GetActiveTextObj(*(esDimBaseEx **)(this + 0xcfc));
+  if (peVar2 != (esLableBox *)0x0) {
+    ExceptionList = local_10;
+    return 0;
+  }
+  this_00 = esPageList::GetPage(*(esPageList **)(this + 0xcfc),-1);
+  if ((this_00 == (esDocPage *)0x0) ||
+     (iVar3 = esSnapObj::Is((esSnapObj *)this_00,0x200f), iVar3 != 0)) {
+    ExceptionList = local_10;
+    return 0;
+  }
+  if (this_00 == (esDocPage *)0x0) {
+LAB_10192178:
+    local_24 = (esTextPage *)0x0;
+  }
+  else {
+    pwVar4 = esTextPage::ID();
+    iVar3 = (**(code **)(*(int *)this_00 + 8))(pwVar4,uVar1);
+    local_24 = (esTextPage *)this_00;
+    if (iVar3 == 0) goto LAB_10192178;
+  }
+  if (local_24 != (esTextPage *)0x0) {
+    uVar5 = esCanvas::GetFrameType(param_1);
+    if (uVar5 == 0) {
+      esCanvas::SetAsBorderRect(param_1,0,0,0,0);
+    }
+    iVar6 = esPageList::GetActiveGPage(*(esPageList **)(this + 0xcfc));
+    iVar3 = *(int *)(this_00 + 0x34);
+    local_34 = (undefined2)(iVar6 - iVar3);
+    *(undefined2 *)(param_1 + 0x3c) = local_34;
+    *(uint *)(param_1 + 0x4c) = *(uint *)(param_1 + 0x4c) & 0xfffffff8;
+    *(uint *)(param_1 + 0x4c) = *(uint *)(param_1 + 0x4c) | 0xc;
+    this_01 = operator_new(0x2c);
+    local_8 = 0;
+    esStyleList<esBlockStyle>::__autoclassinit2(this_01,0x2c);
+    peVar7 = (esCvsAnchor *)esCvsAnchor::esCvsAnchor((esCvsAnchor *)this_01,param_1);
+    local_8 = 0xffffffff;
+    this_02 = esTextPage::GetTopTable(local_24);
+    esTopTable::RepositionAnchor(this_02,peVar7,iVar6 - iVar3);
+    goto LAB_10192359;
+  }
+  if (this_00 == (esDocPage *)0x0) {
+LAB_10192279:
+    local_38 = (esGrapPage *)0x0;
+  }
+  else {
+    pwVar4 = esGrapPage::ID();
+    iVar3 = (**(code **)(*(int *)this_00 + 8))(pwVar4);
+    local_38 = (esGrapPage *)this_00;
+    if (iVar3 == 0) goto LAB_10192279;
+  }
+  if (local_38 != (esGrapPage *)0x0) {
+    this_03 = esGrapPage::GetFixedCanvas(local_38);
+    pDVar8 = elfLamp::GetMatrixVtoP((elfLamp *)this_03);
+    if (pDVar8 != (D2DMatrix *)0x0) {
+      peVar9 = sgMedia::GetLamp((sgMedia *)pDVar8);
+      pDVar8 = elfLamp::GetMatrixVtoP((elfLamp *)param_1);
+      peVar10 = sgMedia::GetLamp((sgMedia *)pDVar8);
+      *(uint *)peVar10 = *(uint *)peVar10 & 0xfffeffff | (*(uint *)peVar9 >> 0x10 & 1) << 0x10;
+      *(uint *)peVar10 = *(uint *)peVar10 & 0xffffffcf | (*(uint *)peVar9 >> 4 & 3) << 4;
+      *(uint *)peVar10 = *(uint *)peVar10 & 0xffff00ff | (*(uint *)peVar9 >> 8 & 0xff) << 8;
+    }
+    *(undefined2 *)(param_1 + 0x3c) = 0;
+    esObject::SetUnAddInfo((esObject *)param_1);
+    esCanvas::SetAsBorderRect(param_1,0,0,0,0);
+  }
+LAB_10192359:
+  esCanvasList::Append((esCanvasList *)(this_00 + 0x40),param_1);
+  esCanvas::SetFocus(param_1);
+  ExceptionList = local_10;
+  return 1;
+}
+
+
+
+// =========================================================
+// esCanvasList::ID
+// entry=101c0ea0
+// signature=wchar_t * ID(void)
+// bodyBytes=10
+// =========================================================
+
+/* public: static wchar_t const * __cdecl esCanvasList::ID(void) */
+
+wchar_t * __cdecl esCanvasList::ID(void)
+
+{
+                    /* 0x1c0ea0  8548  ?ID@esCanvasList@@SAPB_WXZ */
+  return L"esCanvasList";
+}
+
+
+
+// =========================================================
+// esCanvasList::isKindOf
+// entry=101c0eb0
+// signature=int isKindOf(esCanvasList * this, wchar_t * param_1)
+// bodyBytes=147
+// =========================================================
+
+/* public: virtual int __thiscall esCanvasList::isKindOf(wchar_t const *)const  */
+
+int __thiscall esCanvasList::isKindOf(esCanvasList *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  int iVar2;
+  bool bVar3;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x1c0eb0  15296  ?isKindOf@esCanvasList@@UBEHPB_W@Z */
+  if (this == (esCanvasList *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    local_10 = ID();
+    local_c = param_1;
+    do {
+      wVar1 = *local_c;
+      bVar3 = (ushort)wVar1 < (ushort)*local_10;
+      if (wVar1 != *local_10) {
+LAB_101c0f16:
+        local_14 = -(uint)bVar3 | 1;
+        goto LAB_101c0f1e;
+      }
+      if (wVar1 == L'\0') break;
+      wVar1 = local_c[1];
+      bVar3 = (ushort)wVar1 < (ushort)local_10[1];
+      if (wVar1 != local_10[1]) goto LAB_101c0f16;
+      local_c = local_c + 2;
+      local_10 = local_10 + 2;
+    } while (wVar1 != L'\0');
+    local_14 = 0;
+LAB_101c0f1e:
+    if (local_14 == 0) {
+      iVar2 = 1;
+    }
+    else {
+      iVar2 = esGraphObject::isKindOf((esGraphObject *)this,param_1);
+    }
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esCanvasList::isOf
+// entry=101c0f50
+// signature=int isOf(esCanvasList * this, wchar_t * param_1)
+// bodyBytes=137
+// =========================================================
+
+/* public: virtual int __thiscall esCanvasList::isOf(wchar_t const *)const  */
+
+int __thiscall esCanvasList::isOf(esCanvasList *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  bool bVar2;
+  uint local_18;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x1c0f50  15554  ?isOf@esCanvasList@@UBEHPB_W@Z */
+  local_10 = ID();
+  local_c = param_1;
+  do {
+    wVar1 = *local_c;
+    bVar2 = (ushort)wVar1 < (ushort)*local_10;
+    if (wVar1 != *local_10) {
+LAB_101c0fac:
+      local_14 = -(uint)bVar2 | 1;
+      goto LAB_101c0fb4;
+    }
+    if (wVar1 == L'\0') break;
+    wVar1 = local_c[1];
+    bVar2 = (ushort)wVar1 < (ushort)local_10[1];
+    if (wVar1 != local_10[1]) goto LAB_101c0fac;
+    local_c = local_c + 2;
+    local_10 = local_10 + 2;
+  } while (wVar1 != L'\0');
+  local_14 = 0;
+LAB_101c0fb4:
+  local_18 = (uint)(local_14 == 0);
+  return local_18;
+}
+
+
+
+// =========================================================
+// esCanvasList::esCanvasList
+// entry=101c0fe0
+// signature=undefined esCanvasList(esCanvasList * this)
+// bodyBytes=153
+// =========================================================
+
+/* public: __thiscall esCanvasList::esCanvasList(void) */
+
+esCanvasList * __thiscall esCanvasList::esCanvasList(esCanvasList *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c0fe0  541  ??0esCanvasList@@QAE@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539a08;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  esGraphObject::esGraphObject((esGraphObject *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined2 *)(this + 0x40) = 0;
+  esCanvasState::esCanvasState((esCanvasState *)(this + 0x44),this);
+  *(undefined2 *)(this + 4) = 0x2010;
+  *(undefined4 *)(this + 0x34) = 0;
+  *(undefined4 *)(this + 0x3c) = 0;
+  *(undefined4 *)(this + 0x38) = 0;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esCanvasList::~esCanvasList
+// entry=101c1080
+// signature=void ~esCanvasList(esCanvasList * this)
+// bodyBytes=89
+// =========================================================
+
+/* public: virtual __thiscall esCanvasList::~esCanvasList(void) */
+
+void __thiscall esCanvasList::~esCanvasList(esCanvasList *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0x1c1080  1697  ??1esCanvasList@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1052a980;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  RemoveAllItems(this);
+  esCanvasState::~esCanvasState((esCanvasState *)(this + 0x44));
+  esGraphObject::~esGraphObject((esGraphObject *)this);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::RemoveAllItems
+// entry=101c10e0
+// signature=void RemoveAllItems(esCanvasList * this)
+// bodyBytes=120
+// =========================================================
+
+/* public: void __thiscall esCanvasList::RemoveAllItems(void) */
+
+void __thiscall esCanvasList::RemoveAllItems(esCanvasList *this)
+
+{
+  esCalligraph *peVar1;
+  esCalligraph *local_8;
+  
+                    /* 0x1c10e0  11491  ?RemoveAllItems@esCanvasList@@QAEXXZ */
+  peVar1 = *(esCalligraph **)(this + 0x38);
+  while (local_8 = peVar1, local_8 != (esCalligraph *)0x0) {
+    peVar1 = *(esCalligraph **)(local_8 + 0x50);
+    esCalligraph::ResetLineWidth(local_8,0);
+    if (*(int *)(local_8 + 0x40) == 0) {
+      if (local_8 != (esCalligraph *)0x0) {
+        (*(code *)**(undefined4 **)local_8)(1);
+      }
+    }
+    else {
+      *(undefined4 *)(local_8 + 0x40) = 0;
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::Initialize
+// entry=101c1160
+// signature=void Initialize(esCanvasList * this, esObject * param_1)
+// bodyBytes=244
+// =========================================================
+
+/* public: void __thiscall esCanvasList::Initialize(class esObject *) */
+
+void __thiscall esCanvasList::Initialize(esCanvasList *this,esObject *param_1)
+
+{
+  int iVar1;
+  esStyleList<esBlockStyle> *this_00;
+  esCanvas *peVar2;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c1160  8876  ?Initialize@esCanvasList@@QAEXPAVesObject@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539a42;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  esCalligraph::ResetLineWidth((esCalligraph *)this,(int)param_1);
+  iVar1 = esSnapObj::Is((esSnapObj *)param_1,0x2001);
+  if (iVar1 == 0) {
+    iVar1 = esSnapObj::Is((esSnapObj *)param_1,0x200f);
+    if (iVar1 == 0) {
+      *(undefined2 *)(this + 4) = 0x2011;
+    }
+    else {
+      *(undefined2 *)(this + 4) = 0x2012;
+    }
+  }
+  else {
+    *(undefined2 *)(this + 4) = 0x2010;
+  }
+  if (*(int *)(this + 0x38) == 0) {
+    this_00 = operator_new(0xe0);
+    local_8 = 0;
+    esStyleList<esBlockStyle>::__autoclassinit2(this_00,0xe0);
+    peVar2 = (esCanvas *)esCanvas::esCanvas((esCanvas *)this_00);
+    local_8 = 0xffffffff;
+    Append(this,peVar2);
+  }
+  esCanvasState::ReseCanvas((esCanvasState *)(this + 0x44),*(esCanvas **)(this + 0x38));
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::Insert
+// entry=101c1260
+// signature=void Insert(esCanvasList * this, esObject * param_1, esObject * param_2, int param_3)
+// bodyBytes=308
+// =========================================================
+
+/* public: virtual void __thiscall esCanvasList::Insert(class esObject *,class esObject *,int) */
+
+void __thiscall
+esCanvasList::Insert(esCanvasList *this,esObject *param_1,esObject *param_2,int param_3)
+
+{
+                    /* 0x1c1260  8925  ?Insert@esCanvasList@@UAEXPAVesObject@@0H@Z */
+  esCalligraph::ResetLineWidth((esCalligraph *)param_1,(int)this);
+  if (param_3 == 0) {
+    if (param_2 == (esObject *)0x0) {
+      *(undefined4 *)(param_1 + 0x54) = *(undefined4 *)(this + 0x3c);
+      if (*(int *)(this + 0x3c) == 0) {
+        *(esObject **)(this + 0x38) = param_1;
+      }
+      else {
+        *(esObject **)(*(int *)(this + 0x3c) + 0x50) = param_1;
+      }
+      *(esObject **)(this + 0x3c) = param_1;
+    }
+    else {
+      *(undefined4 *)(param_1 + 0x54) = *(undefined4 *)(param_2 + 0x54);
+      *(esObject **)(param_1 + 0x50) = param_2;
+      *(esObject **)(param_2 + 0x54) = param_1;
+      if (*(int *)(param_1 + 0x54) == 0) {
+        *(esObject **)(this + 0x38) = param_1;
+      }
+      else {
+        *(esObject **)(*(int *)(param_1 + 0x54) + 0x50) = param_1;
+      }
+    }
+  }
+  else if (param_2 == (esObject *)0x0) {
+    *(undefined4 *)(param_1 + 0x50) = *(undefined4 *)(this + 0x38);
+    if (*(int *)(this + 0x38) == 0) {
+      *(esObject **)(this + 0x3c) = param_1;
+    }
+    else {
+      *(esObject **)(*(int *)(this + 0x38) + 0x54) = param_1;
+    }
+    *(esObject **)(this + 0x38) = param_1;
+  }
+  else {
+    *(undefined4 *)(param_1 + 0x50) = *(undefined4 *)(param_2 + 0x50);
+    *(esObject **)(param_1 + 0x54) = param_2;
+    *(esObject **)(param_2 + 0x50) = param_1;
+    if (*(int *)(param_1 + 0x50) == 0) {
+      *(esObject **)(this + 0x3c) = param_1;
+    }
+    else {
+      *(esObject **)(*(int *)(param_1 + 0x50) + 0x54) = param_1;
+    }
+  }
+  (**(code **)(*(int *)this + 0x44))(0);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::DeleteGraps
+// entry=101c13a0
+// signature=void DeleteGraps(esCanvasList * this, int param_1, esUndo * param_2)
+// bodyBytes=151
+// =========================================================
+
+/* public: void __thiscall esCanvasList::DeleteGraps(int,class esUndo *) */
+
+void __thiscall esCanvasList::DeleteGraps(esCanvasList *this,int param_1,esUndo *param_2)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  esCanvas *peVar3;
+  esCanvas *local_8;
+  
+                    /* 0x1c13a0  5091  ?DeleteGraps@esCanvasList@@QAEXHPAVesUndo@@@Z */
+  peVar3 = *(esCanvas **)(this + 0x38);
+  while (local_8 = peVar3, local_8 != (esCanvas *)0x0) {
+    peVar3 = *(esCanvas **)(local_8 + 0x50);
+    iVar1 = esCanvas::page(local_8);
+    if (param_1 <= iVar1) {
+      if (param_2 != (esUndo *)0x0) {
+        (**(code **)(*(int *)local_8 + 0x14))();
+      }
+      (**(code **)(*(int *)local_8 + 0x38))();
+      if (local_8 == (esCanvas *)0x0) {
+        uVar2 = 0;
+      }
+      else {
+        uVar2 = (*(code *)**(undefined4 **)local_8)(1);
+      }
+      (**(code **)(*(int *)this + 0x44))(0,peVar3,uVar2);
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::MoveToTop
+// entry=101c1440
+// signature=int MoveToTop(esCanvasList * this, int param_1)
+// bodyBytes=396
+// =========================================================
+
+/* public: int __thiscall esCanvasList::MoveToTop(int) */
+
+int __thiscall esCanvasList::MoveToTop(esCanvasList *this,int param_1)
+
+{
+  esCanvas *this_00;
+  esAmulet *peVar1;
+  int iVar2;
+  esStyleList<esBlockStyle> *this_01;
+  esUnBase *peVar3;
+  zRect *pzVar4;
+  tagRECT *ptVar5;
+  tagRECT *ptVar6;
+  esCanvas *local_18;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c1440  10517  ?MoveToTop@esCanvasList@@QAEHH@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539a6f;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this_00 = GetActive(this,1);
+  if ((((this_00 == (esCanvas *)0x0) ||
+       (peVar1 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)this_00),
+       peVar1 == (esAmulet *)0x0)) || (*(int *)(this_00 + 0x40) != 0)) ||
+     ((iVar2 = esCanvas::IsFixed(this_00), iVar2 != 0 ||
+      (iVar2 = esCanvas::IsLocked(this_00), iVar2 != 0)))) {
+    iVar2 = 0;
+  }
+  else {
+    local_18 = *(esCanvas **)(this_00 + 0x50);
+    if ((local_18 == (esCanvas *)0x0) || (iVar2 = esCanvas::IsFixed(local_18), iVar2 != 0)) {
+      iVar2 = 0;
+    }
+    else {
+      this_01 = operator_new(0x18);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2(this_01,0x18);
+      peVar3 = (esUnBase *)esUnMove::esUnMove((esUnMove *)this_01,(esObject *)this_00);
+      local_8 = 0xffffffff;
+      esUndo::Rec_Add(esObject::m_pUndo,peVar3);
+      while ((local_18 != (esCanvas *)0x0 && (iVar2 = esCanvas::IsFixed(local_18), iVar2 == 0))) {
+        (**(code **)(*(int *)local_18 + 0x38))();
+        (**(code **)(*(int *)this + 0x3c))(local_18,this_00,0);
+        if (param_1 == 1) break;
+        if (param_1 == 0) {
+          pzVar4 = esGraphObject::GetSolidRect((esGraphObject *)local_18,1);
+          ptVar5 = zRect::operator_struct_tagRECT_const_(pzVar4);
+          pzVar4 = esGraphObject::GetSolidRect((esGraphObject *)this_00,1);
+          ptVar6 = zRect::operator_struct_tagRECT_const_(pzVar4);
+          iVar2 = zRectTempl<tagRECT,long>::IsIntersectRect(ptVar6,ptVar5);
+          if (iVar2 != 0) break;
+        }
+        local_18 = *(esCanvas **)(this_00 + 0x50);
+      }
+      iVar2 = 1;
+    }
+  }
+  ExceptionList = local_10;
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esCanvasList::MoveToUnder
+// entry=101c15e0
+// signature=int MoveToUnder(esCanvasList * this, int param_1)
+// bodyBytes=391
+// =========================================================
+
+/* public: int __thiscall esCanvasList::MoveToUnder(int) */
+
+int __thiscall esCanvasList::MoveToUnder(esCanvasList *this,int param_1)
+
+{
+  esCanvas *this_00;
+  esAmulet *peVar1;
+  int iVar2;
+  esStyleList<esBlockStyle> *this_01;
+  esUnBase *peVar3;
+  zRect *pzVar4;
+  tagRECT *ptVar5;
+  tagRECT *ptVar6;
+  esCanvas *local_18;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c15e0  10519  ?MoveToUnder@esCanvasList@@QAEHH@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539a9f;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this_00 = GetActive(this,1);
+  if ((((this_00 == (esCanvas *)0x0) ||
+       (peVar1 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)this_00),
+       peVar1 == (esAmulet *)0x0)) || (*(int *)(this_00 + 0x40) != 0)) ||
+     ((iVar2 = esCanvas::IsFixed(this_00), iVar2 != 0 ||
+      (iVar2 = esCanvas::IsLocked(this_00), iVar2 != 0)))) {
+    iVar2 = 0;
+  }
+  else {
+    local_18 = *(esCanvas **)(this_00 + 0x54);
+    if ((local_18 == (esCanvas *)0x0) || (iVar2 = esCanvas::IsFixed(local_18), iVar2 != 0)) {
+      iVar2 = 0;
+    }
+    else {
+      this_01 = operator_new(0x18);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2(this_01,0x18);
+      peVar3 = (esUnBase *)esUnMove::esUnMove((esUnMove *)this_01,(esObject *)this_00);
+      local_8 = 0xffffffff;
+      esUndo::Rec_Add(esObject::m_pUndo,peVar3);
+      while ((local_18 != (esCanvas *)0x0 && (iVar2 = esCanvas::IsFixed(local_18), iVar2 == 0))) {
+        (**(code **)(*(int *)local_18 + 0x38))();
+        (**(code **)(*(int *)this + 0x3c))(local_18,this_00,1);
+        if (param_1 == 0) {
+          pzVar4 = esGraphObject::GetSolidRect((esGraphObject *)local_18,1);
+          ptVar5 = zRect::operator_struct_tagRECT_const_(pzVar4);
+          pzVar4 = esGraphObject::GetSolidRect((esGraphObject *)this_00,1);
+          ptVar6 = zRect::operator_struct_tagRECT_const_(pzVar4);
+          iVar2 = zRectTempl<tagRECT,long>::IsIntersectRect(ptVar6,ptVar5);
+          if (iVar2 != 0) break;
+        }
+        else if (param_1 == 1) break;
+        local_18 = *(esCanvas **)(this_00 + 0x54);
+      }
+      iVar2 = 1;
+    }
+  }
+  ExceptionList = local_10;
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esCanvasList::GetContentPlaceObj
+// entry=101c1770
+// signature=esShapeBase * GetContentPlaceObj(esCanvasList * this, tagRECT * param_1)
+// bodyBytes=327
+// =========================================================
+
+/* public: class esShapeBase * __thiscall esCanvasList::GetContentPlaceObj(struct tagRECT *) */
+
+esShapeBase * __thiscall esCanvasList::GetContentPlaceObj(esCanvasList *this,tagRECT *param_1)
+
+{
+  zRect *pzVar1;
+  long lVar2;
+  long lVar3;
+  tagRECT *ptVar4;
+  esShapeBase *peVar5;
+  int iVar6;
+  int local_30;
+  esGraphObject *local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  uint local_8;
+  
+                    /* 0x1c1770  6484
+                       ?GetContentPlaceObj@esCanvasList@@QAEPAVesShapeBase@@PAUtagRECT@@@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x38) != 0) {
+    local_30 = (((param_1->right - param_1->left) / 100) * ((param_1->bottom - param_1->top) / 100))
+               / 2;
+    for (local_1c = *(esGraphObject **)(*(int *)(this + 0x38) + 0x34);
+        local_1c != (esGraphObject *)0x0; local_1c = *(esGraphObject **)(local_1c + 0x44)) {
+      if ((*(short *)(local_1c + 4) == 0x3908) && (*(int *)(local_1c + 0x60) == 2)) {
+        pzVar1 = esGraphObject::GetSolidRect(local_1c,1);
+        local_18 = *(undefined4 *)pzVar1;
+        local_14 = *(undefined4 *)(pzVar1 + 4);
+        local_10 = *(undefined4 *)(pzVar1 + 8);
+        local_c = *(undefined4 *)(pzVar1 + 0xc);
+        lVar2 = zRectTempl<tagRECT,long>::Width((zRectTempl<tagRECT,long> *)&local_18);
+        lVar3 = zRectTempl<tagRECT,long>::Height((zRectTempl<tagRECT,long> *)&local_18);
+        iVar6 = (lVar2 / 100) * (lVar3 / 100);
+        if (local_30 < iVar6) {
+          ptVar4 = zRect::operator_struct_tagRECT_((zRect *)&local_18);
+          param_1->left = ptVar4->left;
+          param_1->top = ptVar4->top;
+          param_1->right = ptVar4->right;
+          param_1->bottom = ptVar4->bottom;
+          local_30 = iVar6;
+        }
+      }
+    }
+  }
+  peVar5 = (esShapeBase *)__security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return peVar5;
+}
+
+
+
+// =========================================================
+// esCanvasList::IsEqual
+// entry=101c18c0
+// signature=int IsEqual(esCanvasList * this, esObject * param_1, esStyleSheet * param_2)
+// bodyBytes=155
+// =========================================================
+
+/* public: virtual int __thiscall esCanvasList::IsEqual(class esObject *,class esStyleSheet *) */
+
+int __thiscall esCanvasList::IsEqual(esCanvasList *this,esObject *param_1,esStyleSheet *param_2)
+
+{
+  int iVar1;
+  int local_14;
+  int local_c;
+  int *local_8;
+  
+                    /* 0x1c18c0  9264  ?IsEqual@esCanvasList@@UAEHPAVesObject@@PAVesStyleSheet@@@Z
+                        */
+  iVar1 = esObject::IsEqual((esObject *)this,param_1,param_2);
+  if (iVar1 == 0) {
+    local_14 = 0;
+  }
+  else {
+    local_8 = *(int **)(this + 0x38);
+    for (local_c = *(int *)(param_1 + 0x38); (local_8 != (int *)0x0 && (local_c != 0));
+        local_c = *(int *)(local_c + 0x50)) {
+      iVar1 = (**(code **)(*local_8 + 0x4c))(local_c,param_2);
+      if (iVar1 == 0) {
+        return 0;
+      }
+      local_8 = (int *)local_8[0x14];
+    }
+    if ((local_8 == (int *)0x0) && (local_c == 0)) {
+      local_14 = 1;
+    }
+    else {
+      local_14 = 0;
+    }
+  }
+  return local_14;
+}
+
+
+
+// =========================================================
+// esCanvasList::Serialize
+// entry=101c1960
+// signature=void Serialize(esCanvasList * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+// bodyBytes=1148
+// =========================================================
+
+/* public: virtual void __thiscall esCanvasList::Serialize(class zArchive &,class esStyleSheet
+   *,unsigned short) */
+
+void __thiscall
+esCanvasList::Serialize(esCanvasList *this,zArchive *param_1,esStyleSheet *param_2,ushort param_3)
+
+{
+  ushort uVar1;
+  ushort uVar2;
+  ulong uVar3;
+  int iVar4;
+  esAmulet *peVar5;
+  esStyleList<esBlockStyle> *this_00;
+  esCanvas *peVar6;
+  ushort local_30;
+  ushort local_2c;
+  ushort local_28;
+  int *local_20;
+  ushort local_18 [2];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c1960  12184
+                       ?Serialize@esCanvasList@@UAEXAAVzArchive@@PAVesStyleSheet@@G@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539ad2;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  esObject::Serialize((esObject *)this,param_1,param_2,param_3);
+  uVar3 = esStyleSheet::GetVersion(param_2);
+  if ((param_2 != (esStyleSheet *)0x0) && (iVar4 = esStyleSheet::IsCopyMode(param_2), iVar4 == 0)) {
+    peVar5 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)this);
+    if ((peVar5 != (esAmulet *)0x0) && (*(int *)(this + 0x38) == 0)) {
+      this_00 = operator_new(0xe0);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2(this_00,0xe0);
+      peVar6 = (esCanvas *)esCanvas::esCanvas((esCanvas *)this_00);
+      local_8 = 0xffffffff;
+      Append(this,peVar6);
+    }
+    if (*(short *)(this + 4) == 0x2010) {
+      iVar4 = zStream::IsStoring((zStream *)param_1);
+      if (iVar4 == 0) {
+        if (uVar3 < 0x1070210) {
+          if (uVar3 < 0x1060509) {
+            uVar1 = zStream::ReadWord((zStream *)param_1);
+            for (local_28 = 0; local_28 < uVar1; local_28 = local_28 + 1) {
+              uVar2 = zStream::ReadWord((zStream *)param_1);
+              if (uVar2 != 0x2020) {
+                zApiThrowMemoryException();
+              }
+              peVar6 = (esCanvas *)(**(code **)(*(int *)this + 0x58))(0x2020);
+              Append(this,peVar6);
+              (**(code **)(*(int *)peVar6 + 0x40))(param_1,param_2,0);
+            }
+          }
+          esCanvasState::ReseCanvas((esCanvasState *)(this + 0x44),*(esCanvas **)(this + 0x38));
+        }
+        else {
+          uVar1 = zStream::ReadWord((zStream *)param_1);
+          if (uVar1 != 0x2020) {
+            zApiThrowMemoryException();
+          }
+          (**(code **)(**(int **)(this + 0x38) + 0x40))(param_1,param_2,param_3);
+          esCanvasState::ReseCanvas((esCanvasState *)(this + 0x44),*(esCanvas **)(this + 0x38));
+        }
+      }
+      else {
+        (**(code **)(**(int **)(this + 0x38) + 0x40))(param_1,param_2,param_3);
+      }
+      goto LAB_101c1dc8;
+    }
+  }
+  local_18[0] = 0;
+  iVar4 = zStream::IsStoring((zStream *)param_1);
+  if (iVar4 == 0) {
+    zStream::operator>>((zStream *)param_1,local_18);
+    if (local_18[0] != 0) {
+      if (*(short *)(this + 4) == 0x2012) {
+        for (local_2c = 0; local_2c < local_18[0]; local_2c = local_2c + 1) {
+          uVar1 = zStream::ReadWord((zStream *)param_1);
+          if (uVar1 != 0x2020) {
+            zApiThrowMemoryException();
+          }
+          (**(code **)(**(int **)(this + 0x3c) + 0x40))(param_1,param_2,param_3);
+        }
+        esCanvas::Initialize(*(esCanvas **)(this + 0x38));
+      }
+      else {
+        if (0x107000d < uVar3) {
+          zStream::ReadWord((zStream *)param_1);
+          (**(code **)(**(int **)(this + 0x38) + 0x40))(param_1,param_2,param_3);
+          local_18[0] = local_18[0] - 1;
+        }
+        for (local_30 = 0; local_30 < local_18[0]; local_30 = local_30 + 1) {
+          uVar1 = zStream::ReadWord((zStream *)param_1);
+          if (uVar1 != 0x2020) {
+            zApiThrowMemoryException();
+          }
+          peVar6 = (esCanvas *)(**(code **)(*(int *)this + 0x58))(uVar1);
+          Append(this,peVar6);
+          (**(code **)(*(int *)peVar6 + 0x40))(param_1,param_2,param_3);
+          if ((((*(short *)(this + 4) == 0x2011) && (*(esCanvas **)(this + 0x38) != peVar6)) &&
+              (*(int *)(peVar6 + 0x34) == 0)) &&
+             ((**(code **)(*(int *)peVar6 + 0x38))(), peVar6 != (esCanvas *)0x0)) {
+            (*(code *)**(undefined4 **)peVar6)(1);
+          }
+        }
+      }
+    }
+    esCanvasState::ReseCanvas((esCanvasState *)(this + 0x44),*(esCanvas **)(this + 0x38));
+  }
+  else {
+    for (local_20 = *(int **)(this + 0x38); local_20 != (int *)0x0;
+        local_20 = *(int **)((int)local_20 + 0x50)) {
+      local_18[0] = local_18[0] + 1;
+    }
+    zStream::operator<<((zStream *)param_1,local_18[0]);
+    for (local_20 = *(int **)(this + 0x38); local_20 != (int *)0x0; local_20 = (int *)local_20[0x14]
+        ) {
+      (**(code **)(*local_20 + 0x40))(param_1,param_2,param_3);
+    }
+  }
+LAB_101c1dc8:
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::GetUniqueCanvassName
+// entry=101c1df0
+// signature=void GetUniqueCanvassName(esCanvasList * this, zwstr * param_1)
+// bodyBytes=275
+// =========================================================
+
+/* public: void __thiscall esCanvasList::GetUniqueCanvassName(class zwstr &) */
+
+void __thiscall esCanvasList::GetUniqueCanvassName(esCanvasList *this,zwstr *param_1)
+
+{
+  uint uVar1;
+  wchar_t *pwVar2;
+  int iVar3;
+  zwstr *this_00;
+  zwstr *this_01;
+  undefined4 uVar4;
+  esCanvas *local_28;
+  int local_24;
+  zwstr local_20 [12];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c1df0  8232  ?GetUniqueCanvassName@esCanvasList@@QAEXAAVzwstr@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1052c8d9;
+  local_10 = ExceptionList;
+  uVar1 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_14 = uVar1;
+  zwstr::zwstr(local_20);
+  local_8 = 0;
+  uVar4 = 1;
+  pwVar2 = zwstr::Str(param_1);
+  zwstr::Format(this_00,(wchar_t *)local_20,L"%s%d",pwVar2,uVar4,uVar1);
+  local_24 = 2;
+  local_28 = *(esCanvas **)(this + 0x38);
+  while (local_28 != (esCanvas *)0x0) {
+    pwVar2 = zwstr::operator_wchar_t_const_(local_20);
+    iVar3 = esCanvas::IsEqualRoleName(local_28,pwVar2);
+    if (iVar3 == 0) {
+      local_28 = *(esCanvas **)(local_28 + 0x50);
+    }
+    else {
+      iVar3 = local_24;
+      pwVar2 = zwstr::Str(param_1);
+      zwstr::Format(this_01,(wchar_t *)local_20,L"%s%d",pwVar2,iVar3);
+      local_24 = local_24 + 1;
+      local_28 = *(esCanvas **)(this + 0x38);
+    }
+  }
+  zwstr::operator=(param_1,local_20);
+  local_8 = 0xffffffff;
+  zwstr::~zwstr(local_20);
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::UpdatePlaceholders
+// entry=101c1f10
+// signature=void UpdatePlaceholders(esCanvasList * this, esCanvas * param_1, tagRECT * param_2, esStyleSheet * param_3)
+// bodyBytes=636
+// =========================================================
+
+/* public: void __thiscall esCanvasList::UpdatePlaceholders(class esCanvas *,struct tagRECT *,class
+   esStyleSheet *) */
+
+void __thiscall
+esCanvasList::UpdatePlaceholders
+          (esCanvasList *this,esCanvas *param_1,tagRECT *param_2,esStyleSheet *param_3)
+
+{
+  esShapeBase *peVar1;
+  bool bVar2;
+  int iVar3;
+  zRect *this_00;
+  tagRECT *ptVar4;
+  esShapeHolder *this_01;
+  bool bVar5;
+  tagRECT *ptVar6;
+  esShapeHolder *local_2c;
+  esShapeBase *local_c;
+  
+                    /* 0x1c1f10  13659
+                       ?UpdatePlaceholders@esCanvasList@@QAEXPAVesCanvas@@PAUtagRECT@@PAVesStyleSheet@@@Z
+                        */
+  if ((*(int *)(this + 0x38) != 0) && (param_1 != (esCanvas *)0x0)) {
+    local_2c = (esShapeHolder *)0x0;
+    if ((*(int *)(this + 0x38) == 0) || (*(int *)(*(int *)(this + 0x38) + 0x34) != 0)) {
+      bVar2 = false;
+    }
+    else {
+      bVar2 = true;
+    }
+    for (local_c = *(esShapeBase **)(param_1 + 0x34); local_c != (esShapeBase *)0x0;
+        local_c = *(esShapeBase **)(local_c + 0x44)) {
+      iVar3 = esShapeBase::IsPlaceHolder(local_c);
+      if (iVar3 != 0) {
+        bVar5 = true;
+        if (param_2 != (tagRECT *)0x0) {
+          ptVar6 = param_2;
+          this_00 = esGraphObject::GetSolidRect((esGraphObject *)local_c,1);
+          ptVar4 = zRect::operator_struct_tagRECT_const_(this_00);
+          iVar3 = zRectTempl<tagRECT,long>::IsIntersectRect(ptVar4,ptVar6);
+          bVar5 = iVar3 == 0;
+        }
+        if ((((bVar5) && (iVar3 = ApplyPalceHolder(this,(esShapeHolder *)local_c), iVar3 == 0)) &&
+            (bVar2)) &&
+           (this_01 = esShapeHolder::CreateForeHolder((esShapeHolder *)local_c,param_3),
+           this_01 != (esShapeHolder *)0x0)) {
+          *(uint *)(this_01 + 0x60) = *(uint *)(this_01 + 0x60) | 0x80000000;
+          (**(code **)(**(int **)(this + 0x38) + 0x3c))(this_01,local_2c,1);
+          (**(code **)(**(int **)(this + 0x38) + 0x44))(0);
+          local_2c = this_01;
+          if (esObject::m_pUndo != (esUndo *)0x0) {
+            esObject::SetUnAddInfo((esObject *)this_01);
+          }
+        }
+      }
+    }
+    peVar1 = (esShapeBase *)*(int **)(*(int *)(this + 0x38) + 0x34);
+    while (local_c = peVar1, local_c != (esShapeBase *)0x0) {
+      peVar1 = *(esShapeBase **)((int)local_c + 0x44);
+      if (((short)*(int *)((int)local_c + 4) == 0x3908) && (*(int *)((int)local_c + 0x40) != 0)) {
+        if ((*(uint *)((int)local_c + 0x60) & 0x80000000) == 0) {
+          if (*(short *)(*(int *)((int)local_c + 0x40) + 4) == -0x5001) {
+            if (esObject::m_pUndo != (esUndo *)0x0) {
+              (**(code **)(*(int *)local_c + 0x14))();
+            }
+            (**(code **)(*(int *)local_c + 0x38))();
+            if (local_c != (esShapeBase *)0x0) {
+              (*(code *)**(undefined4 **)local_c)(1);
+            }
+          }
+          else if ((*(uint *)((int)local_c + 0x60) & 0x40000000) != 0) {
+            if (esObject::m_pUndo != (esUndo *)0x0) {
+              FUN_10026360(local_c,0x531,(int *)((int)local_c + 0x60));
+            }
+            *(uint *)((int)local_c + 0x60) = *(uint *)((int)local_c + 0x60) & 0xbfffffff;
+          }
+        }
+        else {
+          *(uint *)((int)local_c + 0x60) = *(uint *)((int)local_c + 0x60) & 0x7fffffff;
+        }
+      }
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::ApplyPalceHolder
+// entry=101c2190
+// signature=int ApplyPalceHolder(esCanvasList * this, esShapeHolder * param_1)
+// bodyBytes=279
+// =========================================================
+
+/* protected: int __thiscall esCanvasList::ApplyPalceHolder(class esShapeHolder *) */
+
+int __thiscall esCanvasList::ApplyPalceHolder(esCanvasList *this,esShapeHolder *param_1)
+
+{
+  int iVar1;
+  esShapeBase *local_14;
+  esShapeHolder *local_c;
+  
+                    /* 0x1c2190  3915  ?ApplyPalceHolder@esCanvasList@@IAEHPAVesShapeHolder@@@Z */
+  if (*(int *)(this + 0x38) != 0) {
+    if (*(int *)(this + 0x38) != 0) {
+      for (local_c = *(esShapeHolder **)(*(int *)(this + 0x38) + 0x34);
+          local_c != (esShapeHolder *)0x0; local_c = *(esShapeHolder **)(local_c + 0x44)) {
+        if ((((*(short *)(local_c + 4) == 0x3908) && ((*(uint *)(local_c + 0x60) & 0x80000000) == 0)
+             ) && ((*(uint *)(local_c + 0x60) & *(uint *)(param_1 + 0x60)) != 0)) &&
+           ((*(int *)(local_c + 0x40) != 0 && (*(short *)(*(int *)(local_c + 0x40) + 4) != -0x5001))
+           )) {
+          esShapeHolder::ResetPlace(local_c,param_1);
+          return 1;
+        }
+      }
+    }
+    if (*(int *)(this + 0x38) != 0) {
+      for (local_14 = *(esShapeBase **)(*(int *)(this + 0x38) + 0x34);
+          local_14 != (esShapeBase *)0x0; local_14 = *(esShapeBase **)(local_14 + 0x44)) {
+        iVar1 = esShapeBase::IsPlaceHolder(local_14);
+        if (((iVar1 != 0) && ((*(uint *)(local_14 + 0x60) & 0x80000000) == 0)) &&
+           ((*(uint *)(local_14 + 0x60) & 0xfffffff) == *(uint *)(param_1 + 0x60))) {
+          esShapeHolder::ResetPlace((esShapeHolder *)local_14,param_1);
+          return 1;
+        }
+      }
+    }
+  }
+  return 0;
+}
+
+
+
+// =========================================================
+// esCanvasList::CreateObject
+// entry=101c22b0
+// signature=esObject * CreateObject(esCanvasList * this, ushort param_1)
+// bodyBytes=139
+// =========================================================
+
+/* public: virtual class esObject * __thiscall esCanvasList::CreateObject(unsigned short)const  */
+
+esObject * __thiscall esCanvasList::CreateObject(esCanvasList *this,ushort param_1)
+
+{
+  esStyleList<esBlockStyle> *this_00;
+  esObject *peVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c22b0  4998  ?CreateObject@esCanvasList@@UBEPAVesObject@@G@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539b12;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this_00 = operator_new(0xe0);
+  local_8 = 0;
+  esStyleList<esBlockStyle>::__autoclassinit2(this_00,0xe0);
+  peVar1 = (esObject *)esCanvas::esCanvas((esCanvas *)this_00);
+  *(ushort *)(peVar1 + 4) = param_1;
+  ExceptionList = local_10;
+  return peVar1;
+}
+
+
+
+// =========================================================
+// esCanvasList::Append
+// entry=101c2350
+// signature=void Append(esCanvasList * this, esCanvas * param_1)
+// bodyBytes=103
+// =========================================================
+
+/* public: void __thiscall esCanvasList::Append(class esCanvas *) */
+
+void __thiscall esCanvasList::Append(esCanvasList *this,esCanvas *param_1)
+
+{
+                    /* 0x1c2350  3843  ?Append@esCanvasList@@QAEXPAVesCanvas@@@Z */
+  esCalligraph::ResetLineWidth((esCalligraph *)param_1,(int)this);
+  if (*(int *)(this + 0x38) == 0) {
+    *(esCanvas **)(this + 0x38) = param_1;
+  }
+  else {
+    *(esCanvas **)(*(int *)(this + 0x3c) + 0x50) = param_1;
+    *(undefined4 *)(param_1 + 0x54) = *(undefined4 *)(this + 0x3c);
+  }
+  *(undefined4 *)(param_1 + 0x50) = 0;
+  *(esCanvas **)(this + 0x3c) = param_1;
+  (**(code **)(*(int *)this + 0x44))(0);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::RecalcLayout
+// entry=101c23c0
+// signature=void RecalcLayout(esCanvasList * this)
+// bodyBytes=240
+// =========================================================
+
+/* public: virtual void __thiscall esCanvasList::RecalcLayout(void) */
+
+void __thiscall esCanvasList::RecalcLayout(esCanvasList *this)
+
+{
+  esGraphObject *this_00;
+  int iVar1;
+  zRect *pzVar2;
+  tagRECT *ptVar3;
+  esGraphObject *local_2c;
+  tagRECT local_28;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  uint local_8;
+  
+                    /* 0x1c23c0  11347  ?RecalcLayout@esCanvasList@@UAEXXZ */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  iVar1 = eaProject::GetActiveFrame((eaProject *)this);
+  if (iVar1 != 0) {
+    zRect::zRect((zRect *)&local_18,0,0,0,0);
+    if (*(int *)(this + 0x38) != 0) {
+      this_00 = *(esGraphObject **)(this + 0x38);
+      pzVar2 = esGraphObject::GetSolidRect(this_00,1);
+      local_18 = *(undefined4 *)pzVar2;
+      local_14 = *(undefined4 *)(pzVar2 + 4);
+      local_10 = *(undefined4 *)(pzVar2 + 8);
+      local_c = *(undefined4 *)(pzVar2 + 0xc);
+      for (local_2c = *(esGraphObject **)(this_00 + 0x50); local_2c != (esGraphObject *)0x0;
+          local_2c = *(esGraphObject **)(local_2c + 0x50)) {
+        pzVar2 = esGraphObject::GetSolidRect(local_2c,1);
+        local_28.left = *(LONG *)pzVar2;
+        local_28.top = *(LONG *)(pzVar2 + 4);
+        local_28.right = *(LONG *)(pzVar2 + 8);
+        local_28.bottom = *(LONG *)(pzVar2 + 0xc);
+        zRectTempl<tagRECT,long>::Union((zRectTempl<tagRECT,long> *)&local_18,&local_28);
+      }
+    }
+    ptVar3 = zRect::operator_struct_tagRECT_((zRect *)&local_18);
+    esGraphObject::SetSolidRect((esGraphObject *)this,ptVar3);
+    ptVar3 = zRect::operator_struct_tagRECT_((zRect *)&local_18);
+    esGraphObject::SetBoundingRect((esGraphObject *)this,ptVar3);
+    (**(code **)(*(int *)this + 0x60))(0);
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::GetCountOnPage
+// entry=101c24b0
+// signature=int GetCountOnPage(esCanvasList * this, esCanvas * param_1)
+// bodyBytes=104
+// =========================================================
+
+/* public: int __thiscall esCanvasList::GetCountOnPage(class esCanvas *) */
+
+int __thiscall esCanvasList::GetCountOnPage(esCanvasList *this,esCanvas *param_1)
+
+{
+  int local_10;
+  esCanvas *local_8;
+  
+                    /* 0x1c24b0  6523  ?GetCountOnPage@esCanvasList@@QAEHPAVesCanvas@@@Z */
+  local_10 = 0;
+  if ((*(int *)(this + 0x38) != 0) && (*(short *)(this + 4) == 0x2011)) {
+    for (local_8 = *(esCanvas **)(*(int *)(this + 0x38) + 0x50); local_8 != (esCanvas *)0x0;
+        local_8 = *(esCanvas **)(local_8 + 0x50)) {
+      if ((*(int *)(local_8 + 0x34) != 0) && (local_8 != param_1)) {
+        local_10 = local_10 + 1;
+      }
+    }
+  }
+  return local_10;
+}
+
+
+
+// =========================================================
+// esCanvasList::RemoveItem
+// entry=101c2520
+// signature=void RemoveItem(esCanvasList * this, esCanvas * param_1)
+// bodyBytes=187
+// =========================================================
+
+/* public: void __thiscall esCanvasList::RemoveItem(class esCanvas *) */
+
+void __thiscall esCanvasList::RemoveItem(esCanvasList *this,esCanvas *param_1)
+
+{
+  undefined4 uVar1;
+  
+                    /* 0x1c2520  11575  ?RemoveItem@esCanvasList@@QAEXPAVesCanvas@@@Z */
+  if ((param_1 != (esCanvas *)0x0) && (param_1 != *(esCanvas **)(this + 0x38))) {
+    esCanvasState::OnRemove((esCanvasState *)(this + 0x44),param_1);
+    if (*(int *)(param_1 + 0x54) == 0) {
+      *(undefined4 *)(this + 0x38) = *(undefined4 *)(param_1 + 0x50);
+    }
+    else {
+      *(undefined4 *)(*(int *)(param_1 + 0x54) + 0x50) = *(undefined4 *)(param_1 + 0x50);
+    }
+    if (*(int *)(param_1 + 0x50) == 0) {
+      *(undefined4 *)(this + 0x3c) = *(undefined4 *)(param_1 + 0x54);
+    }
+    else {
+      *(undefined4 *)(*(int *)(param_1 + 0x50) + 0x54) = *(undefined4 *)(param_1 + 0x54);
+    }
+    if (param_1 == (esCanvas *)0x0) {
+      uVar1 = 0;
+    }
+    else {
+      uVar1 = (*(code *)**(undefined4 **)param_1)(1);
+    }
+    (**(code **)(*(int *)this + 0x44))(0,uVar1);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::OnMessage
+// entry=101c25e0
+// signature=int OnMessage(esCanvasList * this, esMessage * param_1, ulong param_2)
+// bodyBytes=97
+// =========================================================
+
+/* public: virtual int __thiscall esCanvasList::OnMessage(class esMessage *,unsigned long) */
+
+int __thiscall esCanvasList::OnMessage(esCanvasList *this,esMessage *param_1,ulong param_2)
+
+{
+  int iVar1;
+  int *local_8;
+  
+                    /* 0x1c25e0  10879  ?OnMessage@esCanvasList@@UAEHPAVesMessage@@K@Z */
+  for (local_8 = *(int **)(this + 0x38); local_8 != (int *)0x0; local_8 = (int *)local_8[0x14]) {
+    iVar1 = (**(code **)(*local_8 + 0x48))(param_1,param_2);
+    if (iVar1 != 0) {
+      (**(code **)(*(int *)this + 0x44))(0);
+    }
+  }
+  iVar1 = esObject::OnMessage((esObject *)this,param_1,param_2);
+  return iVar1;
+}
+
+
+
+// =========================================================
+// esCanvasList::GetActive
+// entry=101c2650
+// signature=esCanvas * GetActive(esCanvasList * this, int param_1)
+// bodyBytes=74
+// =========================================================
+
+/* public: class esCanvas * __thiscall esCanvasList::GetActive(int)const  */
+
+esCanvas * __thiscall esCanvasList::GetActive(esCanvasList *this,int param_1)
+
+{
+  esCanvas *local_c;
+  
+                    /* 0x1c2650  5997  ?GetActive@esCanvasList@@QBEPAVesCanvas@@H@Z */
+  if (param_1 == 0) {
+    local_c = (esCanvas *)esDimBaseEx::GetActiveTextObj((esDimBaseEx *)(this + 0x44));
+  }
+  else {
+    local_c = esCanvasState::GetActive((esCanvasState *)(this + 0x44));
+  }
+  if (local_c == (esCanvas *)0x0) {
+    local_c = *(esCanvas **)(this + 0x38);
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// esCanvasList::DetachCanvas
+// entry=101c26a0
+// signature=void DetachCanvas(esCanvasList * this, esStyleSheet * param_1)
+// bodyBytes=444
+// =========================================================
+
+/* public: void __thiscall esCanvasList::DetachCanvas(class esStyleSheet *) */
+
+void __thiscall esCanvasList::DetachCanvas(esCanvasList *this,esStyleSheet *param_1)
+
+{
+  esObject *peVar1;
+  esCanvas *this_00;
+  esShapeBase *peVar2;
+  esAmulet *peVar3;
+  esStyleList<esBlockStyle> *peVar4;
+  esObject *this_01;
+  esUnBase *peVar5;
+  esObject *local_18;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c26a0  5188  ?DetachCanvas@esCanvasList@@QAEXPAVesStyleSheet@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539b51;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  if ((((*(short *)(this + 4) == 0x2011) &&
+       (this_00 = GetActive(this,1), this_00 != (esCanvas *)0x0)) &&
+      (peVar2 = esCanvas::GetActive(this_00), peVar2 != (esShapeBase *)0x0)) &&
+     (peVar3 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)this_00),
+     peVar3 == (esAmulet *)this)) {
+    peVar4 = operator_new(0xe0);
+    local_8 = 0;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar4,0xe0);
+    this_01 = (esObject *)esCanvas::esCanvas((esCanvas *)peVar4,this_00);
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)this + 0x3c))(this_01,this_00,1);
+    esObject::SetUnAddInfo(this_01);
+    esCanvas::OnEdit(this_00,1,0);
+    esCanvas::CheckRemoveControlAndLinkInfo(this_00,2);
+    peVar1 = *(esObject **)(this_00 + 0x34);
+    while (local_18 = peVar1, local_18 != (esObject *)0x0) {
+      peVar1 = *(esObject **)(local_18 + 0x44);
+      if (*(int *)(local_18 + 0x3c) != 0) {
+        peVar4 = operator_new(0x18);
+        local_8 = 1;
+        esStyleList<esBlockStyle>::__autoclassinit2(peVar4,0x18);
+        peVar5 = (esUnBase *)esUnMove::esUnMove((esUnMove *)peVar4,local_18);
+        local_8 = 0xffffffff;
+        esUndo::Rec_Add(esObject::m_pUndo,peVar5);
+        (**(code **)(*(int *)local_18 + 0x38))();
+        *(undefined4 *)(local_18 + 0x3c) = 0;
+        esCanvas::AddItem((esCanvas *)this_01,(esShapeBase *)local_18,1);
+      }
+    }
+    (**(code **)(*(int *)this_00 + 0x44))(0);
+    SetActiveCanvas(this,(esCanvas *)this_01);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::AtachCanvas
+// entry=101c2870
+// signature=void AtachCanvas(esCanvasList * this, esStyleSheet * param_1)
+// bodyBytes=494
+// =========================================================
+
+/* public: void __thiscall esCanvasList::AtachCanvas(class esStyleSheet *) */
+
+void __thiscall esCanvasList::AtachCanvas(esCanvasList *this,esStyleSheet *param_1)
+
+{
+  esObject *peVar1;
+  uint uVar2;
+  esCanvas *this_00;
+  esAmulet *peVar3;
+  int iVar4;
+  esStyleList<esBlockStyle> *this_01;
+  esUnBase *peVar5;
+  esObject *local_24;
+  esStyleList<esBlockStyle> local_1c [8];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x1c2870  3925  ?AtachCanvas@esCanvasList@@QAEXPAVesStyleSheet@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539b87;
+  local_10 = ExceptionList;
+  uVar2 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_14 = uVar2;
+  if ((((*(short *)(this + 4) == 0x2011) &&
+       (this_00 = GetActive(this,1), this_00 != (esCanvas *)0x0)) &&
+      (this_00 != *(esCanvas **)(this + 0x38))) &&
+     (peVar3 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)this_00),
+     peVar3 == (esAmulet *)this)) {
+    esStyleList<esBlockStyle>::__autoclassinit2(local_1c,8);
+    FUN_10027060(uVar2);
+    local_8 = 0;
+    esCanvas::GetMatrix(this_00,(Matrix *)local_1c);
+    iVar4 = FUN_10027a90();
+    esCanvas::CancelAllSelect(*(esCanvas **)(this + 0x38));
+    SetActiveCanvas(this,*(esCanvas **)(this + 0x38));
+    local_24 = *(esObject **)(this_00 + 0x34);
+    while (local_24 != (esObject *)0x0) {
+      peVar1 = *(esObject **)(local_24 + 0x44);
+      this_01 = operator_new(0x18);
+      local_8._0_1_ = 1;
+      esStyleList<esBlockStyle>::__autoclassinit2(this_01,0x18);
+      peVar5 = (esUnBase *)esUnMove::esUnMove((esUnMove *)this_01,local_24);
+      local_8 = (uint)local_8._1_3_ << 8;
+      esUndo::Rec_Add(esObject::m_pUndo,peVar5);
+      (**(code **)(*(int *)local_24 + 0x38))();
+      if (iVar4 != 0) {
+        (**(code **)(*(int *)local_24 + 0x70))(local_1c,esObject::m_pUndo);
+      }
+      esCanvas::AddItem(*(esCanvas **)(this + 0x38),(esShapeBase *)local_24,1);
+      *(undefined4 *)(local_24 + 0x3c) = 1;
+      local_24 = peVar1;
+    }
+    esCanvas::SetActive(*(esCanvas **)(this + 0x38),*(esShapeBase **)(*(int *)(this + 0x38) + 0x38))
+    ;
+    (**(code **)(*(int *)this_00 + 0x14))();
+    (**(code **)(*(int *)this_00 + 0x5c))(0,0);
+    esCanvas::InvalidateState(*(esCanvas **)(this + 0x38));
+    (**(code **)(**(int **)(this + 0x38) + 0x44))(0);
+    local_8 = 0xffffffff;
+    ATL::CComBSTR::~CComBSTR((CComBSTR *)local_1c);
+  }
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::UnionCanvas
+// entry=101c2a70
+// signature=void UnionCanvas(esCanvasList * this, esCanvas * param_1)
+// bodyBytes=731
+// =========================================================
+
+/* public: void __thiscall esCanvasList::UnionCanvas(class esCanvas *) */
+
+void __thiscall esCanvasList::UnionCanvas(esCanvasList *this,esCanvas *param_1)
+
+{
+  bool bVar1;
+  esAmulet *peVar2;
+  esLableBox *this_00;
+  int iVar3;
+  esStyleList<esBlockStyle> *this_01;
+  esUnBase *peVar4;
+  uint local_50;
+  esObject *local_44;
+  esObject *local_40;
+  esCanvas *local_34;
+  esObject *local_28;
+  esStyleList<esBlockStyle> local_24 [8];
+  esStyleList<esBlockStyle> local_1c [8];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  uint local_8;
+  
+                    /* 0x1c2a70  13554  ?UnionCanvas@esCanvasList@@QAEXPAVesCanvas@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10539bcf;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (((((*(short *)(this + 4) == 0x2011) && (param_1 != (esCanvas *)0x0)) &&
+       (param_1 != *(esCanvas **)(this + 0x38))) &&
+      ((peVar2 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)param_1),
+       peVar2 == (esAmulet *)this &&
+       (this_00 = esDimBaseEx::GetActiveTextObj((esDimBaseEx *)(this + 0x44)),
+       this_00 != (esLableBox *)0x0)))) &&
+     ((this_00 != (esLableBox *)param_1 &&
+      ((peVar2 = esScopedAmulet::operator_class_esAmulet_((esScopedAmulet *)this_00),
+       peVar2 == (esAmulet *)this && (iVar3 = esCanvas::IsFixed((esCanvas *)this_00), iVar3 == 0))))
+     )) {
+    esCanvas::OnEdit((esCanvas *)this_00,1,0);
+    esStyleList<esBlockStyle>::__autoclassinit2(local_24,8);
+    FUN_10027060();
+    local_8 = 0;
+    esCanvas::GetMatrix(param_1,(Matrix *)local_24);
+    esStyleList<esBlockStyle>::__autoclassinit2(local_1c,8);
+    FUN_10027060();
+    local_8 = CONCAT31(local_8._1_3_,1);
+    esCanvas::GetMatrix((esCanvas *)this_00,(Matrix *)local_1c);
+    iVar3 = FUN_10027a90();
+    if ((iVar3 == 0) && (iVar3 = FUN_10027480(), iVar3 != 0)) {
+      FUN_10027330();
+      FUN_10027140(local_1c,1);
+    }
+    iVar3 = FUN_10027a90();
+    bVar1 = false;
+    for (local_34 = *(esCanvas **)(this_00 + 0x54); local_34 != (esCanvas *)0x0;
+        local_34 = *(esCanvas **)(local_34 + 0x54)) {
+      if (local_34 == param_1) {
+        bVar1 = true;
+        break;
+      }
+    }
+    if (bVar1) {
+      local_40 = *(esObject **)(param_1 + 0x38);
+    }
+    else {
+      local_40 = *(esObject **)(param_1 + 0x34);
+    }
+    local_28 = local_40;
+    while (local_28 != (esObject *)0x0) {
+      if (bVar1) {
+        local_44 = *(esObject **)(local_28 + 0x48);
+      }
+      else {
+        local_44 = *(esObject **)(local_28 + 0x44);
+      }
+      this_01 = operator_new(0x18);
+      local_8._0_1_ = 2;
+      esStyleList<esBlockStyle>::__autoclassinit2(this_01,0x18);
+      peVar4 = (esUnBase *)esUnMove::esUnMove((esUnMove *)this_01,local_28);
+      local_8 = CONCAT31(local_8._1_3_,1);
+      esUndo::Rec_Add(esObject::m_pUndo,peVar4);
+      (**(code **)(*(int *)local_28 + 0x38))();
+      *(undefined4 *)(local_28 + 0x3c) = 0;
+      if (iVar3 == 0) {
+        (**(code **)(*(int *)local_28 + 0x70))(local_24,esObject::m_pUndo);
+      }
+      local_50 = (uint)!bVar1;
+      esCanvas::AddItem((esCanvas *)this_00,(esShapeBase *)local_28,local_50);
+      local_28 = local_44;
+    }
+    (**(code **)(*(int *)param_1 + 0x14))();
+    (**(code **)(*(int *)param_1 + 0x5c))(0,0);
+    (**(code **)(*(int *)this_00 + 0x44))(0);
+    esCanvas::OnEdit((esCanvas *)this_00,0,0);
+    local_8 = local_8 & 0xffffff00;
+    ATL::CComBSTR::~CComBSTR((CComBSTR *)local_1c);
+    local_8 = 0xffffffff;
+    ATL::CComBSTR::~CComBSTR((CComBSTR *)local_24);
+  }
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::HitTestCanvasBoxes
+// entry=101c2d60
+// signature=int HitTestCanvasBoxes(esCanvasList * this, esHitTest * param_1)
+// bodyBytes=158
+// =========================================================
+
+/* public: int __thiscall esCanvasList::HitTestCanvasBoxes(class esHitTest *) */
+
+int __thiscall esCanvasList::HitTestCanvasBoxes(esCanvasList *this,esHitTest *param_1)
+
+{
+  ulong uVar1;
+  esCanvas *peVar2;
+  int iVar3;
+  esCanvas *local_8;
+  
+                    /* 0x1c2d60  8418  ?HitTestCanvasBoxes@esCanvasList@@QAEHPAVesHitTest@@@Z */
+  if ((*(short *)(this + 4) == 0x2011) && (uVar1 = esHitTest::CheckMode(param_1,0x20), uVar1 != 0))
+  {
+    peVar2 = GetActive(this,1);
+    if (peVar2 == (esCanvas *)0x0) {
+      return 0;
+    }
+    local_8 = *(esCanvas **)(this + 0x3c);
+    while( true ) {
+      if (local_8 == (esCanvas *)0x0) {
+        esHitTest::SetSelInfo(param_1,2,(esObject *)0x0,0);
+        return 1;
+      }
+      if (((*(int *)(local_8 + 0x54) != 0) && (local_8 != peVar2)) &&
+         (iVar3 = esCanvas::HitTestCanvasFrame(local_8,param_1,1), iVar3 != 0)) break;
+      local_8 = *(esCanvas **)(local_8 + 0x54);
+    }
+    return 1;
+  }
+  return 0;
+}
+
+
+
+// =========================================================
+// esCanvasList::HitTestGraphics
+// entry=101c2e00
+// signature=int HitTestGraphics(esCanvasList * this, esHitTest * param_1)
+// bodyBytes=302
+// =========================================================
+
+/* public: int __thiscall esCanvasList::HitTestGraphics(class esHitTest *) */
+
+int __thiscall esCanvasList::HitTestGraphics(esCanvasList *this,esHitTest *param_1)
+
+{
+  ulong uVar1;
+  esCanvas *this_00;
+  int iVar2;
+  tagPOINT tVar3;
+  esCanvas *local_28;
+  esCanvas *local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  uint local_8;
+  
+                    /* 0x1c2e00  8444  ?HitTestGraphics@esCanvasList@@QAEHPAVesHitTest@@@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  uVar1 = esHitTest::CheckMode(param_1,0x20);
+  if (uVar1 == 0) {
+    local_28 = (esCanvas *)0x0;
+    this_00 = GetActive(this,1);
+    if (this_00 != (esCanvas *)0x0) {
+      iVar2 = esCanvas::HitTestGraphics(this_00,param_1);
+      if (-1 < iVar2) goto LAB_101c2f1e;
+      iVar2 = esCanvas::IsFocused(this_00);
+      if (iVar2 != 0) {
+        local_28 = this_00;
+      }
+    }
+    if ((*(short *)(this + 4) != 0x2012) && (uVar1 = esHitTest::CheckMode(param_1,1), uVar1 != 0)) {
+      tVar3 = esHitTest::get_point(param_1);
+      D2DPointF::D2DPointF((D2DPointF *)&local_10,(D2D_POINT_2F *)tVar3.x);
+      for (local_14 = *(esCanvas **)(this + 0x3c); local_14 != (esCanvas *)0x0;
+          local_14 = *(esCanvas **)(local_14 + 0x54)) {
+        iVar2 = esCanvas::IsFixed(local_14);
+        if ((iVar2 == 0) &&
+           (iVar2 = esCanvas::IsPointInsideOutlines(local_14,local_10,local_c), iVar2 != 0)) {
+          if (local_14 != local_28) {
+            esHitTest::SetSelInfo(param_1,1,(esObject *)local_14,0);
+          }
+          break;
+        }
+      }
+    }
+  }
+  else {
+    HitTestCanvasBoxes(this,param_1);
+  }
+LAB_101c2f1e:
+  iVar2 = __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esCanvasList::CollectStyles
+// entry=101c2f30
+// signature=void CollectStyles(esCanvasList * this, esStyleSheet * param_1)
+// bodyBytes=58
+// =========================================================
+
+/* public: virtual void __thiscall esCanvasList::CollectStyles(class esStyleSheet *)const  */
+
+void __thiscall esCanvasList::CollectStyles(esCanvasList *this,esStyleSheet *param_1)
+
+{
+  int *local_8;
+  
+                    /* 0x1c2f30  4568  ?CollectStyles@esCanvasList@@UBEXPAVesStyleSheet@@@Z */
+  for (local_8 = *(int **)(this + 0x38); local_8 != (int *)0x0; local_8 = (int *)local_8[0x14]) {
+    (**(code **)(*local_8 + 0x10))(param_1);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esCanvasList::CancelSelect
+// entry=101c2f70
+// signature=int CancelSelect(esCanvasList * this, int param_1)
+// bodyBytes=106
+// =========================================================
+
+/* public: int __thiscall esCanvasList::CancelSelect(int) */
+
+int __thiscall esCanvasList::CancelSelect(esCanvasList *this,int param_1)
+
+{
+  esLableBox *this_00;
+  esShapeBase *peVar1;
+  int iVar2;
+  uint local_c;
+  
+                    /* 0x1c2f70  4173  ?CancelSelect@esCanvasList@@QAEHH@Z */
+  local_c = 0;
+  this_00 = esDimBaseEx::GetActiveTextObj((esDimBaseEx *)(this + 0x44));
+  if (this_00 != (esLableBox *)0x0) {
+    peVar1 = esCanvas::GetActive((esCanvas *)this_00);
+    if (peVar1 != (esShapeBase *)0x0) {
+      esCanvas::SetSelObj((esCanvas *)this_00,(esShapeBase *)0x0,3);
+    }
+    local_c = (uint)(peVar1 != (esShapeBase *)0x0);
+    if (param_1 != 0) {
+      iVar2 = esCanvasState::CanceActiveCanvas((esCanvasState *)(this + 0x44),1);
+      if (iVar2 != 0) {
+        local_c = 1;
+      }
+    }
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// esCanvasList::SetActiveCanvas
+// entry=101c2fe0
+// signature=int SetActiveCanvas(esCanvasList * this, esCanvas * param_1)
+// bodyBytes=51
+// =========================================================
+
+/* public: int __thiscall esCanvasList::SetActiveCanvas(class esCanvas *) */
+
+int __thiscall esCanvasList::SetActiveCanvas(esCanvasList *this,esCanvas *param_1)
+
+{
+  int iVar1;
+  
+                    /* 0x1c2fe0  12407  ?SetActiveCanvas@esCanvasList@@QAEHPAVesCanvas@@@Z */
+  iVar1 = esCanvasState::IsFocused((esCanvasState *)(this + 0x44),param_1);
+  if (iVar1 == 0) {
+    iVar1 = esCanvasState::SetActiveCanvas((esCanvasState *)(this + 0x44),param_1);
+  }
+  else {
+    iVar1 = 0;
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// esTextUI::InsertCanvas
+// entry=1048c6e0
+// signature=esCanvas * InsertCanvas(esTextUI * this)
+// bodyBytes=657
+// =========================================================
+
+/* public: class esCanvas * __thiscall esTextUI::InsertCanvas(void) */
+
+esCanvas * __thiscall esTextUI::InsertCanvas(esTextUI *this)
+
+{
+  ushort uVar1;
+  int iVar2;
+  esMainTable *this_00;
+  eSS eVar3;
+  elfLamp *this_01;
+  ID2D1Geometry *pIVar4;
+  int iVar5;
+  esStyleList<esBlockStyle> *peVar6;
+  esChrObj *peVar7;
+  esCanvas *peVar8;
+  int local_30;
+  int local_28;
+  int local_20;
+  int local_1c;
+  int local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x48c6e0  8952  ?InsertCanvas@esTextUI@@QAEPAVesCanvas@@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10555221;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  iVar2 = IsAbleToInput(this,1);
+  if (((iVar2 != 0) &&
+      (this_00 = GetMainTable(this,-1,(tagPOINT *)0x0), this_00 != (esMainTable *)0x0)) &&
+     ((eVar3 = GetSelState(this), eVar3 == 0 || (eVar3 == 1)))) {
+    this_01 = sgMedia::GetLamp((sgMedia *)(this + 0x14));
+    pIVar4 = D2DGeometry::operator_struct_ID2D1Geometry_((D2DGeometry *)this_01);
+    if ((pIVar4 != (ID2D1Geometry *)0x0) && (*(short *)(pIVar4 + 4) == 4)) {
+      DeleteSel(this,1,0);
+      pIVar4 = D2DGeometry::operator_struct_ID2D1Geometry_((D2DGeometry *)this_01);
+      iVar2 = ePos::GetInsertPos((ePos *)this_01,0);
+      esPara::GetIndentMetrics
+                ((esPara *)pIVar4,*(esStyleSheet **)(this + 0x1e0),&local_20,&local_1c,&local_18);
+      local_28 = esPara::GetUsebleWidth((esPara *)pIVar4,iVar2,*(esStyleSheet **)(this + 0x1e0));
+      local_28 = local_28 - local_18;
+      local_30 = local_28 / 2;
+      if (local_28 < 4000) {
+        local_28 = 4000;
+      }
+      iVar5 = esSnapObj::Is((esSnapObj *)this_00,0x380);
+      if ((iVar5 != 0) && (*(int *)(this_00 + 100) / 3 < local_30)) {
+        local_30 = *(int *)(this_00 + 100) / 3;
+      }
+      if (local_30 < 4000) {
+        local_30 = 4000;
+      }
+      peVar6 = operator_new(0xe0);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0xe0);
+      peVar8 = (esCanvas *)esCanvas::esCanvas((esCanvas *)peVar6,local_28,local_30);
+      local_8 = 0xffffffff;
+      peVar6 = operator_new(0x44);
+      local_8 = 1;
+      esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x44);
+      peVar7 = (esChrObj *)esEmbedder::esEmbedder((esEmbedder *)peVar6,peVar8);
+      local_8 = 0xffffffff;
+      uVar1 = esText::GetPosFont((esText *)pIVar4,iVar2,0xffff,(esStyleSheet *)0x0);
+      *(ushort *)(peVar7 + 0x1a) = uVar1;
+      iVar2 = esText::AddChrObj((esText *)pIVar4,peVar7,iVar2,esObject::m_pUndo);
+      if (iVar2 == 0) {
+        esSelector::CancelSel((esSelector *)(this + 0x14),(esTextLine *)pIVar4,0,0);
+      }
+      else {
+        esMainTable::AddCanvas(this_00,peVar8);
+        esSelector::CancelSel
+                  ((esSelector *)(this + 0x14),(esTextLine *)pIVar4,*(ushort *)(peVar7 + 0x14) + 1,2
+                  );
+      }
+    }
+  }
+  ExceptionList = local_10;
+  peVar8 = (esCanvas *)__security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return peVar8;
+}
+
+
+
+// =========================================================
+// esTextUI::InsertCanvas
+// entry=1048c980
+// signature=int InsertCanvas(esTextUI * this, esCanvas * param_1, int param_2)
+// bodyBytes=414
+// =========================================================
+
+/* public: int __thiscall esTextUI::InsertCanvas(class esCanvas *,int) */
+
+int __thiscall esTextUI::InsertCanvas(esTextUI *this,esCanvas *param_1,int param_2)
+
+{
+  int iVar1;
+  ePos local_50 [16];
+  ePos *local_40;
+  ePos *local_3c;
+  int local_38;
+  esChrObj *local_34;
+  esChrObj *local_30;
+  esMainTable *local_2c;
+  esChrObj *local_28;
+  esEmbedder *local_24;
+  ID2D1Geometry *local_20;
+  elfLamp *local_1c;
+  esTextUI *local_18;
+  ID2D1Geometry *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x48c980  8951  ?InsertCanvas@esTextUI@@QAEHPAVesCanvas@@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10555267;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_18 = this;
+  local_1c = sgMedia::GetLamp((sgMedia *)(this + 0x14));
+  local_20 = D2DGeometry::operator_struct_ID2D1Geometry_((D2DGeometry *)local_1c);
+  if ((local_20 != (ID2D1Geometry *)0x0) &&
+     (iVar1 = esSnapObj::Is((esSnapObj *)local_20,4), iVar1 != 0)) {
+    OnPreInsert(local_18,param_2);
+    local_14 = D2DGeometry::operator_struct_ID2D1Geometry_((D2DGeometry *)local_1c);
+    iVar1 = esSnapObj::Is((esSnapObj *)local_14,4);
+    if (iVar1 != 0) {
+      local_38 = ePos::GetInsertPos((ePos *)local_1c,0);
+      local_24 = operator_new(0x44);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_24,0x44);
+      local_34 = (esChrObj *)esEmbedder::esEmbedder(local_24,param_1);
+      local_8 = 0xffffffff;
+      local_30 = local_34;
+      local_28 = local_34;
+      iVar1 = esText::AddChrObj((esText *)local_14,local_34,local_38,esObject::m_pUndo);
+      if (iVar1 != 0) {
+        (**(code **)(*(int *)local_14 + 0x44))(1);
+        *(undefined4 *)(param_1 + 0x4c) = 0x1000;
+        local_2c = GetMainTable(local_18,-1,(tagPOINT *)0x0);
+        if (local_2c != (esMainTable *)0x0) {
+          esMainTable::AddCanvas(local_2c,param_1);
+        }
+        esSelector::CancelSel
+                  ((esSelector *)(local_18 + 0x14),(esTextLine *)local_14,
+                   *(ushort *)(local_30 + 0x14) + 1,2);
+        ExceptionList = local_10;
+        return 1;
+      }
+      local_40 = (ePos *)ePos::ePos(local_50,(esTextLine *)local_14,0,0);
+      local_8 = 1;
+      local_3c = local_40;
+      esSelector::CancelSel((esSelector *)(local_18 + 0x14),local_40);
+      local_8 = 0xffffffff;
+      ePos::~ePos(local_50);
+    }
+  }
+  ExceptionList = local_10;
+  return 0;
+}
+
+
+
+// matched=41 dumped=41

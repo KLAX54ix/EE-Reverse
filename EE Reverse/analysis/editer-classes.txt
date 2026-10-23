@@ -1,0 +1,113 @@
+// program=Editer.exe imageBase=00400000
+
+// ==== substring: esSegLable
+EXTERNAL:00000cc2  ESLIB.DLL::esSegLable::esSegLable  [Function]
+NO ADDRESS  esSegLable  [Class]
+NO ADDRESS  ESLIB.DLL::esSegLable  [Class]
+// matched=3
+
+// ==== substring: esShapeLine
+EXTERNAL:00000cc1  ESLIB.DLL::esShapeLine::esShapeLine  [Function]
+EXTERNAL:000011f2  ESLIB.DLL::esShapeLine::esShapeLine  [Function]
+NO ADDRESS  esShapeLine  [Class]
+NO ADDRESS  ESLIB.DLL::esShapeLine  [Class]
+// matched=4
+
+// ==== substring: esObject
+NO ADDRESS  esObject  [Class]
+NO ADDRESS  ESLIB.DLL::esObject  [Class]
+// matched=2
+
+// ==== substring: esAxisObj
+EXTERNAL:00000947  ESLIB.DLL::esAxisObj::esAxisObj  [Function]
+NO ADDRESS  ESLIB.DLL::esAxisObj  [Class]
+// matched=2
+
+// ==== substring: esSegAxis
+EXTERNAL:000011ec  ESLIB.DLL::esSegAxis::esSegAxis  [Function]
+NO ADDRESS  esSegAxis  [Class]
+NO ADDRESS  ESLIB.DLL::esSegAxis  [Class]
+// matched=3
+
+// ==== functions (entry points)
+006543ce  ESLIB.DLL::esSegLable::LoadProp  sig=void LoadProp(esSegLable * this, esPropManager * param_1, ulong param_2)
+006543d4  ESLIB.DLL::esSegLable::SaveProp  sig=void SaveProp(esSegLable * this, esPropManager * param_1, ulong param_2)
+006543f2  ESLIB.DLL::esObject::SearchUp  sig=esObject * SearchUp(esObject * this, uint param_1)
+00654416  ESLIB.DLL::esObject::ExecuteCommand  sig=void ExecuteCommand(esObject * this, int param_1)
+00654470  ESLIB.DLL::esObject::EraseModifyFlags  sig=void EraseModifyFlags(esObject * this, int param_1)
+0065448e  ESLIB.DLL::esObject::CollectStyles  sig=void CollectStyles(esObject * this, esStyleSheet * param_1)
+00654494  ESLIB.DLL::esObject::SetUnDelInfo  sig=void SetUnDelInfo(esObject * this)
+0065449a  ESLIB.DLL::esObject::LoadProp  sig=void LoadProp(esObject * this, esPropManager * param_1, ulong param_2)
+006544a0  ESLIB.DLL::esObject::SaveProp  sig=void SaveProp(esObject * this, esPropManager * param_1, ulong param_2)
+006544b2  ESLIB.DLL::esObject::DeleteRole  sig=int DeleteRole(esObject * this)
+006544be  ESLIB.DLL::esObject::Undo  sig=void Undo(esObject * this, ushort param_1, zArchive * param_2, zArchive * param_3)
+006544dc  ESLIB.DLL::esObject::SetModifiedFlags  sig=void SetModifiedFlags(esObject * this, int param_1)
+006544ee  ESLIB.DLL::esObject::IsBatchble  sig=int IsBatchble(esObject * this)
+006545c6  ESLIB.DLL::esShapeLine::GetColors  sig=int GetColors(esShapeLine * this, zArray<unsigned_long> * param_1, ulong param_2)
+006545d2  ESLIB.DLL::esShapeLine::ToFixColor  sig=void ToFixColor(esShapeLine * this, esColorScheme * param_1)
+0065462c  ESLIB.DLL::esShapeLine::Undo  sig=void Undo(esShapeLine * this, ushort param_1, zArchive * param_2, zArchive * param_3)
+006546b6  ESLIB.DLL::esShapeLine::GrapConvert  sig=esShapeBase * GrapConvert(esShapeLine * this)
+00654782  ESLIB.DLL::esSegLable::isOf  sig=int isOf(esSegLable * this, wchar_t * param_1)
+00654788  ESLIB.DLL::esSegLable::isKindOf  sig=int isKindOf(esSegLable * this, wchar_t * param_1)
+0065478e  ESLIB.DLL::esSegLable::className  sig=wchar_t * className(esSegLable * this)
+00654794  ESLIB.DLL::esSegLable::CollectStyles  sig=void CollectStyles(esSegLable * this, esStyleSheet * param_1)
+0065479a  ESLIB.DLL::esSegLable::CopyFrom  sig=void CopyFrom(esSegLable * this, esObject * param_1, esStyleExchanger * param_2)
+006547a0  ESLIB.DLL::esSegLable::Undata  sig=void * Undata(esSegLable * this, ushort * param_1, void * param_2, int * param_3)
+006547a6  ESLIB.DLL::esSegLable::Undo  sig=void Undo(esSegLable * this, ushort param_1, zArchive * param_2, zArchive * param_3)
+006547b8  ESLIB.DLL::esObject::Insert  sig=void Insert(esObject * this, esObject * param_1, esObject * param_2, int param_3)
+006547be  ESLIB.DLL::esSegLable::Serialize  sig=void Serialize(esSegLable * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+006547ca  ESLIB.DLL::esSegLable::OnMessage  sig=int OnMessage(esSegLable * this, esMessage * param_1, ulong param_2)
+006547d0  ESLIB.DLL::esSegLable::IsEqual  sig=int IsEqual(esSegLable * this, esObject * param_1, esStyleSheet * param_2)
+006547dc  ESLIB.DLL::esObject::CreateObject  sig=esObject * CreateObject(esObject * this, ushort param_1)
+006547e8  ESLIB.DLL::esSegLable::RecalcLayout  sig=void RecalcLayout(esSegLable * this)
+00654800  ESLIB.DLL::esSegLable::SetPointPos  sig=int SetPointPos(esSegLable * this, esSnapManager * param_1, int param_2, uint param_3, Matrix * param_4)
+00654806  ESLIB.DLL::esSegLable::Build  sig=void Build(esSegLable * this, int param_1)
+0065484e  ESLIB.DLL::esSegLable::Draw  sig=void Draw(esSegLable * this, esRender * param_1, tag_DRAWPARAM * param_2, Matrix * param_3)
+0065485a  ESLIB.DLL::esSegLable::MoveAcmePoints  sig=int MoveAcmePoints(esSegLable * this, esVertexGroup * param_1, tagPOINT * param_2, int param_3)
+0065486c  ESLIB.DLL::esSegLable::HitTest  sig=int HitTest(esSegLable * this, esHitTest * param_1, int param_2)
+00654872  ESLIB.DLL::esSegLable::GetDefaultPtOrg  sig=int GetDefaultPtOrg(esSegLable * this, tagPOINT * param_1)
+00654890  ESLIB.DLL::esSegLable::Load  sig=void Load(esSegLable * this, elfPage * param_1, elfSubject * param_2, tag_DRAWPARAM * param_3)
+0065489c  ESLIB.DLL::esSegLable::UnitOtherMaxRect  sig=void UnitOtherMaxRect(esSegLable * this, zRect * param_1)
+00654950  ESLIB.DLL::esShapeLine::isOf  sig=int isOf(esShapeLine * this, wchar_t * param_1)
+00654956  ESLIB.DLL::esShapeLine::isKindOf  sig=int isKindOf(esShapeLine * this, wchar_t * param_1)
+0065495c  ESLIB.DLL::esShapeLine::className  sig=wchar_t * className(esShapeLine * this)
+00654962  ESLIB.DLL::esShapeLine::LoadProp  sig=void LoadProp(esShapeLine * this, esPropManager * param_1, ulong param_2)
+00654968  ESLIB.DLL::esShapeLine::SaveProp  sig=void SaveProp(esShapeLine * this, esPropManager * param_1, ulong param_2)
+0065496e  ESLIB.DLL::esShapeLine::CopyFrom  sig=void CopyFrom(esShapeLine * this, esObject * param_1, esStyleExchanger * param_2)
+0065497a  ESLIB.DLL::esShapeLine::Serialize  sig=void Serialize(esShapeLine * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+00654980  ESLIB.DLL::esShapeLine::IsEqual  sig=int IsEqual(esShapeLine * this, esObject * param_1, esStyleSheet * param_2)
+00654986  ESLIB.DLL::esShapeLine::GetSnapPoints  sig=int GetSnapPoints(esShapeLine * this, tagPOINT * param_1, zRect * param_2)
+0065498c  ESLIB.DLL::esShapeLine::Load  sig=elfSubject * Load(esShapeLine * this, elfPage * param_1, elfSubject * param_2)
+00654992  ESLIB.DLL::esShapeLine::Render  sig=void Render(esShapeLine * this, esRender * param_1)
+006549e6  ESLIB.DLL::esObject::GetNextObjID  sig=int GetNextObjID(esObject * this)
+006549ec  ESLIB.DLL::esObject::Detach  sig=void Detach(esObject * this)
+00654a22  ESLIB.DLL::esObject::DeleteSlef  sig=esObject * DeleteSlef(esObject * this, int param_1, int param_2)
+00654b4e  ESLIB.DLL::esObject::IsEqual  sig=int IsEqual(esObject * this, esObject * param_1, esStyleSheet * param_2)
+00654c9e  ESLIB.DLL::esObject::CopyFrom  sig=void CopyFrom(esObject * this, esObject * param_1, esStyleExchanger * param_2)
+00654ca4  ESLIB.DLL::esObject::Undata  sig=void * Undata(esObject * this, ushort * param_1, void * param_2, int * param_3)
+00654caa  ESLIB.DLL::esObject::Serialize  sig=void Serialize(esObject * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+00654cb0  ESLIB.DLL::esObject::OnMessage  sig=int OnMessage(esObject * this, esMessage * param_1, ulong param_2)
+00654e96  ESLIB.DLL::esSegAxis::isOf  sig=int isOf(esSegAxis * this, wchar_t * param_1)
+00654e9c  ESLIB.DLL::esSegAxis::isKindOf  sig=int isKindOf(esSegAxis * this, wchar_t * param_1)
+00654ea2  ESLIB.DLL::esSegAxis::className  sig=wchar_t * className(esSegAxis * this)
+00654ea8  ESLIB.DLL::esSegAxis::CollectStyles  sig=void CollectStyles(esSegAxis * this, esStyleSheet * param_1)
+00654eae  ESLIB.DLL::esSegAxis::LoadProp  sig=void LoadProp(esSegAxis * this, esPropManager * param_1, ulong param_2)
+00654eb4  ESLIB.DLL::esSegAxis::SaveProp  sig=void SaveProp(esSegAxis * this, esPropManager * param_1, ulong param_2)
+00654eba  ESLIB.DLL::esSegAxis::CopyFrom  sig=void CopyFrom(esSegAxis * this, esObject * param_1, esStyleExchanger * param_2)
+00654ec0  ESLIB.DLL::esSegAxis::Undata  sig=void * Undata(esSegAxis * this, ushort * param_1, void * param_2, int * param_3)
+00654ec6  ESLIB.DLL::esSegAxis::Undo  sig=void Undo(esSegAxis * this, ushort param_1, zArchive * param_2, zArchive * param_3)
+00654ecc  ESLIB.DLL::esSegAxis::Serialize  sig=void Serialize(esSegAxis * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+00654ed2  ESLIB.DLL::esSegAxis::OnMessage  sig=int OnMessage(esSegAxis * this, esMessage * param_1, ulong param_2)
+00654ed8  ESLIB.DLL::esSegAxis::IsEqual  sig=int IsEqual(esSegAxis * this, esObject * param_1, esStyleSheet * param_2)
+00654ede  ESLIB.DLL::esSegAxis::RecalcLayout  sig=void RecalcLayout(esSegAxis * this)
+00654ee4  ESLIB.DLL::esSegAxis::MovePoint  sig=void MovePoint(esSegAxis * this, zPoint param_1, int param_2, uint param_3, esObjCheck * param_4)
+00654ef0  ESLIB.DLL::esSegAxis::Build  sig=void Build(esSegAxis * this, int param_1)
+00654ef6  ESLIB.DLL::esSegAxis::unMPSave  sig=void unMPSave(esSegAxis * this, zArchive * param_1)
+00654efc  ESLIB.DLL::esSegAxis::Draw  sig=void Draw(esSegAxis * this, esRender * param_1, tag_DRAWPARAM * param_2, Matrix * param_3)
+00654f02  ESLIB.DLL::esSegAxis::GetLbcLines  sig=void GetLbcLines(esSegAxis * this, xzLbcList * param_1, Matrix * param_2, int param_3)
+00654f08  ESLIB.DLL::esSegAxis::MoveAcmePoints  sig=int MoveAcmePoints(esSegAxis * this, esVertexGroup * param_1, tagPOINT * param_2, int param_3)
+00654f0e  ESLIB.DLL::esSegAxis::HitTest  sig=int HitTest(esSegAxis * this, esHitTest * param_1, int param_2)
+00654f14  ESLIB.DLL::esSegAxis::DoSnap  sig=int DoSnap(esSegAxis * this, esSnapManager * param_1)
+00654f1a  ESLIB.DLL::esSegAxis::GetCtlPts  sig=int GetCtlPts(esSegAxis * this, esVertexList * param_1, int param_2)
+00654f20  ESLIB.DLL::esSegAxis::Load  sig=void Load(esSegAxis * this, elfPage * param_1, elfSubject * param_2, tag_DRAWPARAM * param_3)
+// functions=80

@@ -1,0 +1,10 @@
+# zoro runtime helpers identified via zStringTemplate decompilation (2026-10-17)
+# evidence: analysis/pseudo/zoro/zrt-helpers.decomp.txt
+# rva,newname
+0x15b0,zrt_strlenA
+0x1600,zrt_strcmp
+0x1680,zrt_stricmp
+0x16b0,zrt_strstr
+0x16e0,zrt_strchr
+0x1710,zrt_wcslen
+0x28f64,zrt_new

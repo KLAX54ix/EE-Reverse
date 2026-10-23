@@ -1,0 +1,6 @@
+﻿# D:\educationeditor\EduEditer\EpAddin.dll  arch=x86 pe=PE32 sections=8 datadirs=16
+# dll=EpAddin.DLL base=1 functions=4 named=4
+      1 0x0000aab0 DllCanUnloadNow
+      2 0x0000aa70 DllGetClassObject
+      3 0x0000aae0 DllRegisterServer
+      4 0x0000ab10 DllUnregisterServer

@@ -1,0 +1,185 @@
+// program=zoro.dll imageBase=10000000
+// specs=[fun_100015b0, fun_10001600, fun_10001680, fun_100016b0, fun_100016e0, fun_10001710, fun_10028f64]
+
+// =========================================================
+// FUN_100015b0
+// entry=100015b0
+// signature=int FUN_100015b0(char * param_1)
+// bodyBytes=65
+// =========================================================
+
+int __cdecl FUN_100015b0(char *param_1)
+
+{
+  char cVar1;
+  int iVar2;
+  char *local_c;
+  
+  if (param_1 == (char *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    local_c = param_1;
+    do {
+      cVar1 = *local_c;
+      local_c = local_c + 1;
+    } while (cVar1 != '\0');
+    iVar2 = (int)local_c - (int)(param_1 + 1);
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// FUN_10001600
+// entry=10001600
+// signature=uint FUN_10001600(byte * param_1, byte * param_2)
+// bodyBytes=126
+// =========================================================
+
+uint __cdecl FUN_10001600(byte *param_1,byte *param_2)
+
+{
+  byte bVar1;
+  bool bVar2;
+  byte *local_10;
+  byte *local_c;
+  
+  if (param_1 == (byte *)0x0) {
+    param_1 = &DAT_10044019;
+  }
+  if (param_2 == (byte *)0x0) {
+    param_2 = &DAT_10044019;
+  }
+  local_10 = param_2;
+  local_c = param_1;
+  while( true ) {
+    bVar1 = *local_c;
+    bVar2 = bVar1 < *local_10;
+    if (bVar1 != *local_10) break;
+    if (bVar1 == 0) {
+      return 0;
+    }
+    bVar1 = local_c[1];
+    bVar2 = bVar1 < local_10[1];
+    if (bVar1 != local_10[1]) break;
+    local_c = local_c + 2;
+    local_10 = local_10 + 2;
+    if (bVar1 == 0) {
+      return 0;
+    }
+  }
+  return -(uint)bVar2 | 1;
+}
+
+
+
+// =========================================================
+// FUN_10001680
+// entry=10001680
+// signature=undefined FUN_10001680(char * param_1, char * param_2)
+// bodyBytes=48
+// =========================================================
+
+void __cdecl FUN_10001680(char *param_1,char *param_2)
+
+{
+  if (param_1 == (char *)0x0) {
+    param_1 = &DAT_10044018;
+  }
+  if (param_2 == (char *)0x0) {
+    param_2 = &DAT_10044018;
+  }
+  _stricmp(param_1,param_2);
+  return;
+}
+
+
+
+// =========================================================
+// FUN_100016b0
+// entry=100016b0
+// signature=char * FUN_100016b0(char * param_1, char * param_2)
+// bodyBytes=38
+// =========================================================
+
+char * __cdecl FUN_100016b0(char *param_1,char *param_2)
+
+{
+  char *pcVar1;
+  
+  if ((param_1 == (char *)0x0) || (param_2 == (char *)0x0)) {
+    pcVar1 = (char *)0x0;
+  }
+  else {
+    pcVar1 = strstr(param_1,param_2);
+  }
+  return pcVar1;
+}
+
+
+
+// =========================================================
+// FUN_100016e0
+// entry=100016e0
+// signature=char * FUN_100016e0(char * param_1, char param_2)
+// bodyBytes=41
+// =========================================================
+
+char * __cdecl FUN_100016e0(char *param_1,char param_2)
+
+{
+  char *pcVar1;
+  
+  if ((param_1 == (char *)0x0) || (param_2 == '\0')) {
+    pcVar1 = (char *)0x0;
+  }
+  else {
+    pcVar1 = strchr(param_1,(int)param_2);
+  }
+  return pcVar1;
+}
+
+
+
+// =========================================================
+// FUN_10001710
+// entry=10001710
+// signature=int FUN_10001710(LPCWSTR param_1)
+// bodyBytes=25
+// =========================================================
+
+int __cdecl FUN_10001710(LPCWSTR param_1)
+
+{
+  int iVar1;
+  
+  if (param_1 == (LPCWSTR)0x0) {
+    iVar1 = 0;
+  }
+  else {
+    iVar1 = lstrlenW(param_1);
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// FUN_10028f64
+// entry=10028f64
+// signature=undefined FUN_10028f64(uint param_1)
+// bodyBytes=9
+// =========================================================
+
+void __cdecl FUN_10028f64(uint param_1)
+
+{
+  operator_new(param_1);
+  return;
+}
+
+
+
+// matched=7 dumped=7

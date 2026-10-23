@@ -1,0 +1,819 @@
+// program=eslib.dll imageBase=10000000
+// specs=[esseglable::esseglable, esseglable::build, esseglable::initialize, esseglable::getlablefreature, esseglable::handmovetext, eseqline::appendstring, esseglable::recalclayout]
+
+// =========================================================
+// esSegLable::esSegLable
+// entry=103e8f40
+// signature=undefined esSegLable(esSegLable * this)
+// bodyBytes=174
+// =========================================================
+
+/* public: __thiscall esSegLable::esSegLable(void) */
+
+esSegLable * __thiscall esSegLable::esSegLable(esSegLable *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3e8f40  1145  ??0esSegLable@@QAE@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ec28;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  esSeg::esSeg((esSeg *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  esEQLine::esEQLine((esEQLine *)(this + 0x80));
+  *(undefined4 *)(this + 0xd4) = 0;
+  *(undefined2 *)(this + 4) = 0x600d;
+  *(undefined4 *)(this + 0x68) = 0;
+  *(undefined2 *)(this + 0x6c) = 0;
+  *(undefined4 *)(this + 0x7c) = 0;
+  *(undefined4 *)(this + 0x78) = 0;
+  this[0x74] = (esSegLable)0x0;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esSegLable::esSegLable
+// entry=103e8ff0
+// signature=undefined esSegLable(esSegLable * this, zPoint param_1, zwstr param_2, ulong param_3, ushort param_4, ushort param_5)
+// bodyBytes=405
+// =========================================================
+
+/* public: __thiscall esSegLable::esSegLable(class zPoint,class zwstr,unsigned long,unsigned
+   short,unsigned short) */
+
+esSegLable * __thiscall
+esSegLable::esSegLable(esSegLable *this,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 *puVar1;
+  longlong lVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  int iVar5;
+  wchar_t *lpString2;
+  undefined4 in_stack_00000018;
+  undefined2 in_stack_0000001c;
+  undefined2 in_stack_00000020;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3e8ff0  1144  ??0esSegLable@@QAE@VzPoint@@Vzwstr@@KGG@Z */
+  puStack_c = &LAB_1054ec6f;
+  local_10 = ExceptionList;
+  uVar3 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  esSeg::esSeg((esSeg *)this);
+  local_8._0_1_ = 1;
+  *(undefined ***)this = vftable;
+  esEQLine::esEQLine((esEQLine *)(this + 0x80));
+  local_8 = CONCAT31(local_8._1_3_,2);
+  *(undefined4 *)(this + 0xd4) = 0;
+  *(undefined2 *)(this + 4) = 0x600d;
+  uVar4 = FUN_105290e5(8,uVar3);
+  *(undefined4 *)(this + 0x58) = uVar4;
+  puVar1 = *(undefined4 **)(this + 0x58);
+  *puVar1 = param_2;
+  puVar1[1] = param_3;
+  *(undefined2 *)(this + 0x5c) = 1;
+  this[0x70] = SUB41(in_stack_00000018,0);
+  this[0x71] = SUB41((uint)in_stack_00000018 >> 8,0);
+  this[0x72] = SUB41((uint)in_stack_00000018 >> 0x10,0);
+  this[0x73] = SUB41((uint)in_stack_00000018 >> 0x18,0);
+  iVar5 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                    ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x0000000c);
+  lVar2 = (ulonglong)(iVar5 + 1) * 2;
+  uVar4 = FUN_105290e5(-(uint)((int)((ulonglong)lVar2 >> 0x20) != 0) | (uint)lVar2);
+  *(undefined4 *)(this + 0x68) = uVar4;
+  lpString2 = zwstr::operator_wchar_t_const_((zwstr *)&stack0x0000000c);
+  lstrcpyW(*(LPWSTR *)(this + 0x68),lpString2);
+  *(undefined2 *)(this + 0x6e) = in_stack_0000001c;
+  *(undefined2 *)(this + 0x6c) = in_stack_00000020;
+  *(undefined4 *)(this + 0x7c) = 0;
+  *(undefined4 *)(this + 0x78) = 0;
+  this[0x74] = (esSegLable)0x4;
+  local_8 = 0xffffffff;
+  zwstr::~zwstr((zwstr *)&stack0x0000000c);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esSegLable::RecalcLayout
+// entry=103e91e0
+// signature=void RecalcLayout(esSegLable * this)
+// bodyBytes=19
+// =========================================================
+
+/* protected: virtual void __thiscall esSegLable::RecalcLayout(void) */
+
+void __thiscall esSegLable::RecalcLayout(esSegLable *this)
+
+{
+                    /* 0x3e91e0  11375  ?RecalcLayout@esSegLable@@MAEXXZ */
+  esSeg::RecalcLayout((esSeg *)this);
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::Initialize
+// entry=103ea1e0
+// signature=void Initialize(esSegLable * this, esFontSheet * param_1)
+// bodyBytes=37
+// =========================================================
+
+/* public: void __thiscall esSegLable::Initialize(class esFontSheet *) */
+
+void __thiscall esSegLable::Initialize(esSegLable *this,esFontSheet *param_1)
+
+{
+                    /* 0x3ea1e0  8897  ?Initialize@esSegLable@@QAEXPAVesFontSheet@@@Z */
+  if (*(int *)(this + 0xd4) == 0) {
+    *(esFontSheet **)(this + 0xd4) = param_1;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::HandMoveText
+// entry=103ea2f0
+// signature=int HandMoveText(esSegLable * this, tagPOINT * param_1, int param_2)
+// bodyBytes=1177
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: int __thiscall esSegLable::HandMoveText(struct tagPOINT &,int) */
+
+int __thiscall esSegLable::HandMoveText(esSegLable *this,tagPOINT *param_1,int param_2)
+
+{
+  byte bVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  uint local_8c;
+  Matrix *local_88;
+  int local_84;
+  int local_80;
+  esSegLable local_6d;
+  es_matrix local_6c [48];
+  tagPOINT local_3c;
+  tagPOINT local_34;
+  tagPOINT local_2c;
+  float local_24;
+  float local_20;
+  tagPOINT local_1c;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3ea2f0  8348  ?HandMoveText@esSegLable@@QAEHAAUtagPOINT@@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ed48;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  iVar2 = FUN_10027480(local_14);
+  if (iVar2 == 0) {
+    iVar2 = 0;
+  }
+  else if ((*(int *)(this + 0x34) == 0) &&
+          ((**(code **)(*(int *)this + 0x7c))(0), *(int *)(this + 0x34) == 0)) {
+    iVar2 = 0;
+  }
+  else {
+    if (this == (esSegLable *)0xffffffb8) {
+      local_88 = (Matrix *)0x0;
+    }
+    else {
+      local_88 = (Matrix *)(this + 0x4c);
+    }
+    es_matrix::es_matrix(local_6c,local_88);
+    local_8 = 0;
+    es_matrix::Invert(local_6c);
+    D2DPointF::D2DPointF((D2DPointF *)&local_34,*(D2D_POINT_2F **)(this + 0x34));
+    es_matrix::TransformPoint(local_6c,&local_34);
+    D2DPointF::D2DPointF((D2DPointF *)&local_2c,(D2D_POINT_2F *)(*(int *)(this + 0x34) + 0x10));
+    es_matrix::TransformPoint(local_6c,&local_2c);
+    iVar2 = (local_34.x + local_2c.x) / 2 - **(int **)(this + 0x58);
+    iVar3 = (local_34.y + local_2c.y) / 2 - *(int *)(*(int *)(this + 0x58) + 4);
+    iVar4 = FUN_10027ae0(local_2c.x - local_34.x);
+    iVar4 = iVar4 / 2;
+    iVar5 = FUN_10027ae0(local_2c.y - local_34.y);
+    iVar5 = iVar5 / 2;
+    D2DPointU::D2DPointU((D2DPointU *)&local_3c,0,0);
+    D2DPointF::D2DPointF((D2DPointF *)&local_1c,(D2D_POINT_2F *)param_1);
+    es_matrix::TransformPoint(local_6c,&local_3c);
+    es_matrix::TransformPoint(local_6c,&local_1c);
+    iVar7 = (local_1c.x - local_3c.x) + iVar2;
+    iVar6 = (local_1c.y - local_3c.y) + iVar3;
+    if (param_2 == 0) {
+      bVar1 = (byte)this[0x74] & 0xf;
+      local_20 = *(float *)(this + 0x78);
+      if (-iVar7 < iVar4) {
+        if (iVar7 < iVar4) {
+          local_6d = (esSegLable)(bVar1 | 0x10);
+          *(float *)(this + 0x78) = (float)(iVar4 + iVar7) / (float)(iVar4 << 1);
+        }
+        else {
+          local_6d = (esSegLable)(bVar1 | 0x30);
+          *(float *)(this + 0x78) = (float)(iVar7 - iVar4);
+        }
+      }
+      else {
+        local_6d = (esSegLable)(bVar1 | 0x20);
+        *(float *)(this + 0x78) = (float)(-iVar4 - iVar7);
+      }
+      if ((*(float *)(this + 0x78) != local_20) && (esObject::m_pUndo != (esUndo *)0x0)) {
+        FUN_10026200(this,0xa11,&local_20);
+      }
+      local_24 = *(float *)(this + 0x7c);
+      if (-iVar6 < iVar5) {
+        if (iVar6 < iVar5) {
+          local_6d = (esSegLable)((byte)local_6d | 0x40);
+          *(float *)(this + 0x7c) = (float)(iVar5 + iVar6) / (float)(iVar5 << 1);
+        }
+        else {
+          local_6d = (esSegLable)((byte)local_6d | 0xc0);
+          *(float *)(this + 0x7c) = (float)(iVar6 - iVar5);
+        }
+      }
+      else {
+        local_6d = (esSegLable)((byte)local_6d | 0x80);
+        *(float *)(this + 0x7c) = (float)(-iVar5 - iVar6);
+      }
+      if ((*(float *)(this + 0x7c) != local_24) && (esObject::m_pUndo != (esUndo *)0x0)) {
+        FUN_10026200(this,0xa12,&local_24);
+      }
+      if ((local_6d != this[0x74]) && (esObject::m_pUndo != (esUndo *)0x0)) {
+        FUN_10025f60(this,0xa0a,this + 0x74);
+      }
+      this[0x74] = local_6d;
+      (**(code **)(*(int *)this + 0x44))(0);
+    }
+    else {
+      if (*(ushort *)(this + 0x6c) < 600) {
+        local_8c = 600;
+      }
+      else {
+        local_8c = (uint)*(ushort *)(this + 0x6c);
+      }
+      iVar4 = iVar4 + local_8c;
+      iVar5 = iVar5 + local_8c;
+      local_80 = iVar4;
+      if ((iVar7 <= iVar4) && (local_80 = iVar7, iVar7 < -iVar4)) {
+        local_80 = -iVar4;
+      }
+      local_84 = iVar5;
+      if ((iVar6 <= iVar5) && (local_84 = iVar6, iVar6 < -iVar5)) {
+        local_84 = -iVar5;
+      }
+      local_1c.x = (local_3c.x + local_80) - iVar2;
+      local_1c.y = (local_3c.y + local_84) - iVar3;
+      FUN_10027a30(&local_1c,1);
+      param_1->x = local_1c.x;
+      param_1->y = local_1c.y;
+    }
+    local_8 = 0xffffffff;
+    TLaterParam::~TLaterParam((TLaterParam *)local_6c);
+    iVar2 = 1;
+  }
+  ExceptionList = local_10;
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esSegLable::GetLableFreature
+// entry=103eac10
+// signature=ulong GetLableFreature(esSegLable * this)
+// bodyBytes=276
+// =========================================================
+
+/* public: unsigned long __thiscall esSegLable::GetLableFreature(void)const  */
+
+ulong __thiscall esSegLable::GetLableFreature(esSegLable *this)
+
+{
+  wchar_t wVar1;
+  uint local_1c;
+  int local_18;
+  uint local_14;
+  uint local_c;
+  
+                    /* 0x3eac10  7109  ?GetLableFreature@esSegLable@@QBEKXZ */
+  if (*(int *)(this + 0xd4) == 0) {
+    local_c = 0;
+  }
+  else {
+    local_c = (uint)*(ushort *)(this + 0x6e) << 0x10 | (byte)this[0x73] & 0xf0;
+    for (local_18 = 0; local_18 < (int)(uint)(byte)this[0x70]; local_18 = local_18 + 1) {
+      wVar1 = *(wchar_t *)(*(int *)(this + 0x68) + local_18 * 2);
+      local_14 = esFontSheet::GetMathCharType(wVar1,10);
+      if (local_14 != 6) {
+        if ((int)local_14 < 0) {
+          local_1c = (uint)(0xff < (ushort)wVar1);
+          local_14 = local_1c;
+        }
+        else if (7 < (int)local_14) {
+          local_14 = 2;
+        }
+        local_c = 0x100 << ((byte)local_14 & 0x1f) | local_c;
+      }
+    }
+    if (this[0x70] != (esSegLable)0x0) {
+      local_c = local_c | 1;
+    }
+    if (this[0x71] != (esSegLable)0x0) {
+      local_c = local_c | 2;
+    }
+    if (this[0x72] != (esSegLable)0x0) {
+      local_c = local_c | 4;
+    }
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// esSegLable::RecalcLayoutLable
+// entry=103eb390
+// signature=void RecalcLayoutLable(esSegLable * this)
+// bodyBytes=2490
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* protected: void __thiscall esSegLable::RecalcLayoutLable(void) */
+
+void __thiscall esSegLable::RecalcLayoutLable(esSegLable *this)
+
+{
+  esSegLable eVar1;
+  ushort uVar2;
+  int *piVar3;
+  ushort uVar4;
+  esFont *peVar5;
+  esStyleList<esBlockStyle> *peVar6;
+  esTextItem *peVar7;
+  esEquBox *peVar8;
+  wchar_t *pwVar9;
+  int iVar10;
+  undefined4 local_394;
+  esEQLine *local_390;
+  esEQLine *local_380;
+  esEQLine *local_370;
+  esEQLine *local_368;
+  esEQLine *local_358;
+  esEQLine *local_350;
+  wchar_t *local_328;
+  esStyleList<esBlockStyle> local_31c [764];
+  GWindowDC local_20 [12];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3eb390  11392  ?RecalcLayoutLable@esSegLable@@IAEXXZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ee81;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0xd4) == 0) {
+    return;
+  }
+  local_328 = *(wchar_t **)(this + 0x68);
+  ExceptionList = &local_10;
+  esText::ClearAllContent((esText *)(this + 0x80),1);
+  peVar5 = esFontSheet::GetFont
+                     (*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e),DAT_1057f0b4);
+  esStyleList<esBlockStyle>::__autoclassinit2(local_31c,0x2fc);
+  if (((byte)this[0x73] & 0x80) == 0) {
+    local_394 = 0;
+  }
+  else {
+    local_394 = 0x40000;
+  }
+  FUN_103e0e30(*(undefined4 *)(this + 0xd4),local_394,0);
+  FUN_103e0e90(peVar5);
+  esFont::SetFontHeight((esFont *)local_31c,*(int *)(peVar5 + 0x14));
+  uVar2 = *(ushort *)(this + 0x6e);
+  peVar5 = esFontSheet::GetFont
+                     (*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e),DAT_1057f0b4);
+  esFontSheet::SetActiveFont(*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e));
+  esFontSheet::SpecifyFont(*(esFontSheet **)(this + 0xd4),peVar5);
+  uVar4 = esFontSheet::SetFontMode(*(esFontSheet **)(this + 0xd4),0);
+  if (this[0x70] != (esSegLable)0x0) {
+    esEQLine::AppendString
+              ((esEQLine *)(this + 0x80),local_328,(uint)(byte)this[0x70],
+               *(esFontSheet **)(this + 0xd4),uVar2);
+    local_328 = local_328 + (byte)this[0x70];
+  }
+  if ((this[0x71] == (esSegLable)0x0) && (this[0x72] == (esSegLable)0x0)) goto LAB_103ebcd4;
+  if (((byte)this[0x73] & 0x40) != 0) {
+    peVar6 = operator_new(0x58);
+    local_8 = 0;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x58);
+    peVar7 = (esTextItem *)FUN_1007c700();
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)peVar7 + 0xbc))(0,*(undefined4 *)(this + 0xd4));
+    esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+    if (this[0x71] != (esSegLable)0x0) {
+      peVar8 = esTextItem::box(peVar7,0);
+      if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb6d4:
+        local_350 = (esEQLine *)0x0;
+      }
+      else {
+        peVar8 = esTextItem::box(peVar7,0);
+        piVar3 = *(int **)(peVar8 + 0x14);
+        pwVar9 = esEQLine::ID();
+        iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+        if (iVar10 == 0) goto LAB_103eb6d4;
+        peVar8 = esTextItem::box(peVar7,0);
+        local_350 = *(esEQLine **)(peVar8 + 0x14);
+      }
+      esEQLine::AppendString
+                (local_350,local_328,(uint)(byte)this[0x71],*(esFontSheet **)(this + 0xd4),uVar2);
+      local_328 = local_328 + (byte)this[0x71];
+    }
+    if (this[0x72] == (esSegLable)0x0) goto LAB_103ebcd4;
+    peVar8 = esTextItem::box(peVar7,1);
+    if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb7a5:
+      local_358 = (esEQLine *)0x0;
+    }
+    else {
+      peVar8 = esTextItem::box(peVar7,1);
+      piVar3 = *(int **)(peVar8 + 0x14);
+      pwVar9 = esEQLine::ID();
+      iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+      if (iVar10 == 0) goto LAB_103eb7a5;
+      peVar8 = esTextItem::box(peVar7,1);
+      local_358 = *(esEQLine **)(peVar8 + 0x14);
+    }
+    esEQLine::AppendString
+              (local_358,local_328,(uint)(byte)this[0x72],*(esFontSheet **)(this + 0xd4),uVar2);
+    goto LAB_103ebcd4;
+  }
+  if (this[0x71] == (esSegLable)0x0) {
+    if (this[0x72] == (esSegLable)0x0) goto LAB_103ebcd4;
+    peVar6 = operator_new(0x48);
+    local_8 = 3;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x48);
+    peVar7 = (esTextItem *)FUN_10095830();
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)peVar7 + 0xbc))(0x16000081,*(undefined4 *)(this + 0xd4));
+    esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+    peVar8 = esTextItem::box(peVar7,0);
+    if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103ebc7b:
+      local_390 = (esEQLine *)0x0;
+    }
+    else {
+      peVar8 = esTextItem::box(peVar7,0);
+      piVar3 = *(int **)(peVar8 + 0x14);
+      pwVar9 = esEQLine::ID();
+      iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+      if (iVar10 == 0) goto LAB_103ebc7b;
+      peVar8 = esTextItem::box(peVar7,0);
+      local_390 = *(esEQLine **)(peVar8 + 0x14);
+    }
+    *(ushort *)(local_390 + 0x1e) = uVar2;
+    esEQLine::AppendString
+              (local_390,local_328,(uint)(byte)this[0x72],*(esFontSheet **)(this + 0xd4),uVar2);
+    goto LAB_103ebcd4;
+  }
+  if (this[0x72] == (esSegLable)0x0) {
+    peVar6 = operator_new(0x48);
+    local_8 = 2;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x48);
+    peVar7 = (esTextItem *)FUN_10095830();
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)peVar7 + 0xbc))(0x16000041,*(undefined4 *)(this + 0xd4));
+    esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+    peVar8 = esTextItem::box(peVar7,0);
+    if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103ebb1e:
+      local_380 = (esEQLine *)0x0;
+    }
+    else {
+      peVar8 = esTextItem::box(peVar7,0);
+      piVar3 = *(int **)(peVar8 + 0x14);
+      pwVar9 = esEQLine::ID();
+      iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+      if (iVar10 == 0) goto LAB_103ebb1e;
+      peVar8 = esTextItem::box(peVar7,0);
+      local_380 = *(esEQLine **)(peVar8 + 0x14);
+    }
+    esEQLine::AppendString
+              (local_380,local_328,(uint)(byte)this[0x71],*(esFontSheet **)(this + 0xd4),uVar2);
+    goto LAB_103ebcd4;
+  }
+  peVar6 = operator_new(0x48);
+  local_8 = 1;
+  esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x48);
+  peVar7 = (esTextItem *)FUN_10095830();
+  local_8 = 0xffffffff;
+  (**(code **)(*(int *)peVar7 + 0xbc))(0x160000c2,*(undefined4 *)(this + 0xd4));
+  esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+  peVar8 = esTextItem::box(peVar7,0);
+  if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb914:
+    local_368 = (esEQLine *)0x0;
+  }
+  else {
+    peVar8 = esTextItem::box(peVar7,0);
+    piVar3 = *(int **)(peVar8 + 0x14);
+    pwVar9 = esEQLine::ID();
+    iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+    if (iVar10 == 0) goto LAB_103eb914;
+    peVar8 = esTextItem::box(peVar7,0);
+    local_368 = *(esEQLine **)(peVar8 + 0x14);
+  }
+  esEQLine::AppendString
+            (local_368,local_328,(uint)(byte)this[0x71],*(esFontSheet **)(this + 0xd4),uVar2);
+  eVar1 = this[0x71];
+  peVar8 = esTextItem::box(peVar7,1);
+  if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb9d3:
+    local_370 = (esEQLine *)0x0;
+  }
+  else {
+    peVar8 = esTextItem::box(peVar7,1);
+    piVar3 = *(int **)(peVar8 + 0x14);
+    pwVar9 = esEQLine::ID();
+    iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+    if (iVar10 == 0) goto LAB_103eb9d3;
+    peVar8 = esTextItem::box(peVar7,1);
+    local_370 = *(esEQLine **)(peVar8 + 0x14);
+  }
+  esEQLine::AppendString
+            (local_370,local_328 + (byte)eVar1,(uint)(byte)this[0x72],*(esFontSheet **)(this + 0xd4)
+             ,uVar2);
+LAB_103ebcd4:
+  esText::StylizeLabelFonts((esText *)(this + 0x80),(esFontTyper *)local_31c);
+  esFontSheet::SetFontMode(*(esFontSheet **)(this + 0xd4),uVar4);
+  eg_gui::GWindowDC::GWindowDC(local_20);
+  local_8 = 4;
+  esEQLine::RecalcLayout
+            ((esEQLine *)(this + 0x80),(GDC *)local_20,*(esFontSheet **)(this + 0xd4),0,DAT_1057f0b4
+             ,0);
+  local_8 = 0xffffffff;
+  eg_gui::GWindowDC::~GWindowDC(local_20);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::Build
+// entry=103ebd80
+// signature=void Build(esSegLable * this, int param_1)
+// bodyBytes=1041
+// =========================================================
+
+/* protected: virtual void __thiscall esSegLable::Build(int) */
+
+void __thiscall esSegLable::Build(esSegLable *this,int param_1)
+
+{
+  LONG LVar1;
+  void *_Memory;
+  esColorScheme *peVar2;
+  int iVar3;
+  tagPOINT *ptVar4;
+  undefined4 uVar5;
+  uint local_2c;
+  int local_24;
+  int local_1c;
+  int local_18;
+  byte local_5;
+  
+                    /* 0x3ebd80  4032  ?Build@esSegLable@@MAEXH@Z */
+  RecalcLayoutLable(this);
+  peVar2 = elfPage::GetColorScheme((elfPage *)(this + 0x80));
+  iVar3 = esEQLine::Height((esEQLine *)(this + 0x80));
+  if (((byte)this[0x73] & 0x20) == 0) {
+    local_2c = 0;
+  }
+  else {
+    local_2c = (uint)*(ushort *)(this + 0x6c);
+  }
+  peVar2 = peVar2 + local_2c * 2;
+  iVar3 = iVar3 + local_2c * 2;
+  ptVar4 = (tagPOINT *)FUN_105290e5(0x30);
+  GetPointsForRect(0,0,(int)peVar2,iVar3,ptVar4);
+  LVar1 = ptVar4->y;
+  ptVar4[4].x = ptVar4->x;
+  ptVar4[4].y = LVar1;
+  if (((byte)this[0x74] & 0xf0) == 0) {
+    local_18 = (((byte)this[0x74] & 0xf) % 3) * ((int)peVar2 / 2) +
+               (**(int **)(this + 0x58) - (int)peVar2);
+    local_1c = (((byte)this[0x74] & 0xf) / 3) * (iVar3 / 2) +
+               (*(int *)(*(int *)(this + 0x58) + 4) - iVar3);
+    this[0x73] = (esSegLable)((byte)this[0x73] & 0xf0 | (byte)this[0x74] & 0xf);
+  }
+  else {
+    local_18 = **(int **)(this + 0x58);
+    local_1c = *(int *)(*(int *)(this + 0x58) + 4);
+    local_5 = 0;
+    switch((byte)this[0x74] & 0x30) {
+    case 0:
+      local_18 = local_18 - (int)peVar2 / 2;
+      local_5 = 1;
+      break;
+    case 0x10:
+      local_18 = ((int)((float)(int)peVar2 * *(float *)(this + 0x78)) - (int)peVar2) + local_18;
+      local_5 = 1;
+      break;
+    case 0x20:
+      local_18 = local_18 - (int)(peVar2 + (int)*(float *)(this + 0x78));
+      local_5 = 0;
+      break;
+    case 0x30:
+      local_18 = (int)*(float *)(this + 0x78) + local_18;
+      local_5 = 2;
+    }
+    switch((byte)this[0x74] & 0xc0) {
+    case 0:
+      local_1c = local_1c - (int)peVar2 / 2;
+      local_5 = local_5 + 3;
+      break;
+    case 0x40:
+      local_1c = ((int)((float)iVar3 * *(float *)(this + 0x7c)) - iVar3) + local_1c;
+      local_5 = local_5 + 3;
+      break;
+    case 0x80:
+      local_1c = local_1c - ((int)*(float *)(this + 0x7c) + iVar3);
+      break;
+    case 0xc0:
+      local_1c = (int)*(float *)(this + 0x7c) + local_1c;
+      local_5 = local_5 + 6;
+    }
+    this[0x73] = (esSegLable)((byte)this[0x73] & 0xf0 | local_5);
+  }
+  for (local_24 = 0; local_24 < 5; local_24 = local_24 + 1) {
+    ptVar4[local_24].x = ptVar4[local_24].x + local_18;
+    ptVar4[local_24].y = ptVar4[local_24].y + local_1c;
+  }
+  ptVar4[5].x = ptVar4->x + local_2c;
+  ptVar4[5].y = ptVar4->y + local_2c;
+  FUN_10027a30(ptVar4,5);
+  if ((*(int *)(this + 0x34) != 0) &&
+     (_Memory = *(void **)(this + 0x34), free(_Memory), _Memory != (void *)0x0)) {
+    *(undefined4 *)(this + 0x34) = 0x8123;
+  }
+  *(tagPOINT **)(this + 0x34) = ptVar4;
+  *(undefined4 *)(this + 0x38) = 5;
+  if (*(int *)(this + 0x60) == 0) {
+    uVar5 = FUN_105290e5(5);
+    *(undefined4 *)(this + 0x60) = uVar5;
+    **(undefined1 **)(this + 0x60) = 0;
+    *(undefined4 *)(*(int *)(this + 0x60) + 1) = 0x1010101;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esEQLine::AppendString
+// entry=1045d070
+// signature=void AppendString(esEQLine * this, wchar_t * param_1, int param_2, esFontSheet * param_3, ushort param_4)
+// bodyBytes=752
+// =========================================================
+
+/* public: void __thiscall esEQLine::AppendString(wchar_t const *,int,class esFontSheet *,unsigned
+   short) */
+
+void __thiscall
+esEQLine::AppendString
+          (esEQLine *this,wchar_t *param_1,int param_2,esFontSheet *param_3,ushort param_4)
+
+{
+  wchar_t wVar1;
+  undefined4 uVar2;
+  int iVar3;
+  uint uVar4;
+  esFont *this_00;
+  int iVar5;
+  ulong uVar6;
+  esFont *peVar7;
+  esStyleList<esBlockStyle> *this_01;
+  esChrObj *peVar8;
+  undefined4 local_20;
+  int local_1c;
+  ushort local_18;
+  wchar_t local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x45d070  3907  ?AppendString@esEQLine@@QAEXPB_WHPAVesFontSheet@@G@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_105526cf;
+  local_10 = ExceptionList;
+  uVar4 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  *(ushort *)(this + 0x1e) = param_4;
+  this_00 = esFontSheet::GetFont(param_3,param_4,DAT_1057f0b4);
+  local_1c = 0;
+  do {
+    if (param_2 <= local_1c) {
+      ExceptionList = local_10;
+      return;
+    }
+    local_18 = param_4;
+    wVar1 = param_1[local_1c];
+    iVar3 = local_1c;
+    if (((ushort)wVar1 < 0x30) || (0x39 < (ushort)wVar1)) {
+      if (wVar1 != L'\'') {
+        local_18 = esFontSheet::MakeFont(param_3,wVar1,this_00);
+        goto LAB_1045d33f;
+      }
+      peVar7 = esFont::Clone(this_00);
+      *(uint *)(peVar7 + 0x28) = *(uint *)(peVar7 + 0x28) & 0xfffdfffd;
+      *(undefined2 *)(peVar7 + 6) = 0;
+      local_18 = (**(code **)(*(int *)param_3 + 8))(peVar7,uVar4);
+      if (*(int *)(this + 8) != 0) {
+        local_14 = L'\xf00a';
+        wVar1 = local_14;
+        if ((local_1c + 1 < param_2) && (param_1[local_1c + 1] == L'\'')) {
+          local_14 = L'\xf00b';
+          iVar3 = local_1c + 1;
+          wVar1 = L'\xf00b';
+          if ((local_1c + 2 < param_2) && (wVar1 = local_14, param_1[local_1c + 2] == L'\'')) {
+            local_14 = L'\xf00c';
+            iVar3 = local_1c + 2;
+            wVar1 = L'\xf00c';
+            if ((local_1c + 3 < param_2) && (wVar1 = local_14, param_1[local_1c + 3] == L'\'')) {
+              iVar3 = local_1c + 3;
+              wVar1 = L'\xf00d';
+            }
+          }
+        }
+        goto LAB_1045d33f;
+      }
+      local_20 = 0x21000301;
+      uVar2 = local_20;
+      if ((local_1c + 1 < param_2) && (param_1[local_1c + 1] == L'\'')) {
+        local_20 = 0x21000302;
+        uVar2 = 0x21000302;
+        iVar3 = local_1c + 1;
+        if ((local_1c + 2 < param_2) && (uVar2 = local_20, param_1[local_1c + 2] == L'\'')) {
+          uVar2 = 0x21000303;
+          iVar3 = local_1c + 2;
+        }
+      }
+      local_1c = iVar3;
+      local_20 = uVar2;
+      this_01 = operator_new(0x54);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2(this_01,0x54);
+      peVar8 = (esChrObj *)esTmplSubScript::esTmplSubScript((esTmplSubScript *)this_01);
+      local_8 = 0xffffffff;
+      (**(code **)(*(int *)peVar8 + 0xbc))(local_20,param_3);
+      *(ushort *)(peVar8 + 0x1a) = local_18;
+      esText::AppendChrObj((esText *)this,peVar8);
+    }
+    else {
+      iVar5 = esFont::IsItalic(this_00);
+      if ((iVar5 != 0) && (uVar6 = esFont::GetType(this_00), uVar6 == 0x40000)) {
+        peVar7 = esFont::Clone(this_00);
+        *(uint *)(peVar7 + 0x28) = *(uint *)(peVar7 + 0x28) & 0xfffdfffd;
+        local_18 = (**(code **)(*(int *)param_3 + 8))(peVar7);
+      }
+LAB_1045d33f:
+      local_14 = wVar1;
+      local_1c = iVar3;
+      esText::AppendChar((esText *)this,local_14,local_18);
+    }
+    local_1c = local_1c + 1;
+  } while( true );
+}
+
+
+
+// matched=9 dumped=9

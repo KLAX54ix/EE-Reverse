@@ -1,0 +1,33 @@
+{"k": "install", "at": 1792121448045, "installed": [{"i": 0, "label": "esCanvas::AddItem", "hooked": true, "addr": "0x6d3d45d0"}, {"i": 1, "label": "esCanvas::Insert", "hooked": true, "addr": "0x6d3d46a0"}, {"i": 2, "label": "esPageList::CreateObject", "hooked": true, "addr": "0x6d38c600"}, {"i": 3, "label": "esObject::CreateObject", "hooked": true, "addr": "0x6d2166a0"}, {"i": 4, "label": "esShapeBase::CreateObject", "hooked": true, "addr": "0x6d3adec0"}, {"i": 5, "label": "esSegList::CreateObject", "hooked": true, "addr": "0x6d3adec0"}, {"i": 6, "label": "esContainer::CreateObject", "hooked": true, "addr": "0x6d3c2480"}, {"i": 7, "label": "esCanvasList::CreateObject", "hooked": true, "addr": "0x6d3d22b0"}, {"i": 8, "label": "esShapeCreator::Initialize", "hooked": true, "addr": "0x6d3c60c0"}, {"i": 9, "label": "esShapeCreator::GetCreateType", "hooked": true, "addr": "0x6d222440"}, {"i": 10, "label": "esShapeCreator::SetCreateInfo(pen,ulong)", "hooked": true, "addr": "0x6d3c5fe0"}, {"i": 11, "label": "esShapeCreator::SetCreateInfo(pen,shape,ushort)", "hooked": true, "addr": "0x6d3c5f40"}, {"i": 12, "label": "esDrawingModifier::OnInitializeProcess", "hooked": true, "addr": "0x6d3bb880"}, {"i": 13, "label": "esDrawingModifier::OnEndProcess", "hooked": true, "addr": "0x6d3bc9f0"}, {"i": 14, "label": "esDrawingModifier::OnMouseMove", "hooked": true, "addr": "0x6d3bc830"}, {"i": 15, "label": "esDrawingModifier::OnInitializeProcess2", "hooked": true, "addr": "0x6d3bb880"}, {"i": 16, "label": "esDrawingModifier::SnapPoint", "hooked": true, "addr": "0x6d3bb540"}, {"i": 17, "label": "esCanvas::GetShapeList", "hooked": true, "addr": "0x6d223850"}, {"i": 18, "label": "esShapeCreator::ClearCreateInfo", "hooked": true, "addr": "0x6d3c5d90"}], "ts": 1792121448.046259}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4701", "a": ["0x0"], "ts": 1792121559.1718135}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121559.1728227}
+{"k": "call", "label": "esShapeCreator::GetCreateType", "self": "0xcec62f19", "a": [], "ts": 1792121560.3268359}
+{"k": "call", "label": "esShapeCreator::SetCreateInfo(pen,ulong)", "self": "0xaa79828", "a": ["0xeff660", "0x0", "0xcec62f19"], "ts": 1792121560.327851}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0x108611e8", "a": [], "ts": 1792121562.027867}
+{"k": "call", "label": "esCanvas::AddItem", "self": "0x108611e8", "a": ["0x1", "0xcec62f3d"], "ts": 1792121562.0289297}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4701", "a": ["0x0"], "ts": 1792121562.057269}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121562.057269}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4281", "a": ["0x0"], "ts": 1792121562.991276}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121562.991276}
+{"k": "call", "label": "esShapeCreator::GetCreateType", "self": "0xcec62f19", "a": [], "ts": 1792121564.2363696}
+{"k": "call", "label": "esShapeCreator::SetCreateInfo(pen,ulong)", "self": "0xaa79828", "a": ["0xeff660", "0x0", "0xcec62f19"], "ts": 1792121564.2363696}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0x10860de8", "a": [], "ts": 1792121566.4274988}
+{"k": "call", "label": "esCanvas::AddItem", "self": "0x10860de8", "a": ["0x1", "0xcec62f3d"], "ts": 1792121566.4274988}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4281", "a": ["0x0"], "ts": 1792121566.4570644}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121566.4570644}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4285", "a": ["0x0"], "ts": 1792121568.287331}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121568.287331}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4284", "a": ["0x0"], "ts": 1792121570.2918217}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121570.2918217}
+{"k": "call", "label": "esShapeCreator::GetCreateType", "self": "0xcec62f19", "a": [], "ts": 1792121572.6887956}
+{"k": "call", "label": "esShapeCreator::SetCreateInfo(pen,ulong)", "self": "0xaa79828", "a": ["0xeff660", "0x0", "0xcec62f19"], "ts": 1792121572.6887956}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0x10860e68", "a": [], "ts": 1792121573.9164739}
+{"k": "call", "label": "esCanvas::AddItem", "self": "0x10860e68", "a": ["0x1", "0xcec62f3d"], "ts": 1792121573.9174771}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4284", "a": ["0x0"], "ts": 1792121573.9468942}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121573.9468942}
+{"k": "call", "label": "esShapeCreator::GetCreateType", "self": "0xcec62f19", "a": [], "ts": 1792121577.0499213}
+{"k": "call", "label": "esShapeCreator::SetCreateInfo(pen,ulong)", "self": "0xaa79828", "a": ["0xeff660", "0x0", "0xcec62f19"], "ts": 1792121577.0504265}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0x10860d68", "a": [], "ts": 1792121579.9474828}
+{"k": "call", "label": "esCanvas::AddItem", "self": "0x10860d68", "a": ["0x1", "0xcec62f3d"], "ts": 1792121579.9474828}
+{"k": "call", "label": "esShapeCreator::Initialize", "self": "0x4284", "a": ["0x0"], "ts": 1792121579.9794762}
+{"k": "call", "label": "esShapeCreator::ClearCreateInfo", "self": "0xaa79960", "a": [], "ts": 1792121579.9794762}

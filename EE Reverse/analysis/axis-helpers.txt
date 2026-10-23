@@ -1,0 +1,52 @@
+// program=Editer.exe imageBase=00400000
+// specs=[fun_004fd2a0, fun_004fcbf0, fun_004fd280]
+
+// =========================================================
+// FUN_004fcbf0
+// entry=004fcbf0
+// signature=undefined FUN_004fcbf0()
+// bodyBytes=35
+// =========================================================
+
+void __fastcall FUN_004fcbf0(int param_1)
+
+{
+  FUN_004feea0(*(undefined4 *)(param_1 + 0x2a0));
+  return;
+}
+
+
+
+// =========================================================
+// FUN_004fd280
+// entry=004fd280
+// signature=undefined FUN_004fd280()
+// bodyBytes=31
+// =========================================================
+
+void FUN_004fd280(undefined4 param_1)
+
+{
+  FUN_004fefe0(param_1);
+  return;
+}
+
+
+
+// =========================================================
+// FUN_004fd2a0
+// entry=004fd2a0
+// signature=undefined FUN_004fd2a0()
+// bodyBytes=31
+// =========================================================
+
+void FUN_004fd2a0(undefined4 param_1)
+
+{
+  FUN_00501060(param_1);
+  return;
+}
+
+
+
+// matched=3 dumped=3

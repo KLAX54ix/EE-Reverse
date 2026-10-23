@@ -1,0 +1,160 @@
+{
+  "schema": "re-ledger/1",
+  "tool": "tools/re_ledger.py",
+  "generated_at": "2026-10-17T22:32:14+0800",
+  "workspace": "D:\\EE Reverse",
+  "inputs": {
+    "recon/eslib_exports.txt": "343f525a836997100493661efaf41db02f36758e910309e9decf910af922f850",
+    "recon/eulib_exports.txt": "b21903f0088e9e0420878d2bfb188a60b3dd0723e4b440faf9772168bdbf741f",
+    "recon/zoro_exports.txt": "88266881c3859e16095ff95ae922238601bd4664bf7c82d38f9b56e7fba824f1",
+    "recon/eglib_exports.txt": "12bf029dcd2f228a1565fceac15dc661445fe774d95a21960a1dd0474a631660",
+    "ledger/raw/Editer_functions.csv": "c7232a8e7078e6e897a73e6eebc96ab44922b5ad9d7c378db02cf11d83c2f573",
+    "ledger/raw/eslib_functions.csv": "73cccb5c974e81d3831ea64d5073b67cce4e01722611f7a437ac88da9324e888",
+    "ledger/raw/eulib_functions.csv": "da43837cccd43c7891e26d9c09ac0e1097d07d0d645d72dbe682a5103b5a4e93",
+    "ledger/raw/zoro_functions.csv": "3ecdc659780fbc5c7b96f83aa3d4c4e261066f55d60316bc0b7dec37a67af2d4",
+    "ledger/raw/eglib_functions.csv": "aa3f8e760768e2379573e71ce80068784f5e00cec3bca85559615e9e94e96b3d",
+    "ledger/raw/Editer_xrefs.csv": "c4ccd82c9d269a27d53cb0b3cebab9274feb0a3bca5ba0ed1083d91c6f4b747e",
+    "ledger/raw/Editer_strings.csv": "be30a6f7c4adb3868fe397f8ec136ef83ebb46935fc1027c170ceb94d0b866e4",
+    "ledger/raw/Editer_vtables.csv": "193c27922303343417d90afc0906eaec71954e20ae98d78aea59eda5c9557ab4",
+    "ledger/raw/eslib_xrefs.csv": "618fe264a97b9dc4f2faea120247b41e67838e821af56c9802fd7f921ced85a4",
+    "ledger/raw/eslib_strings.csv": "5df8a0ed45640af8290b701cdc651333700c6d667b9c671315171f066bf351f0",
+    "ledger/raw/eslib_vtables.csv": "f9e5ead9e57c8f9c5e78faf87ab1e19d0c20164d5f716f4016cf13f967b92d16",
+    "ledger/raw/eulib_xrefs.csv": "5a42f8cd46be2cb5e7554f647d4b936cd8c6feec538bdd06eb83f32029bfb2d5",
+    "ledger/raw/eulib_strings.csv": "0b1ed8bc5e05add185924745e4e9c2495fc3a80d8cc87931873b31f75bbe6065",
+    "ledger/raw/eulib_vtables.csv": "1765d4a2bc39616f81abc94bb754663b0c73d3f92d00c461d8ef80b107c7455d",
+    "ledger/raw/zoro_xrefs.csv": "219f4e73753c8a985aa548ff696b19aa4462020c42694111ada8ed15f416610c",
+    "ledger/raw/zoro_strings.csv": "2baaae6e804fcae1a10a0487970d7d4ae0afaad768b04d082ef8c3abf53ee96a",
+    "ledger/raw/zoro_vtables.csv": "b9ac85e8e8ce6390fb5ba4aab78a8b5c32ed24cf37d4b4cdfff278d7b67bb466",
+    "ledger/raw/eglib_xrefs.csv": "fea6532dabae16a9f0efe19a1130813508b99c22a47e67cb35c5a0177147f240",
+    "ledger/raw/eglib_strings.csv": "a2cdb37e5a89a0a4459aaa6d2974d108c43840ad07d842c4c75187c0c74a7055",
+    "ledger/raw/eglib_vtables.csv": "fe7b4ad12798b7fc054e735e7cf5b060a8f079a705d2dc359dfdd995f5e98678",
+    "ledger/raw/demangled.csv": "3db5ff67134a5170dde7d9593736cd17f53367b06289adf048e0cd0f2eea7998",
+    "ledger/status-overrides.csv": "ec4cb439936833fd2a5876cb17b37b0bf661db109201bfbb08d98e7a871c1a1c"
+  },
+  "output_hashes": {
+    "exports.csv": "01bcce2f0f952edea9f6f1600b537d831b1255576d525d65f5f4d662a135d044",
+    "functions.csv": "4291c6446676aae8f7c806a0c5ef593fdede6c5f2dfccf013bc25a067eff9a97",
+    "ledger.csv": "fc6a3dc7d68d68e4cf01c743422fc15f9017bc1dba61a49ea074e783c51dc392",
+    "unresolved-mangling.csv": "63a927326ed993636a030be9e018b63cdaa7b8937e572a08a0f19ae930a054d5"
+  },
+  "counts": {
+    "exports.csv": 21801,
+    "functions.csv": 68737,
+    "ledger.csv": 113883,
+    "unresolved-mangling.csv": 0
+  },
+  "stats": {
+    "totals": {
+      "functions": 68737,
+      "unnamed": 24274,
+      "xrefs_linked": 68737,
+      "named": 44463,
+      "owner_known": 21751,
+      "stub": 2315,
+      "exports_merged": 17354,
+      "export_aliases": 2975,
+      "exports_standalone": 1472,
+      "exports": 21801,
+      "exports_merged_entries": 20329
+    },
+    "per_module": {
+      "Editer": {
+        "functions": 19320,
+        "unnamed": 10552,
+        "xrefs_linked": 19320,
+        "named": 8768,
+        "owner_known": 1904,
+        "stub": 1566,
+        "exports_merged": 0,
+        "export_aliases": 0
+      },
+      "eslib": {
+        "functions": 37797,
+        "unnamed": 9914,
+        "xrefs_linked": 37797,
+        "named": 27883,
+        "owner_known": 14549,
+        "stub": 62,
+        "exports_standalone": 1022,
+        "standalone_kinds": {
+          "data": 485,
+          "vtable": 537
+        },
+        "exports": 16123,
+        "exports_merged_entries": 15101,
+        "exports_merged": 12865,
+        "export_aliases": 2236
+      },
+      "eulib": {
+        "functions": 5118,
+        "unnamed": 752,
+        "xrefs_linked": 5118,
+        "named": 4366,
+        "owner_known": 3262,
+        "stub": 624,
+        "exports_standalone": 312,
+        "standalone_kinds": {
+          "vtable": 139,
+          "data": 173
+        },
+        "exports": 3305,
+        "exports_merged_entries": 2993,
+        "exports_merged": 2627,
+        "export_aliases": 366
+      },
+      "zoro": {
+        "functions": 1716,
+        "unnamed": 180,
+        "xrefs_linked": 1716,
+        "named": 1536,
+        "owner_known": 1165,
+        "stub": 28,
+        "exports_standalone": 80,
+        "standalone_kinds": {
+          "vtable": 55,
+          "data": 25
+        },
+        "exports": 1536,
+        "exports_merged_entries": 1456,
+        "exports_merged": 1159,
+        "export_aliases": 297
+      },
+      "eglib": {
+        "functions": 4786,
+        "unnamed": 2876,
+        "xrefs_linked": 4786,
+        "named": 1910,
+        "owner_known": 871,
+        "stub": 35,
+        "exports_standalone": 58,
+        "standalone_kinds": {
+          "vtable": 43,
+          "data": 15
+        },
+        "exports": 837,
+        "exports_merged_entries": 779,
+        "exports_merged": 703,
+        "export_aliases": 76
+      }
+    },
+    "extra": {
+      "strings_added": 38803,
+      "strings_merged": 340,
+      "vtables_added": 4871,
+      "vtables_merged": 774,
+      "overrides_defined": 1635,
+      "overrides_applied": 1635
+    },
+    "demangled": {
+      "names": 21801,
+      "ok": 21801
+    },
+    "checks": {
+      "id_unique": true,
+      "exports_all_accounted": true,
+      "functions_all_registered": true,
+      "xrefs_linked": true,
+      "overrides_valid": true
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+ "q": 4,
+ "title": "semicircle O (r=1), A(-1,0)/B(1,0) diameter, angle AOC=45, D on arc BC, quadrilateral AODC",
+ "png": "captures/jxqz-figs/fig06.png",
+ "unit": "radius of the circle = 1 (stem's unit)",
+ "free_parameters": {
+  "theta_D_deg": 69.0,
+  "source": "printed figure captures/jxqz-figs/fig06.png; estimates 68.5 (OD line) / 69.8 (chord CD), adopted 69.0"
+ },
+ "points": {
+  "O": [
+   0.0,
+   0.0
+  ],
+  "A": [
+   -1.0,
+   1.2246467991473532e-16
+  ],
+  "B": [
+   1.0,
+   0.0
+  ],
+  "C": [
+   -0.7071067811865475,
+   0.7071067811865476
+  ],
+  "D": [
+   0.3583679495453004,
+   0.9335804264972017
+  ]
+ },
+ "checks": [
+  {
+   "type": "distance",
+   "label": "OA = radius",
+   "a": "O",
+   "b": "A",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "OB = radius",
+   "a": "O",
+   "b": "B",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "OC = radius",
+   "a": "O",
+   "b": "C",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "OD = radius",
+   "a": "O",
+   "b": "D",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "AB = diameter = 2",
+   "a": "A",
+   "b": "B",
+   "value": 2.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "midpoint",
+   "label": "O midpoint of AB",
+   "point": "O",
+   "a": "A",
+   "b": "B",
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "A,O,B collinear",
+   "points": [
+    "A",
+    "O",
+    "B"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "angle",
+   "label": "angle AOC = 45 (given)",
+   "vertex": "O",
+   "a": "A",
+   "b": "C",
+   "deg": 45.0,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "D on arc BC: angle BOD = free parameter",
+   "vertex": "O",
+   "a": "B",
+   "b": "D",
+   "deg": 69.0,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "angle COD = 135 - free parameter",
+   "vertex": "O",
+   "a": "C",
+   "b": "D",
+   "deg": 66.0,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "quadrilateral AODC: angle AOD",
+   "vertex": "O",
+   "a": "A",
+   "b": "D",
+   "deg": 111.0,
+   "tol_deg": 1e-06
+  }
+ ],
+ "paths": [
+  {
+   "points": [
+    "A",
+    "B"
+   ]
+  },
+  {
+   "points": [
+    "O",
+    "C"
+   ]
+  },
+  {
+   "points": [
+    "O",
+    "D"
+   ]
+  },
+  {
+   "points": [
+    "C",
+    "D"
+   ]
+  },
+  {
+   "points": [
+    "C",
+    "A"
+   ]
+  }
+ ],
+ "arcs": [
+  {
+   "cx": 0.0,
+   "cy": 0.0,
+   "r": 1.0,
+   "a0": 180.0,
+   "a1": 0.0,
+   "steps": 128
+  }
+ ],
+ "labels": [
+  {
+   "text": "A",
+   "anchor": "A",
+   "ox": -0.1,
+   "oy": -0.09
+  },
+  {
+   "text": "B",
+   "anchor": "B",
+   "ox": 0.09,
+   "oy": -0.1
+  },
+  {
+   "text": "O",
+   "anchor": "O",
+   "ox": 0.0,
+   "oy": -0.13
+  },
+  {
+   "text": "C",
+   "anchor": "C",
+   "ox": -0.11,
+   "oy": 0.1
+  },
+  {
+   "text": "D",
+   "anchor": "D",
+   "ox": 0.04,
+   "oy": 0.15
+  }
+ ]
+}

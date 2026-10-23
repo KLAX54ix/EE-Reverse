@@ -1,0 +1,1295 @@
+{
+ "q": 3,
+ "title": "magic ruler: 24 congruent isosceles right triangles (hyp=1) closed into a 4x3 rectangular ring (inner 3x2)",
+ "png": "captures/jxqz-figs/fig05.png",
+ "unit": "hypotenuse of one isosceles right triangle = 1 (stem's unit)",
+ "assumptions": [
+  "the photo is a closed ring of the 24-segment ruler, so the triangles carry their hypotenuses on the outer boundary (14) and on the inner boundary (10): 14+10 = 24; the ring has constant width 1/2",
+  "outer rectangle 4x3 is literal in the stem's unit (hyp=1); the inner hole is 3x2; 4x3 is not a solid 12-square grid -- the solid reading would make the 24 triangles cover only half of it",
+  "the 24 triangles form one closed chain; segment colours alternate along that chain (red -> fill=dark, white -> unfilled)"
+ ],
+ "points": {
+  "ob0": [
+   0.0,
+   0.0
+  ],
+  "ob1": [
+   1.0,
+   0.0
+  ],
+  "ob2": [
+   2.0,
+   0.0
+  ],
+  "ob3": [
+   3.0,
+   0.0
+  ],
+  "ob4": [
+   4.0,
+   0.0
+  ],
+  "or1": [
+   4.0,
+   1.0
+  ],
+  "or2": [
+   4.0,
+   2.0
+  ],
+  "or3": [
+   4.0,
+   3.0
+  ],
+  "ot3": [
+   3.0,
+   3.0
+  ],
+  "ot2": [
+   2.0,
+   3.0
+  ],
+  "ot1": [
+   1.0,
+   3.0
+  ],
+  "ot0": [
+   0.0,
+   3.0
+  ],
+  "ol2": [
+   0.0,
+   2.0
+  ],
+  "ol1": [
+   0.0,
+   1.0
+  ],
+  "ib0": [
+   0.5,
+   0.5
+  ],
+  "ib1": [
+   1.5,
+   0.5
+  ],
+  "ib2": [
+   2.5,
+   0.5
+  ],
+  "ib3": [
+   3.5,
+   0.5
+  ],
+  "ir1": [
+   3.5,
+   1.5
+  ],
+  "ir2": [
+   3.5,
+   2.5
+  ],
+  "it2": [
+   2.5,
+   2.5
+  ],
+  "it1": [
+   1.5,
+   2.5
+  ],
+  "it0": [
+   0.5,
+   2.5
+  ],
+  "il1": [
+   0.5,
+   1.5
+  ]
+ },
+ "checks": [
+  {
+   "type": "distance",
+   "label": "outer AB = 4",
+   "a": "ob0",
+   "b": "ob4",
+   "value": 4.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "outer BC = 3",
+   "a": "ob4",
+   "b": "or3",
+   "value": 3.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "outer CD = 4",
+   "a": "or3",
+   "b": "ot0",
+   "value": 4.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "outer DA = 3",
+   "a": "ot0",
+   "b": "ob0",
+   "value": 3.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "perpendicular",
+   "label": "outer corner A",
+   "a": [
+    "ob0",
+    "ob1"
+   ],
+   "b": [
+    "ob0",
+    "ol1"
+   ]
+  },
+  {
+   "type": "perpendicular",
+   "label": "outer corner B",
+   "a": [
+    "ob4",
+    "or1"
+   ],
+   "b": [
+    "ob4",
+    "ob3"
+   ]
+  },
+  {
+   "type": "perpendicular",
+   "label": "outer corner C",
+   "a": [
+    "or3",
+    "ot3"
+   ],
+   "b": [
+    "or3",
+    "or2"
+   ]
+  },
+  {
+   "type": "perpendicular",
+   "label": "outer corner D",
+   "a": [
+    "ot0",
+    "ol2"
+   ],
+   "b": [
+    "ot0",
+    "ot1"
+   ]
+  },
+  {
+   "type": "collinear",
+   "label": "outer side AB straight",
+   "points": [
+    "ob0",
+    "ob2",
+    "ob4"
+   ]
+  },
+  {
+   "type": "collinear",
+   "label": "outer side BC straight",
+   "points": [
+    "ob4",
+    "or2",
+    "or3"
+   ]
+  },
+  {
+   "type": "collinear",
+   "label": "outer side CD straight",
+   "points": [
+    "or3",
+    "ot2",
+    "ot0"
+   ]
+  },
+  {
+   "type": "collinear",
+   "label": "outer side DA straight",
+   "points": [
+    "ot0",
+    "ol1",
+    "ob0"
+   ]
+  },
+  {
+   "type": "distance",
+   "label": "inner A'B' = 3",
+   "a": "ib0",
+   "b": "ib3",
+   "value": 3.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "inner B'C' = 2",
+   "a": "ib3",
+   "b": "ir2",
+   "value": 2.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "inner C'D' = 3",
+   "a": "ir2",
+   "b": "it0",
+   "value": 3.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "inner D'A' = 2",
+   "a": "it0",
+   "b": "ib0",
+   "value": 2.0,
+   "tol_pct": 0.001
+  },
+  {
+   "type": "perpendicular",
+   "label": "inner corner A'",
+   "a": [
+    "ib0",
+    "ib1"
+   ],
+   "b": [
+    "ib0",
+    "il1"
+   ]
+  },
+  {
+   "type": "perpendicular",
+   "label": "inner corner C'",
+   "a": [
+    "ir2",
+    "it2"
+   ],
+   "b": [
+    "ir2",
+    "ir1"
+   ]
+  },
+  {
+   "type": "parallel",
+   "label": "inner A'B' // outer AB",
+   "a": [
+    "ib0",
+    "ib3"
+   ],
+   "b": [
+    "ob0",
+    "ob4"
+   ]
+  },
+  {
+   "type": "parallel",
+   "label": "inner B'C' // outer BC",
+   "a": [
+    "ib3",
+    "ir2"
+   ],
+   "b": [
+    "ob4",
+    "or3"
+   ]
+  },
+  {
+   "type": "parallel",
+   "label": "inner C'D' // outer CD",
+   "a": [
+    "ir2",
+    "it0"
+   ],
+   "b": [
+    "or3",
+    "ot0"
+   ]
+  },
+  {
+   "type": "parallel",
+   "label": "inner D'A' // outer DA",
+   "a": [
+    "it0",
+    "ib0"
+   ],
+   "b": [
+    "ot0",
+    "ob0"
+   ]
+  },
+  {
+   "type": "collinear",
+   "label": "inner side A'B' straight",
+   "points": [
+    "ib0",
+    "ib2",
+    "ib3"
+   ]
+  },
+  {
+   "type": "collinear",
+   "label": "inner side C'D' straight",
+   "points": [
+    "ir2",
+    "it1",
+    "it0"
+   ]
+  },
+  {
+   "type": "distance",
+   "label": "T01 hypotenuse = 1",
+   "a": "ob0",
+   "b": "ob1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T01 legs equal",
+   "a": [
+    "ob0",
+    "ib0"
+   ],
+   "b": [
+    "ob1",
+    "ib0"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T01 right angle at apex",
+   "vertex": "ib0",
+   "a": "ob0",
+   "b": "ob1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T02 hypotenuse = 1",
+   "a": "ob1",
+   "b": "ob2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T02 legs equal",
+   "a": [
+    "ob1",
+    "ib1"
+   ],
+   "b": [
+    "ob2",
+    "ib1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T02 right angle at apex",
+   "vertex": "ib1",
+   "a": "ob1",
+   "b": "ob2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T03 hypotenuse = 1",
+   "a": "ob2",
+   "b": "ob3",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T03 legs equal",
+   "a": [
+    "ob2",
+    "ib2"
+   ],
+   "b": [
+    "ob3",
+    "ib2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T03 right angle at apex",
+   "vertex": "ib2",
+   "a": "ob2",
+   "b": "ob3",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T04 hypotenuse = 1",
+   "a": "ob3",
+   "b": "ob4",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T04 legs equal",
+   "a": [
+    "ob3",
+    "ib3"
+   ],
+   "b": [
+    "ob4",
+    "ib3"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T04 right angle at apex",
+   "vertex": "ib3",
+   "a": "ob3",
+   "b": "ob4",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T05 hypotenuse = 1",
+   "a": "ob4",
+   "b": "or1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T05 legs equal",
+   "a": [
+    "ob4",
+    "ib3"
+   ],
+   "b": [
+    "or1",
+    "ib3"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T05 right angle at apex",
+   "vertex": "ib3",
+   "a": "ob4",
+   "b": "or1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T06 hypotenuse = 1",
+   "a": "or1",
+   "b": "or2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T06 legs equal",
+   "a": [
+    "or1",
+    "ir1"
+   ],
+   "b": [
+    "or2",
+    "ir1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T06 right angle at apex",
+   "vertex": "ir1",
+   "a": "or1",
+   "b": "or2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T07 hypotenuse = 1",
+   "a": "or2",
+   "b": "or3",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T07 legs equal",
+   "a": [
+    "or2",
+    "ir2"
+   ],
+   "b": [
+    "or3",
+    "ir2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T07 right angle at apex",
+   "vertex": "ir2",
+   "a": "or2",
+   "b": "or3",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T08 hypotenuse = 1",
+   "a": "or3",
+   "b": "ot3",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T08 legs equal",
+   "a": [
+    "or3",
+    "ir2"
+   ],
+   "b": [
+    "ot3",
+    "ir2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T08 right angle at apex",
+   "vertex": "ir2",
+   "a": "or3",
+   "b": "ot3",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T09 hypotenuse = 1",
+   "a": "ot3",
+   "b": "ot2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T09 legs equal",
+   "a": [
+    "ot3",
+    "it2"
+   ],
+   "b": [
+    "ot2",
+    "it2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T09 right angle at apex",
+   "vertex": "it2",
+   "a": "ot3",
+   "b": "ot2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T10 hypotenuse = 1",
+   "a": "ot2",
+   "b": "ot1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T10 legs equal",
+   "a": [
+    "ot2",
+    "it1"
+   ],
+   "b": [
+    "ot1",
+    "it1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T10 right angle at apex",
+   "vertex": "it1",
+   "a": "ot2",
+   "b": "ot1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T11 hypotenuse = 1",
+   "a": "ot1",
+   "b": "ot0",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T11 legs equal",
+   "a": [
+    "ot1",
+    "it0"
+   ],
+   "b": [
+    "ot0",
+    "it0"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T11 right angle at apex",
+   "vertex": "it0",
+   "a": "ot1",
+   "b": "ot0",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T12 hypotenuse = 1",
+   "a": "ot0",
+   "b": "ol2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T12 legs equal",
+   "a": [
+    "ot0",
+    "it0"
+   ],
+   "b": [
+    "ol2",
+    "it0"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T12 right angle at apex",
+   "vertex": "it0",
+   "a": "ot0",
+   "b": "ol2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T13 hypotenuse = 1",
+   "a": "ol2",
+   "b": "ol1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T13 legs equal",
+   "a": [
+    "ol2",
+    "il1"
+   ],
+   "b": [
+    "ol1",
+    "il1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T13 right angle at apex",
+   "vertex": "il1",
+   "a": "ol2",
+   "b": "ol1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T14 hypotenuse = 1",
+   "a": "ol1",
+   "b": "ob0",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T14 legs equal",
+   "a": [
+    "ol1",
+    "ib0"
+   ],
+   "b": [
+    "ob0",
+    "ib0"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T14 right angle at apex",
+   "vertex": "ib0",
+   "a": "ol1",
+   "b": "ob0",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T15 hypotenuse = 1",
+   "a": "ib0",
+   "b": "ib1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T15 legs equal",
+   "a": [
+    "ib0",
+    "ob1"
+   ],
+   "b": [
+    "ib1",
+    "ob1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T15 right angle at apex",
+   "vertex": "ob1",
+   "a": "ib0",
+   "b": "ib1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T16 hypotenuse = 1",
+   "a": "ib1",
+   "b": "ib2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T16 legs equal",
+   "a": [
+    "ib1",
+    "ob2"
+   ],
+   "b": [
+    "ib2",
+    "ob2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T16 right angle at apex",
+   "vertex": "ob2",
+   "a": "ib1",
+   "b": "ib2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T17 hypotenuse = 1",
+   "a": "ib2",
+   "b": "ib3",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T17 legs equal",
+   "a": [
+    "ib2",
+    "ob3"
+   ],
+   "b": [
+    "ib3",
+    "ob3"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T17 right angle at apex",
+   "vertex": "ob3",
+   "a": "ib2",
+   "b": "ib3",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T18 hypotenuse = 1",
+   "a": "ib3",
+   "b": "ir1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T18 legs equal",
+   "a": [
+    "ib3",
+    "or1"
+   ],
+   "b": [
+    "ir1",
+    "or1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T18 right angle at apex",
+   "vertex": "or1",
+   "a": "ib3",
+   "b": "ir1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T19 hypotenuse = 1",
+   "a": "ir1",
+   "b": "ir2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T19 legs equal",
+   "a": [
+    "ir1",
+    "or2"
+   ],
+   "b": [
+    "ir2",
+    "or2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T19 right angle at apex",
+   "vertex": "or2",
+   "a": "ir1",
+   "b": "ir2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T20 hypotenuse = 1",
+   "a": "ir2",
+   "b": "it2",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T20 legs equal",
+   "a": [
+    "ir2",
+    "ot3"
+   ],
+   "b": [
+    "it2",
+    "ot3"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T20 right angle at apex",
+   "vertex": "ot3",
+   "a": "ir2",
+   "b": "it2",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T21 hypotenuse = 1",
+   "a": "it2",
+   "b": "it1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T21 legs equal",
+   "a": [
+    "it2",
+    "ot2"
+   ],
+   "b": [
+    "it1",
+    "ot2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T21 right angle at apex",
+   "vertex": "ot2",
+   "a": "it2",
+   "b": "it1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T22 hypotenuse = 1",
+   "a": "it1",
+   "b": "it0",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T22 legs equal",
+   "a": [
+    "it1",
+    "ot1"
+   ],
+   "b": [
+    "it0",
+    "ot1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T22 right angle at apex",
+   "vertex": "ot1",
+   "a": "it1",
+   "b": "it0",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T23 hypotenuse = 1",
+   "a": "it0",
+   "b": "il1",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T23 legs equal",
+   "a": [
+    "it0",
+    "ol2"
+   ],
+   "b": [
+    "il1",
+    "ol2"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T23 right angle at apex",
+   "vertex": "ol2",
+   "a": "it0",
+   "b": "il1",
+   "deg": 90,
+   "tol_deg": 0.0001
+  },
+  {
+   "type": "distance",
+   "label": "T24 hypotenuse = 1",
+   "a": "il1",
+   "b": "ib0",
+   "value": 1.0,
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "equal",
+   "label": "T24 legs equal",
+   "a": [
+    "il1",
+    "ol1"
+   ],
+   "b": [
+    "ib0",
+    "ol1"
+   ],
+   "tol_pct": 0.0001
+  },
+  {
+   "type": "angle",
+   "label": "T24 right angle at apex",
+   "vertex": "ol1",
+   "a": "il1",
+   "b": "ib0",
+   "deg": 90,
+   "tol_deg": 0.0001
+  }
+ ],
+ "paths": [
+  {
+   "points": [
+    "ob0",
+    "ob1",
+    "ib0"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ob1",
+    "ob2",
+    "ib1"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ob2",
+    "ob3",
+    "ib2"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ob3",
+    "ob4",
+    "ib3"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "or3",
+    "ot3",
+    "ir2"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ot3",
+    "ot2",
+    "it2"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ot2",
+    "ot1",
+    "it1"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ot1",
+    "ot0",
+    "it0"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ib3",
+    "ir1",
+    "or1"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ir1",
+    "ir2",
+    "or2"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "it0",
+    "il1",
+    "ol2"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "il1",
+    "ib0",
+    "ol1"
+   ],
+   "close": true,
+   "fill": "dark"
+  },
+  {
+   "points": [
+    "ob4",
+    "or1",
+    "ib3"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "or1",
+    "or2",
+    "ir1"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "or2",
+    "or3",
+    "ir2"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ot0",
+    "ol2",
+    "it0"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ol2",
+    "ol1",
+    "il1"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ol1",
+    "ob0",
+    "ib0"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ib0",
+    "ib1",
+    "ob1"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ib1",
+    "ib2",
+    "ob2"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ib2",
+    "ib3",
+    "ob3"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ir2",
+    "it2",
+    "ot3"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "it2",
+    "it1",
+    "ot2"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "it1",
+    "it0",
+    "ot1"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ob0",
+    "ob4",
+    "or3",
+    "ot0"
+   ],
+   "close": true
+  },
+  {
+   "points": [
+    "ib0",
+    "ib3",
+    "ir2",
+    "it0"
+   ],
+   "close": true
+  }
+ ],
+ "labels": [],
+ "dots": []
+}

@@ -1,0 +1,2701 @@
+// program=zoro.dll imageBase=10000000
+// specs=[zstr::, zwstr::, zwsharedstring, zwstrarray, zwstrlist, zstringitem, zstringlist]
+
+// =========================================================
+// zWSharedString::zWSharedString
+// entry=10001d10
+// signature=undefined zWSharedString(zWSharedString * this, wchar_t * param_1, uint param_2)
+// bodyBytes=153
+// =========================================================
+
+/* public: __thiscall zWSharedString::zWSharedString(wchar_t const *,unsigned int) */
+
+zWSharedString * __thiscall
+zWSharedString::zWSharedString(zWSharedString *this,wchar_t *param_1,uint param_2)
+
+{
+  zSharedStrBuffer *this_00;
+  undefined4 uVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1d10  168  ??0zWSharedString@@QAE@PB_WI@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5ff;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = 0;
+  this_00 = operator_new(0x10);
+  local_8 = 0;
+  uVar1 = zSharedStrBuffer::zSharedStrBuffer(this_00,param_1,param_2);
+  local_8 = 0xffffffff;
+  *(undefined4 *)(this + 4) = uVar1;
+  zSharedBuffer<unsigned_char>::AddRef(*(zSharedBuffer<unsigned_char> **)(this + 4));
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zWSharedString::zWSharedString
+// entry=10001db0
+// signature=undefined zWSharedString(zWSharedString * this, zSharedStrBuffer * param_1)
+// bodyBytes=54
+// =========================================================
+
+/* public: __thiscall zWSharedString::zWSharedString(class zSharedStrBuffer *) */
+
+zWSharedString * __thiscall
+zWSharedString::zWSharedString(zWSharedString *this,zSharedStrBuffer *param_1)
+
+{
+                    /* 0x1db0  167  ??0zWSharedString@@QAE@PAVzSharedStrBuffer@@@Z */
+  *(undefined ***)this = vftable;
+  *(zSharedStrBuffer **)(this + 4) = param_1;
+  if (*(int *)(this + 4) != 0) {
+    zSharedBuffer<unsigned_char>::AddRef(*(zSharedBuffer<unsigned_char> **)(this + 4));
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// zWSharedString::zWSharedString
+// entry=10001df0
+// signature=undefined zWSharedString(zWSharedString * this, zWSharedString * param_1)
+// bodyBytes=57
+// =========================================================
+
+/* public: __thiscall zWSharedString::zWSharedString(class zWSharedString const &) */
+
+zWSharedString * __thiscall
+zWSharedString::zWSharedString(zWSharedString *this,zWSharedString *param_1)
+
+{
+                    /* 0x1df0  166  ??0zWSharedString@@QAE@ABV0@@Z */
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  if (*(int *)(this + 4) != 0) {
+    zSharedBuffer<unsigned_char>::AddRef(*(zSharedBuffer<unsigned_char> **)(this + 4));
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// zWSharedString::~zWSharedString
+// entry=10001e30
+// signature=void ~zWSharedString(zWSharedString * this)
+// bodyBytes=82
+// =========================================================
+
+/* public: virtual __thiscall zWSharedString::~zWSharedString(void) */
+
+void __thiscall zWSharedString::~zWSharedString(zWSharedString *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0x1e30  275  ??1zWSharedString@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5d0;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  if (*(int *)(this + 4) != 0) {
+    zSharedBuffer<unsigned_char>::Release(*(zSharedBuffer<unsigned_char> **)(this + 4));
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zWSharedString::GetLenght
+// entry=10001e90
+// signature=uint GetLenght(zWSharedString * this)
+// bodyBytes=35
+// =========================================================
+
+/* public: unsigned int __thiscall zWSharedString::GetLenght(void)const  */
+
+uint __thiscall zWSharedString::GetLenght(zWSharedString *this)
+
+{
+  uchar *puVar1;
+  
+                    /* 0x1e90  849  ?GetLenght@zWSharedString@@QBEIXZ */
+  if (*(int *)(this + 4) == 0) {
+    puVar1 = (uchar *)0x0;
+  }
+  else {
+    puVar1 = zMemory::operator_unsigned_char_(*(zMemory **)(this + 4));
+  }
+  return (uint)puVar1;
+}
+
+
+
+// =========================================================
+// zWSharedString::operator_wchar_t_const*
+// entry=10001ec0
+// signature=wchar_t * operator_wchar_t_const*(zWSharedString * this)
+// bodyBytes=35
+// =========================================================
+
+/* public: __thiscall zWSharedString::operator wchar_t const *(void)const  */
+
+wchar_t * __thiscall zWSharedString::operator_wchar_t_const_(zWSharedString *this)
+
+{
+  wchar_t *pwVar1;
+  
+                    /* 0x1ec0  504  ??BzWSharedString@@QBEPB_WXZ
+                       0x1ec0  888  ?GetString@zWSharedString@@QBEPB_WXZ */
+  if (*(int *)(this + 4) == 0) {
+    pwVar1 = (wchar_t *)0x0;
+  }
+  else {
+    pwVar1 = (wchar_t *)
+             zSharedBuffer<unsigned_char>::operator_unsigned_char_
+                       (*(zSharedBuffer<unsigned_char> **)(this + 4));
+  }
+  return pwVar1;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10001fa0
+// signature=undefined zwstr(zwstr * this)
+// bodyBytes=24
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(void) */
+
+zwstr * __thiscall zwstr::zwstr(zwstr *this)
+
+{
+                    /* 0x1fa0  220  ??0zwstr@@QAE@XZ */
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,0);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10001fc0
+// signature=undefined zwstr(zwstr * this, zwstr * param_1)
+// bodyBytes=42
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(class zwstr const &) */
+
+zwstr * __thiscall zwstr::zwstr(zwstr *this,zwstr *param_1)
+
+{
+  uchar *puVar1;
+  sqlite3 *psVar2;
+  
+                    /* 0x1fc0  214  ??0zwstr@@QAE@ABV0@@Z */
+  puVar1 = zSharedBuffer<unsigned_char>::operator_unsigned_char_
+                     ((zSharedBuffer<unsigned_char> *)param_1);
+  psVar2 = sqDatabase::operator_struct_sqlite3_((sqDatabase *)param_1);
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,(wchar_t *)psVar2,(int)puVar1);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10001ff0
+// signature=undefined zwstr(zwstr * this, wchar_t param_1)
+// bodyBytes=30
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(wchar_t) */
+
+zwstr * __thiscall zwstr::zwstr(zwstr *this,wchar_t param_1)
+
+{
+                    /* 0x1ff0  221  ??0zwstr@@QAE@_W@Z */
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,&param_1,1);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10002010
+// signature=undefined zwstr(zwstr * this, wchar_t * param_1)
+// bodyBytes=28
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(wchar_t const *) */
+
+zwstr * __thiscall zwstr::zwstr(zwstr *this,wchar_t *param_1)
+
+{
+                    /* 0x2010  218  ??0zwstr@@QAE@PB_W@Z */
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,param_1);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10002030
+// signature=undefined zwstr(zwstr * this, wchar_t * param_1, int param_2)
+// bodyBytes=32
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(wchar_t const *,int) */
+
+zwstr * __thiscall zwstr::zwstr(zwstr *this,wchar_t *param_1,int param_2)
+
+{
+                    /* 0x2030  219  ??0zwstr@@QAE@PB_WH@Z */
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,param_1,param_2);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10002050
+// signature=undefined zwstr(zwstr * this, basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>_> * param_1)
+// bodyBytes=42
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(class std::basic_string<wchar_t,struct
+   std::char_traits<wchar_t>,class std::allocator<wchar_t> > const &) */
+
+zwstr * __thiscall
+zwstr::zwstr(zwstr *this,
+            basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>_> *param_1)
+
+{
+  uint uVar1;
+  wchar_t *pwVar2;
+  
+                    /* 0x2050  215
+                       ??0zwstr@@QAE@ABV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+                        */
+  uVar1 = FUN_1000a130((_String_alloc<std::_String_base_types<char,std::allocator<char>_>_> *)
+                       param_1);
+  pwVar2 = (wchar_t *)FID_conflict_c_str((zEncoder *)param_1);
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,pwVar2,uVar1);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=10002080
+// signature=undefined zwstr(zwstr * this, zStringTemplate<wchar_t,unicode_string_manager> * param_1)
+// bodyBytes=28
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(class zStringTemplate<wchar_t,class unicode_string_manager> const
+   &) */
+
+zwstr * __thiscall
+zwstr::zwstr(zwstr *this,zStringTemplate<wchar_t,unicode_string_manager> *param_1)
+
+{
+                    /* 0x2080  216
+                       ??0zwstr@@QAE@ABV?$zStringTemplate@_WVunicode_string_manager@@@@@Z */
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,
+             (zStringTemplate<wchar_t,class_unicode_string_manager> *)param_1);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::zwstr
+// entry=100020a0
+// signature=undefined zwstr(zwstr * this, char * param_1)
+// bodyBytes=211
+// =========================================================
+
+/* public: __thiscall zwstr::zwstr(char const *) */
+
+void __thiscall zwstr::zwstr(zwstr *this,char *param_1)
+
+{
+  char cVar1;
+  uint uVar2;
+  wchar_t *pwVar3;
+  char *local_34;
+  _String_alloc<std::_String_base_types<char,std::allocator<char>_>_> local_2c [24];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x20a0  217  ??0zwstr@@QAE@PBD@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a630;
+  local_10 = ExceptionList;
+  local_14 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  zStringTemplate<wchar_t,unicode_string_manager>::zStringTemplate<wchar_t,unicode_string_manager>
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,0);
+  local_8 = 0;
+  if (param_1 != (char *)0x0) {
+    local_34 = param_1;
+    do {
+      cVar1 = *local_34;
+      local_34 = local_34 + 1;
+    } while (cVar1 != '\0');
+    if (1 < (uint)((int)local_34 - (int)(param_1 + 1))) {
+      zEncoder::AnsiToUnicode((char *)local_2c,(uint)param_1);
+      local_8._0_1_ = 1;
+      uVar2 = FUN_1000a130(local_2c);
+      pwVar3 = (wchar_t *)FID_conflict_c_str((zEncoder *)local_2c);
+      zStringTemplate<wchar_t,unicode_string_manager>::SetString
+                ((zStringTemplate<wchar_t,unicode_string_manager> *)this,pwVar3,uVar2);
+      local_8 = (uint)local_8._1_3_ << 8;
+      ~basic_string<>((sqRecord *)local_2c);
+    }
+  }
+  local_8 = 0xffffffff;
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// zwstr::Enum
+// entry=10002180
+// signature=void Enum(zwstr * this, function<void___cdecl(wchar_t)> param_1)
+// bodyBytes=131
+// =========================================================
+
+/* public: void __thiscall zwstr::Enum(class std::function<void __cdecl(wchar_t)>) */
+
+void __thiscall zwstr::Enum(zwstr *this)
+
+{
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x2180  742  ?Enum@zwstr@@QAEXV?$function@$$A6AX_W@Z@std@@@Z */
+  puStack_c = &LAB_1002a668;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  for (local_14 = 0; local_14 < *(uint *)(this + 4); local_14 = local_14 + 1) {
+    FUN_10008690((int)&stack0x00000004);
+  }
+  local_8 = 0xffffffff;
+  FUN_100086e0((zEncoder *)&stack0x00000004);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zwstr::CompareFromFirst
+// entry=10002210
+// signature=int CompareFromFirst(zwstr * this, wchar_t * param_1)
+// bodyBytes=129
+// =========================================================
+
+/* public: int __thiscall zwstr::CompareFromFirst(wchar_t const *) */
+
+int __thiscall zwstr::CompareFromFirst(zwstr *this,wchar_t *param_1)
+
+{
+  int iVar1;
+  int local_14;
+  int local_8;
+  
+                    /* 0x2210  684  ?CompareFromFirst@zwstr@@QAEHPB_W@Z */
+  iVar1 = zrt_wcslen(param_1);
+  local_14 = *(int *)(this + 4);
+  if (iVar1 < local_14) {
+    local_14 = iVar1;
+  }
+  for (local_8 = 0;
+      (iVar1 = local_14, local_8 < local_14 &&
+      (iVar1 = local_8, param_1[local_8] == *(wchar_t *)(*(int *)this + local_8 * 2)));
+      local_8 = local_8 + 1) {
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zstr::~zstr
+// entry=100022d0
+// signature=void ~zstr(zstr * this)
+// bodyBytes=19
+// =========================================================
+
+/* public: __thiscall zstr::~zstr(void) */
+
+void __thiscall zstr::~zstr(zstr *this)
+
+{
+                    /* 0x22d0  292  ??1zstr@@QAE@XZ
+                       0x22d0  293  ??1zwstr@@QAE@XZ */
+  zStringTemplate<char,ansi_string_manager>::~zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this);
+  return;
+}
+
+
+
+// =========================================================
+// zwstr::operator=
+// entry=100022f0
+// signature=zwstr * operator=(zwstr * this, zwstr * param_1)
+// bodyBytes=28
+// =========================================================
+
+/* public: class zwstr & __thiscall zwstr::operator=(class zwstr const &) */
+
+zwstr * __thiscall zwstr::operator=(zwstr *this,zwstr *param_1)
+
+{
+                    /* 0x22f0  401  ??4zwstr@@QAEAAV0@ABV0@@Z */
+  zStringTemplate<wchar_t,unicode_string_manager>::operator=
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,
+             (zStringTemplate<wchar_t,class_unicode_string_manager> *)param_1);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=10002310
+// signature=undefined zstr(zstr * this)
+// bodyBytes=24
+// =========================================================
+
+/* public: __thiscall zstr::zstr(void) */
+
+zstr * __thiscall zstr::zstr(zstr *this)
+
+{
+                    /* 0x2310  213  ??0zstr@@QAE@XZ */
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,0);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=10002330
+// signature=undefined zstr(zstr * this, int param_1)
+// bodyBytes=103
+// =========================================================
+
+/* public: __thiscall zstr::zstr(int) */
+
+zstr * __thiscall zstr::zstr(zstr *this,int param_1)
+
+{
+  uint uVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x2330  209  ??0zstr@@QAE@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a698;
+  local_10 = ExceptionList;
+  uVar1 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,0);
+  local_8 = 0;
+  Format(this,(char *)this,&DAT_1002c520,param_1,uVar1);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=100023a0
+// signature=undefined zstr(zstr * this, char * param_1)
+// bodyBytes=28
+// =========================================================
+
+/* public: __thiscall zstr::zstr(char const *) */
+
+zstr * __thiscall zstr::zstr(zstr *this,char *param_1)
+
+{
+                    /* 0x23a0  210  ??0zstr@@QAE@PBD@Z */
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,param_1);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=100023c0
+// signature=undefined zstr(zstr * this, char * param_1, int param_2)
+// bodyBytes=32
+// =========================================================
+
+/* public: __thiscall zstr::zstr(char const *,int) */
+
+zstr * __thiscall zstr::zstr(zstr *this,char *param_1,int param_2)
+
+{
+                    /* 0x23c0  211  ??0zstr@@QAE@PBDH@Z */
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,param_1,param_2);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=100023e0
+// signature=undefined zstr(zstr * this, char param_1)
+// bodyBytes=30
+// =========================================================
+
+/* public: __thiscall zstr::zstr(char) */
+
+zstr * __thiscall zstr::zstr(zstr *this,char param_1)
+
+{
+                    /* 0x23e0  208  ??0zstr@@QAE@D@Z */
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,&param_1,1);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=10002400
+// signature=undefined zstr(zstr * this, zstr * param_1)
+// bodyBytes=28
+// =========================================================
+
+/* public: __thiscall zstr::zstr(class zstr const &) */
+
+zstr * __thiscall zstr::zstr(zstr *this,zstr *param_1)
+
+{
+                    /* 0x2400  207  ??0zstr@@QAE@ABV0@@Z */
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,
+             (zStringTemplate<char,class_ansi_string_manager> *)param_1);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::zstr
+// entry=10002420
+// signature=undefined zstr(zstr * this, wchar_t * param_1)
+// bodyBytes=277
+// =========================================================
+
+/* public: __thiscall zstr::zstr(wchar_t const *) */
+
+zstr * __thiscall zstr::zstr(zstr *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  undefined4 uVar2;
+  uint local_20;
+  wchar_t *local_1c;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x2420  212  ??0zstr@@QAE@PB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a6c8;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zStringTemplate<char,ansi_string_manager>::zStringTemplate<char,ansi_string_manager>
+            ((zStringTemplate<char,ansi_string_manager> *)this,0);
+  local_8 = 0;
+  local_1c = param_1;
+  do {
+    wVar1 = *local_1c;
+    local_1c = local_1c + 1;
+  } while (wVar1 != L'\0');
+  *(int *)(this + 4) = (int)local_1c - (int)(param_1 + 1) >> 1;
+  if (*(int *)this != 0) {
+    free(*(void **)this);
+  }
+  uVar2 = zrt_new(*(int *)(this + 4) + 1);
+  *(undefined4 *)this = uVar2;
+  for (local_20 = 0; local_20 < *(uint *)(this + 4); local_20 = local_20 + 1) {
+    *(char *)(*(int *)this + local_20) = (char)param_1[local_20];
+  }
+  *(undefined1 *)(*(int *)this + *(int *)(this + 4)) = 0;
+  *(undefined4 *)(this + 8) = *(undefined4 *)(this + 4);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::operator=
+// entry=10002540
+// signature=char * operator=(zstr * this, wchar_t * param_1)
+// bodyBytes=213
+// =========================================================
+
+/* public: char const * __thiscall zstr::operator=(wchar_t const *) */
+
+char * __thiscall zstr::operator=(zstr *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  undefined4 uVar2;
+  uint local_14;
+  wchar_t *local_10;
+  
+                    /* 0x2540  400  ??4zstr@@QAEPBDPB_W@Z */
+  local_10 = param_1;
+  do {
+    wVar1 = *local_10;
+    local_10 = local_10 + 1;
+  } while (wVar1 != L'\0');
+  *(int *)(this + 4) = (int)local_10 - (int)(param_1 + 1) >> 1;
+  if (*(int *)this != 0) {
+    free(*(void **)this);
+  }
+  uVar2 = zrt_new(*(int *)(this + 4) + 1);
+  *(undefined4 *)this = uVar2;
+  for (local_14 = 0; local_14 < *(uint *)(this + 4); local_14 = local_14 + 1) {
+    *(char *)(*(int *)this + local_14) = (char)param_1[local_14];
+  }
+  *(undefined1 *)(*(int *)this + *(int *)(this + 4)) = 0;
+  *(undefined4 *)(this + 8) = *(undefined4 *)(this + 4);
+  return *(char **)this;
+}
+
+
+
+// =========================================================
+// zstr::operator=
+// entry=10002640
+// signature=zstr * operator=(zstr * this, zstr * param_1)
+// bodyBytes=28
+// =========================================================
+
+/* public: class zstr & __thiscall zstr::operator=(class zstr const &) */
+
+zstr * __thiscall zstr::operator=(zstr *this,zstr *param_1)
+
+{
+                    /* 0x2640  399  ??4zstr@@QAEAAV0@ABV0@@Z */
+  zStringTemplate<char,ansi_string_manager>::operator=
+            ((zStringTemplate<char,ansi_string_manager> *)this,
+             (zStringTemplate<char,class_ansi_string_manager> *)param_1);
+  return this;
+}
+
+
+
+// =========================================================
+// zWstrArray::Clone
+// entry=10002950
+// signature=wchar_t * Clone(zWstrArray * this, wchar_t * param_1)
+// bodyBytes=105
+// =========================================================
+
+/* private: wchar_t * __thiscall zWstrArray::Clone(wchar_t const *) */
+
+wchar_t * __thiscall zWstrArray::Clone(zWstrArray *this,wchar_t *param_1)
+
+{
+  longlong lVar1;
+  int iVar2;
+  wchar_t *_Dst;
+  
+                    /* 0x2950  673  ?Clone@zWstrArray@@AAEPA_WPB_W@Z */
+  iVar2 = lstrlenW(param_1);
+  lVar1 = (ulonglong)(iVar2 + 1) * 2;
+  _Dst = (wchar_t *)zrt_new(-(uint)((int)((ulonglong)lVar1 >> 0x20) != 0) | (uint)lVar1);
+  memcpy(_Dst,param_1,iVar2 << 1);
+  _Dst[iVar2] = L'\0';
+  return _Dst;
+}
+
+
+
+// =========================================================
+// zWstrArray::zWstrArray
+// entry=100029c0
+// signature=undefined zWstrArray(zWstrArray * this)
+// bodyBytes=33
+// =========================================================
+
+/* public: __thiscall zWstrArray::zWstrArray(void) */
+
+zWstrArray * __thiscall zWstrArray::zWstrArray(zWstrArray *this)
+
+{
+                    /* 0x29c0  173  ??0zWstrArray@@QAE@XZ */
+  zTypedPtrArray<wchar_t>::zTypedPtrArray<wchar_t>((zTypedPtrArray<wchar_t> *)this,0x40);
+  *(undefined ***)this = vftable;
+  return this;
+}
+
+
+
+// =========================================================
+// zWstrArray::zWstrArray
+// entry=100029f0
+// signature=undefined zWstrArray(zWstrArray * this, wchar_t * param_1, wchar_t param_2)
+// bodyBytes=321
+// =========================================================
+
+/* public: __thiscall zWstrArray::zWstrArray(wchar_t const *,wchar_t) */
+
+zWstrArray * __thiscall zWstrArray::zWstrArray(zWstrArray *this,wchar_t *param_1,wchar_t param_2)
+
+{
+  longlong lVar1;
+  int local_28;
+  char *local_24;
+  int local_20;
+  zWstrArray *local_1c;
+  int local_18;
+  int local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x29f0  172  ??0zWstrArray@@QAE@PB_W_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a6f8;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_1c = this;
+  zTypedPtrArray<wchar_t>::zTypedPtrArray<wchar_t>((zTypedPtrArray<wchar_t> *)this,0x40);
+  local_8 = 0;
+  *(undefined ***)local_1c = vftable;
+  local_20 = lstrlenW(param_1);
+  local_28 = 0;
+  for (local_14 = 0; local_14 <= local_20; local_14 = local_14 + 1) {
+    if ((param_1[local_14] == param_2) || (local_14 == local_20)) {
+      local_18 = local_14 - local_28;
+      if ((0 < local_18) || ((0 < local_14 && (local_14 < local_20)))) {
+        lVar1 = (ulonglong)(local_18 + 1) * 2;
+        local_24 = (char *)zrt_new(-(uint)((int)((ulonglong)lVar1 >> 0x20) != 0) | (uint)lVar1);
+        if (0 < local_18) {
+          memcpy(local_24,param_1 + local_28,local_18 << 1);
+        }
+        (local_24 + local_18 * 2)[0] = '\0';
+        (local_24 + local_18 * 2)[1] = '\0';
+        zArrayBase<char*>::Add((zArrayBase<char*> *)local_1c,&local_24);
+      }
+      local_28 = local_14 + 1;
+    }
+  }
+  ExceptionList = local_10;
+  return local_1c;
+}
+
+
+
+// =========================================================
+// zWstrArray::Append
+// entry=10002b40
+// signature=void Append(zWstrArray * this, wchar_t * param_1, int param_2)
+// bodyBytes=101
+// =========================================================
+
+/* public: void __thiscall zWstrArray::Append(wchar_t const *,int) */
+
+void __thiscall zWstrArray::Append(zWstrArray *this,wchar_t *param_1,int param_2)
+
+{
+  longlong lVar1;
+  char *local_8;
+  
+                    /* 0x2b40  629  ?Append@zWstrArray@@QAEXPB_WH@Z */
+  lVar1 = (ulonglong)(param_2 + 1) * 2;
+  local_8 = (char *)zrt_new(-(uint)((int)((ulonglong)lVar1 >> 0x20) != 0) | (uint)lVar1);
+  memcpy(local_8,param_1,param_2 << 1);
+  (local_8 + param_2 * 2)[0] = '\0';
+  (local_8 + param_2 * 2)[1] = '\0';
+  zArrayBase<char*>::Add((zArrayBase<char*> *)this,&local_8);
+  return;
+}
+
+
+
+// =========================================================
+// zWstrArray::Add
+// entry=10002bb0
+// signature=uint Add(zWstrArray * this, wchar_t * param_1)
+// bodyBytes=114
+// =========================================================
+
+/* public: virtual unsigned int __thiscall zWstrArray::Add(wchar_t const *) */
+
+uint __thiscall zWstrArray::Add(zWstrArray *this,wchar_t *param_1)
+
+{
+  longlong lVar1;
+  uint uVar2;
+  char *local_c;
+  int local_8;
+  
+                    /* 0x2bb0  603  ?Add@zWstrArray@@UAEIPB_W@Z */
+  local_8 = lstrlenW(param_1);
+  lVar1 = (ulonglong)(local_8 + 1) * 2;
+  local_c = (char *)zrt_new(-(uint)((int)((ulonglong)lVar1 >> 0x20) != 0) | (uint)lVar1);
+  memcpy(local_c,param_1,local_8 << 1);
+  (local_c + local_8 * 2)[0] = '\0';
+  (local_c + local_8 * 2)[1] = '\0';
+  uVar2 = zArrayBase<char*>::Add((zArrayBase<char*> *)this,&local_c);
+  return uVar2;
+}
+
+
+
+// =========================================================
+// zWstrArray::Insert
+// entry=10002c30
+// signature=void Insert(zWstrArray * this, uint param_1, wchar_t * param_2)
+// bodyBytes=118
+// =========================================================
+
+/* public: virtual void __thiscall zWstrArray::Insert(unsigned int,wchar_t const *) */
+
+void __thiscall zWstrArray::Insert(zWstrArray *this,uint param_1,wchar_t *param_2)
+
+{
+  longlong lVar1;
+  char *local_c;
+  int local_8;
+  
+                    /* 0x2c30  930  ?Insert@zWstrArray@@UAEXIPB_W@Z */
+  local_8 = lstrlenW(param_2);
+  lVar1 = (ulonglong)(local_8 + 1) * 2;
+  local_c = (char *)zrt_new(-(uint)((int)((ulonglong)lVar1 >> 0x20) != 0) | (uint)lVar1);
+  memcpy(local_c,param_2,local_8 << 1);
+  (local_c + local_8 * 2)[0] = '\0';
+  (local_c + local_8 * 2)[1] = '\0';
+  zArrayBase<char*>::Insert((zArrayBase<char*> *)this,param_1,&local_c);
+  return;
+}
+
+
+
+// =========================================================
+// zWstrArray::SetAt
+// entry=10002cb0
+// signature=int SetAt(zWstrArray * this, uint param_1, wchar_t * param_2)
+// bodyBytes=103
+// =========================================================
+
+/* public: virtual int __thiscall zWstrArray::SetAt(unsigned int,wchar_t const *) */
+
+int __thiscall zWstrArray::SetAt(zWstrArray *this,uint param_1,wchar_t *param_2)
+
+{
+  wchar_t *pwVar1;
+  int iVar2;
+  
+                    /* 0x2cb0  1186  ?SetAt@zWstrArray@@UAEHIPB_W@Z */
+  if (param_1 < *(uint *)(this + 8)) {
+    if (*(int *)(*(int *)(this + 4) + param_1 * 4) != 0) {
+      FUN_10028e01(*(void **)(*(int *)(this + 4) + param_1 * 4));
+    }
+    pwVar1 = Clone(this,param_2);
+    *(wchar_t **)(*(int *)(this + 4) + param_1 * 4) = pwVar1;
+    iVar2 = 1;
+  }
+  else {
+    iVar2 = 0;
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// zWstrArray::Reset
+// entry=10002d20
+// signature=void Reset(zWstrArray * this, uint param_1, wchar_t * param_2)
+// bodyBytes=92
+// =========================================================
+
+/* public: void __thiscall zWstrArray::Reset(unsigned int,wchar_t const *) */
+
+void __thiscall zWstrArray::Reset(zWstrArray *this,uint param_1,wchar_t *param_2)
+
+{
+  wchar_t *pwVar1;
+  
+                    /* 0x2d20  1142  ?Reset@zWstrArray@@QAEXIPB_W@Z */
+  if (param_1 < *(uint *)(this + 8)) {
+    if (*(int *)(*(int *)(this + 4) + param_1 * 4) != 0) {
+      free(*(void **)(*(int *)(this + 4) + param_1 * 4));
+    }
+    pwVar1 = Clone(this,param_2);
+    *(wchar_t **)(*(int *)(this + 4) + param_1 * 4) = pwVar1;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zWstrArray::Load
+// entry=10002d80
+// signature=void Load(zWstrArray * this, wchar_t * param_1)
+// bodyBytes=244
+// =========================================================
+
+/* public: void __thiscall zWstrArray::Load(wchar_t const *) */
+
+void __thiscall zWstrArray::Load(zWstrArray *this,wchar_t *param_1)
+
+{
+  sqlite3 *psVar1;
+  zStringTemplate<char,ansi_string_manager> local_48 [12];
+  zwstr local_3c [12];
+  zwstr local_30 [12];
+  zStringTemplate<wchar_t,unicode_string_manager> *local_24;
+  zStringTemplate<wchar_t,unicode_string_manager> *local_20;
+  zWstrArray *local_1c;
+  int local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x2d80  1003  ?Load@zWstrArray@@QAEXPB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a738;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_1c = this;
+  zwstr::zwstr(local_30,param_1);
+  local_8 = 0;
+  local_14 = 0;
+  while (local_18 = zStringTemplate<wchar_t,unicode_string_manager>::Find
+                              ((zStringTemplate<wchar_t,unicode_string_manager> *)local_30,L'\t',
+                               local_14), -1 < local_18) {
+    local_24 = (zStringTemplate<wchar_t,unicode_string_manager> *)
+               zStringTemplate<wchar_t,unicode_string_manager>::Mid
+                         ((zStringTemplate<wchar_t,unicode_string_manager> *)local_30,(uint)local_48
+                          ,local_14);
+    local_8._0_1_ = 1;
+    local_20 = local_24;
+    zwstr::zwstr(local_3c,local_24);
+    local_8._0_1_ = 3;
+    zStringTemplate<char,ansi_string_manager>::~zStringTemplate<char,ansi_string_manager>(local_48);
+    psVar1 = sqDatabase::operator_struct_sqlite3_((sqDatabase *)local_3c);
+    (**(code **)(*(int *)local_1c + 8))(psVar1);
+    local_14 = local_18 + 1;
+    local_8 = (uint)local_8._1_3_ << 8;
+    zstr::~zstr((zstr *)local_3c);
+  }
+  local_8 = 0xffffffff;
+  zstr::~zstr((zstr *)local_30);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zWstrArray::operator[]
+// entry=10002e80
+// signature=wchar_t * operator[](zWstrArray * this, int param_1)
+// bodyBytes=27
+// =========================================================
+
+/* public: wchar_t const * __thiscall zWstrArray::operator[](int)const  */
+
+wchar_t * __thiscall zWstrArray::operator[](zWstrArray *this,int param_1)
+
+{
+  char **ppcVar1;
+  
+                    /* 0x2e80  486  ??AzWstrArray@@QBEPB_WH@Z
+                       0x2e80  784  ?GetAt@zWstrArray@@QBEPB_WH@Z */
+  ppcVar1 = zArrayBase<char*>::GetAt((zArrayBase<char*> *)this,param_1);
+  return (wchar_t *)*ppcVar1;
+}
+
+
+
+// =========================================================
+// zWstrArray::~zWstrArray
+// entry=10002ef0
+// signature=void ~zWstrArray(zWstrArray * this)
+// bodyBytes=19
+// =========================================================
+
+/* public: virtual __thiscall zWstrArray::~zWstrArray(void) */
+
+void __thiscall zWstrArray::~zWstrArray(zWstrArray *this)
+
+{
+                    /* 0x2ef0  277  ??1zWstrArray@@UAE@XZ */
+  zTypedPtrArray<wchar_t>::~zTypedPtrArray<wchar_t>((zTypedPtrArray<wchar_t> *)this);
+  return;
+}
+
+
+
+// =========================================================
+// zWstrArray::zWstrArray
+// entry=10002f10
+// signature=undefined zWstrArray(zWstrArray * this, zWstrArray * param_1)
+// bodyBytes=37
+// =========================================================
+
+/* public: __thiscall zWstrArray::zWstrArray(class zWstrArray &&) */
+
+zWstrArray * __thiscall zWstrArray::zWstrArray(zWstrArray *this,zWstrArray *param_1)
+
+{
+                    /* 0x2f10  170  ??0zWstrArray@@QAE@$$QAV0@@Z
+                       0x2f10  171  ??0zWstrArray@@QAE@ABV0@@Z */
+  zTypedPtrArray<wchar_t>::zTypedPtrArray<wchar_t>
+            ((zTypedPtrArray<wchar_t> *)this,(zTypedPtrArray<wchar_t> *)param_1);
+  *(undefined ***)this = vftable;
+  return this;
+}
+
+
+
+// =========================================================
+// zWstrList::zWstrList
+// entry=100030a0
+// signature=undefined zWstrList(zWstrList * this, zWstrList * param_1)
+// bodyBytes=147
+// =========================================================
+
+/* public: __thiscall zWstrList::zWstrList(class zWstrList const &) */
+
+zWstrList * __thiscall zWstrList::zWstrList(zWstrList *this,zWstrList *param_1)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x30a0  174  ??0zWstrList@@QAE@ABV0@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a768;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zSection::zSection((zSection *)this,(zSection *)param_1);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  zwstr::zwstr((zwstr *)(this + 0x14),(zwstr *)(param_1 + 0x14));
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zWstrList::operator=
+// entry=10003140
+// signature=zWstrList * operator=(zWstrList * this, zWstrList * param_1)
+// bodyBytes=82
+// =========================================================
+
+/* public: class zWstrList & __thiscall zWstrList::operator=(class zWstrList const &) */
+
+zWstrList * __thiscall zWstrList::operator=(zWstrList *this,zWstrList *param_1)
+
+{
+                    /* 0x3140  383  ??4zWstrList@@QAEAAV0@ABV0@@Z */
+  zMutex::operator=((zMutex *)this,(zMutex *)param_1);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  zwstr::operator=((zwstr *)(this + 0x14),(zwstr *)(param_1 + 0x14));
+  return this;
+}
+
+
+
+// =========================================================
+// zStringItem::zStringItem
+// entry=10017ac0
+// signature=undefined zStringItem(zStringItem * this, char * param_1, int param_2)
+// bodyBytes=170
+// =========================================================
+
+/* public: __thiscall zStringItem::zStringItem(char const *,int) */
+
+zStringItem * __thiscall zStringItem::zStringItem(zStringItem *this,char *param_1,int param_2)
+
+{
+  char cVar1;
+  void *pvVar2;
+  char *local_10;
+  
+                    /* 0x17ac0  150  ??0zStringItem@@QAE@PBDH@Z */
+  zItem<zStringItem>::zItem<zStringItem>((zItem<zStringItem> *)this);
+  *(undefined ***)this = vftable;
+  if (param_2 < 0) {
+    local_10 = param_1;
+    do {
+      cVar1 = *local_10;
+      local_10 = local_10 + 1;
+    } while (cVar1 != '\0');
+    *(int *)(this + 0x14) = (int)local_10 - (int)(param_1 + 1);
+  }
+  else {
+    *(int *)(this + 0x14) = param_2;
+  }
+  pvVar2 = malloc(*(int *)(this + 0x14) + 1);
+  *(void **)(this + 0x10) = pvVar2;
+  memcpy(*(void **)(this + 0x10),param_1,*(size_t *)(this + 0x14));
+  *(undefined1 *)(*(int *)(this + 0x10) + *(int *)(this + 0x14)) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zStringItem::zStringItem
+// entry=10017b70
+// signature=undefined zStringItem(zStringItem * this, basic_string<char,std::char_traits<char>,std::allocator<char>_> * param_1)
+// bodyBytes=119
+// =========================================================
+
+/* public: __thiscall zStringItem::zStringItem(class std::basic_string<char,struct
+   std::char_traits<char>,class std::allocator<char> > const &) */
+
+zStringItem * __thiscall
+zStringItem::zStringItem
+          (zStringItem *this,
+          basic_string<char,std::char_traits<char>,std::allocator<char>_> *param_1)
+
+{
+  uint uVar1;
+  void *pvVar2;
+  size_t _Size;
+  
+                    /* 0x17b70  149
+                       ??0zStringItem@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+                        */
+  zItem<zStringItem>::zItem<zStringItem>((zItem<zStringItem> *)this);
+  *(undefined ***)this = vftable;
+  uVar1 = FUN_1000a130((_String_alloc<std::_String_base_types<char,std::allocator<char>_>_> *)
+                       param_1);
+  *(uint *)(this + 0x14) = uVar1;
+  pvVar2 = malloc(*(int *)(this + 0x14) + 1);
+  *(void **)(this + 0x10) = pvVar2;
+  _Size = *(size_t *)(this + 0x14);
+  pvVar2 = (void *)FID_conflict_c_str((_String_alloc<std::_String_base_types<char,std::allocator<char>_>_>
+                                       *)param_1);
+  memcpy(*(void **)(this + 0x10),pvVar2,_Size);
+  *(undefined1 *)(*(int *)(this + 0x10) + *(int *)(this + 0x14)) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zStringItem::~zStringItem
+// entry=10017bf0
+// signature=void ~zStringItem(zStringItem * this)
+// bodyBytes=53
+// =========================================================
+
+/* public: virtual __thiscall zStringItem::~zStringItem(void) */
+
+void __thiscall zStringItem::~zStringItem(zStringItem *this)
+
+{
+                    /* 0x17bf0  270  ??1zStringItem@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  if (*(int *)(this + 0x10) != 0) {
+    free(*(void **)(this + 0x10));
+  }
+  zItem<zStringItem>::~zItem<zStringItem>((zItem<zStringItem> *)this);
+  return;
+}
+
+
+
+// =========================================================
+// zItem<zStringItem>::zItem<zStringItem>
+// entry=10017c30
+// signature=undefined zItem<zStringItem>(zItem<zStringItem> * this, zItem<class_zStringItem> * param_1)
+// bodyBytes=61
+// =========================================================
+
+/* public: __thiscall zItem<class zStringItem>::zItem<class zStringItem>(class zItem<class
+   zStringItem> const &) */
+
+zItem<zStringItem> * __thiscall
+zItem<zStringItem>::zItem<zStringItem>(zItem<zStringItem> *this,zItem<class_zStringItem> *param_1)
+
+{
+                    /* 0x17c30  18  ??0?$zItem@VzStringItem@@@@QAE@ABV0@@Z */
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  return this;
+}
+
+
+
+// =========================================================
+// zStringItem::zStringItem
+// entry=10017c70
+// signature=undefined zStringItem(zStringItem * this, zStringItem * param_1)
+// bodyBytes=61
+// =========================================================
+
+/* public: __thiscall zStringItem::zStringItem(class zStringItem const &) */
+
+zStringItem * __thiscall zStringItem::zStringItem(zStringItem *this,zStringItem *param_1)
+
+{
+                    /* 0x17c70  148  ??0zStringItem@@QAE@ABV0@@Z */
+  zItem<zStringItem>::zItem<zStringItem>
+            ((zItem<zStringItem> *)this,(zItem<class_zStringItem> *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  *(undefined4 *)(this + 0x14) = *(undefined4 *)(param_1 + 0x14);
+  return this;
+}
+
+
+
+// =========================================================
+// zStringList::zStringList
+// entry=10017e50
+// signature=undefined zStringList(zStringList * this)
+// bodyBytes=31
+// =========================================================
+
+/* public: __thiscall zStringList::zStringList(void) */
+
+zStringList * __thiscall zStringList::zStringList(zStringList *this)
+
+{
+                    /* 0x17e50  152  ??0zStringList@@QAE@XZ */
+  zList<zStringItem>::zList<zStringItem>((zList<zStringItem> *)this);
+  *(undefined ***)this = vftable;
+  return this;
+}
+
+
+
+// =========================================================
+// zStringList::~zStringList
+// entry=10017e70
+// signature=void ~zStringList(zStringList * this)
+// bodyBytes=28
+// =========================================================
+
+/* public: virtual __thiscall zStringList::~zStringList(void) */
+
+void __thiscall zStringList::~zStringList(zStringList *this)
+
+{
+                    /* 0x17e70  271  ??1zStringList@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  zList<zStringItem>::~zList<zStringItem>((zList<zStringItem> *)this);
+  return;
+}
+
+
+
+// =========================================================
+// zList<zStringItem>::zList<zStringItem>
+// entry=10017e90
+// signature=undefined zList<zStringItem>(zList<zStringItem> * this, zList<class_zStringItem> * param_1)
+// bodyBytes=73
+// =========================================================
+
+/* public: __thiscall zList<class zStringItem>::zList<class zStringItem>(class zList<class
+   zStringItem> const &) */
+
+zList<zStringItem> * __thiscall
+zList<zStringItem>::zList<zStringItem>(zList<zStringItem> *this,zList<class_zStringItem> *param_1)
+
+{
+                    /* 0x17e90  24  ??0?$zList@VzStringItem@@@@QAE@ABV0@@Z */
+  zSection::zSection((zSection *)this,(zSection *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  return this;
+}
+
+
+
+// =========================================================
+// zStringList::zStringList
+// entry=10017f20
+// signature=undefined zStringList(zStringList * this, zStringList * param_1)
+// bodyBytes=37
+// =========================================================
+
+/* public: __thiscall zStringList::zStringList(class zStringList const &) */
+
+zStringList * __thiscall zStringList::zStringList(zStringList *this,zStringList *param_1)
+
+{
+                    /* 0x17f20  151  ??0zStringList@@QAE@ABV0@@Z */
+  zList<zStringItem>::zList<zStringItem>
+            ((zList<zStringItem> *)this,(zList<class_zStringItem> *)param_1);
+  *(undefined ***)this = vftable;
+  return this;
+}
+
+
+
+// =========================================================
+// zList<zStringItem>::~zList<zStringItem>
+// entry=10019fd0
+// signature=void ~zList<zStringItem>(zList<zStringItem> * this)
+// bodyBytes=78
+// =========================================================
+
+/* public: virtual __thiscall zList<class zStringItem>::~zList<class zStringItem>(void) */
+
+void __thiscall zList<zStringItem>::~zList<zStringItem>(zList<zStringItem> *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0x19fd0  230  ??1?$zList@VzStringItem@@@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5d0;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  zList<zDataItem>::RemoveAllItems((zList<zDataItem> *)this);
+  zSection::~zSection((zSection *)this);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zList<zStringItem>::zList<zStringItem>
+// entry=1001a020
+// signature=undefined zList<zStringItem>(zList<zStringItem> * this)
+// bodyBytes=61
+// =========================================================
+
+/* public: __thiscall zList<class zStringItem>::zList<class zStringItem>(void) */
+
+zList<zStringItem> * __thiscall zList<zStringItem>::zList<zStringItem>(zList<zStringItem> *this)
+
+{
+                    /* 0x1a020  25  ??0?$zList@VzStringItem@@@@QAE@XZ */
+  zSection::zSection((zSection *)this);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 8) = 0;
+  *(undefined4 *)(this + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zItem<zStringItem>::~zItem<zStringItem>
+// entry=1001a060
+// signature=void ~zItem<zStringItem>(zItem<zStringItem> * this)
+// bodyBytes=86
+// =========================================================
+
+/* public: virtual __thiscall zItem<class zStringItem>::~zItem<class zStringItem>(void) */
+
+void __thiscall zItem<zStringItem>::~zItem<zStringItem>(zItem<zStringItem> *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0x1a060  227  ??1?$zItem@VzStringItem@@@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5d0;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  if (*(int *)(this + 0xc) != 0) {
+    zList<zDataItem>::Detach(*(zList<zDataItem> **)(this + 0xc),(zItem<zDataItem> *)this);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zItem<zStringItem>::zItem<zStringItem>
+// entry=1001a0c0
+// signature=undefined zItem<zStringItem>(zItem<zStringItem> * this)
+// bodyBytes=53
+// =========================================================
+
+/* public: __thiscall zItem<class zStringItem>::zItem<class zStringItem>(void) */
+
+zItem<zStringItem> * __thiscall zItem<zStringItem>::zItem<zStringItem>(zItem<zStringItem> *this)
+
+{
+                    /* 0x1a0c0  19  ??0?$zItem@VzStringItem@@@@QAE@XZ */
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 4) = 0;
+  *(undefined4 *)(this + 8) = 0;
+  *(undefined4 *)(this + 0xc) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// zStringList::Add
+// entry=1001a1e0
+// signature=zStringItem * Add(zStringList * this, basic_string<char,std::char_traits<char>,std::allocator<char>_> * param_1)
+// bodyBytes=39
+// =========================================================
+
+/* public: class zStringItem * __thiscall zStringList::Add(class std::basic_string<char,struct
+   std::char_traits<char>,class std::allocator<char> > const &) */
+
+zStringItem * __thiscall
+zStringList::Add(zStringList *this,
+                basic_string<char,std::char_traits<char>,std::allocator<char>_> *param_1)
+
+{
+  uint uVar1;
+  char *pcVar2;
+  zStringItem *pzVar3;
+  
+                    /* 0x1a1e0  601
+                       ?Add@zStringList@@QAEPAVzStringItem@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+                        */
+  uVar1 = FUN_1000a130((_String_alloc<std::_String_base_types<char,std::allocator<char>_>_> *)
+                       param_1);
+  pcVar2 = (char *)FID_conflict_c_str((_String_alloc<std::_String_base_types<char,std::allocator<char>_>_>
+                                       *)param_1);
+  pzVar3 = Add(this,pcVar2,uVar1);
+  return pzVar3;
+}
+
+
+
+// =========================================================
+// zStringList::Add
+// entry=1001a210
+// signature=zStringItem * Add(zStringList * this, char * param_1, int param_2)
+// bodyBytes=186
+// =========================================================
+
+/* public: class zStringItem * __thiscall zStringList::Add(char const *,int) */
+
+zStringItem * __thiscall zStringList::Add(zStringList *this,char *param_1,int param_2)
+
+{
+  char cVar1;
+  zStringItem *this_00;
+  zDataItem *pzVar2;
+  char *local_18;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1a210  602  ?Add@zStringList@@QAEPAVzStringItem@@PBDH@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002afdf;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  if (param_2 < 0) {
+    local_18 = param_1;
+    do {
+      cVar1 = *local_18;
+      local_18 = local_18 + 1;
+    } while (cVar1 != '\0');
+    param_2 = (int)local_18 - (int)(param_1 + 1);
+  }
+  this_00 = operator_new(0x18);
+  local_8 = 0;
+  pzVar2 = (zDataItem *)zStringItem::zStringItem(this_00,param_1,param_2);
+  local_8 = 0xffffffff;
+  zList<zDataItem>::Append((zList<zDataItem> *)this,pzVar2);
+  ExceptionList = local_10;
+  return (zStringItem *)pzVar2;
+}
+
+
+
+// =========================================================
+// zwstr::operator<<
+// entry=1001c530
+// signature=zwstr * operator<<(zwstr * this, wchar_t * param_1)
+// bodyBytes=34
+// =========================================================
+
+/* public: class zwstr & __thiscall zwstr::operator<<(wchar_t const *) */
+
+zwstr * __thiscall zwstr::operator<<(zwstr *this,wchar_t *param_1)
+
+{
+                    /* 0x1c530  456  ??6zwstr@@QAEAAV0@PB_W@Z */
+  if (param_1 != (wchar_t *)0x0) {
+    zStringTemplate<wchar_t,unicode_string_manager>::Append
+              ((zStringTemplate<wchar_t,unicode_string_manager> *)this,param_1);
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::operator<<
+// entry=1001c560
+// signature=zwstr * operator<<(zwstr * this, zwstr * param_1)
+// bodyBytes=33
+// =========================================================
+
+/* public: class zwstr & __thiscall zwstr::operator<<(class zwstr const &) */
+
+zwstr * __thiscall zwstr::operator<<(zwstr *this,zwstr *param_1)
+
+{
+  wchar_t *pwVar1;
+  
+                    /* 0x1c560  452  ??6zwstr@@QAEAAV0@ABV0@@Z */
+  pwVar1 = zStringTemplate<wchar_t,unicode_string_manager>::GetString
+                     ((zStringTemplate<wchar_t,unicode_string_manager> *)param_1);
+  zStringTemplate<wchar_t,unicode_string_manager>::Append
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,pwVar1);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::operator<<
+// entry=1001c590
+// signature=zwstr * operator<<(zwstr * this, int param_1)
+// bodyBytes=71
+// =========================================================
+
+/* public: class zwstr & __thiscall zwstr::operator<<(int) */
+
+zwstr * __thiscall zwstr::operator<<(zwstr *this,int param_1)
+
+{
+  zwstr *pzVar1;
+  wchar_t local_28 [16];
+  uint local_8;
+  
+                    /* 0x1c590  454  ??6zwstr@@QAEAAV0@H@Z
+                       0x1c590  455  ??6zwstr@@QAEAAV0@I@Z */
+  local_8 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  _itow_s(param_1,local_28,0xf,10);
+  zStringTemplate<wchar_t,unicode_string_manager>::Append
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,local_28);
+  pzVar1 = (zwstr *)__security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zwstr::operator<<
+// entry=1001c5e0
+// signature=zwstr * operator<<(zwstr * this, char param_1)
+// bodyBytes=78
+// =========================================================
+
+/* WARNING: Removing unreachable block (ram,0x1001c60a) */
+/* public: class zwstr & __thiscall zwstr::operator<<(char) */
+
+zwstr * __thiscall zwstr::operator<<(zwstr *this,char param_1)
+
+{
+  wchar_t local_c [4];
+  
+                    /* 0x1c5e0  453  ??6zwstr@@QAEAAV0@D@Z */
+  local_c[0] = (wchar_t)param_1;
+  local_c[2] = L'\x02';
+  local_c[3] = L'\0';
+  local_c[1] = 0;
+  zStringTemplate<wchar_t,unicode_string_manager>::Append
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,local_c);
+  return this;
+}
+
+
+
+// =========================================================
+// zwstr::MakeFrom
+// entry=1001c630
+// signature=void MakeFrom(zwstr * this, __int64 param_1)
+// bodyBytes=283
+// =========================================================
+
+/* public: void __thiscall zwstr::MakeFrom(__int64) */
+
+void __thiscall zwstr::MakeFrom(zwstr *this,__int64 param_1)
+
+{
+  bool bVar1;
+  undefined8 uVar2;
+  int local_4c;
+  wchar_t local_48;
+  undefined1 local_46 [58];
+  undefined2 local_c;
+  uint local_8;
+  
+                    /* 0x1c630  1016  ?MakeFrom@zwstr@@QAEX_J@Z */
+  local_8 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  local_48 = 0;
+  memset(local_46,0,0x3e);
+  local_4c = 0x1f;
+  if ((param_1 < 0x100000000) && (param_1 < 0)) {
+    bVar1 = true;
+  }
+  else {
+    bVar1 = false;
+  }
+  if (bVar1) {
+    param_1 = CONCAT44(-(param_1._4_4_ + ((uint)param_1 != 0)),-(uint)param_1);
+  }
+  if ((uint)param_1 == 0 && param_1._4_4_ == 0) {
+    local_4c = 0x1e;
+    local_c = 0x30;
+  }
+  else {
+    while( true ) {
+      if ((uint)param_1 == 0 && param_1._4_4_ == 0) break;
+      local_4c = local_4c + -1;
+      uVar2 = __allrem((uint)param_1,param_1._4_4_,10,0);
+      *(short *)(local_46 + local_4c * 2 + -2) = (short)uVar2 + 0x30;
+      param_1 = __alldiv((uint)param_1,param_1._4_4_,10,0);
+    }
+    if (bVar1) {
+      local_4c = local_4c + -1;
+      *(undefined2 *)(local_46 + local_4c * 2 + -2) = 0x2d;
+    }
+  }
+  zStringTemplate<wchar_t,unicode_string_manager>::SetString
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,
+             (wchar_t *)(local_46 + local_4c * 2 + -2),0x1f - local_4c);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// zwstr::MakeFrom
+// entry=1001c750
+// signature=void MakeFrom(zwstr * this, double param_1)
+// bodyBytes=662
+// =========================================================
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: void __thiscall zwstr::MakeFrom(double) */
+
+void __thiscall zwstr::MakeFrom(zwstr *this,double param_1)
+
+{
+  bool bVar1;
+  int iVar2;
+  undefined8 uVar3;
+  double local_78;
+  undefined8 local_64;
+  undefined8 local_5c;
+  int local_50;
+  int local_4c;
+  wchar_t local_48;
+  undefined1 local_46 [62];
+  uint local_8;
+  
+                    /* 0x1c750  1015  ?MakeFrom@zwstr@@QAEXN@Z */
+  local_8 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  local_48 = 0;
+  memset(local_46,0,0x3e);
+  bVar1 = param_1 < 0.0;
+  if (bVar1) {
+    param_1 = (double)CONCAT44((uint)((ulonglong)param_1 >> 0x20) ^ _UNK_1002e0e4,
+                               SUB84(param_1,0) ^ _DAT_1002e0e0);
+  }
+  local_4c = 0x1f;
+  local_50 = 10;
+  local_5c = 10000000000;
+  for (local_78 = param_1; _DAT_1002e0a0 <= local_78; local_78 = local_78 / _DAT_1002e0a8) {
+    local_5c = __alldiv((uint)local_5c,local_5c._4_4_,10,0);
+    local_50 = local_50 + -1;
+  }
+  if (local_50 < 2) {
+    local_50 = 2;
+  }
+  FUN_1002a580();
+  local_64 = FUN_1002a42f();
+  while( true ) {
+    if ((uint)local_64 == 0 && local_64._4_4_ == 0) break;
+    uVar3 = __allrem((uint)local_64,local_64._4_4_,10,0);
+    if ((((short)uVar3 != 0) || (local_50 < 1)) || (local_4c < 0x1f)) {
+      local_4c = local_4c + -1;
+      *(short *)(local_46 + local_4c * 2 + -2) = (short)uVar3 + 0x30;
+    }
+    local_64 = __alldiv((uint)local_64,local_64._4_4_,10,0);
+    local_50 = local_50 + -1;
+    if ((local_50 == 0) && (local_4c < 0x1f)) {
+      local_4c = local_4c + -1;
+      *(undefined2 *)(local_46 + local_4c * 2 + -2) = 0x2e;
+    }
+  }
+  iVar2 = local_4c;
+  if (local_4c < 0x1f) {
+    while (local_4c = iVar2, 0 < local_50) {
+      *(undefined2 *)(local_46 + (local_4c + -1) * 2 + -2) = 0x30;
+      local_50 = local_50 + -1;
+      iVar2 = local_4c + -1;
+      if (local_50 == 0) {
+        *(undefined2 *)(local_46 + (local_4c + -2) * 2 + -2) = 0x2e;
+        iVar2 = local_4c + -2;
+      }
+    }
+    if (local_50 == 0) {
+      local_4c = local_4c + -1;
+      *(undefined2 *)(local_46 + local_4c * 2 + -2) = 0x30;
+    }
+    if (bVar1) {
+      local_4c = local_4c + -1;
+      *(undefined2 *)(local_46 + local_4c * 2 + -2) = 0x2d;
+    }
+  }
+  else {
+    local_4c = local_4c + -1;
+    *(undefined2 *)(local_46 + local_4c * 2 + -2) = 0x30;
+  }
+  zStringTemplate<wchar_t,unicode_string_manager>::SetString
+            ((zStringTemplate<wchar_t,unicode_string_manager> *)this,
+             (wchar_t *)(local_46 + local_4c * 2 + -2),0x1f - local_4c);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// zwstr::Format
+// entry=1001c9f0
+// signature=int Format(zwstr * this, wchar_t * param_1, ...)
+// bodyBytes=171
+// =========================================================
+
+/* public: int __cdecl zwstr::Format(wchar_t const *,...) */
+
+int __thiscall zwstr::Format(zwstr *this,wchar_t *param_1,...)
+
+{
+  int iVar1;
+  void *pvVar2;
+  LPCWSTR in_stack_00000008;
+  wchar_t *in_stack_fffffff4;
+  
+                    /* 0x1c9f0  774  ?Format@zwstr@@QAAHPB_WZZ */
+  zTimer::ClockOutGlobalTimer(in_stack_fffffff4);
+  iVar1 = wvsprintfW((LPWSTR)&DAT_10044fc0,in_stack_00000008,&stack0x0000000c);
+  if ((iVar1 < 0) || (0x3ff < iVar1)) {
+    iVar1 = 0;
+  }
+  else {
+    *(int *)(param_1 + 2) = iVar1;
+    if (*(uint *)(param_1 + 4) <= *(uint *)(param_1 + 2)) {
+      *(int *)(param_1 + 4) = *(int *)(param_1 + 2) + 1;
+      pvVar2 = realloc(*(void **)param_1,*(int *)(param_1 + 4) << 1);
+      *(void **)param_1 = pvVar2;
+    }
+    memcpy(*(void **)param_1,&DAT_10044fc0,*(int *)(param_1 + 2) * 2 + 2);
+    iVar1 = 1;
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zstr::operator<<
+// entry=1001caa0
+// signature=zstr * operator<<(zstr * this, char * param_1)
+// bodyBytes=34
+// =========================================================
+
+/* public: class zstr & __thiscall zstr::operator<<(char const *) */
+
+zstr * __thiscall zstr::operator<<(zstr *this,char *param_1)
+
+{
+                    /* 0x1caa0  451  ??6zstr@@QAEAAV0@PBD@Z */
+  if (param_1 != (char *)0x0) {
+    zStringTemplate<char,ansi_string_manager>::Append
+              ((zStringTemplate<char,ansi_string_manager> *)this,param_1);
+  }
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::operator<<
+// entry=1001cad0
+// signature=zstr * operator<<(zstr * this, zstr * param_1)
+// bodyBytes=33
+// =========================================================
+
+/* public: class zstr & __thiscall zstr::operator<<(class zstr const &) */
+
+zstr * __thiscall zstr::operator<<(zstr *this,zstr *param_1)
+
+{
+  char *pcVar1;
+  
+                    /* 0x1cad0  447  ??6zstr@@QAEAAV0@ABV0@@Z */
+  pcVar1 = zStringTemplate<char,ansi_string_manager>::GetString
+                     ((zStringTemplate<char,ansi_string_manager> *)param_1);
+  zStringTemplate<char,ansi_string_manager>::Append
+            ((zStringTemplate<char,ansi_string_manager> *)this,pcVar1);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::operator<<
+// entry=1001cb00
+// signature=zstr * operator<<(zstr * this, int param_1)
+// bodyBytes=71
+// =========================================================
+
+/* public: class zstr & __thiscall zstr::operator<<(int) */
+
+zstr * __thiscall zstr::operator<<(zstr *this,int param_1)
+
+{
+  zstr *pzVar1;
+  char local_18 [16];
+  uint local_8;
+  
+                    /* 0x1cb00  449  ??6zstr@@QAEAAV0@H@Z
+                       0x1cb00  450  ??6zstr@@QAEAAV0@I@Z */
+  local_8 = DAT_1004400c ^ (uint)&stack0xfffffffc;
+  _itoa_s(param_1,local_18,0xf,10);
+  zStringTemplate<char,ansi_string_manager>::Append
+            ((zStringTemplate<char,ansi_string_manager> *)this,local_18);
+  pzVar1 = (zstr *)__security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zstr::operator<<
+// entry=1001cb50
+// signature=zstr * operator<<(zstr * this, char param_1)
+// bodyBytes=73
+// =========================================================
+
+/* WARNING: Removing unreachable block (ram,0x1001cb77) */
+/* public: class zstr & __thiscall zstr::operator<<(char) */
+
+zstr * __thiscall zstr::operator<<(zstr *this,char param_1)
+
+{
+  char local_8 [4];
+  
+                    /* 0x1cb50  448  ??6zstr@@QAEAAV0@D@Z */
+  local_8[0] = param_1;
+  local_8[1] = 0;
+  zStringTemplate<char,ansi_string_manager>::Append
+            ((zStringTemplate<char,ansi_string_manager> *)this,local_8);
+  return this;
+}
+
+
+
+// =========================================================
+// zstr::Format
+// entry=1001cba0
+// signature=int Format(zstr * this, char * param_1, ...)
+// bodyBytes=175
+// =========================================================
+
+/* public: int __cdecl zstr::Format(char const *,...) */
+
+int __thiscall zstr::Format(zstr *this,char *param_1,...)
+
+{
+  int iVar1;
+  void *pvVar2;
+  undefined4 in_stack_00000008;
+  wchar_t *in_stack_fffffff4;
+  
+                    /* 0x1cba0  773  ?Format@zstr@@QAAHPBDZZ */
+  zTimer::ClockOutGlobalTimer(in_stack_fffffff4);
+  iVar1 = FUN_1001e630(&DAT_10045ba8,0x400,in_stack_00000008,&stack0x0000000c);
+  if ((iVar1 < 0) || (0x3ff < iVar1)) {
+    iVar1 = 0;
+  }
+  else {
+    *(int *)(param_1 + 4) = iVar1;
+    if (*(uint *)(param_1 + 8) <= *(uint *)(param_1 + 4)) {
+      *(int *)(param_1 + 8) = *(int *)(param_1 + 4) + 1;
+      pvVar2 = realloc(*(void **)param_1,*(size_t *)(param_1 + 8));
+      *(void **)param_1 = pvVar2;
+    }
+    memcpy(*(void **)param_1,&DAT_10045ba8,*(int *)(param_1 + 4) + 1);
+    iVar1 = 1;
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::zWstrList
+// entry=1001dae0
+// signature=undefined zWstrList(zWstrList * this)
+// bodyBytes=128
+// =========================================================
+
+/* public: __thiscall zWstrList::zWstrList(void) */
+
+zWstrList * __thiscall zWstrList::zWstrList(zWstrList *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1dae0  175  ??0zWstrList@@QAE@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a768;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zSection::zSection((zSection *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 8) = 0;
+  *(undefined4 *)(this + 0xc) = 0;
+  *(undefined4 *)(this + 0x10) = 0;
+  zwstr::zwstr((zwstr *)(this + 0x14));
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// zWstrList::~zWstrList
+// entry=1001db60
+// signature=void ~zWstrList(zWstrList * this)
+// bodyBytes=89
+// =========================================================
+
+/* public: virtual __thiscall zWstrList::~zWstrList(void) */
+
+void __thiscall zWstrList::~zWstrList(zWstrList *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+                    /* 0x1db60  278  ??1zWstrList@@UAE@XZ */
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_1002a5d0;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  RemoveAll(this);
+  zstr::~zstr((zstr *)(this + 0x14));
+  zSection::~zSection((zSection *)this);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zWstrList::GetHead
+// entry=1001dbc0
+// signature=zwstr * GetHead(zWstrList * this)
+// bodyBytes=45
+// =========================================================
+
+/* public: class zwstr & __thiscall zWstrList::GetHead(void) */
+
+zwstr * __thiscall zWstrList::GetHead(zWstrList *this)
+
+{
+  zwstr *pzVar1;
+  
+                    /* 0x1dbc0  836  ?GetHead@zWstrList@@QAEAAVzwstr@@XZ */
+  if (*(int *)(this + 8) == 0) {
+    zStringTemplate<wchar_t,unicode_string_manager>::Empty
+              ((zStringTemplate<wchar_t,unicode_string_manager> *)(this + 0x14));
+    pzVar1 = (zwstr *)(this + 0x14);
+  }
+  else {
+    pzVar1 = *(zwstr **)(this + 8);
+  }
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::GetHead
+// entry=1001dbf0
+// signature=zwstr * GetHead(zWstrList * this)
+// bodyBytes=34
+// =========================================================
+
+/* public: class zwstr const & __thiscall zWstrList::GetHead(void)const  */
+
+zwstr * __thiscall zWstrList::GetHead(zWstrList *this)
+
+{
+  zwstr *pzVar1;
+  
+                    /* 0x1dbf0  837  ?GetHead@zWstrList@@QBEABVzwstr@@XZ */
+  if (*(int *)(this + 8) == 0) {
+    pzVar1 = (zwstr *)(this + 0x14);
+  }
+  else {
+    pzVar1 = *(zwstr **)(this + 8);
+  }
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::GetTail
+// entry=1001dc20
+// signature=zwstr * GetTail(zWstrList * this)
+// bodyBytes=45
+// =========================================================
+
+/* public: class zwstr & __thiscall zWstrList::GetTail(void) */
+
+zwstr * __thiscall zWstrList::GetTail(zWstrList *this)
+
+{
+  zwstr *pzVar1;
+  
+                    /* 0x1dc20  892  ?GetTail@zWstrList@@QAEAAVzwstr@@XZ */
+  if (*(int *)(this + 0xc) == 0) {
+    zStringTemplate<wchar_t,unicode_string_manager>::Empty
+              ((zStringTemplate<wchar_t,unicode_string_manager> *)(this + 0x14));
+    pzVar1 = (zwstr *)(this + 0x14);
+  }
+  else {
+    pzVar1 = *(zwstr **)(this + 0xc);
+  }
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::GetTail
+// entry=1001dc50
+// signature=zwstr * GetTail(zWstrList * this)
+// bodyBytes=34
+// =========================================================
+
+/* public: class zwstr const & __thiscall zWstrList::GetTail(void)const  */
+
+zwstr * __thiscall zWstrList::GetTail(zWstrList *this)
+
+{
+  zwstr *pzVar1;
+  
+                    /* 0x1dc50  893  ?GetTail@zWstrList@@QBEABVzwstr@@XZ */
+  if (*(int *)(this + 0xc) == 0) {
+    pzVar1 = (zwstr *)(this + 0x14);
+  }
+  else {
+    pzVar1 = *(zwstr **)(this + 0xc);
+  }
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::RemoveHead
+// entry=1001dc80
+// signature=int RemoveHead(zWstrList * this)
+// bodyBytes=199
+// =========================================================
+
+/* public: int __thiscall zWstrList::RemoveHead(void) */
+
+int __thiscall zWstrList::RemoveHead(zWstrList *this)
+
+{
+  void *this_00;
+  int local_10;
+  
+                    /* 0x1dc80  1122  ?RemoveHead@zWstrList@@QAEHXZ */
+  local_10 = 0;
+  zSection::Enter((zSection *)this);
+  if (*(int *)(this + 8) != 0) {
+    this_00 = *(void **)(this + 8);
+    zwstr::operator=((zwstr *)(this + 0x14),*(zwstr **)(this + 8));
+    *(undefined4 *)(this + 8) = *(undefined4 *)(*(int *)(this + 8) + 0xc);
+    if (*(int *)(this + 8) == 0) {
+      *(undefined4 *)(this + 0xc) = 0;
+    }
+    else {
+      *(undefined4 *)(*(int *)(this + 8) + 0x10) = 0;
+    }
+    if (this_00 != (void *)0x0) {
+      FID_conflict__scalar_deleting_destructor_(this_00,1);
+    }
+    if (*(int *)(this + 0x10) != 0) {
+      *(int *)(this + 0x10) = *(int *)(this + 0x10) + -1;
+    }
+    local_10 = 1;
+  }
+  zSection::Leave((zSection *)this);
+  return local_10;
+}
+
+
+
+// =========================================================
+// zWstrList::RemoveTail
+// entry=1001dda0
+// signature=int RemoveTail(zWstrList * this)
+// bodyBytes=199
+// =========================================================
+
+/* public: int __thiscall zWstrList::RemoveTail(void) */
+
+int __thiscall zWstrList::RemoveTail(zWstrList *this)
+
+{
+  void *this_00;
+  int local_10;
+  
+                    /* 0x1dda0  1129  ?RemoveTail@zWstrList@@QAEHXZ */
+  local_10 = 0;
+  zSection::Enter((zSection *)this);
+  if (*(int *)(this + 0xc) != 0) {
+    this_00 = *(void **)(this + 0xc);
+    zwstr::operator=((zwstr *)(this + 0x14),*(zwstr **)(this + 0xc));
+    *(undefined4 *)(this + 0xc) = *(undefined4 *)(*(int *)(this + 0xc) + 0x10);
+    if (*(int *)(this + 0xc) == 0) {
+      *(undefined4 *)(this + 8) = 0;
+    }
+    else {
+      *(undefined4 *)(*(int *)(this + 0xc) + 0xc) = 0;
+    }
+    if (this_00 != (void *)0x0) {
+      FID_conflict__scalar_deleting_destructor_(this_00,1);
+    }
+    if (*(int *)(this + 0x10) != 0) {
+      *(int *)(this + 0x10) = *(int *)(this + 0x10) + -1;
+    }
+    local_10 = 1;
+  }
+  zSection::Leave((zSection *)this);
+  return local_10;
+}
+
+
+
+// =========================================================
+// zWstrList::AddHead
+// entry=1001de70
+// signature=__zPos * AddHead(zWstrList * this, wchar_t * param_1)
+// bodyBytes=200
+// =========================================================
+
+/* public: struct __zPos * __thiscall zWstrList::AddHead(wchar_t const *) */
+
+__zPos * __thiscall zWstrList::AddHead(zWstrList *this,wchar_t *param_1)
+
+{
+  void *this_00;
+  zwstr *pzVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1de70  608  ?AddHead@zWstrList@@QAEPAU__zPos@@PB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002b0bf;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zSection::Enter((zSection *)this);
+  this_00 = operator_new(0x14);
+  local_8 = 0;
+  pzVar1 = FUN_1001c230(this_00,param_1);
+  local_8 = 0xffffffff;
+  *(undefined4 *)(pzVar1 + 0xc) = *(undefined4 *)(this + 8);
+  if (*(int *)(this + 8) == 0) {
+    *(zwstr **)(this + 0xc) = pzVar1;
+  }
+  else {
+    *(zwstr **)(*(int *)(this + 8) + 0x10) = pzVar1;
+  }
+  *(zwstr **)(this + 8) = pzVar1;
+  *(int *)(this + 0x10) = *(int *)(this + 0x10) + 1;
+  zSection::Leave((zSection *)this);
+  ExceptionList = local_10;
+  return (__zPos *)pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::AddTail
+// entry=1001df40
+// signature=__zPos * AddTail(zWstrList * this, wchar_t * param_1)
+// bodyBytes=200
+// =========================================================
+
+/* public: struct __zPos * __thiscall zWstrList::AddTail(wchar_t const *) */
+
+__zPos * __thiscall zWstrList::AddTail(zWstrList *this,wchar_t *param_1)
+
+{
+  void *this_00;
+  zwstr *pzVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1df40  612  ?AddTail@zWstrList@@QAEPAU__zPos@@PB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002b0bf;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  zSection::Enter((zSection *)this);
+  this_00 = operator_new(0x14);
+  local_8 = 0;
+  pzVar1 = FUN_1001c230(this_00,param_1);
+  local_8 = 0xffffffff;
+  *(undefined4 *)(pzVar1 + 0x10) = *(undefined4 *)(this + 0xc);
+  if (*(int *)(this + 0xc) == 0) {
+    *(zwstr **)(this + 8) = pzVar1;
+  }
+  else {
+    *(zwstr **)(*(int *)(this + 0xc) + 0xc) = pzVar1;
+  }
+  *(zwstr **)(this + 0xc) = pzVar1;
+  *(int *)(this + 0x10) = *(int *)(this + 0x10) + 1;
+  zSection::Leave((zSection *)this);
+  ExceptionList = local_10;
+  return (__zPos *)pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::RemoveAll
+// entry=1001e010
+// signature=void RemoveAll(zWstrList * this)
+// bodyBytes=120
+// =========================================================
+
+/* public: void __thiscall zWstrList::RemoveAll(void) */
+
+void __thiscall zWstrList::RemoveAll(zWstrList *this)
+
+{
+                    /* 0x1e010  1112  ?RemoveAll@zWstrList@@QAEXXZ */
+  zSection::Enter((zSection *)this);
+  while (*(int *)(this + 8) != 0) {
+    *(undefined4 *)(this + 0xc) = *(undefined4 *)(*(int *)(this + 8) + 0xc);
+    if (*(void **)(this + 8) != (void *)0x0) {
+      FID_conflict__scalar_deleting_destructor_(*(void **)(this + 8),1);
+    }
+    *(undefined4 *)(this + 8) = *(undefined4 *)(this + 0xc);
+  }
+  *(undefined4 *)(this + 0x10) = 0;
+  zSection::Leave((zSection *)this);
+  return;
+}
+
+
+
+// =========================================================
+// zWstrList::GetNext
+// entry=1001e090
+// signature=zwstr * GetNext(zWstrList * this, __zPos * * param_1)
+// bodyBytes=53
+// =========================================================
+
+/* public: class zwstr & __thiscall zWstrList::GetNext(struct __zPos * &) */
+
+zwstr * __thiscall zWstrList::GetNext(zWstrList *this,__zPos **param_1)
+
+{
+  zwstr *pzVar1;
+  
+                    /* 0x1e090  864  ?GetNext@zWstrList@@QAEAAVzwstr@@AAPAU__zPos@@@Z
+                       0x1e090  865  ?GetNext@zWstrList@@QBEABVzwstr@@AAPAU__zPos@@@Z */
+  if (*param_1 == (__zPos *)0x0) {
+    pzVar1 = (zwstr *)(this + 0x14);
+  }
+  else {
+    pzVar1 = (zwstr *)*param_1;
+    *param_1 = *(__zPos **)(pzVar1 + 0xc);
+  }
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::GetPrev
+// entry=1001e0d0
+// signature=zwstr * GetPrev(zWstrList * this, __zPos * * param_1)
+// bodyBytes=53
+// =========================================================
+
+/* public: class zwstr & __thiscall zWstrList::GetPrev(struct __zPos * &) */
+
+zwstr * __thiscall zWstrList::GetPrev(zWstrList *this,__zPos **param_1)
+
+{
+  zwstr *pzVar1;
+  
+                    /* 0x1e0d0  880  ?GetPrev@zWstrList@@QAEAAVzwstr@@AAPAU__zPos@@@Z
+                       0x1e0d0  881  ?GetPrev@zWstrList@@QBEABVzwstr@@AAPAU__zPos@@@Z */
+  if (*param_1 == (__zPos *)0x0) {
+    pzVar1 = (zwstr *)(this + 0x14);
+  }
+  else {
+    pzVar1 = (zwstr *)*param_1;
+    *param_1 = *(__zPos **)(pzVar1 + 0x10);
+  }
+  return pzVar1;
+}
+
+
+
+// =========================================================
+// zWstrList::GetAt
+// entry=1001e110
+// signature=zwstr * GetAt(zWstrList * this, __zPos * param_1)
+// bodyBytes=38
+// =========================================================
+
+/* public: class zwstr & __thiscall zWstrList::GetAt(struct __zPos *) */
+
+zwstr * __thiscall zWstrList::GetAt(zWstrList *this,__zPos *param_1)
+
+{
+                    /* 0x1e110  785  ?GetAt@zWstrList@@QAEAAVzwstr@@PAU__zPos@@@Z
+                       0x1e110  786  ?GetAt@zWstrList@@QBEABVzwstr@@PAU__zPos@@@Z */
+  if (param_1 == (__zPos *)0x0) {
+    param_1 = (__zPos *)(this + 0x14);
+  }
+  return (zwstr *)param_1;
+}
+
+
+
+// =========================================================
+// zWstrList::SetAt
+// entry=1001e140
+// signature=void SetAt(zWstrList * this, __zPos * param_1, wchar_t * param_2)
+// bodyBytes=115
+// =========================================================
+
+/* public: void __thiscall zWstrList::SetAt(struct __zPos *,wchar_t const *) */
+
+void __thiscall zWstrList::SetAt(zWstrList *this,__zPos *param_1,wchar_t *param_2)
+
+{
+  zwstr local_24 [12];
+  zWstrList *local_18;
+  __zPos *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1e140  1187  ?SetAt@zWstrList@@QAEXPAU__zPos@@PB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002a838;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  if (param_1 != (__zPos *)0x0) {
+    local_14 = param_1;
+    local_18 = this;
+    zwstr::zwstr(local_24,param_2);
+    local_8 = 0;
+    zwstr::operator=((zwstr *)local_14,local_24);
+    local_8 = 0xffffffff;
+    zstr::~zstr((zstr *)local_24);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// zWstrList::RemoveAt
+// entry=1001e1c0
+// signature=void RemoveAt(zWstrList * this, __zPos * param_1)
+// bodyBytes=187
+// =========================================================
+
+/* public: void __thiscall zWstrList::RemoveAt(struct __zPos *) */
+
+void __thiscall zWstrList::RemoveAt(zWstrList *this,__zPos *param_1)
+
+{
+                    /* 0x1e1c0  1118  ?RemoveAt@zWstrList@@QAEXPAU__zPos@@@Z */
+  if (param_1 != (__zPos *)0x0) {
+    zSection::Enter((zSection *)this);
+    if (*(int *)(param_1 + 0xc) == 0) {
+      *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0x10);
+    }
+    else {
+      *(undefined4 *)(*(int *)(param_1 + 0xc) + 0x10) = *(undefined4 *)(param_1 + 0x10);
+    }
+    if (*(int *)(param_1 + 0x10) == 0) {
+      *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 0xc);
+    }
+    else {
+      *(undefined4 *)(*(int *)(param_1 + 0x10) + 0xc) = *(undefined4 *)(param_1 + 0xc);
+    }
+    if (param_1 != (__zPos *)0x0) {
+      FID_conflict__scalar_deleting_destructor_(param_1,1);
+    }
+    if (*(int *)(this + 0x10) != 0) {
+      *(int *)(this + 0x10) = *(int *)(this + 0x10) + -1;
+    }
+    zSection::Leave((zSection *)this);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// zWstrList::InsertBefore
+// entry=1001e280
+// signature=__zPos * InsertBefore(zWstrList * this, __zPos * param_1, wchar_t * param_2)
+// bodyBytes=239
+// =========================================================
+
+/* public: struct __zPos * __thiscall zWstrList::InsertBefore(struct __zPos *,wchar_t const *) */
+
+__zPos * __thiscall zWstrList::InsertBefore(zWstrList *this,__zPos *param_1,wchar_t *param_2)
+
+{
+  void *this_00;
+  zwstr *pzVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1e280  935  ?InsertBefore@zWstrList@@QAEPAU__zPos@@PAU2@PB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002b0ef;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  if (param_1 == (__zPos *)0x0) {
+    param_1 = AddTail(this,param_2);
+  }
+  else {
+    zSection::Enter((zSection *)this);
+    this_00 = operator_new(0x14);
+    local_8 = 0;
+    pzVar1 = FUN_1001c230(this_00,param_2);
+    local_8 = 0xffffffff;
+    if (*(int *)(param_1 + 0x10) == 0) {
+      *(zwstr **)(this + 8) = pzVar1;
+    }
+    else {
+      *(zwstr **)(*(int *)(param_1 + 0x10) + 0xc) = pzVar1;
+    }
+    *(undefined4 *)(pzVar1 + 0x10) = *(undefined4 *)(param_1 + 0x10);
+    *(__zPos **)(pzVar1 + 0xc) = param_1;
+    *(zwstr **)(param_1 + 0x10) = pzVar1;
+    *(int *)(this + 0x10) = *(int *)(this + 0x10) + 1;
+    zSection::Leave((zSection *)this);
+  }
+  ExceptionList = local_10;
+  return param_1;
+}
+
+
+
+// =========================================================
+// zWstrList::InsertAfter
+// entry=1001e380
+// signature=__zPos * InsertAfter(zWstrList * this, __zPos * param_1, wchar_t * param_2)
+// bodyBytes=239
+// =========================================================
+
+/* public: struct __zPos * __thiscall zWstrList::InsertAfter(struct __zPos *,wchar_t const *) */
+
+__zPos * __thiscall zWstrList::InsertAfter(zWstrList *this,__zPos *param_1,wchar_t *param_2)
+
+{
+  void *this_00;
+  zwstr *pzVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1e380  931  ?InsertAfter@zWstrList@@QAEPAU__zPos@@PAU2@PB_W@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1002b0ef;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  if (param_1 == (__zPos *)0x0) {
+    param_1 = AddHead(this,param_2);
+  }
+  else {
+    zSection::Enter((zSection *)this);
+    this_00 = operator_new(0x14);
+    local_8 = 0;
+    pzVar1 = FUN_1001c230(this_00,param_2);
+    local_8 = 0xffffffff;
+    if (*(int *)(param_1 + 0xc) == 0) {
+      *(zwstr **)(this + 0xc) = pzVar1;
+    }
+    else {
+      *(zwstr **)(*(int *)(param_1 + 0xc) + 0x10) = pzVar1;
+    }
+    *(undefined4 *)(pzVar1 + 0xc) = *(undefined4 *)(param_1 + 0xc);
+    *(__zPos **)(pzVar1 + 0x10) = param_1;
+    *(zwstr **)(param_1 + 0xc) = pzVar1;
+    *(int *)(this + 0x10) = *(int *)(this + 0x10) + 1;
+    zSection::Leave((zSection *)this);
+  }
+  ExceptionList = local_10;
+  return param_1;
+}
+
+
+
+// =========================================================
+// zWstrList::Find
+// entry=1001e480
+// signature=__zPos * Find(zWstrList * this, wchar_t * param_1, __zPos * param_2)
+// bodyBytes=55
+// =========================================================
+
+/* public: struct __zPos * __thiscall zWstrList::Find(wchar_t const *,struct __zPos *)const  */
+
+__zPos * __thiscall zWstrList::Find(zWstrList *this,wchar_t *param_1,__zPos *param_2)
+
+{
+  zStringTemplate<wchar_t,unicode_string_manager> *this_00;
+  int iVar1;
+  
+                    /* 0x1e480  764  ?Find@zWstrList@@QBEPAU__zPos@@PB_WPAU2@@Z */
+  this_00 = *(zStringTemplate<wchar_t,unicode_string_manager> **)(this + 8);
+  do {
+    if (this_00 == (zStringTemplate<wchar_t,unicode_string_manager> *)0x0) {
+      return (__zPos *)0x0;
+    }
+    iVar1 = zStringTemplate<wchar_t,unicode_string_manager>::Compare(this_00,param_1);
+  } while (iVar1 != 0);
+  return (__zPos *)this_00;
+}
+
+
+
+// =========================================================
+// zWstrList::FindIndex
+// entry=1001e4c0
+// signature=__zPos * FindIndex(zWstrList * this, uint param_1)
+// bodyBytes=54
+// =========================================================
+
+/* public: struct __zPos * __thiscall zWstrList::FindIndex(unsigned int)const  */
+
+__zPos * __thiscall zWstrList::FindIndex(zWstrList *this,uint param_1)
+
+{
+                    /* 0x1e4c0  768  ?FindIndex@zWstrList@@QBEPAU__zPos@@I@Z */
+  while( true ) {
+    if (*(__zPos **)(this + 8) == (__zPos *)0x0) {
+      return (__zPos *)0x0;
+    }
+    if (param_1 == 0) break;
+    param_1 = param_1 - 1;
+  }
+  return *(__zPos **)(this + 8);
+}
+
+
+
+// matched=88 dumped=88

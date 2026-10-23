@@ -1,0 +1,88 @@
+{
+ "name": "2026-cixi-q13 regular pentagon angle AOB",
+ "points": {
+  "D": [
+   6.123233995736766e-17,
+   1.0
+  ],
+  "C": [
+   0.9510565162951535,
+   0.3090169943749474
+  ],
+  "B": [
+   0.5877852522924731,
+   -0.8090169943749475
+  ],
+  "A": [
+   -0.587785252292473,
+   -0.8090169943749475
+  ],
+  "E": [
+   -0.9510565162951535,
+   0.3090169943749475
+  ],
+  "O": [
+   0,
+   0
+  ]
+ },
+ "checks": [
+  {
+   "type": "distance",
+   "label": "OA=OB=1",
+   "a": "O",
+   "b": "A",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "angle AOB=72",
+   "vertex": "O",
+   "a": "A",
+   "b": "B",
+   "deg": 72,
+   "tol_deg": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "AB side",
+   "a": "A",
+   "b": "B",
+   "value": 1.1755705045849463,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "BC side",
+   "a": "B",
+   "b": "C",
+   "value": 1.1755705045849463,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "CD side",
+   "a": "C",
+   "b": "D",
+   "value": 1.1755705045849463,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "DE side",
+   "a": "D",
+   "b": "E",
+   "value": 1.1755705045849463,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "EA side",
+   "a": "E",
+   "b": "A",
+   "value": 1.1755705045849463,
+   "tol_pct": 1e-06
+  }
+ ]
+}

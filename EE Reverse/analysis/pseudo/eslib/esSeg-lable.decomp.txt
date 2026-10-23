@@ -1,0 +1,5847 @@
+// program=eslib.dll imageBase=10000000
+// specs=[esseglable::, eslablebox::, eslableboxex::]
+
+// =========================================================
+// esLableBox::GetMatrix
+// entry=10004d70
+// signature=Matrix * GetMatrix(esLableBox * this)
+// bodyBytes=17
+// =========================================================
+
+/* public: virtual class Gdiplus::Matrix * __thiscall esLableBox::GetMatrix(void) */
+
+Matrix * __thiscall esLableBox::GetMatrix(esLableBox *this)
+
+{
+                    /* 0x4d70  7258  ?GetMatrix@esLableBox@@UAEPAVMatrix@Gdiplus@@XZ
+                       0x4d70  7790  ?GetRegion@esColumnItem@@QAEPAVesLineRegion@@XZ */
+  return (Matrix *)(this + 0x4c);
+}
+
+
+
+// =========================================================
+// esSegLable::operator=
+// entry=1000ef80
+// signature=esSegLable * operator=(esSegLable * this, esSegLable * param_1)
+// bodyBytes=194
+// =========================================================
+
+/* public: class esSegLable & __thiscall esSegLable::operator=(class esSegLable const &) */
+
+esSegLable * __thiscall esSegLable::operator=(esSegLable *this,esSegLable *param_1)
+
+{
+                    /* 0xef80  2710  ??4esSegLable@@QAEAAV0@ABV0@@Z */
+  esSeg::operator=((esSeg *)this,(esSeg *)param_1);
+  *(undefined4 *)(this + 0x68) = *(undefined4 *)(param_1 + 0x68);
+  *(undefined2 *)(this + 0x6c) = *(undefined2 *)(param_1 + 0x6c);
+  *(undefined2 *)(this + 0x6e) = *(undefined2 *)(param_1 + 0x6e);
+  this[0x70] = param_1[0x70];
+  this[0x71] = param_1[0x71];
+  this[0x72] = param_1[0x72];
+  this[0x73] = param_1[0x73];
+  this[0x74] = param_1[0x74];
+  *(undefined4 *)(this + 0x78) = *(undefined4 *)(param_1 + 0x78);
+  *(undefined4 *)(this + 0x7c) = *(undefined4 *)(param_1 + 0x7c);
+  esEQLine::operator=((esEQLine *)(this + 0x80),(esEQLine *)(param_1 + 0x80));
+  *(undefined4 *)(this + 0xd4) = *(undefined4 *)(param_1 + 0xd4);
+  return this;
+}
+
+
+
+// =========================================================
+// esSegLable::ID
+// entry=103e8e00
+// signature=wchar_t * ID(void)
+// bodyBytes=10
+// =========================================================
+
+/* public: static wchar_t const * __cdecl esSegLable::ID(void) */
+
+wchar_t * __cdecl esSegLable::ID(void)
+
+{
+                    /* 0x3e8e00  8662  ?ID@esSegLable@@SAPB_WXZ */
+  return L"esSegLable";
+}
+
+
+
+// =========================================================
+// esSegLable::isKindOf
+// entry=103e8e10
+// signature=int isKindOf(esSegLable * this, wchar_t * param_1)
+// bodyBytes=147
+// =========================================================
+
+/* public: virtual int __thiscall esSegLable::isKindOf(wchar_t const *)const  */
+
+int __thiscall esSegLable::isKindOf(esSegLable *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  int iVar2;
+  bool bVar3;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x3e8e10  15410  ?isKindOf@esSegLable@@UBEHPB_W@Z */
+  if (this == (esSegLable *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    local_10 = ID();
+    local_c = param_1;
+    do {
+      wVar1 = *local_c;
+      bVar3 = (ushort)wVar1 < (ushort)*local_10;
+      if (wVar1 != *local_10) {
+LAB_103e8e76:
+        local_14 = -(uint)bVar3 | 1;
+        goto LAB_103e8e7e;
+      }
+      if (wVar1 == L'\0') break;
+      wVar1 = local_c[1];
+      bVar3 = (ushort)wVar1 < (ushort)local_10[1];
+      if (wVar1 != local_10[1]) goto LAB_103e8e76;
+      local_c = local_c + 2;
+      local_10 = local_10 + 2;
+    } while (wVar1 != L'\0');
+    local_14 = 0;
+LAB_103e8e7e:
+    if (local_14 == 0) {
+      iVar2 = 1;
+    }
+    else {
+      iVar2 = esSeg::isKindOf((esSeg *)this,param_1);
+    }
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esSegLable::isOf
+// entry=103e8eb0
+// signature=int isOf(esSegLable * this, wchar_t * param_1)
+// bodyBytes=137
+// =========================================================
+
+/* public: virtual int __thiscall esSegLable::isOf(wchar_t const *)const  */
+
+int __thiscall esSegLable::isOf(esSegLable *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  bool bVar2;
+  uint local_18;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x3e8eb0  15668  ?isOf@esSegLable@@UBEHPB_W@Z */
+  local_10 = ID();
+  local_c = param_1;
+  do {
+    wVar1 = *local_c;
+    bVar2 = (ushort)wVar1 < (ushort)*local_10;
+    if (wVar1 != *local_10) {
+LAB_103e8f0c:
+      local_14 = -(uint)bVar2 | 1;
+      goto LAB_103e8f14;
+    }
+    if (wVar1 == L'\0') break;
+    wVar1 = local_c[1];
+    bVar2 = (ushort)wVar1 < (ushort)local_10[1];
+    if (wVar1 != local_10[1]) goto LAB_103e8f0c;
+    local_c = local_c + 2;
+    local_10 = local_10 + 2;
+  } while (wVar1 != L'\0');
+  local_14 = 0;
+LAB_103e8f14:
+  local_18 = (uint)(local_14 == 0);
+  return local_18;
+}
+
+
+
+// =========================================================
+// esSegLable::esSegLable
+// entry=103e8f40
+// signature=undefined esSegLable(esSegLable * this)
+// bodyBytes=174
+// =========================================================
+
+/* public: __thiscall esSegLable::esSegLable(void) */
+
+esSegLable * __thiscall esSegLable::esSegLable(esSegLable *this)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3e8f40  1145  ??0esSegLable@@QAE@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ec28;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  esSeg::esSeg((esSeg *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  esEQLine::esEQLine((esEQLine *)(this + 0x80));
+  *(undefined4 *)(this + 0xd4) = 0;
+  *(undefined2 *)(this + 4) = 0x600d;
+  *(undefined4 *)(this + 0x68) = 0;
+  *(undefined2 *)(this + 0x6c) = 0;
+  *(undefined4 *)(this + 0x7c) = 0;
+  *(undefined4 *)(this + 0x78) = 0;
+  this[0x74] = (esSegLable)0x0;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esSegLable::esSegLable
+// entry=103e8ff0
+// signature=undefined esSegLable(esSegLable * this, zPoint param_1, zwstr param_2, ulong param_3, ushort param_4, ushort param_5)
+// bodyBytes=405
+// =========================================================
+
+/* public: __thiscall esSegLable::esSegLable(class zPoint,class zwstr,unsigned long,unsigned
+   short,unsigned short) */
+
+esSegLable * __thiscall
+esSegLable::esSegLable(esSegLable *this,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 *puVar1;
+  longlong lVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  int iVar5;
+  wchar_t *lpString2;
+  undefined4 in_stack_00000018;
+  undefined2 in_stack_0000001c;
+  undefined2 in_stack_00000020;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3e8ff0  1144  ??0esSegLable@@QAE@VzPoint@@Vzwstr@@KGG@Z */
+  puStack_c = &LAB_1054ec6f;
+  local_10 = ExceptionList;
+  uVar3 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  esSeg::esSeg((esSeg *)this);
+  local_8._0_1_ = 1;
+  *(undefined ***)this = vftable;
+  esEQLine::esEQLine((esEQLine *)(this + 0x80));
+  local_8 = CONCAT31(local_8._1_3_,2);
+  *(undefined4 *)(this + 0xd4) = 0;
+  *(undefined2 *)(this + 4) = 0x600d;
+  uVar4 = FUN_105290e5(8,uVar3);
+  *(undefined4 *)(this + 0x58) = uVar4;
+  puVar1 = *(undefined4 **)(this + 0x58);
+  *puVar1 = param_2;
+  puVar1[1] = param_3;
+  *(undefined2 *)(this + 0x5c) = 1;
+  this[0x70] = SUB41(in_stack_00000018,0);
+  this[0x71] = SUB41((uint)in_stack_00000018 >> 8,0);
+  this[0x72] = SUB41((uint)in_stack_00000018 >> 0x10,0);
+  this[0x73] = SUB41((uint)in_stack_00000018 >> 0x18,0);
+  iVar5 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                    ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x0000000c);
+  lVar2 = (ulonglong)(iVar5 + 1) * 2;
+  uVar4 = FUN_105290e5(-(uint)((int)((ulonglong)lVar2 >> 0x20) != 0) | (uint)lVar2);
+  *(undefined4 *)(this + 0x68) = uVar4;
+  lpString2 = zwstr::operator_wchar_t_const_((zwstr *)&stack0x0000000c);
+  lstrcpyW(*(LPWSTR *)(this + 0x68),lpString2);
+  *(undefined2 *)(this + 0x6e) = in_stack_0000001c;
+  *(undefined2 *)(this + 0x6c) = in_stack_00000020;
+  *(undefined4 *)(this + 0x7c) = 0;
+  *(undefined4 *)(this + 0x78) = 0;
+  this[0x74] = (esSegLable)0x4;
+  local_8 = 0xffffffff;
+  zwstr::~zwstr((zwstr *)&stack0x0000000c);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esSegLable::~esSegLable
+// entry=103e9190
+// signature=void ~esSegLable(esSegLable * this)
+// bodyBytes=76
+// =========================================================
+
+/* public: virtual __thiscall esSegLable::~esSegLable(void) */
+
+void __thiscall esSegLable::~esSegLable(esSegLable *this)
+
+{
+                    /* 0x3e9190  1982  ??1esSegLable@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  if (*(int *)(this + 0x68) != 0) {
+    FUN_10528fdd(*(undefined4 *)(this + 0x68),2);
+  }
+  esEQLine::~esEQLine((esEQLine *)(this + 0x80));
+  esSeg::~esSeg((esSeg *)this);
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::RecalcLayout
+// entry=103e91e0
+// signature=void RecalcLayout(esSegLable * this)
+// bodyBytes=19
+// =========================================================
+
+/* protected: virtual void __thiscall esSegLable::RecalcLayout(void) */
+
+void __thiscall esSegLable::RecalcLayout(esSegLable *this)
+
+{
+                    /* 0x3e91e0  11375  ?RecalcLayout@esSegLable@@MAEXXZ */
+  esSeg::RecalcLayout((esSeg *)this);
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::LoadProp
+// entry=103e9200
+// signature=void LoadProp(esSegLable * this, esPropManager * param_1, ulong param_2)
+// bodyBytes=849
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: virtual void __thiscall esSegLable::LoadProp(class esPropManager *,unsigned long) */
+
+void __thiscall esSegLable::LoadProp(esSegLable *this,esPropManager *param_1,ulong param_2)
+
+{
+  esPropGroup *this_00;
+  esFont *peVar1;
+  undefined4 uStack_98;
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_50;
+  uint local_4c;
+  wchar_t *local_44;
+  zwstr local_38 [12];
+  zwstr local_2c [12];
+  zwstr local_20 [12];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x3e9200  10187  ?LoadProp@esSegLable@@UAEXPAVesPropManager@@K@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ecab;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  uStack_98 = 0x103e923a;
+  this_00 = esPropManager::GetPropGroup(param_1,0xa00,(esObject *)0x0);
+  uStack_98 = 0x103e925d;
+  peVar1 = esFontSheet::GetFont(*(esFontSheet **)param_1,*(ushort *)(this + 0x6e),DAT_1057f0b4);
+  uStack_98 = 0x103e9275;
+  esPropGroup::AddItem(this_00,0xa01,(uint)*(ushort *)(peVar1 + 6));
+  uStack_98 = 0x103e9288;
+  esPropGroup::AddItem(this_00,0xa02,*(int *)peVar1);
+  uStack_98 = 0x103e929c;
+  esPropGroup::AddItem(this_00,0xa04,*(ulong *)(peVar1 + 0x14));
+  uStack_98 = 0x103e92b0;
+  esPropGroup::AddItem(this_00,0xa0e,*(ulong *)(peVar1 + 0x20));
+  uStack_98 = 0x103e92c7;
+  esPropGroup::AddItem(this_00,0xa03,*(uint *)(peVar1 + 0x28) & 3);
+  uStack_98 = 0x103e92e5;
+  esPropGroup::AddItem(this_00,0xa0b,(int)(uint)*(ushort *)(this + 0x6c) >> 2);
+  local_4c = (uint)(((byte)this[0x73] & 0x10) != 0);
+  uStack_98 = 0x103e9318;
+  esPropGroup::AddItem(this_00,0xa09,local_4c);
+  local_50 = (uint)(((byte)this[0x73] & 0x20) != 0);
+  uStack_98 = 0x103e934b;
+  esPropGroup::AddItem(this_00,0xa08,local_50);
+  local_54 = (uint)(((byte)this[0x73] & 0x40) != 0);
+  uStack_98 = 0x103e937e;
+  esPropGroup::AddItem(this_00,0xa0c,local_54);
+  zwstr::zwstr(local_38);
+  local_8 = 0;
+  zwstr::zwstr(local_2c);
+  local_8._0_1_ = 1;
+  zwstr::zwstr(local_20);
+  local_8 = CONCAT31(local_8._1_3_,2);
+  local_44 = *(wchar_t **)(this + 0x68);
+  if (this[0x70] != (esSegLable)0x0) {
+    uStack_98 = 0x103e93d1;
+    zStringTemplate<wchar_t,unicode_string_manager>::SetString
+              ((zStringTemplate<wchar_t,unicode_string_manager> *)local_38,local_44,
+               (uint)(byte)this[0x70]);
+    local_44 = local_44 + (byte)this[0x70];
+  }
+  if (this[0x71] != (esSegLable)0x0) {
+    uStack_98 = 0x103e9401;
+    zStringTemplate<wchar_t,unicode_string_manager>::SetString
+              ((zStringTemplate<wchar_t,unicode_string_manager> *)local_2c,local_44,
+               (uint)(byte)this[0x71]);
+    local_44 = local_44 + (byte)this[0x71];
+  }
+  if (this[0x72] != (esSegLable)0x0) {
+    uStack_98 = 0x103e9431;
+    zStringTemplate<wchar_t,unicode_string_manager>::SetString
+              ((zStringTemplate<wchar_t,unicode_string_manager> *)local_20,local_44,
+               (uint)(byte)this[0x72]);
+  }
+  zwstr::zwstr((zwstr *)&uStack_98,local_38);
+  esPropGroup::AddItem(this_00,0xa05);
+  zwstr::zwstr((zwstr *)&uStack_98,local_2c);
+  esPropGroup::AddItem(this_00,0xa06);
+  zwstr::zwstr((zwstr *)&uStack_98,local_20);
+  esPropGroup::AddItem(this_00,0xa07);
+  if (((byte)this[0x74] & 0xf0) == 0) {
+    local_58 = (byte)this[0x74] & 0xf;
+  }
+  else {
+    local_58 = 0xffffffff;
+  }
+  uStack_98 = 0x103e94d6;
+  esPropGroup::AddItem(this_00,0xa0a,local_58);
+  local_5c = (uint)(((byte)this[0x73] & 0x80) != 0);
+  uStack_98 = 0x103e950c;
+  esPropGroup::AddItem(this_00,0xa0d,local_5c);
+  local_8._0_1_ = 1;
+  zwstr::~zwstr(local_20);
+  local_8 = (uint)local_8._1_3_ << 8;
+  zwstr::~zwstr(local_2c);
+  local_8 = 0xffffffff;
+  zwstr::~zwstr(local_38);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::SetTextColor
+// entry=103e9560
+// signature=void SetTextColor(esSegLable * this, ulong param_1, esStyleSheet * param_2)
+// bodyBytes=153
+// =========================================================
+
+/* public: void __thiscall esSegLable::SetTextColor(unsigned long,class esStyleSheet *) */
+
+void __thiscall esSegLable::SetTextColor(esSegLable *this,ulong param_1,esStyleSheet *param_2)
+
+{
+  undefined2 uVar1;
+  esFont *peVar2;
+  
+                    /* 0x3e9560  13063  ?SetTextColor@esSegLable@@QAEXKPAVesStyleSheet@@@Z */
+  peVar2 = esFontSheet::GetFont((esFontSheet *)param_2,*(ushort *)(this + 0x6e),DAT_1057f0b4);
+  if (*(ulong *)(peVar2 + 0x14) != param_1) {
+    peVar2 = esFont::Clone(peVar2);
+    *(ulong *)(peVar2 + 0x14) = param_1;
+    uVar1 = (**(code **)(*(int *)param_2 + 8))(peVar2);
+    FUN_10052810(this,0xa01,this + 0x6e);
+    *(undefined2 *)(this + 0x6e) = uVar1;
+    (**(code **)(*(int *)this + 0x44))(0);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::OnMessage
+// entry=103e9600
+// signature=int OnMessage(esSegLable * this, esMessage * param_1, ulong param_2)
+// bodyBytes=89
+// =========================================================
+
+/* public: virtual int __thiscall esSegLable::OnMessage(class esMessage *,unsigned long) */
+
+int __thiscall esSegLable::OnMessage(esSegLable *this,esMessage *param_1,ulong param_2)
+
+{
+  ulong uVar1;
+  int iVar2;
+  
+                    /* 0x3e9600  10905  ?OnMessage@esSegLable@@UAEHPAVesMessage@@K@Z */
+  if (*(int *)param_1 == 0x113) {
+    uVar1 = GetLableFreature(this);
+    if (uVar1 == *(ulong *)(param_1 + 4)) {
+      (**(code **)(*(int *)this + 0x1c))(*(undefined4 *)(param_1 + 8),0);
+      iVar2 = 1;
+    }
+    else {
+      iVar2 = 0;
+    }
+  }
+  else {
+    iVar2 = esObject::OnMessage((esObject *)this,param_1,param_2);
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esSegLable::SaveProp
+// entry=103e9660
+// signature=void SaveProp(esSegLable * this, esPropManager * param_1, ulong param_2)
+// bodyBytes=1956
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: virtual void __thiscall esSegLable::SaveProp(class esPropManager *,unsigned long) */
+
+void __thiscall esSegLable::SaveProp(esSegLable *this,esPropManager *param_1,ulong param_2)
+
+{
+  undefined2 uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  wchar_t *pwVar4;
+  uint uVar5;
+  zwstr local_b0 [12];
+  zwstr local_a4 [12];
+  zwstr local_98 [12];
+  undefined4 local_8c;
+  void *local_88;
+  int local_84;
+  LPWSTR local_80;
+  undefined4 local_7c;
+  esFont *local_78;
+  LPWSTR local_74;
+  esFont *local_70;
+  esFont *local_6c;
+  undefined2 local_68;
+  int local_64;
+  int local_60;
+  LPWSTR local_5c;
+  int local_58;
+  esFont *local_54;
+  esPropGroup *local_50;
+  esSegLable local_4c;
+  esObject local_4b;
+  esObject local_4a;
+  esObject local_49;
+  esSegLable *local_48;
+  esPropItem *local_44;
+  esSegLable local_3d;
+  zwstr local_3c [12];
+  zwstr local_30 [12];
+  zwstr local_24 [12];
+  int local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x3e9660  12015  ?SaveProp@esSegLable@@UAEXPAVesPropManager@@K@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ed0f;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_48 = this;
+  local_50 = esPropManager::FindGroup(param_1,0xa00);
+  if (local_50 != (esPropGroup *)0x0) {
+    local_60 = 0;
+    local_6c = esFontSheet::GetFont
+                         (*(esFontSheet **)param_1,*(ushort *)(local_48 + 0x6e),DAT_1057f0b4);
+    local_54 = esFont::Clone(local_6c);
+    local_44 = esPropGroup::Find(local_50,0xa01);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      uVar1 = (**(code **)(*(int *)local_44 + 0xc))();
+      *(undefined2 *)(local_54 + 6) = uVar1;
+    }
+    *(undefined2 *)(local_54 + 8) = *(undefined2 *)(local_54 + 6);
+    *(undefined2 *)(local_54 + 10) = *(undefined2 *)(local_54 + 6);
+    local_44 = esPropGroup::Find(local_50,0xa03);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      uVar3 = (**(code **)(*(int *)local_44 + 0x14))();
+      *(undefined4 *)(local_54 + 0x28) = uVar3;
+    }
+    local_44 = esPropGroup::Find(local_50,0xa02);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      uVar3 = (**(code **)(*(int *)local_44 + 0xc))();
+      *(undefined4 *)local_54 = uVar3;
+    }
+    local_44 = esPropGroup::Find(local_50,0xa04);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      uVar3 = (**(code **)(*(int *)local_44 + 0x14))();
+      *(undefined4 *)(local_54 + 0x14) = uVar3;
+    }
+    local_44 = esPropGroup::Find(local_50,0xa0e);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      uVar3 = (**(code **)(*(int *)local_44 + 0x14))();
+      *(undefined4 *)(local_54 + 0x20) = uVar3;
+    }
+    iVar2 = esFont::IsEqual(local_6c,local_54);
+    if (iVar2 == 0) {
+      local_68 = (**(code **)(**(int **)param_1 + 8))(local_54);
+      FUN_10052810(local_48,0xa01,local_48 + 0x6e);
+      *(undefined2 *)(local_48 + 0x6e) = local_68;
+      local_60 = 1;
+    }
+    else {
+      local_78 = local_54;
+      local_70 = local_54;
+      if (local_54 == (esFont *)0x0) {
+        local_7c = 0;
+      }
+      else {
+        local_7c = _Blocking_recipient___scalar_deleting_destructor_(1);
+      }
+    }
+    local_3d = local_48[0x73];
+    local_44 = esPropGroup::Find(local_50,0xa0a);
+    iVar2 = esPropItem::IsModified(local_44);
+    if ((iVar2 != 0) &&
+       (local_4c = (esSegLable)(**(code **)(*(int *)local_44 + 0xc))(), local_48[0x74] != local_4c))
+    {
+      if (esObject::m_pUndo != (esUndo *)0x0) {
+        FUN_10025f60(local_48,0xa0a,local_48 + 0x74);
+      }
+      local_48[0x74] = local_4c;
+      local_60 = 1;
+    }
+    local_44 = esPropGroup::Find(local_50,0xa09);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      local_3d = (esSegLable)((byte)local_3d & 0xef);
+      iVar2 = (**(code **)(*(int *)local_44 + 0xc))();
+      if (0 < iVar2) {
+        local_3d = (esSegLable)((byte)local_3d | 0x10);
+      }
+    }
+    local_44 = esPropGroup::Find(local_50,0xa08);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      local_3d = (esSegLable)((byte)local_3d & 0xdf);
+      iVar2 = (**(code **)(*(int *)local_44 + 0xc))();
+      if (0 < iVar2) {
+        local_3d = (esSegLable)((byte)local_3d | 0x20);
+      }
+    }
+    local_44 = esPropGroup::Find(local_50,0xa0c);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      local_3d = (esSegLable)((byte)local_3d & 0xbf);
+      iVar2 = (**(code **)(*(int *)local_44 + 0xc))();
+      if (0 < iVar2) {
+        local_3d = (esSegLable)((byte)local_3d | 0x40);
+      }
+    }
+    local_44 = esPropGroup::Find(local_50,0xa0d);
+    iVar2 = esPropItem::IsModified(local_44);
+    if (iVar2 != 0) {
+      local_3d = (esSegLable)((byte)local_3d & 0x7f);
+      iVar2 = (**(code **)(*(int *)local_44 + 0xc))();
+      if (0 < iVar2) {
+        local_3d = (esSegLable)((byte)local_3d | 0x80);
+      }
+    }
+    if (local_48[0x73] != local_3d) {
+      FUN_10025f60(local_48,0xa0f,local_48 + 0x73);
+      local_48[0x73] = local_3d;
+      local_60 = 1;
+    }
+    local_44 = esPropGroup::Find(local_50,0xa0b);
+    iVar2 = esUndo::CheckWrite(esObject::m_pUndo,(esObject *)local_48,(ushort *)(local_48 + 0x6c),
+                               local_44,4);
+    if (iVar2 != 0) {
+      local_60 = 1;
+    }
+    if (param_2 == 0x1000000) {
+      zwstr::zwstr(local_3c);
+      local_8 = 0;
+      zwstr::zwstr(local_30);
+      local_8._0_1_ = 1;
+      zwstr::zwstr(local_24);
+      local_8._0_1_ = 2;
+      local_64 = 0;
+      local_44 = esPropGroup::Find(local_50,0xa05);
+      if (local_44 != (esPropItem *)0x0) {
+        if (*(int *)(local_44 + 8) == 0) {
+          local_64 = 1;
+        }
+        pwVar4 = (wchar_t *)(**(code **)(*(int *)local_44 + 8))();
+        zwstr::zwstr(local_98,pwVar4);
+        local_8._0_1_ = 3;
+        zwstr::operator=(local_3c,local_98);
+        local_8._0_1_ = 2;
+        zwstr::~zwstr(local_98);
+      }
+      local_44 = esPropGroup::Find(local_50,0xa06);
+      if (local_44 != (esPropItem *)0x0) {
+        if (*(int *)(local_44 + 8) == 0) {
+          local_64 = 1;
+        }
+        pwVar4 = (wchar_t *)(**(code **)(*(int *)local_44 + 8))();
+        zwstr::zwstr(local_a4,pwVar4);
+        local_8._0_1_ = 4;
+        zwstr::operator=(local_30,local_a4);
+        local_8._0_1_ = 2;
+        zwstr::~zwstr(local_a4);
+      }
+      local_44 = esPropGroup::Find(local_50,0xa07);
+      if (local_44 != (esPropItem *)0x0) {
+        if (*(int *)(local_44 + 8) == 0) {
+          local_64 = 1;
+        }
+        pwVar4 = (wchar_t *)(**(code **)(*(int *)local_44 + 8))();
+        zwstr::zwstr(local_b0,pwVar4);
+        local_8._0_1_ = 5;
+        zwstr::operator=(local_24,local_b0);
+        local_8._0_1_ = 2;
+        zwstr::~zwstr(local_b0);
+      }
+      if (local_64 != 0) {
+        iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                          ((zStringTemplate<wchar_t,unicode_string_manager> *)local_3c);
+        local_4a = SUB41(iVar2,0);
+        iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                          ((zStringTemplate<wchar_t,unicode_string_manager> *)local_30);
+        local_49 = SUB41(iVar2,0);
+        uVar5 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                          ((zStringTemplate<wchar_t,unicode_string_manager> *)local_24);
+        local_4b = SUB41(uVar5,0);
+        if ((local_4a != (esObject)0x0) ||
+           ((local_49 != (esObject)0x0 && (local_4b != (esObject)0x0)))) {
+          local_58 = (uVar5 & 0xff) + (uint)(byte)local_49 + (uint)(byte)local_4a + 1;
+          local_80 = (LPWSTR)FUN_105290e5(local_58 * 2);
+          local_5c = local_80;
+          pwVar4 = zwstr::operator_wchar_t_const_(local_3c);
+          lstrcpyW(local_5c,pwVar4);
+          if (local_49 != (esObject)0x0) {
+            pwVar4 = zwstr::operator_wchar_t_const_(local_30);
+            lstrcpyW(local_5c + (byte)local_4a,pwVar4);
+          }
+          if (local_4b != (esObject)0x0) {
+            pwVar4 = zwstr::operator_wchar_t_const_(local_24);
+            lstrcpyW(local_5c + (uint)(byte)local_4a + (uint)(byte)local_49,pwVar4);
+          }
+          if ((((*(esObject *)(local_48 + 0x70) == *(esObject *)(local_48 + 0x70)) &&
+               (*(esObject *)(local_48 + 0x71) == local_49)) &&
+              (*(esObject *)(local_48 + 0x72) == local_4b)) &&
+             (local_84 = memcmp(local_5c,*(void **)(local_48 + 0x68),local_58 << 1), local_84 == 0))
+          {
+            local_74 = local_5c;
+            free(local_5c);
+            if (local_74 == (LPWSTR)0x0) {
+              local_8c = 0;
+            }
+            else {
+              local_5c = (LPWSTR)0x8123;
+              local_8c = 0x8123;
+            }
+          }
+          else {
+            local_88 = GetTextData(local_48,&local_18);
+            esUndo::Rec_Data(esObject::m_pUndo,(esObject *)local_48,0xa10,local_88,local_18);
+            *(esObject *)(local_48 + 0x70) = local_4a;
+            *(esObject *)(local_48 + 0x71) = local_49;
+            *(esObject *)(local_48 + 0x72) = local_4b;
+            *(LPWSTR *)(local_48 + 0x68) = local_5c;
+            local_60 = 1;
+          }
+        }
+      }
+      local_8._0_1_ = 1;
+      zwstr::~zwstr(local_24);
+      local_8 = (uint)local_8._1_3_ << 8;
+      zwstr::~zwstr(local_30);
+      local_8 = 0xffffffff;
+      zwstr::~zwstr(local_3c);
+    }
+    if (local_60 != 0) {
+      (**(code **)(*(int *)local_48 + 0x44))(0);
+    }
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::Undo
+// entry=103e9e10
+// signature=void Undo(esSegLable * this, ushort param_1, zArchive * param_2, zArchive * param_3)
+// bodyBytes=394
+// =========================================================
+
+/* public: virtual void __thiscall esSegLable::Undo(unsigned short,class zArchive &,class zArchive
+   &) */
+
+void __thiscall
+esSegLable::Undo(esSegLable *this,ushort param_1,zArchive *param_2,zArchive *param_3)
+
+{
+  zStream *pzVar1;
+  esSegLable eVar2;
+  ushort uVar3;
+  float fVar4;
+  
+                    /* 0x3e9e10  13503  ?Undo@esSegLable@@UAEXGAAVzArchive@@0@Z */
+  switch(param_1) {
+  case 0xa01:
+    uVar3 = *(ushort *)(this + 0x6e);
+    pzVar1 = zStream::operator<<((zStream *)param_2,param_1);
+    zStream::operator<<(pzVar1,uVar3);
+    zStream::operator>>((zStream *)param_3,(ushort *)(this + 0x6e));
+    break;
+  default:
+    esFormulaBox::CaretMove((esFormulaBox *)this,(uint)param_1,(int)param_2,(esCaret *)param_3);
+    break;
+  case 0xa0a:
+    eVar2 = this[0x74];
+    pzVar1 = zStream::operator<<((zStream *)param_2,param_1);
+    zStream::operator<<(pzVar1,(uchar)eVar2);
+    zStream::operator>>((zStream *)param_3,(uchar *)(this + 0x74));
+    break;
+  case 0xa0b:
+    uVar3 = *(ushort *)(this + 0x6c);
+    pzVar1 = zStream::operator<<((zStream *)param_2,param_1);
+    zStream::operator<<(pzVar1,uVar3);
+    zStream::operator>>((zStream *)param_3,(ushort *)(this + 0x6c));
+    break;
+  case 0xa0f:
+    eVar2 = this[0x73];
+    pzVar1 = zStream::operator<<((zStream *)param_2,param_1);
+    zStream::operator<<(pzVar1,(uchar)eVar2);
+    zStream::operator>>((zStream *)param_3,(uchar *)(this + 0x73));
+    break;
+  case 0xa11:
+    fVar4 = *(float *)(this + 0x78);
+    pzVar1 = zStream::operator<<((zStream *)param_2,param_1);
+    zStream::operator<<(pzVar1,fVar4);
+    zStream::operator>>((zStream *)param_3,(float *)(this + 0x78));
+    break;
+  case 0xa12:
+    fVar4 = *(float *)(this + 0x7c);
+    pzVar1 = zStream::operator<<((zStream *)param_2,param_1);
+    zStream::operator<<(pzVar1,fVar4);
+    zStream::operator>>((zStream *)param_3,(float *)(this + 0x7c));
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::GetTextData
+// entry=103e9fd0
+// signature=void * GetTextData(esSegLable * this, int * param_1)
+// bodyBytes=217
+// =========================================================
+
+/* protected: void * __thiscall esSegLable::GetTextData(int &) */
+
+void * __thiscall esSegLable::GetTextData(esSegLable *this,int *param_1)
+
+{
+  int iVar1;
+  esSegLable *peVar2;
+  
+                    /* 0x3e9fd0  8140  ?GetTextData@esSegLable@@IAEPAXAAH@Z */
+  if (*(int *)(this + 0x68) == 0) {
+    *param_1 = 0;
+    peVar2 = (esSegLable *)0x0;
+  }
+  else {
+    iVar1 = lstrlenW(*(LPCWSTR *)(this + 0x68));
+    *param_1 = (iVar1 + 1) * 2 + 3;
+    peVar2 = (esSegLable *)FUN_105290e5(*param_1);
+    *peVar2 = this[0x70];
+    peVar2[1] = this[0x71];
+    peVar2[2] = this[0x72];
+    memcpy(peVar2 + 3,*(void **)(this + 0x68),(iVar1 + 1) * 2);
+    free(*(void **)(this + 0x68));
+    *(undefined4 *)(this + 0x68) = 0;
+  }
+  return peVar2;
+}
+
+
+
+// =========================================================
+// esSegLable::Undata
+// entry=103ea0b0
+// signature=void * Undata(esSegLable * this, ushort * param_1, void * param_2, int * param_3)
+// bodyBytes=214
+// =========================================================
+
+/* public: virtual void * __thiscall esSegLable::Undata(unsigned short &,void *,int &) */
+
+void * __thiscall esSegLable::Undata(esSegLable *this,ushort *param_1,void *param_2,int *param_3)
+
+{
+  int iVar1;
+  void *pvVar2;
+  undefined4 uVar3;
+  
+                    /* 0x3ea0b0  13434  ?Undata@esSegLable@@UAEPAXAAGPAXAAH@Z */
+  if (*param_1 == 0xa10) {
+    iVar1 = *param_3;
+    pvVar2 = GetTextData(this,param_3);
+    this[0x70] = *(esSegLable *)param_2;
+    this[0x71] = *(esSegLable *)((int)param_2 + 1);
+    this[0x72] = *(esSegLable *)((int)param_2 + 2);
+    uVar3 = FUN_105290e5(iVar1 - 3U);
+    *(undefined4 *)(this + 0x68) = uVar3;
+    memcpy(*(void **)(this + 0x68),(void *)((int)param_2 + 3),iVar1 - 3U);
+    (**(code **)(*(int *)this + 0x44))(0);
+  }
+  else {
+    pvVar2 = esSeg::Undata((esSeg *)this,param_1,param_2,param_3);
+  }
+  return pvVar2;
+}
+
+
+
+// =========================================================
+// esSegLable::CollectStyles
+// entry=103ea190
+// signature=void CollectStyles(esSegLable * this, esStyleSheet * param_1)
+// bodyBytes=65
+// =========================================================
+
+/* public: virtual void __thiscall esSegLable::CollectStyles(class esStyleSheet *)const  */
+
+void __thiscall esSegLable::CollectStyles(esSegLable *this,esStyleSheet *param_1)
+
+{
+                    /* 0x3ea190  4609  ?CollectStyles@esSegLable@@UBEXPAVesStyleSheet@@@Z */
+  esUseInfo::CollectStyles((esUseInfo *)param_1,*(ushort *)(this + 0x6e),1);
+  if ((param_1 != (esStyleSheet *)0x0) && (*(uint *)(param_1 + 0x850) < 0x1000202)) {
+    *(undefined4 *)(param_1 + 0x850) = 0x1000202;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::Initialize
+// entry=103ea1e0
+// signature=void Initialize(esSegLable * this, esFontSheet * param_1)
+// bodyBytes=37
+// =========================================================
+
+/* public: void __thiscall esSegLable::Initialize(class esFontSheet *) */
+
+void __thiscall esSegLable::Initialize(esSegLable *this,esFontSheet *param_1)
+
+{
+                    /* 0x3ea1e0  8897  ?Initialize@esSegLable@@QAEXPAVesFontSheet@@@Z */
+  if (*(int *)(this + 0xd4) == 0) {
+    *(esFontSheet **)(this + 0xd4) = param_1;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::HitTest
+// entry=103ea210
+// signature=int HitTest(esSegLable * this, esHitTest * param_1, int param_2)
+// bodyBytes=215
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: virtual int __thiscall esSegLable::HitTest(class esHitTest *,int) */
+
+int __thiscall esSegLable::HitTest(esSegLable *this,esHitTest *param_1,int param_2)
+
+{
+  int iVar1;
+  tagPOINT tVar2;
+  LONG local_10;
+  LONG local_c;
+  uint local_8;
+  
+                    /* 0x3ea210  8390  ?HitTest@esSegLable@@UAEHPAVesHitTest@@H@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x34) != 0) {
+    if ((((byte)this[0x73] & 0x20) != 0) &&
+       (iVar1 = esHitTest::HitTestLines(param_1,*(tagPOINT **)(this + 0x34),5), iVar1 != 0)) {
+      esHitTest::SetSelInfo(param_1,7,(esObject *)this,0);
+      return 1;
+    }
+    tVar2 = esHitTest::get_point(param_1);
+    D2DPointF::D2DPointF((D2DPointF *)&local_10,(D2D_POINT_2F *)tVar2.x);
+    tVar2.y = local_c;
+    tVar2.x = local_10;
+    iVar1 = esGraph::IsPtInGon(tVar2,*(tagPOINT **)(this + 0x34),5);
+    if (iVar1 != 0) {
+      if (param_2 == 0) {
+        esHitTest::SetSelInfo(param_1,0x15,(esObject *)this,0);
+      }
+      else {
+        esHitTest::SetSelInfo(param_1,0x16,(esObject *)this,0);
+      }
+      return 1;
+    }
+  }
+  return 0;
+}
+
+
+
+// =========================================================
+// esSegLable::HandMoveText
+// entry=103ea2f0
+// signature=int HandMoveText(esSegLable * this, tagPOINT * param_1, int param_2)
+// bodyBytes=1177
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: int __thiscall esSegLable::HandMoveText(struct tagPOINT &,int) */
+
+int __thiscall esSegLable::HandMoveText(esSegLable *this,tagPOINT *param_1,int param_2)
+
+{
+  byte bVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  uint local_8c;
+  Matrix *local_88;
+  int local_84;
+  int local_80;
+  esSegLable local_6d;
+  es_matrix local_6c [48];
+  tagPOINT local_3c;
+  tagPOINT local_34;
+  tagPOINT local_2c;
+  float local_24;
+  float local_20;
+  tagPOINT local_1c;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3ea2f0  8348  ?HandMoveText@esSegLable@@QAEHAAUtagPOINT@@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ed48;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  iVar2 = FUN_10027480(local_14);
+  if (iVar2 == 0) {
+    iVar2 = 0;
+  }
+  else if ((*(int *)(this + 0x34) == 0) &&
+          ((**(code **)(*(int *)this + 0x7c))(0), *(int *)(this + 0x34) == 0)) {
+    iVar2 = 0;
+  }
+  else {
+    if (this == (esSegLable *)0xffffffb8) {
+      local_88 = (Matrix *)0x0;
+    }
+    else {
+      local_88 = (Matrix *)(this + 0x4c);
+    }
+    es_matrix::es_matrix(local_6c,local_88);
+    local_8 = 0;
+    es_matrix::Invert(local_6c);
+    D2DPointF::D2DPointF((D2DPointF *)&local_34,*(D2D_POINT_2F **)(this + 0x34));
+    es_matrix::TransformPoint(local_6c,&local_34);
+    D2DPointF::D2DPointF((D2DPointF *)&local_2c,(D2D_POINT_2F *)(*(int *)(this + 0x34) + 0x10));
+    es_matrix::TransformPoint(local_6c,&local_2c);
+    iVar2 = (local_34.x + local_2c.x) / 2 - **(int **)(this + 0x58);
+    iVar3 = (local_34.y + local_2c.y) / 2 - *(int *)(*(int *)(this + 0x58) + 4);
+    iVar4 = FUN_10027ae0(local_2c.x - local_34.x);
+    iVar4 = iVar4 / 2;
+    iVar5 = FUN_10027ae0(local_2c.y - local_34.y);
+    iVar5 = iVar5 / 2;
+    D2DPointU::D2DPointU((D2DPointU *)&local_3c,0,0);
+    D2DPointF::D2DPointF((D2DPointF *)&local_1c,(D2D_POINT_2F *)param_1);
+    es_matrix::TransformPoint(local_6c,&local_3c);
+    es_matrix::TransformPoint(local_6c,&local_1c);
+    iVar7 = (local_1c.x - local_3c.x) + iVar2;
+    iVar6 = (local_1c.y - local_3c.y) + iVar3;
+    if (param_2 == 0) {
+      bVar1 = (byte)this[0x74] & 0xf;
+      local_20 = *(float *)(this + 0x78);
+      if (-iVar7 < iVar4) {
+        if (iVar7 < iVar4) {
+          local_6d = (esSegLable)(bVar1 | 0x10);
+          *(float *)(this + 0x78) = (float)(iVar4 + iVar7) / (float)(iVar4 << 1);
+        }
+        else {
+          local_6d = (esSegLable)(bVar1 | 0x30);
+          *(float *)(this + 0x78) = (float)(iVar7 - iVar4);
+        }
+      }
+      else {
+        local_6d = (esSegLable)(bVar1 | 0x20);
+        *(float *)(this + 0x78) = (float)(-iVar4 - iVar7);
+      }
+      if ((*(float *)(this + 0x78) != local_20) && (esObject::m_pUndo != (esUndo *)0x0)) {
+        FUN_10026200(this,0xa11,&local_20);
+      }
+      local_24 = *(float *)(this + 0x7c);
+      if (-iVar6 < iVar5) {
+        if (iVar6 < iVar5) {
+          local_6d = (esSegLable)((byte)local_6d | 0x40);
+          *(float *)(this + 0x7c) = (float)(iVar5 + iVar6) / (float)(iVar5 << 1);
+        }
+        else {
+          local_6d = (esSegLable)((byte)local_6d | 0xc0);
+          *(float *)(this + 0x7c) = (float)(iVar6 - iVar5);
+        }
+      }
+      else {
+        local_6d = (esSegLable)((byte)local_6d | 0x80);
+        *(float *)(this + 0x7c) = (float)(-iVar5 - iVar6);
+      }
+      if ((*(float *)(this + 0x7c) != local_24) && (esObject::m_pUndo != (esUndo *)0x0)) {
+        FUN_10026200(this,0xa12,&local_24);
+      }
+      if ((local_6d != this[0x74]) && (esObject::m_pUndo != (esUndo *)0x0)) {
+        FUN_10025f60(this,0xa0a,this + 0x74);
+      }
+      this[0x74] = local_6d;
+      (**(code **)(*(int *)this + 0x44))(0);
+    }
+    else {
+      if (*(ushort *)(this + 0x6c) < 600) {
+        local_8c = 600;
+      }
+      else {
+        local_8c = (uint)*(ushort *)(this + 0x6c);
+      }
+      iVar4 = iVar4 + local_8c;
+      iVar5 = iVar5 + local_8c;
+      local_80 = iVar4;
+      if ((iVar7 <= iVar4) && (local_80 = iVar7, iVar7 < -iVar4)) {
+        local_80 = -iVar4;
+      }
+      local_84 = iVar5;
+      if ((iVar6 <= iVar5) && (local_84 = iVar6, iVar6 < -iVar5)) {
+        local_84 = -iVar5;
+      }
+      local_1c.x = (local_3c.x + local_80) - iVar2;
+      local_1c.y = (local_3c.y + local_84) - iVar3;
+      FUN_10027a30(&local_1c,1);
+      param_1->x = local_1c.x;
+      param_1->y = local_1c.y;
+    }
+    local_8 = 0xffffffff;
+    TLaterParam::~TLaterParam((TLaterParam *)local_6c);
+    iVar2 = 1;
+  }
+  ExceptionList = local_10;
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esSegLable::Load
+// entry=103ea790
+// signature=void Load(esSegLable * this, elfPage * param_1, elfSubject * param_2, tag_DRAWPARAM * param_3)
+// bodyBytes=1116
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: virtual void __thiscall esSegLable::Load(class elfPage *,class elfSubject *,struct
+   tag_DRAWPARAM *) */
+
+void __thiscall
+esSegLable::Load(esSegLable *this,elfPage *param_1,elfSubject *param_2,tag_DRAWPARAM *param_3)
+
+{
+  ulong uVar1;
+  undefined4 uVar2;
+  esFont *peVar3;
+  esStyleList<esBlockStyle> *peVar4;
+  elfItem *peVar5;
+  int iVar6;
+  elfPathGeometry *this_00;
+  elfSimpleGeometry *this_01;
+  tagRECT *ptVar7;
+  zRect *pzVar8;
+  elfSubject *this_02;
+  esColorScheme *peVar9;
+  esRole *peVar10;
+  esSegLable *local_8c;
+  int local_58;
+  byte local_4d;
+  zRect local_4c [16];
+  undefined4 local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
+  undefined4 local_30;
+  int local_2c;
+  int local_28;
+  int local_1c;
+  int local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3ea790  9995
+                       ?Load@esSegLable@@UAEXPAVelfPage@@PAVelfSubject@@PAUtag_DRAWPARAM@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054edac;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (*(int *)(this + 0xd4) != 0) {
+    if (*(int *)(this + 0x34) == 0) {
+      (**(code **)(*(int *)this + 0x7c))(0,local_14);
+    }
+    local_4d = 0;
+    peVar3 = esFontSheet::GetFont
+                       (*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e),DAT_1057f0b4);
+    if (*(int *)(peVar3 + 0x20) != 0) {
+      peVar4 = operator_new(0x2c);
+      local_8 = 0;
+      esStyleList<esBlockStyle>::__autoclassinit2(peVar4,0x2c);
+      peVar5 = (elfItem *)
+               elfSolidBrush::elfSolidBrush((elfSolidBrush *)peVar4,*(ulong *)(peVar3 + 0x20));
+      local_8 = 0xffffffff;
+      elfSubject::Add(param_2,param_1,peVar5,1);
+      local_4d = 2;
+    }
+    if ((((byte)this[0x73] & 0x20) != 0) &&
+       (iVar6 = elfSubject::AddPen(param_2,param_1,*(esPenInfo **)(param_3 + 4),1), iVar6 != 0)) {
+      local_4d = local_4d | 1;
+    }
+    if (local_4d != 0) {
+      peVar4 = operator_new(0x40);
+      local_8 = 1;
+      esStyleList<esBlockStyle>::__autoclassinit2(peVar4,0x40);
+      this_00 = (elfPathGeometry *)
+                elfPathGeometry::elfPathGeometry((elfPathGeometry *)peVar4,local_4d);
+      local_8 = 0xffffffff;
+      elfPathGeometry::AddPolygon(this_00,*(tagPOINT **)(this + 0x34),*(int *)(this + 0x38));
+      elfSubject::Add(param_2,param_1,(elfItem *)this_00,1);
+    }
+    if (((((byte)this[0x73] & 0x10) != 0) && (((byte)this[0x73] & 0xf) != 4)) &&
+       (uVar1 = **(ulong **)(param_3 + 4), uVar1 != 0)) {
+      peVar4 = operator_new(0x2c);
+      local_8 = 2;
+      esStyleList<esBlockStyle>::__autoclassinit2(peVar4,0x2c);
+      peVar5 = (elfItem *)elfSolidBrush::elfSolidBrush((elfSolidBrush *)peVar4,uVar1);
+      local_8 = 0xffffffff;
+      elfSubject::Add(param_2,param_1,peVar5,1);
+      local_58 = (*(int *)(*(int *)(param_3 + 4) + 8) * 5) / 2;
+      if (local_58 < 100) {
+        local_58 = 100;
+      }
+      D2DPointF::D2DPointF((D2DPointF *)&local_1c,*(D2D_POINT_2F **)(this + 0x58));
+      FUN_10027a30(&local_1c,1);
+      zRect::zRect(local_4c,local_1c - local_58,local_18 - local_58,local_1c + local_58,
+                   local_18 + local_58);
+      peVar4 = operator_new(0x2c);
+      local_8 = 3;
+      esStyleList<esBlockStyle>::__autoclassinit2(peVar4,0x2c);
+      this_01 = (elfSimpleGeometry *)
+                elfSimpleGeometry::elfSimpleGeometry((elfSimpleGeometry *)peVar4,'\x02');
+      local_8 = 0xffffffff;
+      ptVar7 = zRect::operator_struct_tagRECT_(local_4c);
+      elfSimpleGeometry::AddEllipse(this_01,ptVar7);
+      elfSubject::Add(param_2,param_1,(elfItem *)this_01,1);
+    }
+    pzVar8 = esGraphObject::GetSolidRect((esGraphObject *)this,1);
+    local_3c = *(undefined4 *)pzVar8;
+    local_38 = *(undefined4 *)(pzVar8 + 4);
+    local_34 = *(undefined4 *)(pzVar8 + 8);
+    local_30 = *(undefined4 *)(pzVar8 + 0xc);
+    peVar10 = (esRole *)0x0;
+    iVar6 = 1;
+    ptVar7 = zRect::operator_struct_tagRECT_((zRect *)&local_3c);
+    this_02 = elfPage::NewSubj(param_1,(esObject *)this,param_2,ptVar7,iVar6,peVar10);
+    iVar6 = esEQLine::Height((esEQLine *)(this + 0x80));
+    peVar9 = elfPage::GetColorScheme((elfPage *)(this + 0x80));
+    zRect::zRect((zRect *)&local_2c,0,0,(long)peVar9,iVar6);
+    zRectTempl<tagRECT,long>::OffsetRect
+              ((zRectTempl<tagRECT,long> *)&local_2c,*(long *)(*(int *)(this + 0x34) + 0x28),
+               *(long *)(*(int *)(this + 0x34) + 0x2c));
+    if (this == (esSegLable *)0xffffffb8) {
+      local_8c = (esSegLable *)0x0;
+    }
+    else {
+      local_8c = this + 0x4c;
+    }
+    ptVar7 = zRect::operator_struct_tagRECT_((zRect *)&local_2c);
+    elfSubject::SetRectB(this_02,ptVar7,(Matrix *)local_8c);
+    uVar2 = *(undefined4 *)(param_1 + 0x34);
+    ptVar7 = zRect::operator_struct_tagRECT_((zRect *)&local_2c);
+    *(tagRECT **)(param_1 + 0x34) = ptVar7;
+    esEQLine::Load((esEQLine *)(this + 0x80),param_1,this_02,local_2c,local_28,0,DAT_1057f0b4);
+    *(undefined4 *)(param_1 + 0x34) = uVar2;
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::GetLableFreature
+// entry=103eac10
+// signature=ulong GetLableFreature(esSegLable * this)
+// bodyBytes=276
+// =========================================================
+
+/* public: unsigned long __thiscall esSegLable::GetLableFreature(void)const  */
+
+ulong __thiscall esSegLable::GetLableFreature(esSegLable *this)
+
+{
+  wchar_t wVar1;
+  uint local_1c;
+  int local_18;
+  uint local_14;
+  uint local_c;
+  
+                    /* 0x3eac10  7109  ?GetLableFreature@esSegLable@@QBEKXZ */
+  if (*(int *)(this + 0xd4) == 0) {
+    local_c = 0;
+  }
+  else {
+    local_c = (uint)*(ushort *)(this + 0x6e) << 0x10 | (byte)this[0x73] & 0xf0;
+    for (local_18 = 0; local_18 < (int)(uint)(byte)this[0x70]; local_18 = local_18 + 1) {
+      wVar1 = *(wchar_t *)(*(int *)(this + 0x68) + local_18 * 2);
+      local_14 = esFontSheet::GetMathCharType(wVar1,10);
+      if (local_14 != 6) {
+        if ((int)local_14 < 0) {
+          local_1c = (uint)(0xff < (ushort)wVar1);
+          local_14 = local_1c;
+        }
+        else if (7 < (int)local_14) {
+          local_14 = 2;
+        }
+        local_c = 0x100 << ((byte)local_14 & 0x1f) | local_c;
+      }
+    }
+    if (this[0x70] != (esSegLable)0x0) {
+      local_c = local_c | 1;
+    }
+    if (this[0x71] != (esSegLable)0x0) {
+      local_c = local_c | 2;
+    }
+    if (this[0x72] != (esSegLable)0x0) {
+      local_c = local_c | 4;
+    }
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// esSegLable::Draw
+// entry=103ead30
+// signature=void Draw(esSegLable * this, esRender * param_1, tag_DRAWPARAM * param_2, Matrix * param_3)
+// bodyBytes=1025
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: virtual void __thiscall esSegLable::Draw(class esRender *,struct tag_DRAWPARAM *,class
+   Gdiplus::Matrix const *) */
+
+void __thiscall
+esSegLable::Draw(esSegLable *this,esRender *param_1,tag_DRAWPARAM *param_2,Matrix *param_3)
+
+{
+  esBulletsManager local_a4 [4];
+  esStyleSheet *local_a0;
+  uint local_9c;
+  undefined4 local_98;
+  undefined4 local_94;
+  undefined4 local_90;
+  egPen *local_8c;
+  tagPOINT *local_88;
+  tagPOINT *local_84;
+  esBulletsManager local_80 [4];
+  esFont *local_7c;
+  int local_78;
+  Matrix *local_74;
+  Matrix *local_70;
+  egPen *local_6c;
+  esStyleSheet *local_68;
+  egPen *local_64;
+  egGraphics *local_60;
+  int local_5c;
+  esSegLable *local_58;
+  egSolidBrush local_54 [20];
+  egSolidBrush local_40 [20];
+  esStyleList<esBlockStyle> local_2c [8];
+  int local_24;
+  int local_20;
+  esStyleList<esBlockStyle> local_1c [8];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3ead30  5310
+                       ?Draw@esSegLable@@UAEXPAVesRender@@PAUtag_DRAWPARAM@@PBVMatrix@Gdiplus@@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ee02;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (*(int *)(this + 0xd4) != 0) {
+    local_58 = this;
+    if (*(int *)(this + 0x34) == 0) {
+      (**(code **)(*(int *)this + 0x7c))(0,local_14);
+    }
+    local_60 = esPainter::GetGraphics((esPainter *)param_1,3);
+    local_7c = esFontSheet::GetFont
+                         (*(esFontSheet **)(local_58 + 0xd4),*(ushort *)(local_58 + 0x6e),
+                          DAT_1057f0b4);
+    local_68 = (esStyleSheet *)esRender::MakeSolidColor(param_1,*(ulong *)(local_7c + 0x20),0xff);
+    if ((local_68 != (esStyleSheet *)0x0) && ((*(uint *)(param_2 + 0x18) & 0x20000000) == 0)) {
+      esBulletsManager::esBulletsManager(local_80,local_68);
+      eg_graphics::egSolidBrush::egSolidBrush(local_40,(Color *)local_80);
+      local_8 = 0;
+      local_84 = esSegBase::get_safe_points((esSegBase *)local_58,param_3);
+      eg_graphics::egGraphics::FillPolygon
+                (local_60,(egBrush *)local_40,(Point *)local_84,*(int *)(local_58 + 0x38),0);
+      local_8 = 0xffffffff;
+      eg_graphics::egSolidBrush::~egSolidBrush(local_40);
+    }
+    if (((byte)local_58[0x73] & 0x20) != 0) {
+      local_6c = esPenInfo::CreatePen(*(esPenInfo **)(param_2 + 4),param_1,0,0);
+      local_88 = esSegBase::get_safe_points((esSegBase *)local_58,param_3);
+      eg_graphics::egGraphics::DrawPolygon
+                (local_60,local_6c,(Point *)local_88,*(int *)(local_58 + 0x38));
+      local_8c = local_6c;
+      local_64 = local_6c;
+      if (local_6c == (egPen *)0x0) {
+        local_90 = 0;
+      }
+      else {
+        local_90 = (*(code *)**(undefined4 **)local_6c)(1);
+      }
+    }
+    esStyleList<esBlockStyle>::__autoclassinit2(local_2c,8);
+    if (local_58 == (esSegLable *)0xffffffb8) {
+      local_70 = (Matrix *)0x0;
+    }
+    else {
+      local_70 = (Matrix *)(local_58 + 0x4c);
+    }
+    esMatrix::esMatrix((esMatrix *)local_2c,local_70,param_3);
+    local_8 = 1;
+    if ((*(uint *)(param_2 + 0x18) & 0x10000000) == 0) {
+      local_9c = eg_graphics::egGraphics::Save(local_60);
+      esStyleList<esBlockStyle>::__autoclassinit2(local_1c,8);
+      if (local_58 == (esSegLable *)0xffffffb8) {
+        local_74 = (Matrix *)0x0;
+      }
+      else {
+        local_74 = (Matrix *)(local_58 + 0x4c);
+      }
+      esMatrix::esMatrix((esMatrix *)local_1c,local_74,param_3);
+      local_8 = CONCAT31(local_8._1_3_,2);
+      eg_graphics::egGraphics::MultiplyTransform(local_60,(Matrix *)local_1c,0);
+      local_98 = *(undefined4 *)(param_1 + 0x50);
+      local_94 = *(undefined4 *)(param_1 + 0x54);
+      *(undefined4 *)(param_1 + 0x54) = 0;
+      *(undefined4 *)(param_1 + 0x50) = 0;
+      local_78 = esRender::EnableAuxColor(param_1,0);
+      esEQLine::Draw((esEQLine *)(local_58 + 0x80),param_1,(esDrawInfo *)0x0,
+                     *(int *)(*(int *)(local_58 + 0x34) + 0x28),
+                     *(int *)(*(int *)(local_58 + 0x34) + 0x2c),0,DAT_1057f0b4);
+      if (local_78 != 0) {
+        esRender::EnableAuxColor(param_1,local_78);
+      }
+      *(undefined4 *)(param_1 + 0x54) = local_94;
+      *(undefined4 *)(param_1 + 0x50) = local_98;
+      eg_graphics::egGraphics::Restore(local_60,local_9c);
+      local_8 = CONCAT31(local_8._1_3_,1);
+      esInvertedMatrix::~esInvertedMatrix((esInvertedMatrix *)local_1c);
+    }
+    if ((((byte)local_58[0x73] & 0x10) != 0) && ((*(uint *)(param_2 + 0x18) & 0x20000000) == 0)) {
+      local_5c = *(int *)(*(int *)(param_2 + 4) + 8) << 1;
+      if (local_5c < 100) {
+        local_5c = 100;
+      }
+      D2DPointF::D2DPointF((D2DPointF *)&local_24,*(D2D_POINT_2F **)(local_58 + 0x58));
+      FUN_10027a30(&local_24,1);
+      local_a0 = (esStyleSheet *)esRender::MakeSolidColor(param_1,**(ulong **)(param_2 + 4),0xff);
+      esBulletsManager::esBulletsManager(local_a4,local_a0);
+      eg_graphics::egSolidBrush::egSolidBrush(local_54,(Color *)local_a4);
+      local_8._0_1_ = 3;
+      eg_graphics::egGraphics::FillEllipse
+                (local_60,(egBrush *)local_54,local_24 - local_5c,local_20 - local_5c,local_5c << 1,
+                 local_5c << 1);
+      local_8 = CONCAT31(local_8._1_3_,1);
+      eg_graphics::egSolidBrush::~egSolidBrush(local_54);
+    }
+    local_8 = 0xffffffff;
+    esInvertedMatrix::~esInvertedMatrix((esInvertedMatrix *)local_2c);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::GetEntersectInfo
+// entry=103eb140
+// signature=void GetEntersectInfo(esSegLable * this, zPoint param_1, zPoint param_2, double * param_3, double * param_4)
+// bodyBytes=496
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: void __thiscall esSegLable::GetEntersectInfo(class zPoint,class zPoint,double &,double &)
+    */
+
+void __thiscall
+esSegLable::GetEntersectInfo
+          (esSegLable *this,LONG param_2,LONG param_3,LONG param_4,LONG param_5,double *param_6,
+          double *param_7)
+
+{
+  tagPOINT tVar1;
+  tagPOINT tVar2;
+  tagPOINT tVar3;
+  tagPOINT tVar4;
+  tagPOINT tVar5;
+  tagPOINT tVar6;
+  tagPOINT tVar7;
+  tagPOINT tVar8;
+  int iVar9;
+  int local_24;
+  int local_20;
+  double local_18;
+  undefined4 local_10;
+  undefined4 local_c;
+  uint local_8;
+  
+                    /* 0x3eb140  6764  ?GetEntersectInfo@esSegLable@@QAEXVzPoint@@0AAN1@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x34) == 0) {
+    (**(code **)(*(int *)this + 0x7c))(0);
+  }
+  D2DPointF::D2DPointF((D2DPointF *)&local_10,*(D2D_POINT_2F **)(this + 0x58));
+  FUN_10027a30(&local_10,1);
+  iVar9 = distance(local_10,local_c,param_2,param_3);
+  if (iVar9 < 100) {
+    esGraphObject::GetSolidRect((esGraphObject *)this,1);
+    for (local_20 = 1; local_20 < *(int *)(this + 0x38); local_20 = local_20 + 1) {
+      tVar1.y = param_3;
+      tVar1.x = param_2;
+      tVar3.y = param_5;
+      tVar3.x = param_4;
+      tVar5.y = *(LONG *)(*(int *)(this + 0x34) + -4 + local_20 * 8);
+      tVar5.x = *(LONG *)(*(int *)(this + 0x34) + -8 + local_20 * 8);
+      tVar7.y = *(LONG *)(*(int *)(this + 0x34) + 4 + local_20 * 8);
+      tVar7.x = *(LONG *)(*(int *)(this + 0x34) + local_20 * 8);
+      iVar9 = esGraph::Jiao_LineLine(tVar1,tVar3,tVar5,tVar7,&local_18);
+      if ((iVar9 != 0) && (*param_6 <= local_18 && local_18 != *param_6)) {
+        *param_6 = local_18;
+      }
+    }
+  }
+  else {
+    iVar9 = distance(local_10,local_c,param_4,param_5);
+    if (iVar9 < 100) {
+      esGraphObject::GetSolidRect((esGraphObject *)this,1);
+      for (local_24 = 1; local_24 < *(int *)(this + 0x38); local_24 = local_24 + 1) {
+        tVar2.y = param_5;
+        tVar2.x = param_4;
+        tVar4.y = param_3;
+        tVar4.x = param_2;
+        tVar6.y = *(LONG *)(*(int *)(this + 0x34) + -4 + local_24 * 8);
+        tVar6.x = *(LONG *)(*(int *)(this + 0x34) + -8 + local_24 * 8);
+        tVar8.y = *(LONG *)(*(int *)(this + 0x34) + 4 + local_24 * 8);
+        tVar8.x = *(LONG *)(*(int *)(this + 0x34) + local_24 * 8);
+        iVar9 = esGraph::Jiao_LineLine(tVar2,tVar4,tVar6,tVar8,&local_18);
+        if ((iVar9 != 0) && (*param_7 <= local_18 && local_18 != *param_7)) {
+          *param_7 = local_18;
+        }
+      }
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::RecalcLayoutLable
+// entry=103eb390
+// signature=void RecalcLayoutLable(esSegLable * this)
+// bodyBytes=2490
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* protected: void __thiscall esSegLable::RecalcLayoutLable(void) */
+
+void __thiscall esSegLable::RecalcLayoutLable(esSegLable *this)
+
+{
+  esSegLable eVar1;
+  ushort uVar2;
+  int *piVar3;
+  ushort uVar4;
+  esFont *peVar5;
+  esStyleList<esBlockStyle> *peVar6;
+  esTextItem *peVar7;
+  esEquBox *peVar8;
+  wchar_t *pwVar9;
+  int iVar10;
+  undefined4 local_394;
+  esEQLine *local_390;
+  esEQLine *local_380;
+  esEQLine *local_370;
+  esEQLine *local_368;
+  esEQLine *local_358;
+  esEQLine *local_350;
+  wchar_t *local_328;
+  esStyleList<esBlockStyle> local_31c [764];
+  GWindowDC local_20 [12];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x3eb390  11392  ?RecalcLayoutLable@esSegLable@@IAEXXZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1054ee81;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0xd4) == 0) {
+    return;
+  }
+  local_328 = *(wchar_t **)(this + 0x68);
+  ExceptionList = &local_10;
+  esText::ClearAllContent((esText *)(this + 0x80),1);
+  peVar5 = esFontSheet::GetFont
+                     (*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e),DAT_1057f0b4);
+  esStyleList<esBlockStyle>::__autoclassinit2(local_31c,0x2fc);
+  if (((byte)this[0x73] & 0x80) == 0) {
+    local_394 = 0;
+  }
+  else {
+    local_394 = 0x40000;
+  }
+  FUN_103e0e30(*(undefined4 *)(this + 0xd4),local_394,0);
+  FUN_103e0e90(peVar5);
+  esFont::SetFontHeight((esFont *)local_31c,*(int *)(peVar5 + 0x14));
+  uVar2 = *(ushort *)(this + 0x6e);
+  peVar5 = esFontSheet::GetFont
+                     (*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e),DAT_1057f0b4);
+  esFontSheet::SetActiveFont(*(esFontSheet **)(this + 0xd4),*(ushort *)(this + 0x6e));
+  esFontSheet::SpecifyFont(*(esFontSheet **)(this + 0xd4),peVar5);
+  uVar4 = esFontSheet::SetFontMode(*(esFontSheet **)(this + 0xd4),0);
+  if (this[0x70] != (esSegLable)0x0) {
+    esEQLine::AppendString
+              ((esEQLine *)(this + 0x80),local_328,(uint)(byte)this[0x70],
+               *(esFontSheet **)(this + 0xd4),uVar2);
+    local_328 = local_328 + (byte)this[0x70];
+  }
+  if ((this[0x71] == (esSegLable)0x0) && (this[0x72] == (esSegLable)0x0)) goto LAB_103ebcd4;
+  if (((byte)this[0x73] & 0x40) != 0) {
+    peVar6 = operator_new(0x58);
+    local_8 = 0;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x58);
+    peVar7 = (esTextItem *)FUN_1007c700();
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)peVar7 + 0xbc))(0,*(undefined4 *)(this + 0xd4));
+    esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+    if (this[0x71] != (esSegLable)0x0) {
+      peVar8 = esTextItem::box(peVar7,0);
+      if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb6d4:
+        local_350 = (esEQLine *)0x0;
+      }
+      else {
+        peVar8 = esTextItem::box(peVar7,0);
+        piVar3 = *(int **)(peVar8 + 0x14);
+        pwVar9 = esEQLine::ID();
+        iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+        if (iVar10 == 0) goto LAB_103eb6d4;
+        peVar8 = esTextItem::box(peVar7,0);
+        local_350 = *(esEQLine **)(peVar8 + 0x14);
+      }
+      esEQLine::AppendString
+                (local_350,local_328,(uint)(byte)this[0x71],*(esFontSheet **)(this + 0xd4),uVar2);
+      local_328 = local_328 + (byte)this[0x71];
+    }
+    if (this[0x72] == (esSegLable)0x0) goto LAB_103ebcd4;
+    peVar8 = esTextItem::box(peVar7,1);
+    if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb7a5:
+      local_358 = (esEQLine *)0x0;
+    }
+    else {
+      peVar8 = esTextItem::box(peVar7,1);
+      piVar3 = *(int **)(peVar8 + 0x14);
+      pwVar9 = esEQLine::ID();
+      iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+      if (iVar10 == 0) goto LAB_103eb7a5;
+      peVar8 = esTextItem::box(peVar7,1);
+      local_358 = *(esEQLine **)(peVar8 + 0x14);
+    }
+    esEQLine::AppendString
+              (local_358,local_328,(uint)(byte)this[0x72],*(esFontSheet **)(this + 0xd4),uVar2);
+    goto LAB_103ebcd4;
+  }
+  if (this[0x71] == (esSegLable)0x0) {
+    if (this[0x72] == (esSegLable)0x0) goto LAB_103ebcd4;
+    peVar6 = operator_new(0x48);
+    local_8 = 3;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x48);
+    peVar7 = (esTextItem *)FUN_10095830();
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)peVar7 + 0xbc))(0x16000081,*(undefined4 *)(this + 0xd4));
+    esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+    peVar8 = esTextItem::box(peVar7,0);
+    if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103ebc7b:
+      local_390 = (esEQLine *)0x0;
+    }
+    else {
+      peVar8 = esTextItem::box(peVar7,0);
+      piVar3 = *(int **)(peVar8 + 0x14);
+      pwVar9 = esEQLine::ID();
+      iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+      if (iVar10 == 0) goto LAB_103ebc7b;
+      peVar8 = esTextItem::box(peVar7,0);
+      local_390 = *(esEQLine **)(peVar8 + 0x14);
+    }
+    *(ushort *)(local_390 + 0x1e) = uVar2;
+    esEQLine::AppendString
+              (local_390,local_328,(uint)(byte)this[0x72],*(esFontSheet **)(this + 0xd4),uVar2);
+    goto LAB_103ebcd4;
+  }
+  if (this[0x72] == (esSegLable)0x0) {
+    peVar6 = operator_new(0x48);
+    local_8 = 2;
+    esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x48);
+    peVar7 = (esTextItem *)FUN_10095830();
+    local_8 = 0xffffffff;
+    (**(code **)(*(int *)peVar7 + 0xbc))(0x16000041,*(undefined4 *)(this + 0xd4));
+    esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+    peVar8 = esTextItem::box(peVar7,0);
+    if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103ebb1e:
+      local_380 = (esEQLine *)0x0;
+    }
+    else {
+      peVar8 = esTextItem::box(peVar7,0);
+      piVar3 = *(int **)(peVar8 + 0x14);
+      pwVar9 = esEQLine::ID();
+      iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+      if (iVar10 == 0) goto LAB_103ebb1e;
+      peVar8 = esTextItem::box(peVar7,0);
+      local_380 = *(esEQLine **)(peVar8 + 0x14);
+    }
+    esEQLine::AppendString
+              (local_380,local_328,(uint)(byte)this[0x71],*(esFontSheet **)(this + 0xd4),uVar2);
+    goto LAB_103ebcd4;
+  }
+  peVar6 = operator_new(0x48);
+  local_8 = 1;
+  esStyleList<esBlockStyle>::__autoclassinit2(peVar6,0x48);
+  peVar7 = (esTextItem *)FUN_10095830();
+  local_8 = 0xffffffff;
+  (**(code **)(*(int *)peVar7 + 0xbc))(0x160000c2,*(undefined4 *)(this + 0xd4));
+  esText::AppendChrObj((esText *)(this + 0x80),(esChrObj *)peVar7);
+  peVar8 = esTextItem::box(peVar7,0);
+  if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb914:
+    local_368 = (esEQLine *)0x0;
+  }
+  else {
+    peVar8 = esTextItem::box(peVar7,0);
+    piVar3 = *(int **)(peVar8 + 0x14);
+    pwVar9 = esEQLine::ID();
+    iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+    if (iVar10 == 0) goto LAB_103eb914;
+    peVar8 = esTextItem::box(peVar7,0);
+    local_368 = *(esEQLine **)(peVar8 + 0x14);
+  }
+  esEQLine::AppendString
+            (local_368,local_328,(uint)(byte)this[0x71],*(esFontSheet **)(this + 0xd4),uVar2);
+  eVar1 = this[0x71];
+  peVar8 = esTextItem::box(peVar7,1);
+  if (*(int *)(peVar8 + 0x14) == 0) {
+LAB_103eb9d3:
+    local_370 = (esEQLine *)0x0;
+  }
+  else {
+    peVar8 = esTextItem::box(peVar7,1);
+    piVar3 = *(int **)(peVar8 + 0x14);
+    pwVar9 = esEQLine::ID();
+    iVar10 = (**(code **)(*piVar3 + 8))(pwVar9);
+    if (iVar10 == 0) goto LAB_103eb9d3;
+    peVar8 = esTextItem::box(peVar7,1);
+    local_370 = *(esEQLine **)(peVar8 + 0x14);
+  }
+  esEQLine::AppendString
+            (local_370,local_328 + (byte)eVar1,(uint)(byte)this[0x72],*(esFontSheet **)(this + 0xd4)
+             ,uVar2);
+LAB_103ebcd4:
+  esText::StylizeLabelFonts((esText *)(this + 0x80),(esFontTyper *)local_31c);
+  esFontSheet::SetFontMode(*(esFontSheet **)(this + 0xd4),uVar4);
+  eg_gui::GWindowDC::GWindowDC(local_20);
+  local_8 = 4;
+  esEQLine::RecalcLayout
+            ((esEQLine *)(this + 0x80),(GDC *)local_20,*(esFontSheet **)(this + 0xd4),0,DAT_1057f0b4
+             ,0);
+  local_8 = 0xffffffff;
+  eg_gui::GWindowDC::~GWindowDC(local_20);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::Build
+// entry=103ebd80
+// signature=void Build(esSegLable * this, int param_1)
+// bodyBytes=1041
+// =========================================================
+
+/* protected: virtual void __thiscall esSegLable::Build(int) */
+
+void __thiscall esSegLable::Build(esSegLable *this,int param_1)
+
+{
+  LONG LVar1;
+  void *_Memory;
+  esColorScheme *peVar2;
+  int iVar3;
+  tagPOINT *ptVar4;
+  undefined4 uVar5;
+  uint local_2c;
+  int local_24;
+  int local_1c;
+  int local_18;
+  byte local_5;
+  
+                    /* 0x3ebd80  4032  ?Build@esSegLable@@MAEXH@Z */
+  RecalcLayoutLable(this);
+  peVar2 = elfPage::GetColorScheme((elfPage *)(this + 0x80));
+  iVar3 = esEQLine::Height((esEQLine *)(this + 0x80));
+  if (((byte)this[0x73] & 0x20) == 0) {
+    local_2c = 0;
+  }
+  else {
+    local_2c = (uint)*(ushort *)(this + 0x6c);
+  }
+  peVar2 = peVar2 + local_2c * 2;
+  iVar3 = iVar3 + local_2c * 2;
+  ptVar4 = (tagPOINT *)FUN_105290e5(0x30);
+  GetPointsForRect(0,0,(int)peVar2,iVar3,ptVar4);
+  LVar1 = ptVar4->y;
+  ptVar4[4].x = ptVar4->x;
+  ptVar4[4].y = LVar1;
+  if (((byte)this[0x74] & 0xf0) == 0) {
+    local_18 = (((byte)this[0x74] & 0xf) % 3) * ((int)peVar2 / 2) +
+               (**(int **)(this + 0x58) - (int)peVar2);
+    local_1c = (((byte)this[0x74] & 0xf) / 3) * (iVar3 / 2) +
+               (*(int *)(*(int *)(this + 0x58) + 4) - iVar3);
+    this[0x73] = (esSegLable)((byte)this[0x73] & 0xf0 | (byte)this[0x74] & 0xf);
+  }
+  else {
+    local_18 = **(int **)(this + 0x58);
+    local_1c = *(int *)(*(int *)(this + 0x58) + 4);
+    local_5 = 0;
+    switch((byte)this[0x74] & 0x30) {
+    case 0:
+      local_18 = local_18 - (int)peVar2 / 2;
+      local_5 = 1;
+      break;
+    case 0x10:
+      local_18 = ((int)((float)(int)peVar2 * *(float *)(this + 0x78)) - (int)peVar2) + local_18;
+      local_5 = 1;
+      break;
+    case 0x20:
+      local_18 = local_18 - (int)(peVar2 + (int)*(float *)(this + 0x78));
+      local_5 = 0;
+      break;
+    case 0x30:
+      local_18 = (int)*(float *)(this + 0x78) + local_18;
+      local_5 = 2;
+    }
+    switch((byte)this[0x74] & 0xc0) {
+    case 0:
+      local_1c = local_1c - (int)peVar2 / 2;
+      local_5 = local_5 + 3;
+      break;
+    case 0x40:
+      local_1c = ((int)((float)iVar3 * *(float *)(this + 0x7c)) - iVar3) + local_1c;
+      local_5 = local_5 + 3;
+      break;
+    case 0x80:
+      local_1c = local_1c - ((int)*(float *)(this + 0x7c) + iVar3);
+      break;
+    case 0xc0:
+      local_1c = (int)*(float *)(this + 0x7c) + local_1c;
+      local_5 = local_5 + 6;
+    }
+    this[0x73] = (esSegLable)((byte)this[0x73] & 0xf0 | local_5);
+  }
+  for (local_24 = 0; local_24 < 5; local_24 = local_24 + 1) {
+    ptVar4[local_24].x = ptVar4[local_24].x + local_18;
+    ptVar4[local_24].y = ptVar4[local_24].y + local_1c;
+  }
+  ptVar4[5].x = ptVar4->x + local_2c;
+  ptVar4[5].y = ptVar4->y + local_2c;
+  FUN_10027a30(ptVar4,5);
+  if ((*(int *)(this + 0x34) != 0) &&
+     (_Memory = *(void **)(this + 0x34), free(_Memory), _Memory != (void *)0x0)) {
+    *(undefined4 *)(this + 0x34) = 0x8123;
+  }
+  *(tagPOINT **)(this + 0x34) = ptVar4;
+  *(undefined4 *)(this + 0x38) = 5;
+  if (*(int *)(this + 0x60) == 0) {
+    uVar5 = FUN_105290e5(5);
+    *(undefined4 *)(this + 0x60) = uVar5;
+    **(undefined1 **)(this + 0x60) = 0;
+    *(undefined4 *)(*(int *)(this + 0x60) + 1) = 0x1010101;
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::IsEqual
+// entry=103ec2c0
+// signature=int IsEqual(esSegLable * this, esObject * param_1, esStyleSheet * param_2)
+// bodyBytes=319
+// =========================================================
+
+/* public: virtual int __thiscall esSegLable::IsEqual(class esObject *,class esStyleSheet *) */
+
+int __thiscall esSegLable::IsEqual(esSegLable *this,esObject *param_1,esStyleSheet *param_2)
+
+{
+  int iVar1;
+  uint local_14;
+  
+                    /* 0x3ec2c0  9337  ?IsEqual@esSegLable@@UAEHPAVesObject@@PAVesStyleSheet@@@Z */
+  iVar1 = esSeg::IsEqual((esSeg *)this,param_1,param_2);
+  if (iVar1 == 0) {
+    local_14 = 0;
+  }
+  else if (((((*(short *)(this + 0x6e) == *(short *)(param_1 + 0x6e)) &&
+             (*(short *)(this + 0x6c) == *(short *)(param_1 + 0x6c))) &&
+            (this[0x70] == *(esSegLable *)(param_1 + 0x70))) &&
+           ((this[0x71] == *(esSegLable *)(param_1 + 0x71) &&
+            (this[0x72] == *(esSegLable *)(param_1 + 0x72))))) &&
+          (this[0x73] == *(esSegLable *)(param_1 + 0x73))) {
+    if (((this[0x74] == *(esSegLable *)(param_1 + 0x74)) &&
+        (*(float *)(this + 0x78) == *(float *)(param_1 + 0x78))) &&
+       (*(float *)(this + 0x7c) == *(float *)(param_1 + 0x78))) {
+      iVar1 = memcmp(*(void **)(this + 0x68),*(void **)(param_1 + 0x68),
+                     ((uint)(byte)this[0x72] + (uint)(byte)this[0x71] + (uint)(byte)this[0x70]) * 2)
+      ;
+      local_14 = (uint)(iVar1 == 0);
+    }
+    else {
+      local_14 = 0;
+    }
+  }
+  else {
+    local_14 = 0;
+  }
+  return local_14;
+}
+
+
+
+// =========================================================
+// esSegLable::Serialize
+// entry=103ec400
+// signature=void Serialize(esSegLable * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+// bodyBytes=699
+// =========================================================
+
+/* public: virtual void __thiscall esSegLable::Serialize(class zArchive &,class esStyleSheet
+   *,unsigned short) */
+
+void __thiscall
+esSegLable::Serialize(esSegLable *this,zArchive *param_1,esStyleSheet *param_2,ushort param_3)
+
+{
+  int iVar1;
+  zStream *pzVar2;
+  esSegLable *peVar3;
+  ulong uVar4;
+  undefined4 uVar5;
+  esSegLable *peVar6;
+  esSegLable *peVar7;
+  esSegLable eVar8;
+  esSegLable eVar9;
+  float fVar10;
+  esSegLable eVar11;
+  ushort uVar12;
+  float fVar13;
+  
+                    /* 0x3ec400  12293  ?Serialize@esSegLable@@UAEXAAVzArchive@@PAVesStyleSheet@@G@Z
+                        */
+  esSeg::Serialize((esSeg *)this,param_1,param_2,param_3);
+  iVar1 = zStream::IsStoring((zStream *)param_1);
+  if (iVar1 == 0) {
+    peVar3 = this + 0x6c;
+    pzVar2 = zStream::operator>>((zStream *)param_1,(ushort *)(this + 0x6e));
+    zStream::operator>>(pzVar2,(ushort *)peVar3);
+    peVar7 = this + 0x73;
+    peVar3 = this + 0x72;
+    peVar6 = this + 0x71;
+    pzVar2 = zStream::operator>>((zStream *)param_1,(uchar *)(this + 0x70));
+    pzVar2 = zStream::operator>>(pzVar2,(uchar *)peVar6);
+    pzVar2 = zStream::operator>>(pzVar2,(uchar *)peVar3);
+    zStream::operator>>(pzVar2,(uchar *)peVar7);
+    uVar4 = esStyleSheet::GetVersion(param_2);
+    if (uVar4 < 0x1000202) {
+      this[0x74] = (esSegLable)((byte)this[0x73] & 0xf);
+    }
+    else {
+      peVar3 = this + 0x7c;
+      peVar6 = this + 0x78;
+      pzVar2 = zStream::operator>>((zStream *)param_1,(uchar *)(this + 0x74));
+      pzVar2 = zStream::operator>>(pzVar2,(float *)peVar6);
+      zStream::operator>>(pzVar2,(float *)peVar3);
+    }
+    if ((uVar4 < 0x2000735) && (((byte)this[0x73] & 0xf) == 4)) {
+      this[0x73] = (esSegLable)((byte)this[0x73] & 0xef);
+    }
+    if (param_2 != (esStyleSheet *)0x0) {
+      esUseInfo::Update((esUseInfo *)param_2,(ushort *)(this + 0x6e));
+    }
+    iVar1 = (uint)(byte)this[0x70] + (uint)(byte)this[0x71] + (uint)(byte)this[0x72];
+    if (*(int *)(this + 0x68) != 0) {
+      free(*(void **)(this + 0x68));
+    }
+    uVar5 = FUN_105290e5((iVar1 + 1) * 2);
+    *(undefined4 *)(this + 0x68) = uVar5;
+    (**(code **)(*(int *)param_1 + 0xc))(*(undefined4 *)(this + 0x68),iVar1 * 2);
+    *(undefined2 *)(*(int *)(this + 0x68) + iVar1 * 2) = 0;
+    if (param_2 == (esStyleSheet *)0x0) {
+      if (esObject::m_pUndo != (esUndo *)0x0) {
+        Initialize(this,*(esFontSheet **)(esObject::m_pUndo + 8));
+      }
+    }
+    else {
+      Initialize(this,(esFontSheet *)param_2);
+    }
+  }
+  else {
+    uVar12 = *(ushort *)(this + 0x6c);
+    pzVar2 = zStream::operator<<((zStream *)param_1,*(ushort *)(this + 0x6e));
+    zStream::operator<<(pzVar2,uVar12);
+    eVar11 = this[0x73];
+    eVar9 = this[0x72];
+    eVar8 = this[0x71];
+    pzVar2 = zStream::operator<<((zStream *)param_1,(uchar)this[0x70]);
+    pzVar2 = zStream::operator<<(pzVar2,(uchar)eVar8);
+    pzVar2 = zStream::operator<<(pzVar2,(uchar)eVar9);
+    zStream::operator<<(pzVar2,(uchar)eVar11);
+    fVar13 = *(float *)(this + 0x7c);
+    fVar10 = *(float *)(this + 0x78);
+    pzVar2 = zStream::operator<<((zStream *)param_1,(uchar)this[0x74]);
+    pzVar2 = zStream::operator<<(pzVar2,fVar10);
+    zStream::operator<<(pzVar2,fVar13);
+    (**(code **)(*(int *)param_1 + 8))
+              (*(undefined4 *)(this + 0x68),
+               ((uint)(byte)this[0x70] + (uint)(byte)this[0x71] + (uint)(byte)this[0x72]) * 2);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esSegLable::CopyFrom
+// entry=103ec6c0
+// signature=void CopyFrom(esSegLable * this, esObject * param_1, esStyleExchanger * param_2)
+// bodyBytes=349
+// =========================================================
+
+/* public: virtual void __thiscall esSegLable::CopyFrom(class esObject const *,class
+   esStyleExchanger *) */
+
+void __thiscall esSegLable::CopyFrom(esSegLable *this,esObject *param_1,esStyleExchanger *param_2)
+
+{
+  ushort uVar1;
+  wchar_t *pwVar2;
+  int iVar3;
+  undefined4 uVar4;
+  esStyleSheet *peVar5;
+  esObject *local_14;
+  
+                    /* 0x3ec6c0  4798
+                       ?CopyFrom@esSegLable@@UAEXPBVesObject@@PAVesStyleExchanger@@@Z */
+  esSeg::CopyFrom((esSeg *)this,param_1,param_2);
+  if (param_1 != (esObject *)0x0) {
+    pwVar2 = ID();
+    iVar3 = (**(code **)(*(int *)param_1 + 8))(pwVar2);
+    if (iVar3 != 0) {
+      local_14 = param_1;
+      goto LAB_103ec705;
+    }
+  }
+  local_14 = (esObject *)0x0;
+LAB_103ec705:
+  if (local_14 != (esObject *)0x0) {
+    uVar1 = esStyleExchanger::GetFontIdx(param_2,*(ushort *)(local_14 + 0x6e));
+    *(ushort *)(this + 0x6e) = uVar1;
+    *(undefined2 *)(this + 0x6c) = *(undefined2 *)(local_14 + 0x6c);
+    this[0x70] = *(esSegLable *)(local_14 + 0x70);
+    this[0x71] = *(esSegLable *)(local_14 + 0x71);
+    this[0x72] = *(esSegLable *)(local_14 + 0x72);
+    this[0x73] = *(esSegLable *)(local_14 + 0x73);
+    this[0x74] = *(esSegLable *)(local_14 + 0x74);
+    *(undefined4 *)(this + 0x78) = *(undefined4 *)(local_14 + 0x78);
+    *(undefined4 *)(this + 0x7c) = *(undefined4 *)(local_14 + 0x7c);
+    iVar3 = (uint)(byte)this[0x70] + (uint)(byte)this[0x71] + (uint)(byte)this[0x72];
+    uVar4 = FUN_105290e5((iVar3 + 1) * 2);
+    *(undefined4 *)(this + 0x68) = uVar4;
+    memcpy(*(void **)(this + 0x68),*(void **)(local_14 + 0x68),iVar3 * 2);
+    *(undefined2 *)(*(int *)(this + 0x68) + iVar3 * 2) = 0;
+    peVar5 = esStyleExchanger::GetDestSheet(param_2);
+    Initialize(this,(esFontSheet *)peVar5);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::ID
+// entry=104437d0
+// signature=wchar_t * ID(void)
+// bodyBytes=10
+// =========================================================
+
+/* public: static wchar_t const * __cdecl esLableBox::ID(void) */
+
+wchar_t * __cdecl esLableBox::ID(void)
+
+{
+                    /* 0x4437d0  8595  ?ID@esLableBox@@SAPB_WXZ */
+  return L"esLableBox";
+}
+
+
+
+// =========================================================
+// esLableBox::isKindOf
+// entry=104437e0
+// signature=int isKindOf(esLableBox * this, wchar_t * param_1)
+// bodyBytes=147
+// =========================================================
+
+/* public: virtual int __thiscall esLableBox::isKindOf(wchar_t const *)const  */
+
+int __thiscall esLableBox::isKindOf(esLableBox *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  int iVar2;
+  bool bVar3;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x4437e0  15343  ?isKindOf@esLableBox@@UBEHPB_W@Z */
+  if (this == (esLableBox *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    local_10 = ID();
+    local_c = param_1;
+    do {
+      wVar1 = *local_c;
+      bVar3 = (ushort)wVar1 < (ushort)*local_10;
+      if (wVar1 != *local_10) {
+LAB_10443846:
+        local_14 = -(uint)bVar3 | 1;
+        goto LAB_1044384e;
+      }
+      if (wVar1 == L'\0') break;
+      wVar1 = local_c[1];
+      bVar3 = (ushort)wVar1 < (ushort)local_10[1];
+      if (wVar1 != local_10[1]) goto LAB_10443846;
+      local_c = local_c + 2;
+      local_10 = local_10 + 2;
+    } while (wVar1 != L'\0');
+    local_14 = 0;
+LAB_1044384e:
+    if (local_14 == 0) {
+      iVar2 = 1;
+    }
+    else {
+      iVar2 = esFormulaBox::isKindOf((esFormulaBox *)this,param_1);
+    }
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esLableBox::className
+// entry=10443880
+// signature=wchar_t * className(esLableBox * this)
+// bodyBytes=16
+// =========================================================
+
+/* public: virtual wchar_t const * __thiscall esLableBox::className(void)const  */
+
+wchar_t * __thiscall esLableBox::className(esLableBox *this)
+
+{
+  wchar_t *pwVar1;
+  
+                    /* 0x443880  14475  ?className@esLableBox@@UBEPB_WXZ */
+  pwVar1 = esFormulaBox::ID();
+  return pwVar1;
+}
+
+
+
+// =========================================================
+// esLableBox::isOf
+// entry=10443890
+// signature=int isOf(esLableBox * this, wchar_t * param_1)
+// bodyBytes=137
+// =========================================================
+
+/* public: virtual int __thiscall esLableBox::isOf(wchar_t const *)const  */
+
+int __thiscall esLableBox::isOf(esLableBox *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  bool bVar2;
+  uint local_18;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x443890  15601  ?isOf@esLableBox@@UBEHPB_W@Z */
+  local_10 = ID();
+  local_c = param_1;
+  do {
+    wVar1 = *local_c;
+    bVar2 = (ushort)wVar1 < (ushort)*local_10;
+    if (wVar1 != *local_10) {
+LAB_104438ec:
+      local_14 = -(uint)bVar2 | 1;
+      goto LAB_104438f4;
+    }
+    if (wVar1 == L'\0') break;
+    wVar1 = local_c[1];
+    bVar2 = (ushort)wVar1 < (ushort)local_10[1];
+    if (wVar1 != local_10[1]) goto LAB_104438ec;
+    local_c = local_c + 2;
+    local_10 = local_10 + 2;
+  } while (wVar1 != L'\0');
+  local_14 = 0;
+LAB_104438f4:
+  local_18 = (uint)(local_14 == 0);
+  return local_18;
+}
+
+
+
+// =========================================================
+// esLableBox::esLableBox
+// entry=10443920
+// signature=undefined esLableBox(esLableBox * this)
+// bodyBytes=130
+// =========================================================
+
+/* public: __thiscall esLableBox::esLableBox(void) */
+
+esLableBox * __thiscall esLableBox::esLableBox(esLableBox *this)
+
+{
+  uint uVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x443920  806  ??0esLableBox@@QAE@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10551938;
+  local_10 = ExceptionList;
+  uVar1 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  esFormulaBox::esFormulaBox((esFormulaBox *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  FUN_10027060(uVar1);
+  *(undefined2 *)(this + 0x1c) = 8;
+  *(undefined4 *)(this + 0x54) = 0;
+  *(undefined4 *)(this + 0x58) = 0;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esLableBox::~esLableBox
+// entry=104439b0
+// signature=void ~esLableBox(esLableBox * this)
+// bodyBytes=71
+// =========================================================
+
+/* public: virtual __thiscall esLableBox::~esLableBox(void) */
+
+void __thiscall esLableBox::~esLableBox(esLableBox *this)
+
+{
+                    /* 0x4439b0  1828  ??1esLableBox@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  if (*(int *)(this + 0x54) != 0) {
+    free(*(void **)(this + 0x54));
+  }
+  ATL::CComBSTR::~CComBSTR((CComBSTR *)(this + 0x4c));
+  esFormulaBox::~esFormulaBox((esFormulaBox *)this);
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::InitText
+// entry=10443a00
+// signature=void InitText(esLableBox * this, zwstr param_1, zwstr param_2, zwstr param_3, esFontSheet * param_4)
+// bodyBytes=418
+// =========================================================
+
+/* public: void __thiscall esLableBox::InitText(class zwstr,class zwstr,class zwstr,class
+   esFontSheet *) */
+
+void __thiscall esLableBox::InitText(esLableBox *this)
+
+{
+  esTextLine *peVar1;
+  int iVar2;
+  esStyleList<esBlockStyle> *this_00;
+  esTextItem *this_01;
+  esEquBox *peVar3;
+  eaShow *peVar4;
+  esFontSheet *in_stack_00000028;
+  esUndo *peVar5;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x443a00  8822  ?InitText@esLableBox@@QAEXVzwstr@@00PAVesFontSheet@@@Z */
+  puStack_c = &LAB_1055198a;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_8 = 2;
+  if (*(int *)(this + 0x14) == 0) {
+    peVar1 = (esTextLine *)
+             (**(code **)(*(int *)this + 0x58))(0,DAT_1069c00c ^ (uint)&stack0xfffffffc);
+    esLineBox::Append((esLineBox *)this,peVar1);
+  }
+  iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                    ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x00000004);
+  if (iVar2 != 0) {
+    esTextLine::InitText(*(esTextLine **)(this + 0x14),(zwstr *)&stack0x00000004,in_stack_00000028);
+  }
+  iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                    ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x00000010);
+  if (iVar2 == 0) {
+    iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                      ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x0000001c);
+    if (iVar2 == 0) goto LAB_10443b59;
+  }
+  this_00 = operator_new(0x58);
+  local_8._0_1_ = 3;
+  esStyleList<esBlockStyle>::__autoclassinit2(this_00,0x58);
+  this_01 = (esTextItem *)FUN_1007c700();
+  local_8 = CONCAT31(local_8._1_3_,2);
+  (**(code **)(*(int *)this_01 + 0xbc))(0x11000024,in_stack_00000028);
+  iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                    ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x00000010);
+  if (iVar2 != 0) {
+    peVar3 = esTextItem::First(this_01);
+    esTextLine::InitText
+              (*(esTextLine **)(peVar3 + 0x14),(zwstr *)&stack0x00000010,in_stack_00000028);
+  }
+  iVar2 = zStringTemplate<wchar_t,unicode_string_manager>::GetLength
+                    ((zStringTemplate<wchar_t,unicode_string_manager> *)&stack0x0000001c);
+  if (iVar2 != 0) {
+    peVar3 = esTextItem::Last(this_01);
+    esTextLine::InitText
+              (*(esTextLine **)(peVar3 + 0x14),(zwstr *)&stack0x0000001c,in_stack_00000028);
+  }
+  peVar5 = (esUndo *)0x0;
+  peVar4 = eaAct::GetActiveShow(*(eaAct **)(this + 0x14));
+  esText::AddChrObj(*(esText **)(this + 0x14),(esChrObj *)this_01,(int)peVar4,peVar5);
+LAB_10443b59:
+  (**(code **)(**(int **)(this + 0x14) + 0x44))(0);
+  local_8._0_1_ = 1;
+  zwstr::~zwstr((zwstr *)&stack0x00000004);
+  local_8 = (uint)local_8._1_3_ << 8;
+  zwstr::~zwstr((zwstr *)&stack0x00000010);
+  local_8 = 0xffffffff;
+  zwstr::~zwstr((zwstr *)&stack0x0000001c);
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::Initialize
+// entry=10443bb0
+// signature=void Initialize(esLableBox * this, esStyleSheet * param_1)
+// bodyBytes=179
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: virtual void __thiscall esLableBox::Initialize(class esStyleSheet *) */
+
+void __thiscall esLableBox::Initialize(esLableBox *this,esStyleSheet *param_1)
+
+{
+  ushort uVar1;
+  esTextLine *peVar2;
+  int iVar3;
+  wchar_t local_10 [2];
+  ushort local_c [2];
+  uint local_8;
+  
+                    /* 0x443bb0  8886  ?Initialize@esLableBox@@UAEXPAVesStyleSheet@@@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x14) == 0) {
+    peVar2 = (esTextLine *)(**(code **)(*(int *)this + 0x58))(0);
+    if (param_1 != (esStyleSheet *)0x0) {
+      local_10[0] = L'0';
+      iVar3 = esChrObj::CheckDynamicChange((esChrObj *)param_1);
+      local_c[0] = (ushort)iVar3;
+      uVar1 = esFontSheet::SetFontMode((esFontSheet *)param_1,3);
+      esFontSheet::SetupFonts((esFontSheet *)param_1,local_10,local_c,1,0);
+      *(ushort *)(peVar2 + 0x1e) = local_c[0];
+      esFontSheet::SetFontMode((esFontSheet *)param_1,uVar1);
+    }
+    esLineBox::Append((esLineBox *)this,peVar2);
+  }
+  esFormulaBox::Initialize((esFormulaBox *)this,param_1);
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::UnionRect
+// entry=10443c70
+// signature=void UnionRect(esLableBox * this, zRect * param_1)
+// bodyBytes=40
+// =========================================================
+
+/* public: void __thiscall esLableBox::UnionRect(class zRect &) */
+
+void __thiscall esLableBox::UnionRect(esLableBox *this,zRect *param_1)
+
+{
+                    /* 0x443c70  13562  ?UnionRect@esLableBox@@QAEXAAVzRect@@@Z */
+  if (*(int *)(this + 0x54) != 0) {
+    zRectTempl<tagRECT,long>::UnionPoints
+              ((zRectTempl<tagRECT,long> *)param_1,*(tagPOINT **)(this + 0x54),4);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::Build
+// entry=10443ca0
+// signature=int Build(esLableBox * this)
+// bodyBytes=548
+// =========================================================
+
+/* protected: int __thiscall esLableBox::Build(void) */
+
+int __thiscall esLableBox::Build(esLableBox *this)
+
+{
+  esFont *this_00;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  int iVar5;
+  
+                    /* 0x443ca0  4005  ?Build@esLableBox@@IAEHXZ */
+  FUN_100272d0();
+  *(undefined4 *)(this + 0x58) = 5;
+  this_00 = esFontSheet::GetFont
+                      (*(esFontSheet **)(this + 0x40),*(ushort *)(*(int *)(this + 0x14) + 0x1e),
+                       DAT_1057f0b4);
+  iVar1 = esFont::GetFontHeight(this_00);
+  iVar2 = eaProject::GetActiveFrame((eaProject *)this);
+  if (iVar2 != 0) {
+    esFormulaBox::RecalcLayout((esFormulaBox *)this);
+  }
+  iVar2 = esEquBox::Height((esEquBox *)this);
+  iVar2 = iVar2 / 2;
+  iVar3 = *(int *)(this + 0x2c) / 2;
+  *(int *)(this + 0x24) = -iVar3;
+  *(int *)(this + 0x28) = -iVar2;
+  if (*(int *)(this + 0x54) == 0) {
+    uVar4 = FUN_105290e5(0x40);
+    *(undefined4 *)(this + 0x54) = uVar4;
+  }
+  iVar5 = -iVar3;
+  *(int *)(*(int *)(this + 0x54) + 0x20) = iVar5;
+  *(int *)(*(int *)(this + 0x54) + 8) = iVar5;
+  **(int **)(this + 0x54) = iVar5;
+  *(int *)(*(int *)(this + 0x54) + 0x18) = iVar3;
+  *(int *)(*(int *)(this + 0x54) + 0x10) = iVar3;
+  iVar5 = -iVar2;
+  *(int *)(*(int *)(this + 0x54) + 0x24) = iVar5;
+  *(int *)(*(int *)(this + 0x54) + 0x1c) = iVar5;
+  *(int *)(*(int *)(this + 0x54) + 4) = iVar5;
+  *(int *)(*(int *)(this + 0x54) + 0x14) = iVar2;
+  *(int *)(*(int *)(this + 0x54) + 0xc) = iVar2;
+  *(undefined4 *)(*(int *)(this + 0x54) + 0x3c) = 0;
+  *(undefined4 *)(*(int *)(this + 0x54) + 0x34) = 0;
+  iVar3 = iVar1 / 2 + iVar3;
+  *(int *)(*(int *)(this + 0x54) + 0x30) = -iVar3;
+  *(int *)(*(int *)(this + 0x54) + 0x38) = iVar3;
+  return *(int *)(*(int *)(this + 0x54) + 0x18) - **(int **)(this + 0x54);
+}
+
+
+
+// =========================================================
+// esLableBox::Qiujiao
+// entry=10443ed0
+// signature=int Qiujiao(esLableBox * this, int * param_1, int * param_2)
+// bodyBytes=484
+// =========================================================
+
+/* protected: int __thiscall esLableBox::Qiujiao(int &,int &) */
+
+int __thiscall esLableBox::Qiujiao(esLableBox *this,int *param_1,int *param_2)
+
+{
+  bool bVar1;
+  int *_Memory;
+  int iVar2;
+  int *piVar3;
+  int *piVar4;
+  int local_18;
+  int local_14;
+  int local_10;
+  int local_c;
+  
+                    /* 0x443ed0  11249  ?Qiujiao@esLableBox@@IAEHAAH0@Z */
+  _Memory = (int *)FUN_105290e5(0x28);
+  piVar3 = *(int **)(this + 0x54);
+  piVar4 = _Memory;
+  for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *piVar4 = *piVar3;
+    piVar3 = piVar3 + 1;
+    piVar4 = piVar4 + 1;
+  }
+  FUN_10027a30(_Memory,5);
+  bVar1 = false;
+  local_14 = *_Memory;
+  local_18 = *_Memory;
+  for (local_c = 1; local_c < 5; local_c = local_c + 1) {
+    if (local_14 < _Memory[local_c * 2]) {
+      local_14 = _Memory[local_c * 2];
+    }
+    else if (_Memory[local_c * 2] < local_18) {
+      local_18 = _Memory[local_c * 2];
+    }
+    if (((_Memory[local_c * 2 + -1] < 0) && (0 < _Memory[local_c * 2 + 1])) ||
+       ((0 < _Memory[local_c * 2 + -1] && (_Memory[local_c * 2 + 1] < 0)))) {
+      if (_Memory[local_c * 2] == _Memory[local_c * 2 + -2]) {
+        local_10 = _Memory[local_c * 2];
+      }
+      else {
+        local_10 = (-_Memory[local_c * 2 + 1] * (_Memory[local_c * 2 + -2] - _Memory[local_c * 2]))
+                   / (_Memory[local_c * 2 + -1] - _Memory[local_c * 2 + 1]) + _Memory[local_c * 2];
+      }
+      if (bVar1) {
+        if (*param_2 < local_10) {
+          *param_2 = local_10;
+        }
+        else if (local_10 < *param_1) {
+          *param_1 = local_10;
+        }
+      }
+      else {
+        *param_2 = local_10;
+        *param_1 = local_10;
+        bVar1 = true;
+      }
+    }
+  }
+  free(_Memory);
+  return local_14 - local_18;
+}
+
+
+
+// =========================================================
+// esLableBox::JIao_LineCircle
+// entry=104440c0
+// signature=int JIao_LineCircle(esLableBox * this, tagPOINT * param_1, tagPOINT * param_2, int param_3)
+// bodyBytes=1507
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* protected: int __thiscall esLableBox::JIao_LineCircle(struct tagPOINT &,struct tagPOINT &,int) */
+
+int __thiscall
+esLableBox::JIao_LineCircle(esLableBox *this,tagPOINT *param_1,tagPOINT *param_2,int param_3)
+
+{
+  double dVar1;
+  uint uVar2;
+  undefined1 auStack_c8 [4];
+  uint local_c4;
+  double local_c0;
+  double local_b8;
+  double local_a8;
+  double local_a0;
+  double local_98;
+  double local_88;
+  esLableBox *local_74;
+  double local_70;
+  double local_68;
+  double local_60;
+  double local_58;
+  double local_50;
+  double local_48;
+  double local_40;
+  double local_38;
+  double local_30;
+  double local_28;
+  int local_1c;
+  int local_18;
+  int local_14;
+  int local_10;
+  uint local_c;
+  
+                    /* 0x4440c0  9873  ?JIao_LineCircle@esLableBox@@IAEHAAUtagPOINT@@0H@Z */
+  local_c = DAT_1069c00c ^ (uint)auStack_c8;
+  local_c4 = 0;
+  local_74 = this;
+  esSegItems::esSegItems((esSegItems *)&local_1c);
+  esSegItems::esSegItems((esSegItems *)&local_14);
+  if (param_1->y == param_2->y) {
+    if ((param_1->y <= param_3) && (-param_3 <= param_1->y)) {
+      if (param_1->y == param_3) {
+        local_18 = param_1->y;
+        local_1c = 0;
+        local_c4 = 1;
+      }
+      else {
+        local_70 = pow((double)param_3);
+        local_68 = local_70;
+        local_60 = pow((double)param_1->y);
+        dVar1 = local_68 - local_60;
+        libm_sse2_sqrt_precise();
+        local_1c = (int)dVar1;
+        local_18 = param_1->y;
+        local_14 = -local_1c;
+        local_c4 = 3;
+        local_10 = local_18;
+      }
+    }
+  }
+  else if (param_1->x == param_2->x) {
+    if ((param_1->x <= param_3) || (-param_3 <= param_1->x)) {
+      if (param_1->x == param_3) {
+        local_1c = param_1->x;
+        local_18 = 0;
+        local_c4 = 1;
+      }
+      else {
+        local_58 = pow((double)param_3);
+        local_50 = local_58;
+        local_48 = pow((double)param_1->x);
+        dVar1 = local_50 - local_48;
+        libm_sse2_sqrt_precise();
+        local_18 = (int)dVar1;
+        local_1c = param_1->x;
+        local_10 = -local_18;
+        local_c4 = 3;
+        local_14 = local_1c;
+      }
+    }
+  }
+  else {
+    local_c0 = (double)(param_1->y - param_2->y) / (double)(param_1->x - param_2->x);
+    local_b8 = (double)param_1->y - (double)param_1->x * local_c0;
+    local_40 = (double)(param_3 * param_3);
+    local_98 = local_c0 * local_c0 + DAT_1057f1f8;
+    local_a8 = DAT_1057f298 * local_c0 * local_b8;
+    local_38 = local_b8 * local_b8 - local_40;
+    dVar1 = local_a8 * local_a8 - DAT_1057f2c0 * local_98 * local_38;
+    if (_DAT_1057ef30 <= dVar1) {
+      uVar2 = (uint)((ulonglong)local_a8 >> 0x20);
+      if (dVar1 == _DAT_1057ef30) {
+        dVar1 = (double)CONCAT44(uVar2 ^ _UNK_1057f6b4,SUB84(local_a8,0) ^ _DAT_1057f6b0) /
+                (DAT_1057f298 * local_98);
+        local_1c = (int)dVar1;
+        local_18 = (int)(local_c0 * dVar1 + local_b8);
+        local_c4 = 1;
+      }
+      else {
+        local_30 = (double)CONCAT44(uVar2 ^ _UNK_1057f6b4,SUB84(local_a8,0) ^ _DAT_1057f6b0);
+        local_a0 = dVar1;
+        libm_sse2_sqrt_precise();
+        local_88 = (local_30 + dVar1) / (DAT_1057f298 * local_98);
+        local_28 = (double)CONCAT44((uint)((ulonglong)local_a8 >> 0x20) ^ _UNK_1057f6b4,
+                                    SUB84(local_a8,0) ^ _DAT_1057f6b0);
+        libm_sse2_sqrt_precise();
+        dVar1 = (local_28 - local_a0) / (DAT_1057f298 * local_98);
+        local_1c = (int)local_88;
+        local_18 = (int)(local_c0 * local_88 + local_b8);
+        local_14 = (int)dVar1;
+        local_10 = (int)(local_c0 * dVar1 + local_b8);
+        local_c4 = 3;
+      }
+    }
+  }
+  if ((local_c4 & 1) != 0) {
+    if (((((local_1c < param_1->x) && (local_1c < param_2->x)) ||
+         ((param_1->x < local_1c && (param_2->x < local_1c)))) ||
+        ((local_18 < param_1->y && (local_18 < param_2->y)))) ||
+       ((param_1->y < local_18 && (param_2->y < local_18)))) {
+      local_c4 = local_c4 & 2;
+    }
+    if (((local_c4 & 2) != 0) &&
+       ((((local_14 < param_1->x && (local_14 < param_2->x)) ||
+         ((param_1->x < local_14 && (param_2->x < local_14)))) ||
+        (((local_10 < param_1->y && (local_10 < param_2->y)) ||
+         ((param_1->y < local_10 && (param_2->y < local_10)))))))) {
+      local_c4 = local_c4 & 1;
+    }
+    if ((local_c4 & 1) != 0) {
+      param_1->x = local_1c;
+      param_1->y = local_18;
+    }
+    if ((local_c4 & 2) != 0) {
+      param_2->x = local_14;
+      param_2->y = local_10;
+    }
+  }
+  return local_c4;
+}
+
+
+
+// =========================================================
+// esLableBox::Qiujiao
+// entry=104446b0
+// signature=float Qiujiao(esLableBox * this, float * param_1, float * param_2, int param_3)
+// bodyBytes=527
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* protected: float __thiscall esLableBox::Qiujiao(float &,float &,int) */
+
+float __thiscall esLableBox::Qiujiao(esLableBox *this,float *param_1,float *param_2,int param_3)
+
+{
+  float fVar1;
+  undefined4 *_Memory;
+  uint uVar2;
+  int iVar3;
+  undefined4 *puVar4;
+  undefined4 *puVar5;
+  double dVar6;
+  int local_28;
+  tagPOINT local_20;
+  tagPOINT local_18;
+  undefined4 local_10;
+  undefined4 local_c;
+  uint local_8;
+  
+                    /* 0x4446b0  11250  ?Qiujiao@esLableBox@@IAEMAAM0H@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  _Memory = (undefined4 *)FUN_105290e5(0x28);
+  puVar4 = *(undefined4 **)(this + 0x54);
+  puVar5 = _Memory;
+  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + 1;
+    puVar5 = puVar5 + 1;
+  }
+  FUN_10027a30(_Memory,5);
+  D2DPointU::D2DPointU((D2DPointU *)&local_10,0,0);
+  for (local_28 = 1; local_28 < 5; local_28 = local_28 + 1) {
+    D2DPointF::D2DPointF((D2DPointF *)&local_18,(D2D_POINT_2F *)(_Memory + local_28 * 2 + -2));
+    D2DPointF::D2DPointF((D2DPointF *)&local_20,(D2D_POINT_2F *)(_Memory + local_28 * 2));
+    uVar2 = JIao_LineCircle(this,&local_18,&local_20,param_3);
+    if ((uVar2 & 1) != 0) {
+      if (local_18.x < 0) {
+        dVar6 = GetAngle_y(local_10,local_c,local_18.x,local_18.y,1,0);
+        fVar1 = (float)dVar6;
+        if (*param_1 <= fVar1 && fVar1 != *param_1) {
+          *param_1 = fVar1;
+        }
+      }
+      else {
+        dVar6 = GetAngle_y(local_10,local_c,local_18.x,local_18.y,0,0);
+        fVar1 = (float)dVar6;
+        if (*param_2 <= fVar1 && fVar1 != *param_2) {
+          *param_2 = fVar1;
+        }
+      }
+    }
+    if ((uVar2 & 2) != 0) {
+      if (local_20.x < 0) {
+        dVar6 = GetAngle_y(local_10,local_c,local_20.x,local_20.y,1,0);
+        fVar1 = (float)dVar6;
+        if (*param_1 <= fVar1 && fVar1 != *param_1) {
+          *param_1 = fVar1;
+        }
+      }
+      else {
+        dVar6 = GetAngle_y(local_10,local_c,local_20.x,local_20.y,0,0);
+        fVar1 = (float)dVar6;
+        if (*param_2 <= fVar1 && fVar1 != *param_2) {
+          *param_2 = fVar1;
+        }
+      }
+    }
+  }
+  free(_Memory);
+  return *param_1 + *param_2;
+}
+
+
+
+// =========================================================
+// esLableBox::HitTest
+// entry=104448c0
+// signature=int HitTest(esLableBox * this, esHitTest * param_1, int param_2)
+// bodyBytes=196
+// =========================================================
+
+/* public: int __thiscall esLableBox::HitTest(class esHitTest *,int) */
+
+int __thiscall esLableBox::HitTest(esLableBox *this,esHitTest *param_1,int param_2)
+
+{
+  int iVar1;
+  esObject *peVar2;
+  
+                    /* 0x4448c0  8382  ?HitTest@esLableBox@@QAEHPAVesHitTest@@H@Z */
+  if (4 < *(int *)(this + 0x58)) {
+    iVar1 = esHitTest::IsPtInGon(param_1,*(tagPOINT **)(this + 0x54),5);
+    if (iVar1 != 0) {
+      if (param_2 == 0) {
+        iVar1 = 0xe;
+        peVar2 = (esObject *)(**(code **)(*(int *)this + 0x54))(0xe,0);
+        esHitTest::SetSelInfo(param_1,0x1b,peVar2,iVar1);
+      }
+      else {
+        iVar1 = 0xe;
+        peVar2 = (esObject *)(**(code **)(*(int *)this + 0x54))(0xe,0);
+        esHitTest::SetSelInfo(param_1,0x18,peVar2,iVar1);
+      }
+      return 1;
+    }
+    if ((5 < *(int *)(this + 0x58)) &&
+       (iVar1 = esHitTest::HitTestLines
+                          (param_1,(tagPOINT *)(*(int *)(this + 0x54) + 0x28),
+                           *(int *)(this + 0x58) + -5), iVar1 != 0)) {
+      iVar1 = 0xe;
+      peVar2 = (esObject *)(**(code **)(*(int *)this + 0x54))(0xe,0);
+      esHitTest::SetSelInfo(param_1,7,peVar2,iVar1);
+      return 1;
+    }
+  }
+  return 0;
+}
+
+
+
+// =========================================================
+// esLableBox::GetPts
+// entry=10444990
+// signature=void GetPts(esLableBox * this, int * param_1, tagPOINT * param_2, uchar * param_3)
+// bodyBytes=162
+// =========================================================
+
+/* public: void __thiscall esLableBox::GetPts(int &,struct tagPOINT *,unsigned char *) */
+
+void __thiscall esLableBox::GetPts(esLableBox *this,int *param_1,tagPOINT *param_2,uchar *param_3)
+
+{
+  int local_8;
+  
+                    /* 0x444990  7716  ?GetPts@esLableBox@@QAEXAAHPAUtagPOINT@@PAE@Z */
+  if (*(int *)(this + 0x54) != 0) {
+    if (param_2 != (tagPOINT *)0x0) {
+      memcpy(param_2 + *param_1,*(void **)(this + 0x54),*(int *)(this + 0x58) << 3);
+      for (local_8 = 0; local_8 < *(int *)(this + 0x58); local_8 = local_8 + 1) {
+        if ((local_8 == 0) || (local_8 == 5)) {
+          param_3[*param_1 + local_8] = '\0';
+        }
+        else {
+          param_3[*param_1 + local_8] = '\x01';
+        }
+      }
+    }
+    *param_1 = *param_1 + *(int *)(this + 0x58);
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::GetCtlPoint
+// entry=10444a40
+// signature=int GetCtlPoint(esLableBox * this, tagPOINT * param_1)
+// bodyBytes=124
+// =========================================================
+
+/* public: int __thiscall esLableBox::GetCtlPoint(struct tagPOINT *) */
+
+int __thiscall esLableBox::GetCtlPoint(esLableBox *this,tagPOINT *param_1)
+
+{
+  int iVar1;
+  
+                    /* 0x444a40  6529  ?GetCtlPoint@esLableBox@@QAEHPAUtagPOINT@@@Z */
+  iVar1 = *(int *)(this + 0x54);
+  if (iVar1 != 0) {
+    param_1->x = (**(int **)(this + 0x54) + *(int *)(*(int *)(this + 0x54) + 0x10)) / 2;
+    param_1->y = (*(int *)(*(int *)(this + 0x54) + 4) + *(int *)(*(int *)(this + 0x54) + 0x14)) / 2;
+  }
+  return (uint)(iVar1 != 0);
+}
+
+
+
+// =========================================================
+// esLableBoxEx::SetMePoints_ForCVL
+// entry=10444ac0
+// signature=void SetMePoints_ForCVL(esLableBoxEx * this, zPoint param_1, int param_2, float * param_3, float * param_4, ushort * param_5, Matrix * param_6)
+// bodyBytes=3774
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: void __thiscall esLableBoxEx::SetMePoints_ForCVL(class zPoint,int,float &,float
+   &,unsigned short &,class Gdiplus::Matrix *) */
+
+void __thiscall
+esLableBoxEx::SetMePoints_ForCVL
+          (esLableBoxEx *this,int param_2,int param_3,int param_4,float *param_5,float *param_6,
+          ushort *param_7)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  double dVar3;
+  undefined1 auStack_fc [4];
+  esLableBoxEx *local_f8;
+  uint uStack_f4;
+  esDimenStyle *peStack_f0;
+  float local_ec;
+  float fStack_e8;
+  int iStack_e4;
+  float local_e0;
+  int iStack_dc;
+  float fStack_d8;
+  uint uStack_d4;
+  float fStack_d0;
+  float fStack_cc;
+  int iStack_c8;
+  uint uStack_c4;
+  float fStack_c0;
+  uint uStack_bc;
+  int iStack_b8;
+  uint uStack_b4;
+  esDimBase *peStack_b0;
+  float fStack_ac;
+  int iStack_a8;
+  int iStack_a4;
+  int iStack_a0;
+  uint uStack_9c;
+  esFont *peStack_98;
+  int iStack_94;
+  double dStack_90;
+  double dStack_88;
+  double dStack_80;
+  double dStack_78;
+  double dStack_70;
+  double dStack_68;
+  double dStack_58;
+  D2DPointF aDStack_4c [8];
+  D2DPointF aDStack_44 [8];
+  D2DPointF aDStack_3c [8];
+  D2DPointF aDStack_34 [8];
+  D2DPointF aDStack_2c [8];
+  float fStack_24;
+  float fStack_20;
+  int iStack_1c;
+  int iStack_18;
+  int iStack_14;
+  int iStack_10;
+  uint local_c;
+  
+                    /* 0x444ac0  12776
+                       ?SetMePoints_ForCVL@esLableBoxEx@@QAEXVzPoint@@HAAM1AAGPAVMatrix@Gdiplus@@@Z
+                        */
+  local_c = DAT_1069c00c ^ (uint)auStack_fc;
+  if (*(int *)(this + 0x40) == 0) {
+    return;
+  }
+  local_e0 = *param_6 - *param_5;
+  local_ec = local_e0 / DAT_1057f290;
+  local_f8 = this;
+  peStack_b0 = (esDimBase *)(**(code **)(*(int *)this + 0x54))();
+  if (peStack_b0 == (esDimBase *)0x0) {
+    *param_6 = local_ec;
+    *param_5 = local_ec;
+    return;
+  }
+  peStack_f0 = esDimBase::GetBzStyle(peStack_b0);
+  iStack_94 = esLableBox::Build((esLableBox *)local_f8);
+  *(int *)(*(int *)(local_f8 + 0x54) + 0x28) = param_2;
+  *(int *)(*(int *)(local_f8 + 0x54) + 0x2c) = param_3 - param_4;
+  Rotate((double)(*param_5 + local_ec),param_2);
+  uStack_c4 = *(uint *)(peStack_f0 + 0x10) & 0xc0;
+  uStack_bc = *(uint *)(peStack_f0 + 0x10) & 0x30;
+  uStack_b4 = *(uint *)(peStack_f0 + 0x10) & 0xf;
+  fStack_d8 = esLableBox::GetTextAngle((esLableBox *)local_f8,param_2,param_3,param_4,*param_5);
+  fStack_e8 = (fStack_d8 * DAT_1057f528) / DAT_1057f368;
+  if (uStack_c4 == 0) {
+    D2DPointF::D2DPointF(aDStack_4c,0.0,0.0);
+    FUN_10027170();
+    uStack_bc = 0;
+  }
+  FUN_10052bd0();
+  fStack_ac = (float)*(ushort *)(peStack_f0 + 0x1a) / (float)param_4;
+  fStack_cc = fStack_ac * DAT_1057f290;
+  fStack_20 = 0.0;
+  fStack_24 = 0.0;
+  esLableBox::Qiujiao((esLableBox *)local_f8,&fStack_20,&fStack_24,param_4);
+  fStack_c0 = fStack_20 + fStack_24 + fStack_ac * DAT_1057f040;
+  uStack_f4 = 0;
+  iStack_e4 = 0;
+  if (fStack_cc + fStack_c0 <= local_e0) goto LAB_1044503c;
+  uStack_d4 = *(uint *)(peStack_f0 + 0x10) & 0x70000;
+  if (uStack_d4 < 0x20001) {
+    if (uStack_d4 == 0x20000) {
+      *param_7 = *param_7 | 0x200;
+      if (local_e0 < fStack_cc) {
+        *param_7 = *param_7 | 0x100;
+      }
+    }
+    else if (uStack_d4 == 0) {
+      if (local_e0 < fStack_c0) {
+        *param_7 = *param_7 | 0x200;
+      }
+      if (local_e0 < fStack_cc) {
+        *param_7 = *param_7 | 0x100;
+      }
+      if ((*param_7 & 0x300) == 0) {
+        if (local_e0 <= fStack_cc) {
+          *param_7 = *param_7 | 0x200;
+        }
+        else {
+          *param_7 = *param_7 | 0x100;
+        }
+      }
+    }
+    else {
+      if (uStack_d4 != 0x10000) goto LAB_10444ed8;
+      *param_7 = *param_7 | 0x100;
+      if (local_e0 < fStack_c0) {
+        *param_7 = *param_7 | 0x200;
+      }
+    }
+  }
+  else if (uStack_d4 == 0x30000) {
+    *param_7 = *param_7 | 0x300;
+  }
+  else {
+LAB_10444ed8:
+    *param_7 = *param_7 | 0x100;
+  }
+  uStack_9c = uStack_d4;
+  if ((*param_7 & 0x200) == 0) {
+    if (uStack_b4 != 0) {
+      fStack_d8 = (*param_5 + *param_6) / DAT_1057f290;
+      fStack_e8 = (fStack_d8 * DAT_1057f528) / DAT_1057f368;
+      FUN_100272d0();
+      if (uStack_c4 == 0) {
+        D2DPointF::D2DPointF(aDStack_44,0.0,0.0);
+        FUN_10027170();
+      }
+      FUN_10052bd0();
+    }
+  }
+  else {
+    if (((*(uint *)(peStack_f0 + 0x10) & 0x100000) != 0) || ((*param_7 & 3) == 0)) {
+      *param_7 = *param_7 | 0x80;
+    }
+    iStack_e4 = 0;
+  }
+  if (((*param_7 & 0x100) != 0) && ((*(uint *)(peStack_f0 + 0x10) & 0x80000) != 0)) {
+    if ((*param_7 & 1) == 0) {
+      *param_7 = *param_7 | 0x10;
+    }
+    if ((*param_7 & 2) == 0) {
+      *param_7 = *param_7 | 0x20;
+    }
+  }
+LAB_1044503c:
+  peStack_98 = esFontSheet::GetFont
+                         (*(esFontSheet **)(local_f8 + 0x40),
+                          *(ushort *)(*(int *)(local_f8 + 0x14) + 0x1e),DAT_1057f0b4);
+  iStack_c8 = esFont::GetFontHeight(peStack_98);
+  if ((*param_7 & 0x80) == 0) {
+    if ((*param_7 & 0x200) == 0) {
+      if (uStack_bc == 0) {
+        if (((*param_7 & 0x100) != 0) && (uStack_b4 != 0)) {
+          fStack_24 = 0.0;
+          fStack_20 = 0.0;
+          esLableBox::Qiujiao((esLableBox *)local_f8,&fStack_20,&fStack_24,param_4);
+        }
+        *param_5 = (fStack_d8 - *param_5) - fStack_20;
+        *param_6 = (*param_6 - fStack_d8) - fStack_24;
+      }
+      else {
+        if ((*(uint *)(peStack_f0 + 0x10) & 0x1000) == 0) {
+          iStack_b8 = (int)((double)iStack_c8 * DAT_1057f170) + (uint)*(ushort *)(peStack_f0 + 0xc);
+        }
+        else {
+          iStack_b8 = (int)((double)iStack_c8 * _DAT_1057f190);
+        }
+        iStack_a0 = iStack_b8;
+        if (((uStack_bc != 0x10) || (fStack_e8 <= _DAT_1057f510)) || (DAT_1057f538 <= fStack_e8)) {
+          iStack_e4 = -iStack_b8;
+        }
+        else {
+          iStack_e4 = iStack_b8;
+        }
+        *param_6 = local_ec;
+        *param_5 = local_ec;
+      }
+    }
+    else {
+      if ((*param_7 & 0x40) == 0) {
+        iStack_a8 = -1;
+      }
+      else {
+        iStack_a8 = 1;
+      }
+      iStack_dc = iStack_a8;
+      *param_7 = *param_7 & 0xfff7;
+      iStack_e4 = 0;
+      FUN_100272d0();
+      if ((*param_7 & 2) == 0) {
+        if (iStack_dc == 1) {
+          fStack_d0 = *param_5;
+        }
+        else {
+          fStack_d0 = *param_6;
+        }
+      }
+      else if (iStack_dc == 1) {
+        fStack_d0 = *param_6;
+      }
+      else {
+        fStack_d0 = *param_5;
+      }
+      fStack_e8 = (fStack_d0 * DAT_1057f528) / DAT_1057f368;
+      FUN_100272d0();
+      if (uStack_c4 == 0) {
+        D2DPointF::D2DPointF(aDStack_3c,0.0,0.0);
+        FUN_10027170();
+      }
+      iStack_1c = 0;
+      iStack_18 = 0;
+      iStack_94 = esLableBox::Qiujiao((esLableBox *)local_f8,&iStack_1c,&iStack_18);
+      FUN_10052bd0();
+      if ((*param_7 & 2) == 0) {
+        iStack_dc = -iStack_dc;
+      }
+      if ((*param_7 & 0x100) == 0) {
+        uStack_f4 = *(ushort *)(peStack_f0 + 0x1a) / 2;
+        *(undefined4 *)(local_f8 + 0x58) = 7;
+        iStack_a4 = param_3 - param_4;
+        *(int *)(*(int *)(local_f8 + 0x54) + 0x34) = iStack_a4;
+        *(int *)(*(int *)(local_f8 + 0x54) + 0x2c) = iStack_a4;
+        *(int *)(*(int *)(local_f8 + 0x54) + 0x28) = param_2;
+        *(uint *)(*(int *)(local_f8 + 0x54) + 0x30) = uStack_f4 * iStack_dc + param_2;
+        Rotate((double)fStack_d0,param_2);
+        FUN_10027a30();
+      }
+      else {
+        uStack_f4 = ((uint)*(ushort *)(peStack_f0 + 0x1a) << 2) / 3;
+      }
+      iVar2 = iStack_1c;
+      if ((int)(uStack_f4 * iStack_dc) < 0) {
+        iVar2 = iStack_18;
+      }
+      uStack_f4 = uStack_f4 * iStack_dc - iVar2;
+      *param_6 = local_ec;
+      *param_5 = local_ec;
+    }
+    if ((uStack_c4 != 0) &&
+       (iVar2 = esLableBox::IsMirr((esLableBox *)local_f8,fStack_e8), iVar2 != 0)) {
+      D2DPointF::D2DPointF(aDStack_34,0.0,(float)-param_4);
+      FUN_10027170();
+      *param_7 = *param_7 | 8;
+    }
+  }
+  else {
+    if ((*(int *)(local_f8 + 0x5c) == 0) && (*(int *)(local_f8 + 0x60) == 0)) {
+      iVar2 = iStack_c8;
+      if ((*param_7 & 4) == 0) {
+        iVar2 = -iStack_c8;
+      }
+      iStack_e4 = (int)((double)iVar2 * DAT_1057f270);
+    }
+    else {
+      esSegItems::esSegItems((esSegItems *)&iStack_14);
+      D2DPointF::D2DPointF((D2DPointF *)&stack0xfffffef4,(D2D_POINT_2F *)(local_f8 + 0x5c));
+      Rotate((double)(float)((uint)fStack_d8 ^ _DAT_1057f6c0),param_2,param_3);
+      uStack_f4 = iStack_14 - param_2;
+      iStack_e4 = (iStack_10 - param_3) + param_4;
+    }
+    *param_6 = local_ec;
+    *param_5 = local_ec;
+  }
+  FUN_10052bd0();
+  D2DPointF::D2DPointF(aDStack_2c,(float)param_2,(float)param_3);
+  FUN_10027170();
+  FUN_10027140();
+  FUN_10027a30();
+  if (((*param_7 & 0x80) != 0) && ((*(uint *)(peStack_f0 + 0x10) & 0x200000) != 0)) {
+    *(undefined4 *)(local_f8 + 0x58) = 8;
+    FUN_10027a30();
+    FUN_10027a30();
+    dStack_90 = pow((double)(*(int *)(*(int *)(local_f8 + 0x54) + 0x28) -
+                            *(int *)(*(int *)(local_f8 + 0x54) + 0x30)));
+    dStack_88 = dStack_90;
+    dStack_80 = pow((double)(*(int *)(*(int *)(local_f8 + 0x54) + 0x2c) -
+                            *(int *)(*(int *)(local_f8 + 0x54) + 0x34)));
+    dVar3 = dStack_88 + dStack_80;
+    libm_sse2_sqrt_precise();
+    dStack_58 = dVar3;
+    dStack_78 = pow((double)(*(int *)(*(int *)(local_f8 + 0x54) + 0x28) -
+                            *(int *)(*(int *)(local_f8 + 0x54) + 0x38)));
+    dStack_70 = dStack_78;
+    dStack_68 = pow((double)(*(int *)(*(int *)(local_f8 + 0x54) + 0x2c) -
+                            *(int *)(*(int *)(local_f8 + 0x54) + 0x3c)));
+    dVar3 = dStack_70 + dStack_68;
+    libm_sse2_sqrt_precise();
+    if (dVar3 <= dStack_58) {
+      uVar1 = *(undefined4 *)(*(int *)(local_f8 + 0x54) + 0x3c);
+      iVar2 = *(int *)(local_f8 + 0x54);
+      *(undefined4 *)(iVar2 + 0x30) = *(undefined4 *)(*(int *)(local_f8 + 0x54) + 0x38);
+      *(undefined4 *)(iVar2 + 0x34) = uVar1;
+      *(int *)(*(int *)(local_f8 + 0x54) + 0x38) =
+           (*(int *)(*(int *)(local_f8 + 0x54) + 0x10) + *(int *)(*(int *)(local_f8 + 0x54) + 0x18))
+           / 2;
+      *(int *)(*(int *)(local_f8 + 0x54) + 0x3c) =
+           (*(int *)(*(int *)(local_f8 + 0x54) + 0x14) + *(int *)(*(int *)(local_f8 + 0x54) + 0x1c))
+           / 2;
+    }
+    else {
+      *(int *)(*(int *)(local_f8 + 0x54) + 0x38) =
+           (**(int **)(local_f8 + 0x54) + *(int *)(*(int *)(local_f8 + 0x54) + 8)) / 2;
+      *(int *)(*(int *)(local_f8 + 0x54) + 0x3c) =
+           (*(int *)(*(int *)(local_f8 + 0x54) + 4) + *(int *)(*(int *)(local_f8 + 0x54) + 0xc)) / 2
+      ;
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::GetTextAngle
+// entry=10445980
+// signature=float GetTextAngle(esLableBox * this, zPoint param_1, int param_2, float param_3, float param_4, ushort param_5, esDS_HV * param_6)
+// bodyBytes=822
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* protected: float __thiscall esLableBox::GetTextAngle(class zPoint,int,float,float,unsigned
+   short,class esDS_HV *) */
+
+float __thiscall
+esLableBox::GetTextAngle
+          (esLableBox *this,undefined4 param_2,undefined4 param_3,int param_4,float param_5,
+          float param_6,ushort param_7,int param_8)
+
+{
+  int *piVar1;
+  bool bVar2;
+  int iVar3;
+  uint uVar4;
+  float fVar5;
+  float fVar6;
+  int local_34;
+  int local_30;
+  int local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  int local_20 [4];
+  int local_10;
+  int local_c;
+  uint local_8;
+  
+                    /* 0x445980  8135  ?GetTextAngle@esLableBox@@IAEMVzPoint@@HMMGPAVesDS_HV@@@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  uVar4 = *(uint *)(param_8 + 0x10) & 0xf;
+  if (uVar4 == 0) {
+    param_5 = (param_5 + param_6) / DAT_1057f290;
+  }
+  else {
+    if (((uVar4 == 1) && ((param_7 & 0x40) != 0)) || ((uVar4 == 2 && ((param_7 & 0x40) == 0)))) {
+      bVar2 = true;
+    }
+    else {
+      bVar2 = false;
+    }
+    if ((*(uint *)(param_8 + 0x10) & 0xc0) == 0) {
+      D2DPointU::D2DPointU((D2DPointU *)&local_28,0,0);
+      local_30 = -1;
+      FUN_10027a00(local_20,8,3,esSegItems::esSegItems);
+      piVar1 = *(int **)(this + 0x54);
+      local_20[0] = *piVar1;
+      local_20[1] = piVar1[1];
+      local_20[2] = piVar1[2];
+      local_20[3] = piVar1[3];
+      local_10 = piVar1[4];
+      local_c = piVar1[5];
+      if (bVar2) {
+        Rotate((double)(float)((uint)param_5 ^ _DAT_1057f6c0),local_28,local_24,local_20,3);
+      }
+      else {
+        Rotate((double)(float)((uint)param_6 ^ _DAT_1057f6c0),local_28,local_24,local_20,3);
+      }
+      for (local_2c = 0; local_2c < 2; local_2c = local_2c + 1) {
+        if (((local_20[local_2c * 2 + 1] < 1) && (-1 < local_20[local_2c * 2 + 3])) ||
+           ((-1 < local_20[local_2c * 2 + 1] && (local_20[local_2c * 2 + 3] < 1)))) {
+          if (local_20[local_2c * 2 + 2] == local_20[local_2c * 2]) {
+            local_30 = FUN_10027ae0(local_20[local_2c * 2]);
+          }
+          else {
+            local_30 = FUN_10027ae0((-local_20[local_2c * 2 + 3] *
+                                    (local_20[local_2c * 2] - local_20[local_2c * 2 + 2])) /
+                                    (local_20[local_2c * 2 + 1] - local_20[local_2c * 2 + 3]) +
+                                    local_20[local_2c * 2 + 2]);
+          }
+          break;
+        }
+      }
+      local_34 = FUN_10027ae0(local_20[0]);
+      iVar3 = FUN_10027ae0(local_20[2]);
+      if (local_34 < iVar3) {
+        local_34 = iVar3;
+      }
+      if (local_30 < 0) {
+        local_30 = local_34;
+      }
+      local_30 = (int)((double)*(ushort *)(param_8 + 0x1a) * _DAT_1057f248) + local_30;
+      if (local_30 < local_34) {
+        local_30 = local_34;
+      }
+      if (bVar2) {
+        param_5 = param_5 + (float)local_30 / (float)param_4;
+      }
+      else {
+        param_5 = param_6 - (float)local_30 / (float)param_4;
+      }
+    }
+    else {
+      fVar5 = (float)*(ushort *)(param_8 + 0x1a) / (float)param_4;
+      fVar6 = (float)*(int *)(*(int *)(this + 0x54) + 0x10) / (float)param_4;
+      if (bVar2) {
+        param_5 = fVar5 * _DAT_1057f0f0 + fVar6 + param_5;
+      }
+      else {
+        param_5 = param_6 - (fVar5 * _DAT_1057f0f0 + fVar6);
+      }
+    }
+  }
+  return param_5;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForCCD
+// entry=10445cc0
+// signature=int SetMePoints_ForCCD(esLableBox * this, zPoint param_1, float param_2, Matrix * param_3)
+// bodyBytes=589
+// =========================================================
+
+/* public: int __thiscall esLableBox::SetMePoints_ForCCD(class zPoint,float,class Gdiplus::Matrix *)
+    */
+
+int __thiscall
+esLableBox::SetMePoints_ForCCD
+          (esLableBox *this,int param_2,int param_3,float param_4,undefined4 param_5)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  int iVar3;
+  double dVar4;
+  undefined4 uVar5;
+  D2DPointF local_48 [8];
+  D2DPointF local_40 [8];
+  int local_38;
+  int local_34;
+  esFont *local_30;
+  esDimenStyle *local_2c;
+  int local_28;
+  int local_24;
+  uint local_20;
+  esDimBase *local_1c;
+  int local_18;
+  float local_14;
+  int local_10;
+  esLableBox *local_c;
+  undefined2 local_8;
+  
+                    /* 0x445cc0  12773
+                       ?SetMePoints_ForCCD@esLableBox@@QAEHVzPoint@@MPAVMatrix@Gdiplus@@@Z */
+  if (*(int *)(this + 0x40) == 0) {
+    local_18 = 0;
+  }
+  else {
+    local_c = this;
+    local_1c = (esDimBase *)(**(code **)(*(int *)this + 0x54))(0xe);
+    if (local_1c == (esDimBase *)0x0) {
+      local_18 = 0;
+    }
+    else {
+      local_30 = esFontSheet::GetFont
+                           (*(esFontSheet **)(local_c + 0x40),
+                            *(ushort *)(*(int *)(local_c + 0x14) + 0x1e),DAT_1057f0b4);
+      local_10 = esFont::GetFontHeight(local_30);
+      local_2c = esDimBase::GetBzStyle(local_1c);
+      if ((*(uint *)(local_2c + 0x10) & 0x1000) == 0) {
+        local_20 = 0;
+      }
+      else {
+        local_20 = (int)(local_10 + (local_10 >> 0x1f & 7U)) >> 3;
+      }
+      local_8 = (undefined2)local_20;
+      if ((local_20 & 0xffff) != (uint)*(ushort *)(local_c + 0x48)) {
+        *(undefined2 *)(local_c + 0x48) = (undefined2)local_20;
+        (**(code **)(*(int *)local_c + 0x44))(0);
+      }
+      local_24 = Build(local_c);
+      dVar4 = ((double)(local_10 * local_10) * DAT_1057f2c0) / DAT_1057f2a0;
+      libm_sse2_sqrt_precise();
+      local_18 = (int)dVar4;
+      local_14 = (param_4 * DAT_1057f528) / DAT_1057f368;
+      if ((DAT_1057f50c <= local_14) && (local_14 < DAT_1057f534)) {
+        uVar5 = 1;
+        uVar1 = D2DPointF::D2DPointF(local_40,0.0,0.0);
+        FUN_10027170(DAT_1057f528,uVar1,uVar5);
+      }
+      if (local_18 < local_24) {
+        local_28 = (local_18 - local_24) / 2 + param_2;
+      }
+      else {
+        local_28 = param_2;
+      }
+      local_38 = local_28;
+      iVar3 = param_3 - local_10;
+      iVar2 = esEquBox::Height((esEquBox *)local_c);
+      local_34 = ((iVar3 - iVar2 / 2) - local_10 / 10) - (uint)*(ushort *)(local_2c + 0xc);
+      FUN_10052bd0((float)local_38,(float)local_34,1);
+      uVar5 = 1;
+      uVar1 = D2DPointF::D2DPointF(local_48,(float)param_2,(float)param_3);
+      FUN_10027170(local_14,uVar1,uVar5);
+      FUN_10027140(param_5,1);
+      FUN_10027a30(*(undefined4 *)(local_c + 0x54),*(undefined4 *)(local_c + 0x58));
+    }
+  }
+  return local_18;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForCCD_TB
+// entry=10445f10
+// signature=int SetMePoints_ForCCD_TB(esLableBox * this, zPoint param_1, zPoint param_2, int param_3, int param_4, float param_5, Matrix * param_6)
+// bodyBytes=559
+// =========================================================
+
+/* public: int __thiscall esLableBox::SetMePoints_ForCCD_TB(class zPoint,class
+   zPoint,int,int,float,class Gdiplus::Matrix *) */
+
+int __thiscall
+esLableBox::SetMePoints_ForCCD_TB
+          (esLableBox *this,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,
+          float param_8,undefined4 param_9)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 uVar3;
+  D2DPointF local_44 [8];
+  D2DPointF local_3c [8];
+  int local_34;
+  esFont *local_30;
+  int local_2c;
+  int local_28;
+  esDimenStyle *local_24;
+  int local_20;
+  uint local_1c;
+  esDimBase *local_18;
+  float local_14;
+  int local_10;
+  esLableBox *local_c;
+  undefined2 local_8;
+  
+                    /* 0x445f10  12774
+                       ?SetMePoints_ForCCD_TB@esLableBox@@QAEHVzPoint@@0HHMPAVMatrix@Gdiplus@@@Z */
+  if (*(int *)(this + 0x40) == 0) {
+    param_6 = 0;
+  }
+  else {
+    local_c = this;
+    local_18 = (esDimBase *)(**(code **)(*(int *)this + 0x54))(0xe);
+    if (local_18 == (esDimBase *)0x0) {
+      param_6 = 0;
+    }
+    else {
+      local_30 = esFontSheet::GetFont
+                           (*(esFontSheet **)(local_c + 0x40),
+                            *(ushort *)(*(int *)(local_c + 0x14) + 0x1e),DAT_1057f0b4);
+      local_20 = esFont::GetFontHeight(local_30);
+      local_24 = esDimBase::GetBzStyle(local_18);
+      if ((*(uint *)(local_24 + 0x10) & 0x1000) == 0) {
+        local_1c = 0;
+      }
+      else {
+        local_1c = (int)(local_20 + (local_20 >> 0x1f & 7U)) >> 3;
+      }
+      local_8 = (undefined2)local_1c;
+      if ((local_1c & 0xffff) != (uint)*(ushort *)(local_c + 0x48)) {
+        *(undefined2 *)(local_c + 0x48) = (undefined2)local_1c;
+        (**(code **)(*(int *)local_c + 0x44))(0);
+      }
+      local_2c = Build(local_c);
+      local_14 = (param_8 * DAT_1057f528) / DAT_1057f368;
+      if ((DAT_1057f50c <= local_14) && (local_14 < DAT_1057f534)) {
+        uVar3 = 1;
+        uVar1 = D2DPointF::D2DPointF(local_3c,0.0,0.0);
+        FUN_10027170(DAT_1057f528,uVar1,uVar3);
+      }
+      local_34 = param_2 + param_6 + local_2c / 2;
+      iVar2 = esEquBox::Height((esEquBox *)local_c);
+      local_28 = iVar2 / 2 + local_20 / 10 + (uint)*(ushort *)(local_24 + 0xc);
+      if (param_7 != 0) {
+        local_28 = -local_28;
+      }
+      local_28 = param_3 + local_28;
+      local_10 = local_28;
+      FUN_10052bd0((float)local_34,(float)local_28,1);
+      uVar3 = 1;
+      uVar1 = D2DPointF::D2DPointF(local_44,(float)param_4,(float)param_5);
+      FUN_10027170(local_14,uVar1,uVar3);
+      FUN_10027140(param_9,1);
+      FUN_10027a30(*(undefined4 *)(local_c + 0x54),*(undefined4 *)(local_c + 0x58));
+      param_6 = param_6 + local_2c;
+    }
+  }
+  return param_6;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForAny
+// entry=10446140
+// signature=int SetMePoints_ForAny(esLableBox * this, tagPOINT * param_1, tagPOINT * param_2, Matrix * param_3)
+// bodyBytes=1456
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Removing unreachable block (ram,0x104463f6) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: int __thiscall esLableBox::SetMePoints_ForAny(struct tagPOINT &,struct tagPOINT &,class
+   Gdiplus::Matrix *) */
+
+int __thiscall
+esLableBox::SetMePoints_ForAny(esLableBox *this,tagPOINT *param_1,tagPOINT *param_2,Matrix *param_3)
+
+{
+  tagRECT *ptVar1;
+  int iVar2;
+  LONG *pLVar3;
+  tagPOINT *ptVar4;
+  double dVar5;
+  undefined4 uStack_e8;
+  tagRECT local_d0;
+  D2DPointF local_c0 [8];
+  D2DPointF local_b8 [8];
+  D2DPointF local_b0 [8];
+  int local_a8;
+  tagRECT local_a4;
+  undefined4 local_94;
+  tagPOINT *local_90;
+  uint local_8c;
+  esFont *local_88;
+  uint local_84;
+  esDimBase *local_80;
+  int local_7c;
+  int local_78;
+  tagPOINT *local_74;
+  float local_70;
+  uint local_6c;
+  int local_68;
+  uint local_64;
+  uint local_60;
+  int local_5c;
+  float local_58;
+  uint local_54;
+  int local_50;
+  uint local_4c;
+  int local_48;
+  tagPOINT *local_44;
+  short local_40;
+  int local_3c;
+  esDimenStyle *local_38;
+  esLableBox *local_34;
+  zRect local_30 [16];
+  int local_20;
+  int local_1c;
+  int local_18;
+  LONG local_14;
+  int local_10;
+  LONG local_c;
+  uint local_8;
+  
+                    /* 0x446140  12771
+                       ?SetMePoints_ForAny@esLableBox@@QAEHAAUtagPOINT@@0PAVMatrix@Gdiplus@@@Z */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x40) == 0) {
+    local_6c = 0;
+  }
+  else {
+    local_34 = this;
+    local_80 = (esDimBase *)(**(code **)(*(int *)this + 0x54))();
+    if (local_80 == (esDimBase *)0x0) {
+      local_6c = 0;
+    }
+    else {
+      local_38 = esDimBase::GetBzStyle(local_80);
+      local_88 = esFontSheet::GetFont
+                           (*(esFontSheet **)(local_34 + 0x40),
+                            *(ushort *)(*(int *)(local_34 + 0x14) + 0x1e),DAT_1057f0b4);
+      local_5c = esFont::GetFontHeight(local_88);
+      local_60 = *(uint *)(local_38 + 0x10) & 0x30;
+      if (local_60 == 0) {
+        local_40 = (short)((int)(local_5c + (local_5c >> 0x1f & 7U)) >> 3);
+      }
+      else {
+        if ((*(uint *)(local_38 + 0x10) & 0x1000) == 0) {
+          local_7c = 0;
+        }
+        else {
+          local_7c = (int)(local_5c + (local_5c >> 0x1f & 7U)) >> 3;
+        }
+        local_40 = (short)local_7c;
+      }
+      if (local_40 != *(short *)(local_34 + 0x48)) {
+        *(short *)(local_34 + 0x48) = local_40;
+        (**(code **)(*(int *)local_34 + 0x44))();
+      }
+      local_a8 = Build(local_34);
+      D2DPointF::D2DPointF((D2DPointF *)&uStack_e8,(D2D_POINT_2F *)param_2);
+      D2DPointF::D2DPointF((D2DPointF *)&stack0xffffff10,(D2D_POINT_2F *)param_1);
+      dVar5 = GetAngle_x();
+      local_70 = (float)dVar5;
+      local_58 = (local_70 * DAT_1057f528) / DAT_1057f368;
+      uStack_e8 = 0x104462a7;
+      D2DPointF::D2DPointF((D2DPointF *)&stack0xffffff20,(D2D_POINT_2F *)param_2);
+      D2DPointF::D2DPointF((D2DPointF *)&uStack_e8,(D2D_POINT_2F *)param_1);
+      local_68 = distance();
+      local_8c = *(uint *)(local_38 + 0x10) & 0xc0;
+      local_64 = *(uint *)(local_38 + 0x10) & 0xf;
+      local_78 = 0;
+      if (local_8c == 0) {
+        uStack_e8 = 0x1044630d;
+        D2DPointF::D2DPointF(local_b0,0.0,0.0);
+        uStack_e8 = 0x1044632b;
+        FUN_10027170();
+      }
+      else if ((DAT_1057f50c <= local_58) && (local_58 < DAT_1057f534)) {
+        uStack_e8 = 0x10446368;
+        D2DPointF::D2DPointF(local_b8,0.0,0.0);
+        uStack_e8 = 0x10446382;
+        FUN_10027170();
+        local_78 = 1;
+      }
+      local_20 = 0;
+      local_1c = 0;
+      local_50 = Qiujiao(local_34,&local_20,&local_1c);
+      local_4c = 0;
+      local_54 = 0;
+      if (*(short *)(local_38 + 0x18) != 0) {
+        local_4c = (uint)*(ushort *)(local_38 + 0x1a);
+      }
+      if (local_38[0x1c] != (esDimenStyle)0x0) {
+        local_54 = (uint)*(ushort *)(local_38 + 0x1a);
+      }
+      local_48 = 0;
+      local_3c = 0;
+      if (local_68 <= (int)(local_50 + local_4c + local_54)) {
+        local_64 = 0;
+      }
+      local_84 = (uint)(0 < local_50);
+      local_6c = local_84;
+      if (local_60 != 0) {
+        local_90 = (tagPOINT *)FUN_105290e5();
+        pLVar3 = *(LONG **)(local_34 + 0x54);
+        ptVar4 = local_90;
+        for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+          ptVar4->x = *pLVar3;
+          pLVar3 = pLVar3 + 1;
+          ptVar4 = (tagPOINT *)&ptVar4->y;
+        }
+        local_44 = local_90;
+        FUN_10027a30();
+        uStack_e8 = 0x10446484;
+        ptVar1 = GetRectByPoints(&local_d0,local_44,4);
+        local_a4.left = ptVar1->left;
+        local_a4.top = ptVar1->top;
+        local_a4.right = ptVar1->right;
+        local_a4.bottom = ptVar1->bottom;
+        zRect::zRect(local_30,&local_a4);
+        local_74 = local_44;
+        free(local_44);
+        if (local_74 == (tagPOINT *)0x0) {
+          local_94 = 0;
+        }
+        else {
+          local_44 = (tagPOINT *)0x8123;
+          local_94 = 0x8123;
+        }
+        iVar2 = esEquBox::Height((esEquBox *)local_34);
+        local_48 = iVar2 / 2 + local_5c / 10 + (uint)*(ushort *)(local_38 + 0xc);
+        if (local_78 == 0) {
+          local_48 = -local_48;
+        }
+        if (local_60 == 0x20) {
+          local_48 = -local_48;
+        }
+        local_6c = 0;
+      }
+      if (local_64 == 1) {
+        local_3c = local_50 / 2 + local_4c;
+      }
+      else if (local_64 == 2) {
+        local_3c = (local_68 - local_54) - local_50 / 2;
+      }
+      else {
+        local_3c = (int)((local_68 - local_4c) - local_54) / 2 + local_4c;
+      }
+      uStack_e8 = 0x104465b0;
+      FUN_10052bd0();
+      uStack_e8 = 0x104465d8;
+      D2DPointF::D2DPointF(local_c0,(float)param_1->x,(float)param_1->y);
+      uStack_e8 = 0x104465ef;
+      FUN_10027170();
+      FUN_10027140();
+      FUN_10027a30();
+      if (local_6c != 0) {
+        esSegItems::esSegItems((esSegItems *)&local_10);
+        local_10 = param_1->x + local_20 + local_3c;
+        local_c = param_1->y;
+        esSegItems::esSegItems((esSegItems *)&local_18);
+        local_18 = param_1->x + local_1c + local_3c;
+        local_14 = param_1->y;
+        D2DPointF::D2DPointF((D2DPointF *)&stack0xffffff14,(D2D_POINT_2F *)param_1);
+        Rotate((double)local_70);
+        param_2->x = local_18;
+        param_2->y = local_14;
+        D2DPointF::D2DPointF((D2DPointF *)&stack0xffffff14,(D2D_POINT_2F *)param_1);
+        Rotate((double)local_70);
+        param_1->x = local_10;
+        param_1->y = local_c;
+      }
+    }
+  }
+  return local_6c;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::SetMePoints_ForCHL
+// entry=104466f0
+// signature=void SetMePoints_ForCHL(esLableBoxEx * this, tagPOINT * param_1, ushort * param_2, Matrix * param_3, float param_4)
+// bodyBytes=3713
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: void __thiscall esLableBoxEx::SetMePoints_ForCHL(struct tagPOINT *,unsigned short &,class
+   Gdiplus::Matrix *,float) */
+
+void __thiscall
+esLableBoxEx::SetMePoints_ForCHL
+          (esLableBoxEx *this,tagPOINT *param_1,ushort *param_2,Matrix *param_3,float param_4)
+
+{
+  LONG LVar1;
+  undefined4 uVar2;
+  int iVar3;
+  double dVar4;
+  undefined4 uVar5;
+  D2DPointF local_cc [8];
+  D2DPointF local_c4 [8];
+  double local_bc;
+  double local_ac;
+  double local_a4;
+  double local_9c;
+  double local_94;
+  double local_8c;
+  double local_84;
+  esFont *local_7c;
+  int local_78;
+  uint local_74;
+  uint local_70;
+  esDimBase *local_6c;
+  int local_68;
+  int local_64;
+  int local_60;
+  uint local_5c;
+  int local_58;
+  int local_54;
+  int local_50;
+  int local_4c;
+  uint local_48;
+  uint local_44;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  ushort local_30;
+  int local_2c;
+  int local_28;
+  int local_24;
+  esDimenStyle *local_20;
+  esLableBoxEx *local_1c;
+  int local_18;
+  int local_14;
+  int local_10;
+  int local_c;
+  uint local_8;
+  
+                    /* 0x4466f0  12775
+                       ?SetMePoints_ForCHL@esLableBoxEx@@QAEXPAUtagPOINT@@AAGPAVMatrix@Gdiplus@@M@Z
+                        */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x40) == 0) {
+    return;
+  }
+  local_1c = this;
+  local_6c = (esDimBase *)(**(code **)(*(int *)this + 0x54))();
+  if (local_6c == (esDimBase *)0x0) {
+    return;
+  }
+  local_20 = esDimBase::GetBzStyle(local_6c);
+  local_7c = esFontSheet::GetFont
+                       (*(esFontSheet **)(local_1c + 0x40),
+                        *(ushort *)(*(int *)(local_1c + 0x14) + 0x1e),DAT_1057f0b4);
+  local_3c = esFont::GetFontHeight(local_7c);
+  local_44 = *(uint *)(local_20 + 0x10) & 0x30;
+  local_30 = 0;
+  if ((local_44 == 0) || ((*(uint *)(local_20 + 0x10) & 0x1000) != 0)) {
+    local_30 = (ushort)((int)(local_3c + (local_3c >> 0x1f & 7U)) >> 3);
+  }
+  if (local_30 != *(ushort *)(local_1c + 0x48)) {
+    *(ushort *)(local_1c + 0x48) = local_30;
+    (**(code **)(*(int *)local_1c + 0x44))();
+  }
+  local_28 = esLableBox::Build((esLableBox *)local_1c);
+  LVar1 = param_1[3].y;
+  iVar3 = *(int *)(local_1c + 0x54);
+  *(LONG *)(iVar3 + 0x28) = param_1[3].x;
+  *(LONG *)(iVar3 + 0x2c) = LVar1;
+  D2DPointF::D2DPointF((D2DPointF *)&local_18,(D2D_POINT_2F *)(*(int *)(local_1c + 0x54) + 0x28));
+  local_70 = *(uint *)(local_20 + 0x10) & 0xc0;
+  if ((local_70 == 0) && (param_4 != (float)PTR_1057ef28)) {
+    uVar5 = 1;
+    uVar2 = D2DPointF::D2DPointF(local_c4,0.0,0.0);
+    FUN_10027170(param_4,uVar2,uVar5);
+    local_44 = 0;
+  }
+  else {
+    iVar3 = esLableBox::IsMirr((esLableBox *)local_1c,param_4);
+    if (iVar3 != 0) {
+      uVar5 = 1;
+      uVar2 = D2DPointF::D2DPointF(local_cc,0.0,0.0);
+      FUN_10027170(DAT_1057f528,uVar2,uVar5);
+      *param_2 = *param_2 | 8;
+    }
+  }
+  local_34 = 0;
+  local_38 = 0;
+  local_c = 0;
+  local_10 = 0;
+  local_64 = 0;
+  local_2c = (int)((double)local_3c * _DAT_1057f158);
+  local_60 = local_28;
+  if (local_44 == 0) {
+    local_28 = esLableBox::Qiujiao((esLableBox *)local_1c,&local_c,&local_10);
+    local_60 = local_10 - local_c;
+    local_64 = 1;
+  }
+  else {
+    iVar3 = esEquBox::Height((esEquBox *)local_1c);
+    local_54 = iVar3 / 2 + (uint)local_30 + *(ushort *)(local_20 + 0xc) / 2;
+    if (local_44 == 0x10) {
+      local_34 = local_54;
+      if ((*param_2 & 8) == 0) {
+        local_34 = -local_54;
+      }
+    }
+    else if ((local_44 == 0x20) && (local_34 = local_54, (*param_2 & 4) != 0)) {
+      local_34 = -local_54;
+    }
+  }
+  local_5c = *(uint *)(local_20 + 0x10) & 0xf;
+  local_4c = FUN_10027ae0();
+  local_4c = local_4c - (int)((double)local_3c * _DAT_1057f130);
+  local_58 = (uint)*(ushort *)(local_20 + 0x1a) * 2;
+  if (local_28 + local_58 <= local_4c) goto LAB_10446be2;
+  local_5c = 0;
+  local_74 = *(uint *)(local_20 + 0x10) & 0x70000;
+  if (local_74 < 0x20001) {
+    if (local_74 == 0x20000) {
+      *param_2 = *param_2 | 0x200;
+      if (local_4c < local_58) {
+        *param_2 = *param_2 | 0x100;
+      }
+    }
+    else if (local_74 == 0) {
+      if (local_4c < local_28) {
+        *param_2 = *param_2 | 0x200;
+      }
+      if (local_4c < local_58) {
+        *param_2 = *param_2 | 0x100;
+      }
+      if ((*param_2 & 0x300) == 0) {
+        if (local_58 < local_28) {
+          *param_2 = *param_2 | 0x100;
+        }
+        else {
+          *param_2 = *param_2 | 0x200;
+        }
+      }
+    }
+    else {
+      if (local_74 != 0x10000) goto LAB_10446b49;
+      *param_2 = *param_2 | 0x100;
+      if (local_4c < local_28) {
+        *param_2 = *param_2 | 0x200;
+      }
+    }
+  }
+  else if (local_74 == 0x30000) {
+    *param_2 = *param_2 | 0x300;
+  }
+  else {
+LAB_10446b49:
+    *param_2 = *param_2 | 0x100;
+  }
+  if (((*param_2 & 0x200) != 0) &&
+     (((*(uint *)(local_20 + 0x10) & 0x100000) != 0 || ((*param_2 & 3) == 0)))) {
+    *param_2 = *param_2 | 0x80;
+  }
+  local_48 = local_74;
+  if (((*param_2 & 0x100) != 0) && ((*(uint *)(local_20 + 0x10) & 0x80000) != 0)) {
+    if ((*param_2 & 1) == 0) {
+      *param_2 = *param_2 | 0x10;
+    }
+    if ((*param_2 & 2) == 0) {
+      *param_2 = *param_2 | 0x20;
+    }
+  }
+LAB_10446be2:
+  local_24 = 1;
+  if (param_1[3].x < param_1[2].x) {
+    local_24 = -1;
+  }
+  if ((*param_2 & 0x80) == 0) {
+    if ((*param_2 & 0x200) == 0) {
+      if ((local_5c & 0xf) != 0) {
+        iVar3 = FUN_10027ae0();
+        local_50 = iVar3 / 2 - local_60 / 2;
+        if ((local_5c & 1) == 0) {
+          local_50 = local_50 - ((uint)*(ushort *)(local_20 + 0x1a) + local_2c);
+        }
+        else {
+          local_50 = ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) - local_50;
+        }
+        local_38 = local_50 * local_24;
+      }
+    }
+    else {
+      local_40 = local_28 / 2 + local_2c;
+      if ((*param_2 & 2) == 0) {
+        if ((*param_2 & 0x100) != 0) {
+          local_40 = (uint)*(ushort *)(local_20 + 0x1a) + local_40;
+        }
+        local_38 = (param_1[6].x - local_18) - local_40 * local_24;
+      }
+      else {
+        if ((*param_2 & 0x100) != 0) {
+          local_40 = (uint)*(ushort *)(local_20 + 0x1a) + local_40;
+        }
+        local_38 = (param_1[7].x - local_18) + local_40 * local_24;
+      }
+    }
+    FUN_101df2d0(local_38,local_34);
+    if ((local_64 == 0) || ((*param_2 & 0x200) != 0)) {
+      if ((*param_2 & 0x100) == 0) {
+        if ((*param_2 & 0x200) != 0) {
+          local_68 = local_2c * local_24;
+          if ((*param_2 & 2) == 0) {
+            param_1[2].x = param_1[2].x - local_68;
+          }
+          else {
+            param_1[4].x = param_1[4].x + local_68;
+          }
+        }
+      }
+      else {
+        LVar1 = param_1[3].y;
+        param_1[4].x = param_1[3].x;
+        param_1[4].y = LVar1;
+        LVar1 = param_1[4].y;
+        param_1[2].x = param_1[4].x;
+        param_1[2].y = LVar1;
+        if ((*param_2 & 0x10) == 0) {
+          param_1[3].x = param_1[6].x - ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) * local_24;
+        }
+        else {
+          param_1[3].x = param_1[6].x;
+          *param_2 = *param_2 | 0x10;
+        }
+        if ((*param_2 & 0x20) == 0) {
+          param_1[5].x = ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) * local_24 + param_1[7].x;
+        }
+        else {
+          param_1[5].x = param_1[7].x;
+          *param_2 = *param_2 | 0x20;
+        }
+        if (((*param_2 & 0x200) != 0) && (local_44 != 0)) {
+          if ((*param_2 & 2) == 0) {
+            param_1[3].x = param_1[3].x + local_28;
+          }
+          else {
+            param_1[5].x = local_28 * local_24 + param_1[5].x;
+          }
+        }
+      }
+    }
+    else {
+      iVar3 = local_10;
+      if (local_24 != 1) {
+        local_78 = local_10;
+        iVar3 = local_c;
+        local_c = local_10;
+      }
+      local_c = local_c + local_18;
+      local_10 = iVar3 + local_18;
+      if ((*param_2 & 0x100) == 0) {
+        param_1[3].x = local_c;
+        param_1[5].x = local_10;
+      }
+      else {
+        if ((*param_2 & 0x10) == 0) {
+          param_1[3].x = param_1[6].x - ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) * local_24;
+        }
+        else {
+          param_1[3].x = param_1[6].x;
+          *param_2 = *param_2 | 0x10;
+        }
+        if ((*param_2 & 0x20) == 0) {
+          param_1[5].x = ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) * local_24 + param_1[7].x;
+        }
+        else {
+          param_1[5].x = param_1[7].x;
+          *param_2 = *param_2 | 0x20;
+        }
+        param_1[2].x = local_c;
+        param_1[4].x = local_10;
+      }
+    }
+  }
+  else {
+    if ((*(int *)(local_1c + 0x5c) == 0) && (*(int *)(local_1c + 0x60) == 0)) {
+      if ((*(uint *)(local_20 + 0x10) & 0x200000) != 0) {
+        local_38 = local_28 / 2 + local_3c;
+      }
+      if ((*param_2 & 4) == 0) {
+        local_34 = (int)((double)local_3c * DAT_1057f270);
+      }
+      else {
+        local_34 = -(int)((double)local_3c * DAT_1057f270);
+      }
+    }
+    else {
+      local_38 = *(int *)(local_1c + 0x5c) - local_18;
+      local_34 = *(int *)(local_1c + 0x60) - local_14;
+    }
+    if ((*param_2 & 0x100) != 0) {
+      LVar1 = param_1[3].y;
+      param_1[4].x = param_1[3].x;
+      param_1[4].y = LVar1;
+      LVar1 = param_1[4].y;
+      param_1[2].x = param_1[4].x;
+      param_1[2].y = LVar1;
+      if ((*param_2 & 0x10) == 0) {
+        param_1[3].x = param_1[6].x - ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) * local_24;
+      }
+      else {
+        param_1[3].x = param_1[6].x;
+        *param_2 = *param_2 | 0x10;
+      }
+      if ((*param_2 & 0x20) == 0) {
+        param_1[5].x = ((uint)*(ushort *)(local_20 + 0x1a) + local_2c) * local_24 + param_1[7].x;
+      }
+      else {
+        param_1[5].x = param_1[7].x;
+        *param_2 = *param_2 | 0x20;
+      }
+    }
+    local_18 = local_18 + local_38;
+    local_14 = local_14 + local_34;
+  }
+  FUN_10052bd0((float)local_18,(float)local_14,1);
+  FUN_10027140(param_3,1);
+  FUN_10027a30(*(undefined4 *)(local_1c + 0x54),*(undefined4 *)(local_1c + 0x58));
+  if (((*param_2 & 0x80) != 0) && ((*(uint *)(local_20 + 0x10) & 0x200000) != 0)) {
+    *(undefined4 *)(local_1c + 0x58) = 8;
+    FUN_10027a30(*(int *)(local_1c + 0x54) + 0x28,1);
+    FUN_10027a30(*(int *)(local_1c + 0x54) + 0x30,2);
+    local_8c = pow((double)(*(int *)(*(int *)(local_1c + 0x54) + 0x28) -
+                           *(int *)(*(int *)(local_1c + 0x54) + 0x30)));
+    local_84 = local_8c;
+    local_94 = pow((double)(*(int *)(*(int *)(local_1c + 0x54) + 0x2c) -
+                           *(int *)(*(int *)(local_1c + 0x54) + 0x34)));
+    dVar4 = local_8c + local_94;
+    libm_sse2_sqrt_precise();
+    local_bc = dVar4;
+    local_a4 = pow((double)(*(int *)(*(int *)(local_1c + 0x54) + 0x28) -
+                           *(int *)(*(int *)(local_1c + 0x54) + 0x38)));
+    local_9c = local_a4;
+    local_ac = pow((double)(*(int *)(*(int *)(local_1c + 0x54) + 0x2c) -
+                           *(int *)(*(int *)(local_1c + 0x54) + 0x3c)));
+    dVar4 = local_a4 + local_ac;
+    libm_sse2_sqrt_precise();
+    if (dVar4 <= local_bc) {
+      uVar2 = *(undefined4 *)(*(int *)(local_1c + 0x54) + 0x3c);
+      iVar3 = *(int *)(local_1c + 0x54);
+      *(undefined4 *)(iVar3 + 0x30) = *(undefined4 *)(*(int *)(local_1c + 0x54) + 0x38);
+      *(undefined4 *)(iVar3 + 0x34) = uVar2;
+      *(int *)(*(int *)(local_1c + 0x54) + 0x38) =
+           (*(int *)(*(int *)(local_1c + 0x54) + 0x10) + *(int *)(*(int *)(local_1c + 0x54) + 0x18))
+           / 2;
+      *(int *)(*(int *)(local_1c + 0x54) + 0x3c) =
+           (*(int *)(*(int *)(local_1c + 0x54) + 0x14) + *(int *)(*(int *)(local_1c + 0x54) + 0x1c))
+           / 2;
+    }
+    else {
+      *(int *)(*(int *)(local_1c + 0x54) + 0x38) =
+           (**(int **)(local_1c + 0x54) + *(int *)(*(int *)(local_1c + 0x54) + 8)) / 2;
+      *(int *)(*(int *)(local_1c + 0x54) + 0x3c) =
+           (*(int *)(*(int *)(local_1c + 0x54) + 4) + *(int *)(*(int *)(local_1c + 0x54) + 0xc)) / 2
+      ;
+    }
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::IsMirr
+// entry=10447580
+// signature=int IsMirr(esLableBox * this, float param_1)
+// bodyBytes=62
+// =========================================================
+
+/* protected: int __thiscall esLableBox::IsMirr(float) */
+
+int __thiscall esLableBox::IsMirr(esLableBox *this,float param_1)
+
+{
+  undefined4 local_8;
+  
+                    /* 0x447580  9587  ?IsMirr@esLableBox@@IAEHM@Z */
+  if ((param_1 <= DAT_1057f50c) || (DAT_1057f534 < param_1)) {
+    local_8 = 0;
+  }
+  else {
+    local_8 = 1;
+  }
+  return local_8;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForBJ
+// entry=104475c0
+// signature=int SetMePoints_ForBJ(esLableBox * this, zPoint param_1, float param_2, int param_3, int param_4, tagPOINT * param_5, Matrix * param_6)
+// bodyBytes=2181
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: int __thiscall esLableBox::SetMePoints_ForBJ(class zPoint,float,int,int,struct tagPOINT
+   *,class Gdiplus::Matrix *) */
+
+int __thiscall
+esLableBox::SetMePoints_ForBJ
+          (esLableBox *this,int param_2,int param_3,float param_4,int param_5,int param_6,
+          int *param_7)
+
+{
+  int iVar1;
+  int iStack_cc;
+  D2DPointF local_b8 [8];
+  D2DPointF local_b0 [8];
+  D2DPointF local_a8 [8];
+  D2DPointF local_a0 [8];
+  D2DPointF local_98 [8];
+  D2DPointF local_90 [8];
+  int local_88;
+  int local_84;
+  esFont *local_80;
+  uint local_7c;
+  int local_78;
+  int local_74;
+  uint local_70;
+  int local_6c;
+  int local_68;
+  esDimBase *local_64;
+  float local_60;
+  int local_5c;
+  int local_58;
+  uint local_54;
+  float local_50;
+  float local_4c;
+  int local_48;
+  int local_44;
+  uint local_40;
+  int local_3c;
+  esDimenStyle *local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
+  short local_28;
+  int local_24;
+  int local_20;
+  int *local_1c;
+  esLableBox *local_18;
+  uint local_14;
+  int local_10;
+  int local_c;
+  uint local_8;
+  
+                    /* 0x4475c0  12772
+                       ?SetMePoints_ForBJ@esLableBox@@QAEHVzPoint@@MHHPAUtagPOINT@@PAVMatrix@Gdiplus@@@Z
+                        */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x40) == 0) {
+    local_14 = 0;
+  }
+  else {
+    local_18 = this;
+    local_64 = (esDimBase *)(**(code **)(*(int *)this + 0x54))();
+    if (local_64 == (esDimBase *)0x0) {
+      local_14 = 0;
+    }
+    else {
+      local_38 = esDimBase::GetBzStyle(local_64);
+      local_80 = esFontSheet::GetFont
+                           (*(esFontSheet **)(local_18 + 0x40),
+                            *(ushort *)(*(int *)(local_18 + 0x14) + 0x1e),DAT_1057f0b4);
+      local_3c = esFont::GetFontHeight(local_80);
+      local_40 = *(uint *)(local_38 + 0x10) & 0x30;
+      if (local_40 == 0) {
+        local_28 = (short)((int)(local_3c + (local_3c >> 0x1f & 7U)) >> 3);
+      }
+      else {
+        if ((*(uint *)(local_38 + 0x10) & 0x1000) == 0) {
+          local_68 = 0;
+        }
+        else {
+          local_68 = (int)(local_3c + (local_3c >> 0x1f & 7U)) >> 3;
+        }
+        local_28 = (short)local_68;
+      }
+      if (local_28 != *(short *)(local_18 + 0x48)) {
+        *(short *)(local_18 + 0x48) = local_28;
+        (**(code **)(*(int *)local_18 + 0x44))();
+      }
+      local_30 = Build(local_18);
+      local_7c = *(uint *)(local_38 + 0x10) & 0xc0;
+      local_60 = (param_4 * DAT_1057f528) / DAT_1057f368;
+      local_58 = (int)(local_3c + (local_3c >> 0x1f & 3U)) >> 2;
+      local_14 = 0;
+      local_20 = 0;
+      local_78 = 0;
+      if (local_40 != 0) {
+        local_78 = local_30;
+        iVar1 = esEquBox::Height((esEquBox *)local_18);
+        local_20 = (-(local_3c / 10) - iVar1 / 2) - (uint)*(ushort *)(local_38 + 0xc);
+      }
+      param_7[9] = param_3;
+      param_7[7] = param_3;
+      param_7[5] = param_3;
+      param_7[3] = param_3;
+      param_7[1] = param_3;
+      if ((local_60 < DAT_1057f50c) || (DAT_1057f534 <= local_60)) {
+        local_6c = 0;
+      }
+      else {
+        local_6c = 1;
+      }
+      local_5c = local_6c;
+      local_24 = (uint)*(ushort *)(local_38 + 0x1a) + local_58;
+      if (param_6 < param_5) {
+        local_50 = (float)((uint)param_4 ^ _DAT_1057f6c0);
+        local_74 = 0;
+        if (local_6c != 0) {
+          iStack_cc = 0x1044782e;
+          D2DPointF::D2DPointF(local_90,0.0,0.0);
+          iStack_cc = 0x10447848;
+          FUN_10027170();
+          local_50 = local_50 + DAT_1057f368;
+          local_20 = -local_20;
+        }
+        if ((local_7c & 0xc0) == 0) {
+          local_20 = 0;
+          local_40 = 0;
+          iStack_cc = 0x1044789e;
+          D2DPointF::D2DPointF(local_98,0.0,0.0);
+          iStack_cc = 0x104478c5;
+          FUN_10027170();
+          local_c = 0;
+          local_10 = 0;
+          Qiujiao(local_18,&local_c,&local_10);
+          local_30 = local_10 - local_c;
+          if (0 < local_30) {
+            local_74 = (local_10 + local_c) / 2;
+          }
+        }
+        local_84 = param_5 - param_6;
+        local_70 = (uint)(local_84 < local_24);
+        local_54 = local_70;
+        local_1c = param_7;
+        if (local_70 == 0) {
+          local_2c = param_5 - local_24;
+          if (param_6 < local_2c) {
+            local_2c = param_6;
+          }
+        }
+        else {
+          local_2c = param_6;
+          *param_7 = param_2 + param_5 + local_24;
+          local_14 = 1;
+          local_1c = param_7 + 2;
+        }
+        local_88 = (local_2c - local_30 / 2) + local_74;
+        local_44 = local_2c - local_30;
+        if (local_40 == 0) {
+          *local_1c = param_2 + param_5;
+          local_1c[2] = param_2 + local_2c;
+          if (local_44 < 1) {
+            local_14 = local_14 + 2;
+          }
+          else {
+            local_14 = local_14 + 4 | 0x8000000;
+            local_1c[4] = param_2 + local_44;
+            local_1c[6] = param_2;
+          }
+          if (local_70 == 0) {
+            local_14 = local_14 | 0x100100;
+          }
+          else {
+            local_14 = local_14 | 0x200010;
+          }
+        }
+        else {
+          *local_1c = param_2 + param_5;
+          local_1c[2] = param_2 + local_2c;
+          if (local_44 < 0) {
+            local_1c[4] = param_2 + local_44;
+          }
+          else {
+            local_1c[4] = param_2;
+          }
+          if (local_70 == 0) {
+            local_14 = local_14 + 3 | 0x102200;
+          }
+          else {
+            local_1c[6] = (param_2 - param_5) - local_24;
+            local_14 = local_14 + 3 | 0x243010;
+          }
+        }
+        iStack_cc = 0x10447afb;
+        FUN_10052bd0();
+      }
+      else {
+        if (param_5 < local_24) {
+          local_34 = param_5 + local_24;
+          if (local_34 < param_6) {
+            local_34 = param_6;
+          }
+        }
+        else {
+          local_34 = param_6;
+        }
+        *param_7 = param_2;
+        param_7[2] = param_2 + param_5;
+        param_7[4] = param_2 + local_34;
+        param_7[6] = param_2 + local_34 + local_78;
+        local_48 = local_30 / 2 + local_34;
+        local_14 = 4;
+        if ((local_7c & 0x40) == 0) {
+          local_48 = local_48 + local_58;
+          param_7[6] = param_7[6] + local_58;
+          local_4c = (float)((uint)param_4 ^ _DAT_1057f6c0);
+          if (local_6c != 0) {
+            iStack_cc = 0x10447c90;
+            D2DPointF::D2DPointF(local_a8,0.0,0.0);
+            iStack_cc = 0x10447caa;
+            FUN_10027170();
+            local_4c = local_4c + DAT_1057f368;
+            local_20 = -local_20;
+          }
+          iStack_cc = 0x10447cf1;
+          FUN_10052bd0();
+          iStack_cc = 0x10447d29;
+          D2DPointF::D2DPointF(local_b0,(float)param_7[4],(float)param_7[5]);
+          iStack_cc = 0x10447d50;
+          FUN_10027170();
+          D2DPointF::D2DPointF((D2DPointF *)&iStack_cc,(D2D_POINT_2F *)(param_7 + 4));
+          Rotate((double)local_4c);
+          if (local_24 < param_5) {
+            local_14 = local_14 | 0x200010;
+          }
+          else {
+            local_14 = local_14 | 0x200210;
+          }
+        }
+        else {
+          if (local_6c != 0) {
+            iStack_cc = 0x10447bbc;
+            D2DPointF::D2DPointF(local_a0,0.0,0.0);
+            iStack_cc = 0x10447bd6;
+            FUN_10027170();
+            local_20 = -local_20;
+          }
+          iStack_cc = 0x10447c0b;
+          FUN_10052bd0();
+          if (local_24 < param_5) {
+            local_14 = local_14 | 0x200010;
+          }
+          else {
+            local_14 = local_14 | 0x200210;
+          }
+        }
+      }
+      iStack_cc = 0x10447dc8;
+      D2DPointF::D2DPointF(local_b8,(float)param_2,(float)param_3);
+      iStack_cc = 0x10447ddf;
+      FUN_10027170();
+      FUN_10027140();
+      FUN_10027a30();
+      iStack_cc = param_2;
+      Rotate((double)param_4);
+    }
+  }
+  return local_14;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForGongCa
+// entry=10447e50
+// signature=int SetMePoints_ForGongCa(esLableBox * this, zPoint param_1, int * param_2, int param_3)
+// bodyBytes=437
+// =========================================================
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: int __thiscall esLableBox::SetMePoints_ForGongCa(class zPoint,int &,int) */
+
+int __thiscall
+esLableBox::SetMePoints_ForGongCa
+          (esLableBox *this,int param_2,undefined4 param_3,int *param_4,int param_5)
+
+{
+  short sVar1;
+  int iVar2;
+  esFont *this_00;
+  uint uVar3;
+  int iVar4;
+  int local_24;
+  int local_1c;
+  int local_18;
+  
+                    /* 0x447e50  12777  ?SetMePoints_ForGongCa@esLableBox@@QAEHVzPoint@@AAHH@Z */
+  if (*(int *)(this + 0x40) == 0) {
+    local_24 = 0;
+  }
+  else {
+    iVar2 = (**(code **)(*(int *)this + 0x54))(0xe);
+    if (iVar2 == 0) {
+      local_24 = 0;
+    }
+    else {
+      this_00 = esFontSheet::GetFont
+                          (*(esFontSheet **)(this + 0x40),*(ushort *)(*(int *)(this + 0x14) + 0x1e),
+                           DAT_1057f0b4);
+      iVar2 = esFont::GetFontHeight(this_00);
+      if ((int)((float)iVar2 * _DAT_1057f138) % 100 < 0x33) {
+        local_1c = 0;
+      }
+      else {
+        local_1c = 100;
+      }
+      local_24 = ((int)((float)iVar2 * _DAT_1057f138) / 100) * 100 + local_1c;
+      if ((param_5 != 0) && (*param_4 == 0)) {
+        *param_4 = local_24;
+      }
+      uVar3 = (int)(iVar2 + (iVar2 >> 0x1f & 3U)) >> 2;
+      sVar1 = (short)uVar3;
+      if ((uVar3 & 0xffff) != (uint)*(ushort *)(this + 0x48)) {
+        *(short *)(this + 0x48) = sVar1;
+        (**(code **)(*(int *)this + 0x44))(0);
+        *(short *)(this + 0x3c) = sVar1 << 1;
+      }
+      iVar2 = Build(this);
+      iVar4 = esEquBox::Height((esEquBox *)this);
+      if (local_24 < iVar4) {
+        local_24 = iVar4;
+      }
+      local_18 = iVar2 / 2 + param_2;
+      if (param_5 != 0) {
+        local_18 = local_18 + *param_4;
+      }
+      FUN_10052bd0((float)local_18,
+                   (float)((local_24 - iVar4) / 2 - *(int *)(*(int *)(this + 0x54) + 4)),1);
+    }
+  }
+  return local_24;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMatrix
+// entry=10448010
+// signature=void SetMatrix(esLableBox * this, int param_1, int param_2, Matrix * param_3)
+// bodyBytes=90
+// =========================================================
+
+/* public: void __thiscall esLableBox::SetMatrix(int,int,class Gdiplus::Matrix *) */
+
+void __thiscall esLableBox::SetMatrix(esLableBox *this,int param_1,int param_2,Matrix *param_3)
+
+{
+                    /* 0x448010  12765  ?SetMatrix@esLableBox@@QAEXHHPAVMatrix@Gdiplus@@@Z */
+  FUN_10052bd0((float)param_1,(float)param_2,1);
+  FUN_10027140(param_3,1);
+  FUN_10027a30(*(undefined4 *)(this + 0x54),*(undefined4 *)(this + 0x58));
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForYX
+// entry=10448070
+// signature=tagPOINT SetMePoints_ForYX(esLableBox * this, zPoint param_1, zPoint param_2, ulong param_3, Matrix * param_4)
+// bodyBytes=929
+// =========================================================
+
+/* public: struct tagPOINT __thiscall esLableBox::SetMePoints_ForYX(class zPoint,class
+   zPoint,unsigned long,class Gdiplus::Matrix *) */
+
+tagPOINT __thiscall
+esLableBox::SetMePoints_ForYX
+          (esLableBox *this,int *param_2,int param_3,int param_4,int *param_5,int param_6,
+          uint param_7,undefined4 param_8)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  tagPOINT tVar3;
+  undefined4 uVar4;
+  D2DPointF local_5c [8];
+  D2DPointF local_54 [8];
+  esFont *local_4c;
+  int local_48;
+  esDimenStyle *local_44;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
+  int local_28;
+  esDimBase *local_24;
+  int local_20;
+  int local_1c;
+  float local_18;
+  int local_14;
+  int local_10;
+  esLableBox *local_c;
+  short local_8;
+  
+                    /* 0x448070  12779
+                       ?SetMePoints_ForYX@esLableBox@@QAE?AUtagPOINT@@VzPoint@@0KPAVMatrix@Gdiplus@@@Z
+                        */
+  if (*(int *)(this + 0x40) == 0) {
+    *param_2 = (int)param_5;
+    param_2[1] = param_6;
+  }
+  else {
+    local_c = this;
+    local_24 = (esDimBase *)(**(code **)(*(int *)this + 0x54))(0xe);
+    if (local_24 == (esDimBase *)0x0) {
+      *param_2 = (int)param_5;
+      param_2[1] = param_6;
+    }
+    else {
+      local_44 = esDimBase::GetBzStyle(local_24);
+      local_4c = esFontSheet::GetFont
+                           (*(esFontSheet **)(local_c + 0x40),
+                            *(ushort *)(*(int *)(local_c + 0x14) + 0x1e),DAT_1057f0b4);
+      local_1c = esFont::GetFontHeight(local_4c);
+      if ((param_7 & 0x30) == 0) {
+        local_8 = (short)((int)(local_1c + (local_1c >> 0x1f & 7U)) >> 3);
+      }
+      else {
+        if ((*(uint *)(local_44 + 0x10) & 0x1000) == 0) {
+          local_28 = 0;
+        }
+        else {
+          local_28 = (int)(local_1c + (local_1c >> 0x1f & 7U)) >> 3;
+        }
+        local_8 = (short)local_28;
+      }
+      if (local_8 != *(short *)(local_c + 0x48)) {
+        *(short *)(local_c + 0x48) = local_8;
+        (**(code **)(*(int *)local_c + 0x44))(0);
+      }
+      local_20 = Build(local_c);
+      local_20 = local_20 + ((int)(local_1c + (local_1c >> 0x1f & 3U)) >> 2);
+      local_18 = 0.0;
+      local_30 = FUN_10027ae0(param_3 - (int)param_5);
+      local_2c = FUN_10027ae0(param_4 - param_6);
+      if (local_30 < local_2c) {
+        local_34 = local_2c;
+        if (param_4 < param_6) {
+          local_18 = DAT_1057f50c;
+        }
+        else if (param_6 < param_4) {
+          local_18 = DAT_1057f534;
+        }
+      }
+      else {
+        local_34 = local_30;
+        if ((int)param_5 < param_3) {
+          local_18 = DAT_1057f528;
+        }
+      }
+      local_14 = 0;
+      local_38 = local_20 / 2 + ((int)(local_1c + (local_1c >> 0x1f & 3U)) >> 2);
+      local_3c = local_34 - local_20 / 2;
+      local_40 = local_3c;
+      if (local_3c < local_38) {
+        local_40 = local_38;
+      }
+      local_48 = local_40;
+      local_10 = local_40 - local_20 / 2;
+      if (param_7 == 0) {
+        local_10 = (uint)*(ushort *)(local_c + 0x48) + local_10;
+      }
+      else {
+        iVar1 = esEquBox::Height((esEquBox *)local_c);
+        local_14 = iVar1 / 2 + local_1c / 10 + (uint)*(ushort *)(local_44 + 0xc);
+        if (param_7 == 0x10) {
+          local_14 = -local_14;
+        }
+        local_10 = local_10 + local_20;
+      }
+      if ((local_18 == DAT_1057f50c) || (local_18 == DAT_1057f528)) {
+        uVar4 = 1;
+        uVar2 = D2DPointF::D2DPointF(local_54,0.0,0.0);
+        FUN_10027170(DAT_1057f528,uVar2,uVar4);
+        local_14 = -local_14;
+      }
+      FUN_10052bd0((float)(param_3 + local_48),(float)(param_4 + local_14),1);
+      uVar4 = 1;
+      uVar2 = D2DPointF::D2DPointF(local_5c,(float)param_3,(float)param_4);
+      FUN_10027170(local_18,uVar2,uVar4);
+      FUN_10027140(param_8,1);
+      FUN_10027a30(*(undefined4 *)(local_c + 0x54),*(undefined4 *)(local_c + 0x58));
+      if (param_3 < (int)param_5) {
+        param_5 = (int *)(param_3 + local_10);
+      }
+      else if ((int)param_5 < param_3) {
+        param_5 = (int *)(param_3 - local_10);
+      }
+      else if (param_4 < param_6) {
+        param_6 = param_4 + local_10;
+      }
+      else {
+        param_6 = param_4 - local_10;
+      }
+      *param_2 = (int)param_5;
+      param_2[1] = param_6;
+      param_5 = param_2;
+    }
+  }
+  tVar3.y = (LONG)param_5;
+  tVar3.x = (LONG)param_2;
+  return tVar3;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForZJ
+// entry=10448420
+// signature=int SetMePoints_ForZJ(esLableBox * this, zPoint param_1, float param_2, int param_3, int param_4, tagPOINT * param_5, Matrix * param_6)
+// bodyBytes=2221
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: int __thiscall esLableBox::SetMePoints_ForZJ(class zPoint,float,int,int,struct tagPOINT
+   *,class Gdiplus::Matrix *) */
+
+int __thiscall
+esLableBox::SetMePoints_ForZJ
+          (esLableBox *this,int param_2,int param_3,float param_4,int param_5,int param_6,
+          int *param_7)
+
+{
+  int iVar1;
+  int iStack_d4;
+  D2DPointF local_c0 [8];
+  D2DPointF local_b8 [8];
+  D2DPointF local_b0 [8];
+  D2DPointF local_a8 [8];
+  D2DPointF local_a0 [8];
+  D2DPointF local_98 [8];
+  int local_90;
+  int local_8c;
+  esFont *local_88;
+  uint local_84;
+  uint local_80;
+  int local_7c;
+  int local_78;
+  uint local_74;
+  int local_70;
+  uint local_6c;
+  int local_68;
+  int local_64;
+  esDimBase *local_60;
+  float local_5c;
+  int local_58;
+  int local_54;
+  uint local_50;
+  float local_4c;
+  float local_48;
+  int local_44;
+  uint local_40;
+  int local_3c;
+  esDimenStyle *local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
+  short local_28;
+  int local_24;
+  int local_20;
+  int *local_1c;
+  uint local_18;
+  esLableBox *local_14;
+  int local_10;
+  int local_c;
+  uint local_8;
+  
+                    /* 0x448420  12780
+                       ?SetMePoints_ForZJ@esLableBox@@QAEHVzPoint@@MHHPAUtagPOINT@@PAVMatrix@Gdiplus@@@Z
+                        */
+  local_8 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  if (*(int *)(this + 0x40) == 0) {
+    local_18 = 0;
+  }
+  else {
+    local_14 = this;
+    local_60 = (esDimBase *)(**(code **)(*(int *)this + 0x54))();
+    if (local_60 == (esDimBase *)0x0) {
+      local_18 = 0;
+    }
+    else {
+      local_38 = esDimBase::GetBzStyle(local_60);
+      local_88 = esFontSheet::GetFont
+                           (*(esFontSheet **)(local_14 + 0x40),
+                            *(ushort *)(*(int *)(local_14 + 0x14) + 0x1e),DAT_1057f0b4);
+      local_3c = esFont::GetFontHeight(local_88);
+      local_40 = *(uint *)(local_38 + 0x10) & 0x30;
+      if (local_40 == 0) {
+        local_28 = (short)((int)(local_3c + (local_3c >> 0x1f & 7U)) >> 3);
+      }
+      else {
+        if ((*(uint *)(local_38 + 0x10) & 0x1000) == 0) {
+          local_64 = 0;
+        }
+        else {
+          local_64 = (int)(local_3c + (local_3c >> 0x1f & 7U)) >> 3;
+        }
+        local_28 = (short)local_64;
+      }
+      if (local_28 != *(short *)(local_14 + 0x48)) {
+        *(short *)(local_14 + 0x48) = local_28;
+        (**(code **)(*(int *)local_14 + 0x44))();
+      }
+      local_34 = Build(local_14);
+      local_80 = *(uint *)(local_38 + 0x10) & 0xc0;
+      local_5c = (param_4 * DAT_1057f528) / DAT_1057f368;
+      local_18 = 0;
+      local_20 = 0;
+      local_7c = 0;
+      local_54 = (int)(local_3c + (local_3c >> 0x1f & 3U)) >> 2;
+      if (local_40 != 0) {
+        local_7c = local_34;
+        iVar1 = esEquBox::Height((esEquBox *)local_14);
+        local_20 = (-(local_3c / 10) - iVar1 / 2) - (uint)*(ushort *)(local_38 + 0xc);
+      }
+      param_7[0xb] = param_3;
+      param_7[9] = param_3;
+      param_7[7] = param_3;
+      param_7[5] = param_3;
+      param_7[3] = param_3;
+      param_7[1] = param_3;
+      if ((local_5c < DAT_1057f50c) || (DAT_1057f534 <= local_5c)) {
+        local_68 = 0;
+      }
+      else {
+        local_68 = 1;
+      }
+      local_58 = local_68;
+      local_24 = (uint)*(ushort *)(local_38 + 0x1a) + local_54;
+      if (param_6 < param_5) {
+        local_4c = (float)((uint)param_4 ^ _DAT_1057f6c0);
+        local_70 = 0;
+        if (local_68 != 0) {
+          iStack_d4 = 0x104486a6;
+          D2DPointF::D2DPointF(local_98,0.0,0.0);
+          iStack_d4 = 0x104486c0;
+          FUN_10027170();
+          local_4c = local_4c + DAT_1057f368;
+          local_20 = -local_20;
+        }
+        if ((local_80 & 0xc0) == 0) {
+          local_20 = 0;
+          local_40 = 0;
+          iStack_d4 = 0x10448715;
+          D2DPointF::D2DPointF(local_a0,0.0,0.0);
+          iStack_d4 = 0x1044873c;
+          FUN_10027170();
+          local_c = 0;
+          local_10 = 0;
+          Qiujiao(local_14,&local_c,&local_10);
+          local_34 = local_10 - local_c;
+          if (0 < local_34) {
+            local_70 = (local_10 + local_c) / 2;
+          }
+        }
+        local_8c = param_5 - param_6;
+        local_6c = (uint)(local_8c < local_24);
+        local_50 = local_6c;
+        local_1c = param_7;
+        if (local_6c == 0) {
+          local_2c = param_5 - local_24;
+          if (param_6 < local_2c) {
+            local_2c = param_6;
+          }
+        }
+        else {
+          local_2c = param_6;
+          *param_7 = param_2 + param_5 + local_24;
+          local_18 = 2;
+          local_1c = param_7 + 2;
+        }
+        local_90 = (local_2c - local_34 / 2) + local_70;
+        if (local_40 == 0) {
+          *local_1c = param_2 + param_5;
+          local_1c[2] = param_2 + local_2c;
+          local_1c[4] = (param_2 + local_2c) - local_34;
+          local_1c[6] = param_2 - param_5;
+          if (local_6c == 0) {
+            local_18 = local_18 + 4 | 0x8123100;
+          }
+          else {
+            local_1c[8] = (param_2 - param_5) - local_24;
+            local_18 = local_18 + 4 | 0x8254010;
+          }
+        }
+        else {
+          *local_1c = param_2 + param_5;
+          local_1c[2] = param_2 + local_2c;
+          local_1c[4] = param_2 - param_5;
+          if (local_6c == 0) {
+            local_18 = local_18 + 3 | 0x102200;
+          }
+          else {
+            local_1c[6] = (param_2 - param_5) - local_24;
+            local_18 = local_18 + 3 | 0x243010;
+          }
+        }
+        iStack_d4 = 0x1044895e;
+        FUN_10052bd0();
+      }
+      else {
+        local_74 = (uint)(param_5 < local_24);
+        local_84 = local_74;
+        if (local_74 == 0) {
+          local_78 = param_6;
+        }
+        else {
+          local_78 = param_5 + local_24;
+        }
+        local_30 = local_78;
+        if (local_78 < param_6) {
+          local_30 = param_6;
+        }
+        local_44 = local_34 / 2 + local_30;
+        *param_7 = param_2 + local_30 + local_7c;
+        param_7[2] = param_2 + local_30;
+        param_7[4] = param_2 + param_5;
+        param_7[6] = param_2 - param_5;
+        local_18 = 4;
+        if ((local_80 & 0x40) == 0) {
+          local_44 = local_44 + local_54;
+          *param_7 = *param_7 + local_54;
+          local_48 = (float)((uint)param_4 ^ _DAT_1057f6c0);
+          if (local_68 != 0) {
+            iStack_d4 = 0x10448af8;
+            D2DPointF::D2DPointF(local_b0,0.0,0.0);
+            iStack_d4 = 0x10448b12;
+            FUN_10027170();
+            local_48 = local_48 + DAT_1057f368;
+            local_20 = -local_20;
+          }
+          iStack_d4 = 0x10448b59;
+          FUN_10052bd0();
+          iStack_d4 = 0x10448b93;
+          D2DPointF::D2DPointF(local_b8,(float)param_7[2],(float)param_7[3]);
+          iStack_d4 = 0x10448bba;
+          FUN_10027170();
+          D2DPointF::D2DPointF((D2DPointF *)&iStack_d4,(D2D_POINT_2F *)(param_7 + 2));
+          Rotate((double)local_48);
+        }
+        else {
+          if (local_68 != 0) {
+            iStack_d4 = 0x10448a46;
+            D2DPointF::D2DPointF(local_a8,0.0,0.0);
+            iStack_d4 = 0x10448a60;
+            FUN_10027170();
+            local_20 = -local_20;
+          }
+          iStack_d4 = 0x10448a95;
+          FUN_10052bd0();
+        }
+        if (local_84 == 0) {
+          local_18 = local_18 | 0x123320;
+        }
+        else {
+          local_18 = local_18 + 1 | 0x112430;
+          param_7[8] = (param_2 - param_5) - local_24;
+        }
+      }
+      iStack_d4 = 0x10448c50;
+      D2DPointF::D2DPointF(local_c0,(float)param_2,(float)param_3);
+      iStack_d4 = 0x10448c67;
+      FUN_10027170();
+      FUN_10027140();
+      FUN_10027a30();
+      iStack_d4 = param_2;
+      Rotate((double)param_4);
+    }
+  }
+  return local_18;
+}
+
+
+
+// =========================================================
+// esLableBox::SetMePoints_ForParen
+// entry=10448cd0
+// signature=void SetMePoints_ForParen(esLableBox * this, zPoint param_1, zPoint param_2, float param_3, int param_4, Matrix * param_5)
+// bodyBytes=1059
+// =========================================================
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: void __thiscall esLableBox::SetMePoints_ForParen(class zPoint,class
+   zPoint,float,int,class Gdiplus::Matrix *) */
+
+void __thiscall
+esLableBox::SetMePoints_ForParen
+          (esLableBox *this,int param_2,int param_3,undefined4 param_4,undefined4 param_5,
+          float param_6,int param_7,undefined4 param_8)
+
+{
+  tagPOINT tVar1;
+  int iVar2;
+  undefined4 uVar3;
+  double dVar4;
+  undefined4 uVar5;
+  undefined1 local_7c [8];
+  D2DPointF local_74 [8];
+  double local_6c;
+  double local_64;
+  double local_5c;
+  double local_54;
+  int local_4c;
+  int local_48;
+  double local_44;
+  int local_3c;
+  int local_38;
+  esFont *local_34;
+  esDimenStyle *local_30;
+  uint local_2c;
+  esDimBase *local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
+  float local_10;
+  esLableBox *local_c;
+  undefined2 local_8;
+  
+                    /* 0x448cd0  12778
+                       ?SetMePoints_ForParen@esLableBox@@QAEXVzPoint@@0MHPAVMatrix@Gdiplus@@@Z */
+  if ((*(int *)(this + 0x40) != 0) &&
+     (local_c = this, local_28 = (esDimBase *)(**(code **)(*(int *)this + 0x54))(0xe),
+     local_28 != (esDimBase *)0x0)) {
+    local_34 = esFontSheet::GetFont
+                         (*(esFontSheet **)(local_c + 0x40),
+                          *(ushort *)(*(int *)(local_c + 0x14) + 0x1e),DAT_1057f0b4);
+    local_24 = esFont::GetFontHeight(local_34);
+    local_30 = esDimBase::GetBzStyle(local_28);
+    if ((*(uint *)(local_30 + 0x10) & 0x1000) == 0) {
+      local_2c = 0;
+    }
+    else {
+      local_2c = (int)(local_24 + (local_24 >> 0x1f & 7U)) >> 3;
+    }
+    local_8 = (undefined2)local_2c;
+    if ((local_2c & 0xffff) != (uint)*(ushort *)(local_c + 0x48)) {
+      *(undefined2 *)(local_c + 0x48) = (undefined2)local_2c;
+      (**(code **)(*(int *)local_c + 0x44))();
+    }
+    local_3c = Build(local_c);
+    local_10 = (param_6 * DAT_1057f528) / DAT_1057f368;
+    if ((*(uint *)(local_30 + 0x10) & 0xc0) == 0) {
+      local_20 = local_24 / 10;
+      local_1c = local_3c / 2 + local_20;
+      iVar2 = esEquBox::Height((esEquBox *)local_c);
+      local_14 = iVar2 / 2 + local_20;
+      local_18 = zFtoL((double)local_10);
+      while (0x168 < local_18) {
+        local_10 = local_10 - DAT_1057f540;
+      }
+      while (local_18 < 0) {
+        local_10 = local_10 + DAT_1057f540;
+      }
+      local_18 = local_18 % 0xb4;
+      if (0x5a < local_18) {
+        local_18 = 0xb4 - local_18;
+      }
+      dVar4 = ((double)local_18 / DAT_1057f3b0) * DAT_1057f2a8;
+      local_54 = (double)local_1c;
+      local_44 = dVar4;
+      libm_sse2_sin_precise();
+      local_1c = zFtoL(local_54 * dVar4);
+      local_5c = (double)local_14;
+      dVar4 = local_44;
+      libm_sse2_cos_precise();
+      local_14 = zFtoL(local_5c * dVar4);
+      if (((float)PTR_1057ef28 <= local_10) && (local_10 < DAT_1057f528)) {
+        local_1c = -local_1c;
+      }
+      if ((_DAT_1057f398 <= (double)local_10) && (local_10 < DAT_1057f534)) {
+        local_14 = -local_14;
+      }
+      if (param_7 == -1) {
+        local_64 = (double)local_20;
+        dVar4 = local_44;
+        libm_sse2_cos_precise();
+        iVar2 = zFtoL(local_64 * dVar4);
+        local_1c = -local_1c;
+        local_14 = -(local_14 - iVar2);
+      }
+      else {
+        local_6c = (double)local_20;
+        dVar4 = local_44;
+        libm_sse2_cos_precise();
+        iVar2 = zFtoL(local_6c * dVar4);
+        local_14 = iVar2 + local_14;
+      }
+      FUN_10052bd0((float)(param_2 + local_1c),(float)(param_3 + local_14),1);
+      local_4c = param_2;
+      local_48 = param_3;
+      uVar5 = 1;
+      tVar1.y = param_2;
+      tVar1.x = (LONG)local_7c;
+      uVar3 = pttoptf(tVar1);
+      FUN_10027170((uint)local_10 ^ _DAT_1057f6c0,uVar3,uVar5);
+    }
+    else {
+      iVar2 = esEquBox::Height((esEquBox *)local_c);
+      local_38 = (iVar2 / 2 + ((int)(local_24 + (local_24 >> 0x1f & 7U)) >> 3)) * param_7;
+      if ((DAT_1057f50c <= local_10) && (local_10 < DAT_1057f534)) {
+        uVar5 = 1;
+        uVar3 = D2DPointF::D2DPointF(local_74,0.0,0.0);
+        FUN_10027170(DAT_1057f528,uVar3,uVar5);
+      }
+      FUN_10052bd0((float)param_2,(float)(param_3 + local_38),1);
+    }
+    FUN_10027140(param_8,1);
+    FUN_10027a30(*(undefined4 *)(local_c + 0x54),*(undefined4 *)(local_c + 0x58));
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::InitPts
+// entry=10449100
+// signature=int InitPts(esLableBox * this, double param_1)
+// bodyBytes=245
+// =========================================================
+
+/* public: int __thiscall esLableBox::InitPts(double) */
+
+int __thiscall esLableBox::InitPts(esLableBox *this,double param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  esFont *this_00;
+  int iVar3;
+  double dVar4;
+  
+                    /* 0x449100  8816  ?InitPts@esLableBox@@QAEHN@Z */
+  if (*(int *)(this + 0x40) == 0) {
+    iVar1 = 0;
+  }
+  else {
+    iVar1 = (**(code **)(*(int *)this + 0x54))(0xe);
+    if (iVar1 == 0) {
+      iVar1 = 0;
+    }
+    else {
+      iVar2 = Build(this);
+      this_00 = esFontSheet::GetFont
+                          (*(esFontSheet **)(this + 0x40),*(ushort *)(*(int *)(this + 0x14) + 0x1e),
+                           DAT_1057f0b4);
+      iVar1 = esFont::GetFontHeight(this_00);
+      dVar4 = (double)((iVar1 / 2) * (iVar1 / 2)) * DAT_1057f298;
+      libm_sse2_sqrt_precise();
+      iVar1 = (int)(dVar4 * param_1);
+      iVar3 = esEquBox::Height((esEquBox *)this);
+      dVar4 = (double)(iVar2 * iVar2) / DAT_1057f2c0 + (double)(iVar3 * iVar3) / DAT_1057f2c0;
+      libm_sse2_sqrt_precise();
+      if (iVar1 < (int)dVar4) {
+        iVar1 = (int)dVar4;
+      }
+    }
+  }
+  return iVar1;
+}
+
+
+
+// =========================================================
+// esLableBox::SetTextPos
+// entry=10449200
+// signature=int SetTextPos(esLableBox * this, zPoint param_1, int param_2, int param_3, Matrix * param_4)
+// bodyBytes=737
+// =========================================================
+
+/* public: int __thiscall esLableBox::SetTextPos(class zPoint,int,int,class Gdiplus::Matrix *) */
+
+int __thiscall
+esLableBox::SetTextPos
+          (esLableBox *this,int param_2,int param_3,int param_4,int param_5,undefined4 param_6)
+
+{
+  undefined2 uVar1;
+  esFont *this_00;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  bool bVar6;
+  int local_14;
+  int local_10;
+  
+                    /* 0x449200  13067  ?SetTextPos@esLableBox@@QAEHVzPoint@@HHPAVMatrix@Gdiplus@@@Z
+                        */
+  this_00 = esFontSheet::GetFont
+                      (*(esFontSheet **)(this + 0x40),*(ushort *)(*(int *)(this + 0x14) + 0x1e),
+                       DAT_1057f0b4);
+  iVar2 = esFont::GetFontHeight(this_00);
+  bVar6 = (*(ushort *)(this + 0x1c) & 0x70) != 0x70;
+  uVar3 = (int)(iVar2 + (iVar2 >> 0x1f & 7U)) >> 3;
+  uVar1 = (undefined2)uVar3;
+  if (bVar6) {
+    if (param_4 == 0) {
+      *(undefined2 *)(this + 0x3c) = uVar1;
+    }
+    else {
+      *(undefined2 *)(this + 0x3c) = uVar1;
+    }
+  }
+  else if (param_4 == 0) {
+    *(short *)(this + 0x3c) = (short)(int)((float)iVar2 * DAT_1057f118);
+  }
+  else {
+    *(undefined2 *)(this + 0x3c) = uVar1;
+  }
+  if ((uVar3 & 0xffff) != (uint)*(ushort *)(this + 0x48)) {
+    *(undefined2 *)(this + 0x48) = uVar1;
+    (**(code **)(*(int *)this + 0x44))(0);
+  }
+  iVar4 = Build(this);
+  local_10 = param_2;
+  local_14 = param_3;
+  if (param_4 == 0) {
+    if (param_5 == 0) {
+      param_2 = iVar4 / 2 + param_2;
+      local_14 = param_3 - *(int *)(*(int *)(this + 0x54) + 0xc);
+      if (bVar6) {
+        local_10 = (uint)*(ushort *)(this + 0x48) + param_2;
+      }
+      else {
+        local_10 = (iVar2 / 2 - (uint)*(ushort *)(this + 0x48)) + param_2;
+      }
+    }
+    else {
+      local_14 = param_3 - *(int *)(*(int *)(this + 0x54) + 0xc);
+      if (bVar6) {
+        uVar3 = (uint)*(ushort *)(this + 0x48);
+      }
+      else {
+        uVar3 = iVar2 / 2 - (uint)*(ushort *)(this + 0x48);
+      }
+      local_10 = (param_2 - iVar4 / 2) - uVar3;
+    }
+  }
+  else if ((*(ushort *)(this + 0x1c) & 0x70) == 0x70) {
+    if (param_5 == 0) {
+      local_10 = (iVar4 / 2 -
+                 (*(int *)(*(int *)(this + 0x14) + 0x40) +
+                 *(int *)(*(int *)(this + 0x14) + 0x50) / 2)) - (uint)*(ushort *)(this + 0x48);
+    }
+    else {
+      local_10 = -((iVar4 / 2 - *(int *)(*(int *)(this + 0x18) + 0x50) / 2) -
+                  (uint)*(ushort *)(this + 0x48));
+    }
+    local_10 = param_2 + local_10;
+  }
+  else {
+    iVar2 = *(int *)(*(int *)(this + 0x54) + 4);
+    iVar4 = *(int *)(*(esEQLine **)(this + 0x18) + 0x44);
+    iVar5 = esEQLine::Height(*(esEQLine **)(this + 0x18));
+    local_14 = param_3 - (iVar2 + iVar4 + iVar5 / 2 + (uint)*(ushort *)(this + 0x48));
+  }
+  FUN_10052bd0((float)local_10,(float)local_14,1);
+  FUN_10027140(param_6,1);
+  FUN_10027a30(*(undefined4 *)(this + 0x54),*(undefined4 *)(this + 0x58));
+  iVar2 = esEquBox::Height((esEquBox *)this);
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esLableBox::SetTextPos
+// entry=104494f0
+// signature=void SetTextPos(esLableBox * this, zPoint param_1, Matrix * param_2)
+// bodyBytes=101
+// =========================================================
+
+/* public: void __thiscall esLableBox::SetTextPos(class zPoint,class Gdiplus::Matrix *) */
+
+void __thiscall esLableBox::SetTextPos(esLableBox *this,int param_2,int param_3,undefined4 param_4)
+
+{
+                    /* 0x4494f0  13068  ?SetTextPos@esLableBox@@QAEXVzPoint@@PAVMatrix@Gdiplus@@@Z
+                        */
+  if (*(int *)(this + 0x54) != 0) {
+    FUN_10052bd0((float)param_2,(float)param_3,1);
+    FUN_10027140(param_4,1);
+    FUN_10027a30(*(undefined4 *)(this + 0x54),*(undefined4 *)(this + 0x58));
+  }
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::OnMessage
+// entry=10449560
+// signature=int OnMessage(esLableBox * this, esMessage * param_1, ulong param_2)
+// bodyBytes=29
+// =========================================================
+
+/* public: virtual int __thiscall esLableBox::OnMessage(class esMessage *,unsigned long) */
+
+int __thiscall esLableBox::OnMessage(esLableBox *this,esMessage *param_1,ulong param_2)
+
+{
+  int iVar1;
+  
+                    /* 0x449560  10892  ?OnMessage@esLableBox@@UAEHPAVesMessage@@K@Z */
+  iVar1 = esEquBox::OnMessage((esEquBox *)this,param_1,param_2);
+  return iVar1;
+}
+
+
+
+// =========================================================
+// esLableBox::Load
+// entry=10449580
+// signature=void Load(esLableBox * this, elfPage * param_1, elfSubject * param_2, esDS_Txt * param_3, int param_4)
+// bodyBytes=995
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: void __thiscall esLableBox::Load(class elfPage *,class elfSubject *,class esDS_Txt *,int)
+    */
+
+void __thiscall
+esLableBox::Load(esLableBox *this,elfPage *param_1,elfSubject *param_2,esDS_Txt *param_3,int param_4
+                )
+
+{
+  esDS_Txt eVar1;
+  ushort uVar2;
+  int iVar3;
+  int iVar4;
+  esStyleList<esBlockStyle> *peVar5;
+  elfItem *peVar6;
+  elfPathGeometry *peVar7;
+  byte local_a5;
+  esStyleList<esBlockStyle> local_a4 [144];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x449580  9963
+                       ?Load@esLableBox@@QAEXPAVelfPage@@PAVelfSubject@@PAVesDS_Txt@@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_105519f1;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (((*(int *)(this + 0x54) != 0) &&
+      (iVar4 = (**(code **)(*(int *)this + 0x54))(0xe,local_14), *(int *)(this + 0x40) != 0)) &&
+     (iVar4 != 0)) {
+    iVar4 = eaProject::GetActiveFrame((eaProject *)this);
+    if (iVar4 != 0) {
+      esFormulaBox::RecalcLayout((esFormulaBox *)this);
+    }
+    local_a5 = 0;
+    if (4 < *(int *)(this + 0x58)) {
+      if (((param_4 != 0) && ((*(uint *)(param_3 + 0x10) & 0x1000) != 0)) &&
+         (iVar4 = esDimenStyle::LoadPen((esDimenStyle *)param_3,param_1,param_2,1), iVar4 != 0)) {
+        local_a5 = 1;
+      }
+      if ((param_4 != 0) && (*(int *)(param_3 + 0x14) != 0)) {
+        peVar5 = operator_new(0x2c);
+        local_8 = 0;
+        esStyleList<esBlockStyle>::__autoclassinit2(peVar5,0x2c);
+        peVar6 = (elfItem *)
+                 elfSolidBrush::elfSolidBrush((elfSolidBrush *)peVar5,*(ulong *)(param_3 + 0x14));
+        local_8 = 0xffffffff;
+        elfSubject::Add(param_2,param_1,peVar6,1);
+        local_a5 = local_a5 | 2;
+      }
+      if (local_a5 != 0) {
+        peVar5 = operator_new(0x40);
+        local_8 = 1;
+        esStyleList<esBlockStyle>::__autoclassinit2(peVar5,0x40);
+        peVar7 = (elfPathGeometry *)
+                 elfPathGeometry::elfPathGeometry((elfPathGeometry *)peVar5,local_a5);
+        local_8 = 0xffffffff;
+        elfPathGeometry::AddPolygon(peVar7,*(tagPOINT **)(this + 0x54),5);
+        elfSubject::Add(param_2,param_1,(elfItem *)peVar7,1);
+      }
+    }
+    esFormulaBox::OnLoad((esFormulaBox *)this,param_1,param_2,(Matrix *)(this + 0x4c));
+    if (6 < *(int *)(this + 0x58)) {
+      if (((local_a5 & 1) == 0) &&
+         (iVar4 = esDimenStyle::LoadPen((esDimenStyle *)param_3,param_1,param_2,1), iVar4 != 0)) {
+        local_a5 = 1;
+      }
+      if (local_a5 != 0) {
+        iVar4 = *(int *)(this + 0x58);
+        iVar3 = *(int *)(this + 0x54);
+        peVar5 = operator_new(0x40);
+        local_8 = 2;
+        esStyleList<esBlockStyle>::__autoclassinit2(peVar5,0x40);
+        peVar7 = (elfPathGeometry *)
+                 elfPathGeometry::elfPathGeometry((elfPathGeometry *)peVar5,'\x01');
+        local_8 = 0xffffffff;
+        if (param_3[0x2c] == (esDS_Txt)0x0) {
+          elfPathGeometry::AddExLines(peVar7,(tagPOINT *)(iVar3 + 0x28),iVar4 - 5U);
+        }
+        else {
+          eVar1 = param_3[0x2c];
+          uVar2 = *(ushort *)(param_3 + 0x18);
+          esStyleList<esBlockStyle>::__autoclassinit2(local_a4,0x90);
+          esScriber::esScriber
+                    ((esScriber *)local_a4,(uint)*(ushort *)(param_3 + 0xc),
+                     (tagPOINT *)(iVar3 + 0x28),(uchar *)0x0,iVar4 - 5U,
+                     (ushort)(byte)eVar1 | uVar2 & 0xff00,0,1,2);
+          local_8 = 3;
+          esScriber::Load((esScriber *)local_a4,peVar7,0);
+          local_8 = 0xffffffff;
+          esScriber::~esScriber((esScriber *)local_a4);
+        }
+        elfSubject::Add(param_2,param_1,(elfItem *)peVar7,1);
+      }
+    }
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esLableBox::Draw
+// entry=10449990
+// signature=void Draw(esLableBox * this, esRender * param_1, Matrix * param_2, egPen * param_3, int param_4)
+// bodyBytes=685
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* public: void __thiscall esLableBox::Draw(class esRender *,class Gdiplus::Matrix const *,class
+   eg_graphics::egPen *,int) */
+
+void __thiscall
+esLableBox::Draw(esLableBox *this,esRender *param_1,Matrix *param_2,egPen *param_3,int param_4)
+
+{
+  int iVar1;
+  esStyleSheet *peVar2;
+  Point *pPVar3;
+  uint uVar4;
+  esBulletsManager local_5c [4];
+  uint local_58;
+  tagPOINT *local_54;
+  tagPOINT *local_50;
+  int local_4c;
+  esDimenStyle *local_48;
+  esDimBase *local_44;
+  ushort local_40;
+  esDimenStyle *local_3c;
+  egGraphics *local_38;
+  eaProject *local_34;
+  egSolidBrush local_30 [20];
+  esStyleList<esBlockStyle> local_1c [8];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x449990  5273
+                       ?Draw@esLableBox@@QAEXPAVesRender@@PBVMatrix@Gdiplus@@PAVegPen@eg_graphics@@H@Z
+                        */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10551a31;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (((*(int *)(this + 0x54) != 0) &&
+      (local_34 = (eaProject *)this,
+      local_44 = (esDimBase *)(**(code **)(*(int *)this + 0x54))(0xe,local_14),
+      *(int *)(local_34 + 0x40) != 0)) && (local_44 != (esDimBase *)0x0)) {
+    iVar1 = eaProject::GetActiveFrame(local_34);
+    if (iVar1 != 0) {
+      esFormulaBox::RecalcLayout((esFormulaBox *)local_34);
+    }
+    local_38 = esPainter::GetGraphics((esPainter *)param_1,2);
+    local_3c = esDimBase::GetBzStyle(local_44);
+    if ((param_4 != 0) && (*(int *)(local_3c + 0x14) != 0)) {
+      peVar2 = (esStyleSheet *)esRender::MakeSolidColor(param_1,*(ulong *)(local_3c + 0x14),0xff);
+      esBulletsManager::esBulletsManager(local_5c,peVar2);
+      eg_graphics::egSolidBrush::egSolidBrush(local_30,(Color *)local_5c);
+      local_8 = 0;
+      pPVar3 = (Point *)FUN_1040e4b0(*(undefined4 *)(local_34 + 0x54),5,param_2);
+      eg_graphics::egGraphics::FillPolygon(local_38,(egBrush *)local_30,pPVar3,5,0);
+      local_8 = 0xffffffff;
+      eg_graphics::egSolidBrush::~egSolidBrush(local_30);
+    }
+    uVar4 = eg_graphics::egGraphics::Save(local_38);
+    esStyleList<esBlockStyle>::__autoclassinit2(local_1c,8);
+    esMatrix::esMatrix((esMatrix *)local_1c,(Matrix *)(local_34 + 0x4c),param_2);
+    local_8 = 1;
+    eg_graphics::egGraphics::MultiplyTransform(local_38,(Matrix *)local_1c,0);
+    esFormulaBox::OnDraw((esFormulaBox *)local_34,param_1);
+    iVar1 = esRender::IsEditMode(param_1);
+    if (iVar1 != 0) {
+      iVar1 = esSeg::IsSelected((esSeg *)local_44,param_1);
+      esFormulaBox::DrawEdge((esFormulaBox *)local_34,param_1,iVar1);
+    }
+    eg_graphics::egGraphics::Restore(local_38,uVar4);
+    if ((param_4 != 0) && ((*(uint *)(local_3c + 0x10) & 0x1000) != 0)) {
+      pPVar3 = (Point *)FUN_1040e4b0(*(undefined4 *)(local_34 + 0x54),5,param_2);
+      eg_graphics::egGraphics::DrawPolygon(local_38,param_3,pPVar3,5);
+    }
+    if (6 < *(int *)(local_34 + 0x58)) {
+      local_4c = *(int *)(local_34 + 0x58) + -5;
+      local_54 = (tagPOINT *)(*(int *)(local_34 + 0x54) + 0x28);
+      local_50 = (tagPOINT *)FUN_1040e4b0(local_54,local_4c,param_2);
+      local_48 = local_3c;
+      if (local_3c[0x2c] == (esDimenStyle)0x0) {
+        eg_graphics::egGraphics::DrawLines(local_38,param_3,(Point *)local_50,local_4c);
+      }
+      else {
+        local_40 = (ushort)(byte)local_3c[0x2c] | *(ushort *)(local_3c + 0x18) & 0xff00;
+        local_58 = (uint)(local_50 == local_54);
+        esScriber::DrawTypedLines
+                  (param_1,param_3,local_50,(uchar *)0x0,local_4c,local_40,0,local_58,200);
+      }
+    }
+    local_8 = 0xffffffff;
+    esInvertedMatrix::~esInvertedMatrix((esInvertedMatrix *)local_1c);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::ID
+// entry=10449c40
+// signature=wchar_t * ID(void)
+// bodyBytes=10
+// =========================================================
+
+/* public: static wchar_t const * __cdecl esLableBoxEx::ID(void) */
+
+wchar_t * __cdecl esLableBoxEx::ID(void)
+
+{
+                    /* 0x449c40  8596  ?ID@esLableBoxEx@@SAPB_WXZ */
+  return L"esLableBoxEx";
+}
+
+
+
+// =========================================================
+// esLableBoxEx::isKindOf
+// entry=10449c50
+// signature=int isKindOf(esLableBoxEx * this, wchar_t * param_1)
+// bodyBytes=147
+// =========================================================
+
+/* public: virtual int __thiscall esLableBoxEx::isKindOf(wchar_t const *)const  */
+
+int __thiscall esLableBoxEx::isKindOf(esLableBoxEx *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  int iVar2;
+  bool bVar3;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x449c50  15344  ?isKindOf@esLableBoxEx@@UBEHPB_W@Z */
+  if (this == (esLableBoxEx *)0x0) {
+    iVar2 = 0;
+  }
+  else {
+    local_10 = ID();
+    local_c = param_1;
+    do {
+      wVar1 = *local_c;
+      bVar3 = (ushort)wVar1 < (ushort)*local_10;
+      if (wVar1 != *local_10) {
+LAB_10449cb6:
+        local_14 = -(uint)bVar3 | 1;
+        goto LAB_10449cbe;
+      }
+      if (wVar1 == L'\0') break;
+      wVar1 = local_c[1];
+      bVar3 = (ushort)wVar1 < (ushort)local_10[1];
+      if (wVar1 != local_10[1]) goto LAB_10449cb6;
+      local_c = local_c + 2;
+      local_10 = local_10 + 2;
+    } while (wVar1 != L'\0');
+    local_14 = 0;
+LAB_10449cbe:
+    if (local_14 == 0) {
+      iVar2 = 1;
+    }
+    else {
+      iVar2 = esLableBox::isKindOf((esLableBox *)this,param_1);
+    }
+  }
+  return iVar2;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::className
+// entry=10449cf0
+// signature=wchar_t * className(esLableBoxEx * this)
+// bodyBytes=16
+// =========================================================
+
+/* public: virtual wchar_t const * __thiscall esLableBoxEx::className(void)const  */
+
+wchar_t * __thiscall esLableBoxEx::className(esLableBoxEx *this)
+
+{
+  wchar_t *pwVar1;
+  
+                    /* 0x449cf0  14476  ?className@esLableBoxEx@@UBEPB_WXZ */
+  pwVar1 = esLableBox::ID();
+  return pwVar1;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::isOf
+// entry=10449d00
+// signature=int isOf(esLableBoxEx * this, wchar_t * param_1)
+// bodyBytes=137
+// =========================================================
+
+/* public: virtual int __thiscall esLableBoxEx::isOf(wchar_t const *)const  */
+
+int __thiscall esLableBoxEx::isOf(esLableBoxEx *this,wchar_t *param_1)
+
+{
+  wchar_t wVar1;
+  bool bVar2;
+  uint local_18;
+  uint local_14;
+  wchar_t *local_10;
+  wchar_t *local_c;
+  
+                    /* 0x449d00  15602  ?isOf@esLableBoxEx@@UBEHPB_W@Z */
+  local_10 = ID();
+  local_c = param_1;
+  do {
+    wVar1 = *local_c;
+    bVar2 = (ushort)wVar1 < (ushort)*local_10;
+    if (wVar1 != *local_10) {
+LAB_10449d5c:
+      local_14 = -(uint)bVar2 | 1;
+      goto LAB_10449d64;
+    }
+    if (wVar1 == L'\0') break;
+    wVar1 = local_c[1];
+    bVar2 = (ushort)wVar1 < (ushort)local_10[1];
+    if (wVar1 != local_10[1]) goto LAB_10449d5c;
+    local_c = local_c + 2;
+    local_10 = local_10 + 2;
+  } while (wVar1 != L'\0');
+  local_14 = 0;
+LAB_10449d64:
+  local_18 = (uint)(local_14 == 0);
+  return local_18;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::esLableBoxEx
+// entry=10449d90
+// signature=undefined esLableBoxEx(esLableBoxEx * this)
+// bodyBytes=51
+// =========================================================
+
+/* public: __thiscall esLableBoxEx::esLableBoxEx(void) */
+
+esLableBoxEx * __thiscall esLableBoxEx::esLableBoxEx(esLableBoxEx *this)
+
+{
+                    /* 0x449d90  807  ??0esLableBoxEx@@QAE@XZ */
+  esLableBox::esLableBox((esLableBox *)this);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x60) = 0;
+  *(undefined4 *)(this + 0x5c) = 0;
+  return this;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::~esLableBoxEx
+// entry=10449dd0
+// signature=void ~esLableBoxEx(esLableBoxEx * this)
+// bodyBytes=28
+// =========================================================
+
+/* public: virtual __thiscall esLableBoxEx::~esLableBoxEx(void) */
+
+void __thiscall esLableBoxEx::~esLableBoxEx(esLableBoxEx *this)
+
+{
+                    /* 0x449dd0  1829  ??1esLableBoxEx@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  esLableBox::~esLableBox((esLableBox *)this);
+  return;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::IsEqual
+// entry=10449df0
+// signature=int IsEqual(esLableBoxEx * this, esObject * param_1, esStyleSheet * param_2)
+// bodyBytes=96
+// =========================================================
+
+/* public: virtual int __thiscall esLableBoxEx::IsEqual(class esObject *,class esStyleSheet *) */
+
+int __thiscall esLableBoxEx::IsEqual(esLableBoxEx *this,esObject *param_1,esStyleSheet *param_2)
+
+{
+  int iVar1;
+  int local_c;
+  
+                    /* 0x449df0  9305  ?IsEqual@esLableBoxEx@@UAEHPAVesObject@@PAVesStyleSheet@@@Z
+                        */
+  iVar1 = esEquBox::IsEqual((esEquBox *)this,param_1,param_2);
+  if (iVar1 == 0) {
+    local_c = 0;
+  }
+  else {
+    if ((*(int *)(param_1 + 0x5c) == 0) && (*(int *)(this + 0x60) != *(int *)(param_1 + 0x60))) {
+      local_c = 0;
+    }
+    else {
+      local_c = 1;
+    }
+    *(int *)(this + 0x5c) = local_c;
+  }
+  return local_c;
+}
+
+
+
+// =========================================================
+// esLableBoxEx::Serialize
+// entry=10449e50
+// signature=void Serialize(esLableBoxEx * this, zArchive * param_1, esStyleSheet * param_2, ushort param_3)
+// bodyBytes=81
+// =========================================================
+
+/* public: virtual void __thiscall esLableBoxEx::Serialize(class zArchive &,class esStyleSheet
+   *,unsigned short) */
+
+void __thiscall
+esLableBoxEx::Serialize(esLableBoxEx *this,zArchive *param_1,esStyleSheet *param_2,ushort param_3)
+
+{
+  int iVar1;
+  
+                    /* 0x449e50  12241
+                       ?Serialize@esLableBoxEx@@UAEXAAVzArchive@@PAVesStyleSheet@@G@Z */
+  esFormulaBox::Serialize((esFormulaBox *)this,param_1,param_2,param_3);
+  iVar1 = zStream::IsStoring((zStream *)param_1);
+  if (iVar1 == 0) {
+    zStream::operator>>((zStream *)param_1,(tagPOINT *)(this + 0x5c));
+  }
+  else {
+    zStream::operator<<((zStream *)param_1,(tagPOINT *)(this + 0x5c));
+  }
+  return;
+}
+
+
+
+// matched=72 dumped=72

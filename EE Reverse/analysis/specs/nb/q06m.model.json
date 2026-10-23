@@ -1,0 +1,344 @@
+{
+ "q": "多选6",
+ "title": "半圆O直径AB, C在圆上, BC=CD, CE切线, BE交圆于F, AF延长交CE于G, BE=AG",
+ "png": "captures/jxqz-figs/fig10.png",
+ "unit_note": "AB = 2 model units; theta = arccos(3/5) solved from BE=AG",
+ "points": {
+  "A": [
+   -1.0,
+   0.0
+  ],
+  "B": [
+   1.0,
+   0.0
+  ],
+  "O": [
+   0.0,
+   0.0
+  ],
+  "C": [
+   0.6000000000000001,
+   0.7999999999999999
+  ],
+  "D": [
+   0.20000000000000018,
+   1.5999999999999999
+  ],
+  "E": [
+   -0.039999999999999813,
+   1.28
+  ],
+  "F": [
+   0.2047058823529414,
+   0.9788235294117646
+  ],
+  "G": [
+   0.28000000000000025,
+   1.04
+  ]
+ },
+ "checks": [
+  {
+   "type": "midpoint",
+   "label": "O midpoint AB",
+   "point": "O",
+   "a": "A",
+   "b": "B",
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "B,O,A collinear",
+   "points": [
+    "B",
+    "O",
+    "A"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "distance",
+   "label": "O A = R",
+   "a": "O",
+   "b": "A",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "O B = R",
+   "a": "O",
+   "b": "B",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "C on circle (OC=R)",
+   "a": "O",
+   "b": "C",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "F on circle (OF=R)",
+   "a": "O",
+   "b": "F",
+   "value": 1.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "collinear",
+   "label": "B,C,D collinear",
+   "points": [
+    "B",
+    "C",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "C between B and D",
+   "point": "C",
+   "segment": [
+    "B",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "equal",
+   "label": "BC = CD",
+   "a": [
+    "B",
+    "C"
+   ],
+   "b": [
+    "C",
+    "D"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "perpendicular",
+   "label": "CE perp OC (tangent)",
+   "a": [
+    "C",
+    "E"
+   ],
+   "b": [
+    "O",
+    "C"
+   ],
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "on_segment",
+   "label": "E on AD",
+   "point": "E",
+   "segment": [
+    "A",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "F on BE",
+   "point": "F",
+   "segment": [
+    "B",
+    "E"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "G on CE",
+   "point": "G",
+   "segment": [
+    "C",
+    "E"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "A,F,G collinear",
+   "points": [
+    "A",
+    "F",
+    "G"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "F between A and G",
+   "point": "F",
+   "segment": [
+    "A",
+    "G"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "equal",
+   "label": "BE = AG (given)",
+   "a": [
+    "B",
+    "E"
+   ],
+   "b": [
+    "A",
+    "G"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "option A: AD = AB",
+   "a": [
+    "A",
+    "D"
+   ],
+   "b": [
+    "A",
+    "B"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "perpendicular",
+   "label": "option B: CE perp AD",
+   "a": [
+    "C",
+    "E"
+   ],
+   "b": [
+    "A",
+    "D"
+   ],
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "option C: AE = 4 DE",
+   "a": "A",
+   "b": "E",
+   "value": 1.5999999999999994,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "midpoint",
+   "label": "option D: G midpoint CE",
+   "point": "G",
+   "a": "C",
+   "b": "E",
+   "tol": 1e-09
+  }
+ ],
+ "paths": [
+  {
+   "points": [
+    "A",
+    "B"
+   ]
+  },
+  {
+   "points": [
+    "A",
+    "D"
+   ]
+  },
+  {
+   "points": [
+    "B",
+    "D"
+   ]
+  },
+  {
+   "points": [
+    "C",
+    "E"
+   ]
+  },
+  {
+   "points": [
+    "B",
+    "E"
+   ]
+  },
+  {
+   "points": [
+    "A",
+    "G"
+   ]
+  }
+ ],
+ "arcs": [
+  {
+   "cx": 0.0,
+   "cy": 0.0,
+   "r": 1.0,
+   "a0": 0.0,
+   "a1": 180.0,
+   "steps": 96
+  }
+ ],
+ "labels": [
+  {
+   "text": "A",
+   "anchor": "A",
+   "ox": -0.13,
+   "oy": -0.12
+  },
+  {
+   "text": "B",
+   "anchor": "B",
+   "ox": 0.13,
+   "oy": -0.12
+  },
+  {
+   "text": "O",
+   "anchor": "O",
+   "ox": 0.0,
+   "oy": -0.12
+  },
+  {
+   "text": "C",
+   "anchor": "C",
+   "ox": 0.12,
+   "oy": 0.12
+  },
+  {
+   "text": "D",
+   "anchor": "D",
+   "ox": 0.1,
+   "oy": 0.11
+  },
+  {
+   "text": "E",
+   "anchor": "E",
+   "ox": -0.184,
+   "oy": 0.001
+  },
+  {
+   "text": "F",
+   "anchor": "F",
+   "ox": -0.08,
+   "oy": -0.18
+  },
+  {
+   "text": "G",
+   "anchor": "G",
+   "ox": 0.0,
+   "oy": 0.15
+  }
+ ],
+ "dots": [
+  "O"
+ ]
+}

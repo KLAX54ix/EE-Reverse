@@ -1,0 +1,106 @@
+﻿[0.010s][warning][cds] Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must not be set
+INFO  Using log config file: jar:file:/D:/EE%20Reverse/tools/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\84184\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\84184\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (831 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2402 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+java.exe : WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+所在位置 行:8 字符: 1
++ & $java @base 2>&1 | Out-File 'D:\EE Reverse\analysis\ghidra-eslib.lo ...
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A term...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: sun.misc.Unsafe::staticFieldOffset has been called by org.apache.felix.framework.util.SecureAction (file:/D:/E
+E%20Reverse/tools/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/lib/org.apache.felix.framework-7.0.5.jar)
+WARNING: Please consider reporting this to the maintainers of class org.apache.felix.framework.util.SecureAction
+WARNING: sun.misc.Unsafe::staticFieldOffset will be removed in a future release
+INFO  HEADLESS Script Paths:
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    D:\EE Reverse\tools\ghidra-scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: D:\EE Reverse\analysis\ghidra-proj\EEeslib (HeadlessAnalyzer)  
+INFO  Opening project: D:\EE Reverse\analysis\ghidra-proj\EEeslib (HeadlessProject)  
+INFO  REPORT: Processing project file: /eslib.dll (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: /eslib.dll (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: D:\EE Reverse\tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\data\PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: failed to locate PDB file in configured locations (PdbUniversalAnalyzer)  
+INFO  Use a script to set the PDB file location. I.e.,
+    PdbAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb")); or
+    PdbUniversalAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb"));
+Or set the symbol server search configuration using:    PdbPlugin.saveSymbolServerServiceConfig(...);
+ This must be done using a pre-script (prior to analysis). (PdbUniversalAnalyzer)  
+WARN  Decompiling 100939d0: Unable to read bytes at ram:10893ccc (DecompileCallback)  
+INFO  Packed database cache: C:\Users\84184\AppData\Local\ghidra\packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              0.757 secs
+    Apply Data Archives                        0.641 secs
+    Call Convention ID                         0.513 secs
+    Call-Fixup Installer                       0.266 secs
+    Create Address Tables                      2.374 secs
+    Create Function                            0.000 secs
+    Data Reference                             6.344 secs
+    Decompiler Switch Analysis                59.435 secs
+    Demangler Microsoft                        0.436 secs
+    Disassemble Entry Points                   2.319 secs
+    Embedded Media                             0.055 secs
+    External Entry References                  0.301 secs
+    Function ID                               47.537 secs
+    Function Start Pre Search                  0.212 secs
+    Function Start Search                      5.938 secs
+    Function Start Search After Code           3.144 secs
+    Function Start Search After Data           3.009 secs
+    Non-Returning Functions - Discovered      10.872 secs
+    Non-Returning Functions - Known            0.215 secs
+    PDB Universal                              0.027 secs
+    Reference                                  7.319 secs
+    Scalar Operand References                 14.933 secs
+    Shared Return Calls                        4.874 secs
+    Stack                                      9.027 secs
+    Subroutine References                      4.949 secs
+    Windows x86 PE Exception Handling          0.955 secs
+    Windows x86 PE RTTI Analyzer               0.001 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.000 secs
+    WindowsResourceReference                   0.548 secs
+    X86 Function Callee Purge                  0.448 secs
+    x86 Constant Reference Analyzer           56.978 secs
+-----------------------------------------------------
+     Total Time   244 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: /eslib.dll (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: DumpDecomp.java 'D:\EE Reverse\analysis\decomp-eslib-label.txt' 'esSegLable::esSegLable' 'esSegLable::Build' 'esSegLable::Initialize' 'esSegLable::GetLableFreature' 'esSegLable::HandMoveText' 'esEQLine::AppendString' 'esSegLable::RecalcLayout'  (HeadlessAnalyzer)  
+INFO  SCRIPT: D:\EE Reverse\tools\ghidra-scripts\DumpDecomp.java (HeadlessAnalyzer)  
+INFO  DumpDecomp.java> DumpDecomp: matched=9 dumped=9 -> D:\EE Reverse\analysis\decomp-eslib-label.txt (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: /eslib.dll (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: /eslib.dll (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for processed file: /eslib.dll (HeadlessAnalyzer)  

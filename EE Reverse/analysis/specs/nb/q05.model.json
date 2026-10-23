@@ -1,0 +1,628 @@
+{
+ "q": 5,
+ "title": "四张互不相同的正方形无缝放入矩形ABCD, 右上/左下两块阴影; l=周长的差",
+ "png": "captures/jxqz-figs/fig08.png",
+ "unit_note": "1 model unit = 1 printed-figure pixel; W=127 H=93; sides 1-4 = 73,54,33,20 (distinct)",
+ "points": {
+  "A": [
+   0.0,
+   93.0
+  ],
+  "B": [
+   0.0,
+   0.0
+  ],
+  "C": [
+   127.0,
+   0.0
+  ],
+  "D": [
+   127.0,
+   93.0
+  ],
+  "Q0": [
+   0.0,
+   20.0
+  ],
+  "Q1": [
+   73.0,
+   20.0
+  ],
+  "Q2": [
+   73.0,
+   93.0
+  ],
+  "Q3": [
+   73.0,
+   0.0
+  ],
+  "Q4": [
+   127.0,
+   54.0
+  ],
+  "Q5": [
+   73.0,
+   54.0
+  ],
+  "Q6": [
+   106.0,
+   54.0
+  ],
+  "Q7": [
+   106.0,
+   87.0
+  ],
+  "Q8": [
+   73.0,
+   87.0
+  ],
+  "Q9": [
+   53.0,
+   0.0
+  ],
+  "QA": [
+   53.0,
+   20.0
+  ],
+  "C1": [
+   36.5,
+   56.5
+  ],
+  "C2": [
+   100.0,
+   27.0
+  ],
+  "C3": [
+   89.5,
+   70.5
+  ],
+  "C4": [
+   63.0,
+   10.0
+  ]
+ },
+ "checks": [
+  {
+   "type": "collinear",
+   "label": "left edge B-Q0-A",
+   "points": [
+    "B",
+    "Q0",
+    "A"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "top edge A-Q2-D",
+   "points": [
+    "A",
+    "Q2",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "bottom B-Q9-Q3-C",
+   "points": [
+    "B",
+    "Q9",
+    "Q3",
+    "C"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "right edge C-Q4-D",
+   "points": [
+    "C",
+    "Q4",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "divider Q3-Q1-Q5-Q8-Q2",
+   "points": [
+    "Q3",
+    "Q1",
+    "Q5",
+    "Q8",
+    "Q2"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "equal",
+   "label": "① AQ2=Q2Q1",
+   "a": [
+    "A",
+    "Q2"
+   ],
+   "b": [
+    "Q2",
+    "Q1"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "① Q2Q1=Q1Q0",
+   "a": [
+    "Q2",
+    "Q1"
+   ],
+   "b": [
+    "Q1",
+    "Q0"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "① Q1Q0=Q0A",
+   "a": [
+    "Q1",
+    "Q0"
+   ],
+   "b": [
+    "Q0",
+    "A"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "① right angle at Q2",
+   "vertex": "Q2",
+   "a": "A",
+   "b": "Q1",
+   "deg": 90,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "② Q3C=CQ4",
+   "a": [
+    "Q3",
+    "C"
+   ],
+   "b": [
+    "C",
+    "Q4"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "② CQ4=Q4Q5",
+   "a": [
+    "C",
+    "Q4"
+   ],
+   "b": [
+    "Q4",
+    "Q5"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "② Q4Q5=Q5Q3",
+   "a": [
+    "Q4",
+    "Q5"
+   ],
+   "b": [
+    "Q5",
+    "Q3"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "② right angle at C",
+   "vertex": "C",
+   "a": "Q3",
+   "b": "Q4",
+   "deg": 90,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "③ Q5Q6=Q6Q7",
+   "a": [
+    "Q5",
+    "Q6"
+   ],
+   "b": [
+    "Q6",
+    "Q7"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "③ Q6Q7=Q7Q8",
+   "a": [
+    "Q6",
+    "Q7"
+   ],
+   "b": [
+    "Q7",
+    "Q8"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "③ Q7Q8=Q8Q5",
+   "a": [
+    "Q7",
+    "Q8"
+   ],
+   "b": [
+    "Q8",
+    "Q5"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "③ right angle at Q7",
+   "vertex": "Q7",
+   "a": "Q6",
+   "b": "Q8",
+   "deg": 90,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "④ Q9Q3=Q3Q1",
+   "a": [
+    "Q9",
+    "Q3"
+   ],
+   "b": [
+    "Q3",
+    "Q1"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "④ Q3Q1=Q1QA",
+   "a": [
+    "Q3",
+    "Q1"
+   ],
+   "b": [
+    "Q1",
+    "QA"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "equal",
+   "label": "④ Q1QA=QAQ9",
+   "a": [
+    "Q1",
+    "QA"
+   ],
+   "b": [
+    "QA",
+    "Q9"
+   ],
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "angle",
+   "label": "④ right angle at Q3",
+   "vertex": "Q3",
+   "a": "Q9",
+   "b": "Q1",
+   "deg": 90,
+   "tol_deg": 1e-06
+  },
+  {
+   "type": "on_segment",
+   "label": "Q2 on AD",
+   "point": "Q2",
+   "segment": [
+    "A",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "Q0 on AB",
+   "point": "Q0",
+   "segment": [
+    "A",
+    "B"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "Q9 on BC",
+   "point": "Q9",
+   "segment": [
+    "B",
+    "C"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "Q3 on BC",
+   "point": "Q3",
+   "segment": [
+    "B",
+    "C"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "Q4 on CD",
+   "point": "Q4",
+   "segment": [
+    "C",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "① bottom line Q0-QA-Q1",
+   "points": [
+    "Q0",
+    "QA",
+    "Q1"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "④ top QA on ① bottom",
+   "point": "QA",
+   "segment": [
+    "Q0",
+    "Q1"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "② top line Q5-Q6-Q4",
+   "points": [
+    "Q5",
+    "Q6",
+    "Q4"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "on_segment",
+   "label": "③ bottom Q6 on ② top",
+   "point": "Q6",
+   "segment": [
+    "Q5",
+    "Q4"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "distance",
+   "label": "W = a+b = 127",
+   "a": "A",
+   "b": "D",
+   "value": 127,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "H = a+d = 93",
+   "a": "A",
+   "b": "B",
+   "value": 93,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "BC = W",
+   "a": "B",
+   "b": "C",
+   "value": 127,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "CD = H",
+   "a": "C",
+   "b": "D",
+   "value": 93,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "② side = b",
+   "a": "C",
+   "b": "Q4",
+   "value": 54.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "right column above ② = c+e",
+   "a": "Q4",
+   "b": "D",
+   "value": 39.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "① side = a (left column width)",
+   "a": "B",
+   "b": "Q3",
+   "value": 73.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "① right edge = a",
+   "a": "Q2",
+   "b": "Q1",
+   "value": 73.0,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "distance",
+   "label": "④ left strip = a-d",
+   "a": "B",
+   "b": "Q9",
+   "value": 53.0,
+   "tol_pct": 1e-06
+  }
+ ],
+ "paths": [
+  {
+   "points": [
+    "B",
+    "Q9",
+    "QA",
+    "Q0"
+   ],
+   "close": true,
+   "fill": true
+  },
+  {
+   "points": [
+    "Q2",
+    "D",
+    "Q4",
+    "Q6",
+    "Q7",
+    "Q8"
+   ],
+   "close": true,
+   "fill": true
+  },
+  {
+   "points": [
+    "A",
+    "B"
+   ]
+  },
+  {
+   "points": [
+    "B",
+    "C"
+   ]
+  },
+  {
+   "points": [
+    "C",
+    "D"
+   ]
+  },
+  {
+   "points": [
+    "D",
+    "A"
+   ]
+  },
+  {
+   "points": [
+    "Q2",
+    "Q3"
+   ]
+  },
+  {
+   "points": [
+    "Q0",
+    "Q1"
+   ]
+  },
+  {
+   "points": [
+    "Q8",
+    "Q7"
+   ]
+  },
+  {
+   "points": [
+    "Q5",
+    "Q4"
+   ]
+  },
+  {
+   "points": [
+    "Q6",
+    "Q7"
+   ]
+  },
+  {
+   "points": [
+    "Q9",
+    "QA"
+   ]
+  }
+ ],
+ "labels": [
+  {
+   "text": "A",
+   "anchor": "A",
+   "ox": -3.0,
+   "oy": 7.0
+  },
+  {
+   "text": "D",
+   "anchor": "D",
+   "ox": -3.0,
+   "oy": 7.0
+  },
+  {
+   "text": "B",
+   "anchor": "B",
+   "ox": -3.0,
+   "oy": -7.0
+  },
+  {
+   "text": "C",
+   "anchor": "C",
+   "ox": 3.0,
+   "oy": -7.0
+  },
+  {
+   "text": "①",
+   "anchor": "C1",
+   "ox": 0.0,
+   "oy": 0.0
+  },
+  {
+   "text": "②",
+   "anchor": "C2",
+   "ox": 0.0,
+   "oy": 0.0
+  },
+  {
+   "text": "③",
+   "anchor": "C3",
+   "ox": 0.0,
+   "oy": 0.0
+  },
+  {
+   "text": "④",
+   "anchor": "C4",
+   "ox": 0.0,
+   "oy": 0.0
+  }
+ ],
+ "dots": []
+}

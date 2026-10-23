@@ -1,0 +1,1060 @@
+// program=eslib.dll imageBase=10000000
+// specs=[createfrompathdata, esshapepath::esshapepath, espagelist::createobject, escanvas::additem]
+
+// =========================================================
+// esShapePath::esShapePath
+// entry=10011fd0
+// signature=undefined esShapePath(esShapePath * this, esShapePath * param_1)
+// bodyBytes=97
+// =========================================================
+
+/* public: __thiscall esShapePath::esShapePath(class esShapePath const &) */
+
+esShapePath * __thiscall esShapePath::esShapePath(esShapePath *this,esShapePath *param_1)
+
+{
+                    /* 0x11fd0  1291  ??0esShapePath@@QAE@ABV0@@Z */
+  esShapeCap::esShapeCap((esShapeCap *)this,(esShapeCap *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x60) = *(undefined4 *)(param_1 + 0x60);
+  *(undefined4 *)(this + 100) = *(undefined4 *)(param_1 + 100);
+  *(undefined4 *)(this + 0x68) = *(undefined4 *)(param_1 + 0x68);
+  *(undefined4 *)(this + 0x6c) = *(undefined4 *)(param_1 + 0x6c);
+  this[0x70] = param_1[0x70];
+  return this;
+}
+
+
+
+// =========================================================
+// esPageList::CreateObject
+// entry=1017c600
+// signature=esObject * CreateObject(esPageList * this, ushort param_1)
+// bodyBytes=26
+// =========================================================
+
+/* public: virtual class esObject * __thiscall esPageList::CreateObject(unsigned short)const  */
+
+esObject * __thiscall esPageList::CreateObject(esPageList *this,ushort param_1)
+
+{
+  esDocPage *peVar1;
+  
+                    /* 0x17c600  5005  ?CreateObject@esPageList@@UBEPAVesObject@@G@Z */
+  peVar1 = CreatePage(param_1);
+  return (esObject *)peVar1;
+}
+
+
+
+// =========================================================
+// esShapePath::esShapePath
+// entry=1019e0d0
+// signature=undefined esShapePath(esShapePath * this)
+// bodyBytes=100
+// =========================================================
+
+/* public: __thiscall esShapePath::esShapePath(void) */
+
+esShapePath * __thiscall esShapePath::esShapePath(esShapePath *this)
+
+{
+                    /* 0x19e0d0  1295  ??0esShapePath@@QAE@XZ */
+  esShapeCap::esShapeCap((esShapeCap *)this);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x68) = 0;
+  *(undefined4 *)(this + 0x6c) = 0;
+  *(undefined2 *)(this + 4) = 0x330f;
+  *(undefined4 *)(this + 100) = 0;
+  *(undefined4 *)(this + 0x60) = 0;
+  *(undefined4 *)(this + 0x34) = 0x40700ff;
+  this[0x70] = (esShapePath)0x64;
+  return this;
+}
+
+
+
+// =========================================================
+// esShapePath::esShapePath
+// entry=1019e140
+// signature=undefined esShapePath(esShapePath * this, esShapePath * param_1, int param_2)
+// bodyBytes=182
+// =========================================================
+
+/* public: __thiscall esShapePath::esShapePath(class esShapePath *,int) */
+
+esShapePath * __thiscall
+esShapePath::esShapePath(esShapePath *this,esShapePath *param_1,int param_2)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x19e140  1293  ??0esShapePath@@QAE@PAV0@H@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10537f58;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  esShapeCap::esShapeCap((esShapeCap *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x68) = 0;
+  *(undefined4 *)(this + 0x6c) = 0;
+  *(undefined2 *)(this + 4) = 0x330f;
+  *(undefined4 *)(this + 100) = 0;
+  *(undefined4 *)(this + 0x60) = 0;
+  if (param_1 == (esShapePath *)0x0) {
+    this[0x70] = (esShapePath)0x64;
+    *(undefined4 *)(this + 0x34) = 0x40700ff;
+  }
+  else {
+    InitPropertys(this,(esShapeBase *)param_1,param_2);
+  }
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+// =========================================================
+// esShapePath::esShapePath
+// entry=1019e200
+// signature=undefined esShapePath(esShapePath * this, esSnapManager * param_1, ushort param_2, ulong param_3)
+// bodyBytes=4075
+// =========================================================
+
+/* public: __thiscall esShapePath::esShapePath(class esSnapManager *,unsigned short,unsigned long)
+    */
+
+void __thiscall
+esShapePath::esShapePath(esShapePath *this,esSnapManager *param_1,ushort param_2,ulong param_3)
+
+{
+  uint uVar1;
+  esTextLine *peVar2;
+  tagPOINT tVar3;
+  Matrix *pMVar4;
+  undefined1 local_2ec [8];
+  esSeg *local_2e4;
+  esSeg *local_2e0;
+  esSeg *local_2dc;
+  esSeg *local_2d8;
+  esSeg *local_2d4;
+  esSeg *local_2d0;
+  esSeg *local_2cc;
+  esSeg *local_2c8;
+  esSeg *local_2c4;
+  esSeg *local_2c0;
+  esSeg *local_2bc;
+  esSeg *local_2b8;
+  esSeg *local_2b4;
+  esSeg *local_2b0;
+  esSeg *local_2ac;
+  esSeg *local_2a8;
+  esSeg *local_2a4;
+  esSeg *local_2a0;
+  esSeg *local_29c;
+  esSeg *local_298;
+  esSeg *local_294;
+  esSeg *local_290;
+  esSeg *local_28c;
+  esSeg *local_288;
+  esSeg *local_284;
+  esSeg *local_280;
+  esSeg *local_27c;
+  esSeg *local_278;
+  esSeg *local_274;
+  esSeg *local_270;
+  esSegLine *local_26c;
+  esSeg *local_268;
+  esSegFreePoly *local_264;
+  esSeg *local_260;
+  esStyleList<esBlockStyle> *local_25c;
+  esSeg *local_258;
+  esSegFreeBezier *local_254;
+  esSeg *local_250;
+  esSegEllipseEx *local_24c;
+  esSeg *local_248;
+  esSegCoil *local_244;
+  esSeg *local_240;
+  esSegSpring *local_23c;
+  esSeg *local_238;
+  esSegBezier *local_234;
+  esSeg *local_230;
+  esSegLine *local_22c;
+  esSeg *local_228;
+  esSegHVLine *local_224;
+  esSeg *local_220;
+  esSegRoundLine *local_21c;
+  esSeg *local_218;
+  esSegCurve *local_214;
+  esSeg *local_210;
+  esSegGon *local_20c;
+  esSeg *local_208;
+  esSegArc *local_204;
+  esSeg *local_200;
+  esSegWall *local_1fc;
+  esSeg *local_1f8;
+  esSegPipe *local_1f4;
+  esSeg *local_1f0;
+  esSegArcFace *local_1ec;
+  esSeg *local_1e8;
+  esSegGonFace *local_1e4;
+  esSeg *local_1e0;
+  esSegStar *local_1dc;
+  esSeg *local_1d8;
+  esSegPolygon *local_1d4;
+  esSeg *local_1d0;
+  esSegCircel *local_1cc;
+  esSeg *local_1c8;
+  esStyleList<esBlockStyle> *local_1c4;
+  esSeg *local_1c0;
+  esSegArc90 *local_1bc;
+  esSeg *local_1b8;
+  esSegRoundRect *local_1b4;
+  esSeg *local_1b0;
+  esSegRect *local_1ac;
+  esSeg *local_1a8;
+  esSegHVLine *local_1a4;
+  esSeg *local_1a0;
+  esSegArc *local_19c;
+  esSeg *local_198;
+  esSegGon *local_194;
+  esSeg *local_190;
+  esSegCircel *local_18c;
+  ushort local_188;
+  uint local_184;
+  esShapePath *local_180;
+  uint local_17c;
+  esSeg *local_178;
+  undefined4 local_174;
+  undefined4 local_170;
+  esStyleList<esBlockStyle> local_16c [8];
+  undefined1 local_164;
+  undefined4 local_15c;
+  undefined4 local_158;
+  undefined4 local_90;
+  undefined1 local_30;
+  undefined1 local_2f;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x19e200  1294  ??0esShapePath@@QAE@PAVesSnapManager@@GK@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_105381b5;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_180 = this;
+  esShapeCap::esShapeCap((esShapeCap *)this);
+  local_8._0_1_ = 0;
+  local_8._1_3_ = 0;
+  *(undefined ***)local_180 = vftable;
+  *(undefined4 *)(local_180 + 0x68) = 0;
+  *(undefined4 *)(local_180 + 0x6c) = 0;
+  tVar3 = esSnapManager::GetSnapPoint(param_1,(int)local_2ec);
+  D2DPointF::D2DPointF((D2DPointF *)&local_174,(D2D_POINT_2F *)tVar3.x);
+  *(undefined2 *)(local_180 + 4) = 0x330f;
+  *(undefined4 *)(local_180 + 0x34) = 0x40700ff;
+  if (*(int *)(local_180 + 0x50) == 0) {
+    *(undefined4 *)(local_180 + 0x50) = 0xff01;
+  }
+  *(undefined4 *)(local_180 + 100) = 0;
+  *(undefined4 *)(local_180 + 0x60) = 0;
+  local_180[0x70] = (esShapePath)0x64;
+  local_178 = (esSeg *)0x0;
+  if ((param_2 & 0xf000) == 0xe000) {
+    local_188 = param_2 & 0xff00;
+    local_184 = (uint)local_188;
+    uVar1 = local_17c;
+    if (local_184 < 0xe301) {
+      if (local_184 == 0xe300) {
+        local_194 = operator_new(0x68);
+        local_8._0_1_ = 3;
+        esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_194,0x68);
+        local_274 = (esSeg *)esSegGon::esSegGon(local_194,local_174,local_170,local_174,local_170);
+        local_8._0_1_ = 0;
+        local_198 = local_274;
+        uVar1 = local_17c;
+        local_178 = local_274;
+      }
+      else if (local_184 == 0xe100) {
+        local_26c = operator_new(0x68);
+        local_8._0_1_ = 1;
+        esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_26c,0x68);
+        local_290 = (esSeg *)esSegLine::esSegLine(local_26c,local_174,local_170,param_2);
+        local_8._0_1_ = 0;
+        local_270 = local_290;
+        uVar1 = local_17c;
+        local_178 = local_290;
+      }
+      else if (local_184 == 0xe200) {
+        local_18c = operator_new(0x8c);
+        local_8._0_1_ = 2;
+        esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_18c,0x8c);
+        local_2e0 = (esSeg *)esSegCircel::esSegCircel(local_18c,local_174,local_170,param_2);
+        local_8._0_1_ = 0;
+        local_190 = local_2e0;
+        uVar1 = local_17c;
+        local_178 = local_2e0;
+      }
+    }
+    else if (local_184 == 0xe400) {
+      local_19c = operator_new(0x98);
+      local_8._0_1_ = 4;
+      esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_19c,0x98);
+      local_278 = (esSeg *)esSegArc::esSegArc(local_19c,local_174,local_170,param_2);
+      local_8._0_1_ = 0;
+      local_1a0 = local_278;
+      uVar1 = local_17c;
+      local_178 = local_278;
+    }
+    else if (local_184 == 0xe500) {
+      local_1a4 = operator_new(0x68);
+      local_8._0_1_ = 5;
+      esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1a4,0x68);
+      local_27c = (esSeg *)esSegHVLine::esSegHVLine(local_1a4,local_174,local_170,param_2);
+      local_8._0_1_ = 0;
+      local_1a8 = local_27c;
+      uVar1 = local_17c;
+      local_178 = local_27c;
+    }
+  }
+  else {
+    local_17c = (uint)param_2;
+    if (local_17c < 0x4489) {
+      if (local_17c == 0x4488) {
+        local_1fc = operator_new(0x6c);
+        local_8._0_1_ = 0x10;
+        esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1fc,0x6c);
+        local_2a8 = (esSeg *)esSegWall::esSegWall(local_1fc,local_174,local_170);
+        local_8._0_1_ = 0;
+        local_200 = local_2a8;
+        uVar1 = local_17c;
+        local_178 = local_2a8;
+      }
+      else if (local_17c < 0x4282) {
+        if (local_17c == 0x4281) {
+          local_1ac = operator_new(0x70);
+          local_8._0_1_ = 6;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1ac,0x70);
+          local_280 = (esSeg *)esSegRect::esSegRect(local_1ac,(zPoint *)&local_174,param_2);
+          local_8._0_1_ = 0;
+          local_1b0 = local_280;
+          uVar1 = local_17c;
+          local_178 = local_280;
+        }
+        else {
+          uVar1 = local_17c - 0x4087;
+          switch(local_17c) {
+          case 0x4087:
+            local_17c = uVar1;
+            local_1dc = operator_new(0x84);
+            local_8._0_1_ = 0xc;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1dc,0x84)
+            ;
+            local_298 = (esSeg *)esSegStar::esSegStar(local_1dc,local_174,local_170,param_3);
+            local_8._0_1_ = 0;
+            local_1e0 = local_298;
+            uVar1 = local_17c;
+            local_178 = local_298;
+            break;
+          case 0x410b:
+          case 0x410c:
+            local_17c = uVar1;
+            local_23c = operator_new(0x74);
+            local_8._0_1_ = 0x18;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_23c,0x74)
+            ;
+            local_2c8 = (esSeg *)esSegSpring::esSegSpring(local_23c,local_174,local_170,param_2);
+            local_8._0_1_ = 0;
+            local_240 = local_2c8;
+            uVar1 = local_17c;
+            local_178 = local_2c8;
+            break;
+          case 0x410d:
+            local_17c = uVar1;
+            local_244 = operator_new(0x70);
+            local_8._0_1_ = 0x19;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_244,0x70)
+            ;
+            local_2cc = (esSeg *)esSegCoil::esSegCoil(local_244,local_174,local_170);
+            local_8._0_1_ = 0;
+            local_248 = local_2cc;
+            uVar1 = local_17c;
+            local_178 = local_2cc;
+          }
+        }
+      }
+      else {
+        uVar1 = local_17c - 0x4282;
+        switch(local_17c) {
+        case 0x4282:
+          local_17c = uVar1;
+          local_1bc = operator_new(0x84);
+          local_8._0_1_ = 8;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1bc,0x84);
+          local_288 = (esSeg *)esSegArc90::esSegArc90(local_1bc,local_174,local_170);
+          local_8._0_1_ = 0;
+          local_1c0 = local_288;
+          uVar1 = local_17c;
+          local_178 = local_288;
+          break;
+        case 0x4283:
+          local_17c = uVar1;
+          local_1b4 = operator_new(0x6c);
+          local_8._0_1_ = 7;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1b4,0x6c);
+          local_284 = (esSeg *)esSegRoundRect::esSegRoundRect(local_1b4,(zPoint *)&local_174);
+          local_8._0_1_ = 0;
+          local_1b8 = local_284;
+          uVar1 = local_17c;
+          local_178 = local_284;
+          break;
+        case 0x4284:
+          local_17c = uVar1;
+          local_1cc = operator_new(0x8c);
+          local_8._0_1_ = 10;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1cc,0x8c);
+          local_2bc = (esSeg *)esSegCircel::esSegCircel(local_1cc,local_174,local_170,param_2);
+          local_8._0_1_ = 0;
+          local_1d0 = local_2bc;
+          uVar1 = local_17c;
+          local_178 = local_2bc;
+          break;
+        case 0x4285:
+          local_17c = uVar1;
+          local_1c4 = operator_new(0x7c);
+          local_8._0_1_ = 9;
+          esStyleList<esBlockStyle>::__autoclassinit2(local_1c4,0x7c);
+          local_28c = (esSeg *)FUN_1011e030(&local_174);
+          local_8._0_1_ = 0;
+          local_1c8 = local_28c;
+          uVar1 = local_17c;
+          local_178 = local_28c;
+          break;
+        case 0x4286:
+          local_17c = uVar1;
+          local_1d4 = operator_new(0x7c);
+          local_8._0_1_ = 0xb;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1d4,0x7c);
+          local_294 = (esSeg *)esSegPolygon::esSegPolygon(local_1d4,local_174,local_170,param_3);
+          local_8._0_1_ = 0;
+          local_1d8 = local_294;
+          uVar1 = local_17c;
+          local_178 = local_294;
+          break;
+        case 0x42c1:
+        case 0x4306:
+        case 0x4307:
+          local_17c = uVar1;
+          local_204 = operator_new(0x98);
+          local_8._0_1_ = 0x11;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_204,0x98);
+          local_2ac = (esSeg *)esSegArc::esSegArc(local_204,local_174,local_170,param_2);
+          local_8._0_1_ = 0;
+          local_208 = local_2ac;
+          uVar1 = local_17c;
+          local_178 = local_2ac;
+        }
+      }
+    }
+    else {
+      uVar1 = local_17c;
+      if (local_17c < 0x4702) {
+        if (local_17c == 0x4701) {
+          local_22c = operator_new(0x68);
+          local_8._0_1_ = 0x16;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_22c,0x68);
+          local_2c0 = (esSeg *)esSegLine::esSegLine(local_22c,local_174,local_170,param_2);
+          local_8._0_1_ = 0;
+          local_230 = local_2c0;
+          uVar1 = local_17c;
+          local_178 = local_2c0;
+        }
+        else if (local_17c == 0x4489) {
+          local_1f4 = operator_new(0x70);
+          local_8._0_1_ = 0xf;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1f4,0x70);
+          local_2a4 = (esSeg *)esSegPipe::esSegPipe(local_1f4,local_174,local_170);
+          local_8._0_1_ = 0;
+          local_1f8 = local_2a4;
+          uVar1 = local_17c;
+          local_178 = local_2a4;
+        }
+      }
+      else if (local_17c < 0x4713) {
+        if (local_17c == 0x4712) {
+          local_254 = operator_new(0x74);
+          local_8._0_1_ = 0x1b;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_254,0x74);
+          local_2d4 = (esSeg *)esSegFreeBezier::esSegFreeBezier
+                                         (local_254,local_174,local_170,param_3);
+          local_8._0_1_ = 0;
+          local_258 = local_2d4;
+          uVar1 = local_17c;
+          local_178 = local_2d4;
+        }
+        else {
+          local_17c = local_17c - 0x4702;
+          uVar1 = local_17c;
+          switch(local_17c) {
+          case 0:
+            local_20c = operator_new(0x68);
+            local_8._0_1_ = 0x12;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_20c,0x68)
+            ;
+            local_2b0 = (esSeg *)esSegGon::esSegGon(local_20c,local_174,local_170,local_174,
+                                                    local_170);
+            local_8._0_1_ = 0;
+            local_210 = local_2b0;
+            uVar1 = local_17c;
+            local_178 = local_2b0;
+            break;
+          case 1:
+            local_234 = operator_new(0x68);
+            local_8._0_1_ = 0x17;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_234,0x68)
+            ;
+            local_2c4 = (esSeg *)esSegBezier::esSegBezier(local_234,local_174,local_170);
+            local_8._0_1_ = 0;
+            local_238 = local_2c4;
+            uVar1 = local_17c;
+            local_178 = local_2c4;
+            break;
+          case 2:
+            local_224 = operator_new(0x68);
+            local_8._0_1_ = 0x15;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_224,0x68)
+            ;
+            local_2e4 = (esSeg *)esSegHVLine::esSegHVLine(local_224,local_174,local_170);
+            local_8._0_1_ = 0;
+            local_228 = local_2e4;
+            uVar1 = local_17c;
+            local_178 = local_2e4;
+            break;
+          case 3:
+            local_21c = operator_new(0x6c);
+            local_8._0_1_ = 0x14;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_21c,0x6c)
+            ;
+            local_2b8 = (esSeg *)esSegRoundLine::esSegRoundLine(local_21c,local_174,local_170);
+            local_8._0_1_ = 0;
+            local_220 = local_2b8;
+            uVar1 = local_17c;
+            local_178 = local_2b8;
+            break;
+          case 6:
+            local_214 = operator_new(0x68);
+            local_8._0_1_ = 0x13;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_214,0x68)
+            ;
+            local_2b4 = (esSeg *)esSegCurve::esSegCurve(local_214,local_174,local_170);
+            local_8._0_1_ = 0;
+            local_218 = local_2b4;
+            uVar1 = local_17c;
+            local_178 = local_2b4;
+          }
+        }
+      }
+      else if (local_17c < 0x4810) {
+        if (local_17c == 0x480f) {
+          *(uint *)(local_180 + 0x34) = *(uint *)(local_180 + 0x34) & 0xffffff4f;
+          local_1ec = operator_new(0x84);
+          local_8._0_1_ = 0xe;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1ec,0x84);
+          local_2a0 = (esSeg *)esSegArcFace::esSegArcFace(local_1ec,local_174,local_170);
+          local_8._0_1_ = 0;
+          local_1f0 = local_2a0;
+          uVar1 = local_17c;
+          local_178 = local_2a0;
+        }
+        else if (local_17c == 0x4713) {
+          local_264 = operator_new(0x70);
+          local_8._0_1_ = 0x1d;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_264,0x70);
+          local_2dc = (esSeg *)esSegFreePoly::esSegFreePoly(local_264,local_174,local_170,param_3);
+          local_8._0_1_ = 0;
+          local_268 = local_2dc;
+          uVar1 = local_17c;
+          local_178 = local_2dc;
+        }
+        else if (local_17c == 0x4714) {
+          local_25c = operator_new(0x70);
+          local_8._0_1_ = 0x1c;
+          esStyleList<esBlockStyle>::__autoclassinit2(local_25c,0x70);
+          local_2d8 = (esSeg *)FUN_1011d3f0(local_174,local_170,param_3);
+          local_8._0_1_ = 0;
+          local_260 = local_2d8;
+          uVar1 = local_17c;
+          local_178 = local_2d8;
+        }
+      }
+      else if (local_17c == 0x4a8a) {
+        *(undefined4 *)(local_180 + 0x54) = 3;
+        local_24c = operator_new(0x7c);
+        local_8._0_1_ = 0x1a;
+        esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_24c,0x7c);
+        local_2d0 = (esSeg *)esSegEllipseEx::esSegEllipseEx(local_24c,local_174,local_170);
+        local_8._0_1_ = 0;
+        local_250 = local_2d0;
+        uVar1 = local_17c;
+        local_178 = local_2d0;
+      }
+      else if (local_17c == 0x4c0e) {
+        *(uint *)(local_180 + 0x34) = *(uint *)(local_180 + 0x34) & 0xffffff4f;
+        local_1e4 = operator_new(0x74);
+        local_8._0_1_ = 0xd;
+        esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_1e4,0x74);
+        local_29c = (esSeg *)esSegGonFace::esSegGonFace(local_1e4,local_174,local_170);
+        local_8._0_1_ = 0;
+        local_1e8 = local_29c;
+        uVar1 = local_17c;
+        local_178 = local_29c;
+      }
+    }
+  }
+  local_17c = uVar1;
+  AddSegObject(local_180,local_178,1);
+  if ((param_2 == 0x4c0e) || (param_2 == 0x480f)) {
+    esStyleList<esBlockStyle>::__autoclassinit2(local_16c,0x158);
+    esBrushInfo::esBrushInfo((esBrushInfo *)local_16c);
+    local_8._0_1_ = 0x1e;
+    local_164 = 0x14;
+    local_15c = 0xff01;
+    local_158 = 0;
+    local_2f = 0xff;
+    local_90 = 0;
+    local_30 = 2;
+    pMVar4 = (Matrix *)0x0;
+    peVar2 = esTextMaker::GetActiveLine((esTextMaker *)param_1);
+    SetBrushObj(local_180,(esBrushInfo *)local_16c,(esStyleSheet *)peVar2,pMVar4);
+    local_8 = (uint)local_8._1_3_ << 8;
+    esBrushInfo::~esBrushInfo((esBrushInfo *)local_16c);
+  }
+  else if ((param_2 & 0x80) != 0) {
+    *(uint *)(local_180 + 0x34) = *(uint *)(local_180 + 0x34) | 0x1000;
+    *(uint *)(local_180 + 0x34) = *(uint *)(local_180 + 0x34) & 0xffffffcf;
+  }
+  local_8 = 0xffffffff;
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esShapePath::esShapePath
+// entry=1019f470
+// signature=undefined esShapePath(esShapePath * this, tagPOINT * param_1, uchar * param_2, int param_3)
+// bodyBytes=533
+// =========================================================
+
+/* public: __thiscall esShapePath::esShapePath(struct tagPOINT *,unsigned char *,int) */
+
+void __thiscall
+esShapePath::esShapePath(esShapePath *this,tagPOINT *param_1,uchar *param_2,int param_3)
+
+{
+  byte bVar1;
+  int local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
+  undefined4 local_24 [4];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x19f470  1292  ??0esShapePath@@QAE@PAUtagPOINT@@PAEH@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_105381e8;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  esShapeCap::esShapeCap((esShapeCap *)this);
+  local_8 = 0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x68) = 0;
+  *(undefined4 *)(this + 0x6c) = 0;
+  *(undefined2 *)(this + 4) = 0x330f;
+  *(undefined4 *)(this + 0x34) = 0x40700ff;
+  this[0x70] = (esShapePath)0x64;
+  *(undefined4 *)(this + 100) = 0;
+  *(undefined4 *)(this + 0x60) = 0;
+  if (1 < param_3) {
+    local_24[0] = 0;
+    FUN_1000d9f0(&param_1,local_24,this);
+    local_2c = 0;
+    local_38 = -1;
+    local_30 = -1;
+    for (local_34 = 0; local_34 < param_3; local_34 = local_34 + 1) {
+      bVar1 = param_2[local_34] & 3;
+      if (bVar1 == 3) {
+        if (local_2c == 1) {
+          FUN_1019f690(local_38,local_30,1);
+          local_38 = local_30;
+        }
+        local_2c = 3;
+        local_34 = local_34 + 2;
+        local_30 = local_34;
+      }
+      else if (bVar1 == 1) {
+        if (local_2c == 3) {
+          FUN_1019f690(local_38,local_30,3);
+          local_38 = local_30;
+        }
+        local_2c = 1;
+        local_30 = local_34;
+      }
+      else if ((param_2[local_34] & 3) == 0) {
+        if (local_2c != 0) {
+          FUN_1019f690(local_38,local_30,local_2c);
+        }
+        local_2c = 0;
+        local_30 = local_34;
+        local_38 = local_34;
+        local_24[0] = 0;
+      }
+    }
+    if (local_2c != 0) {
+      FUN_1019f690(local_38,local_30,local_2c);
+    }
+    if ((*(int *)(this + 0x60) != 0) &&
+       (*(undefined4 *)(this + 0x40) = *(undefined4 *)(*(int *)(this + 0x60) + 0x34),
+       (param_2[param_3 + -1] & 0x80) != 0)) {
+      CloseFigure(this,0);
+    }
+  }
+  local_8 = 0xffffffff;
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+// =========================================================
+// esShapePath::CreateFromPathData
+// entry=1019fa10
+// signature=esShapePath * CreateFromPathData(tagPOINT * param_1, uchar * param_2, int param_3, int param_4)
+// bodyBytes=1781
+// =========================================================
+
+/* public: static class esShapePath * __cdecl esShapePath::CreateFromPathData(struct tagPOINT
+   *,unsigned char *,int,int) */
+
+esShapePath * __cdecl
+esShapePath::CreateFromPathData(tagPOINT *param_1,uchar *param_2,int param_3,int param_4)
+
+{
+  esShapePath *peVar1;
+  undefined4 local_100;
+  undefined4 local_fc;
+  int local_f8;
+  int local_f4;
+  undefined4 local_f0;
+  undefined4 local_ec;
+  undefined4 local_e8;
+  undefined4 local_e4;
+  int local_e0;
+  int local_dc;
+  int local_d8;
+  int local_d4;
+  undefined4 local_d0;
+  undefined4 local_cc;
+  esSegList *local_c8;
+  esSeg *local_c4;
+  esSeg *local_c0;
+  undefined4 local_bc;
+  esShapePath *local_b8;
+  esShapePath *local_b4;
+  esSegList *local_b0;
+  esSeg *local_ac;
+  esSeg *local_a8;
+  esSegList *local_a4;
+  esSegList *local_a0;
+  esSegGon *local_9c;
+  esShapePath *local_98;
+  esShapePath *local_94;
+  esSegList *local_90;
+  esSegList *local_8c;
+  esSegList *local_88;
+  esSegList *local_84;
+  esSeg *local_80;
+  esSegBezier *local_7c;
+  esSeg *local_78;
+  esSegGon *local_74;
+  esSegList *local_70;
+  esSegList *local_6c;
+  esSegList *local_68;
+  esSegList *local_64;
+  esSeg *local_60;
+  esSegBezier *local_5c;
+  esSeg *local_58;
+  esShapePath *local_54;
+  esSeg *local_50;
+  esSeg *local_4c;
+  esShapePath *local_48;
+  int local_44;
+  int local_40;
+  esSegList *local_3c;
+  uchar local_36;
+  uchar local_35;
+  undefined4 local_34;
+  undefined4 local_30;
+  int local_2c;
+  int local_28;
+  tagPOINT local_24;
+  int iStack_1c;
+  int iStack_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x19fa10  4972  ?CreateFromPathData@esShapePath@@SAPAV1@PAUtagPOINT@@PAEHH@Z
+                        */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_10538340;
+  local_10 = ExceptionList;
+  local_14 = DAT_1069c00c ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_35 = '\0';
+  local_3c = (esSegList *)0x0;
+  D2DPointF::D2DPointF((D2DPointF *)&local_2c,(D2D_POINT_2F *)param_1);
+  D2DPointF::D2DPointF((D2DPointF *)&local_34,(D2D_POINT_2F *)param_1);
+  local_40 = 0;
+  local_94 = operator_new(0x74);
+  local_8 = 0;
+  esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_94,0x74);
+  local_b4 = (esShapePath *)esShapePath(local_94);
+  local_8 = 0xffffffff;
+  *(undefined4 *)(local_b4 + 0x34) = 0x40700ff;
+  local_98 = local_b4;
+  local_48 = local_b4;
+  for (local_44 = 1; local_44 < param_3; local_44 = local_44 + 1) {
+    local_36 = param_2[local_44];
+    if ((local_36 == '\x03') || (local_36 == '\x01')) {
+      if (local_35 != local_36) {
+        local_4c = (esSeg *)0x0;
+        if (local_35 == '\x01') {
+          local_9c = operator_new(0x68);
+          local_8 = 1;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_9c,0x68);
+          local_c0 = (esSeg *)esSegGon::esSegGon(local_9c);
+          local_8 = 0xffffffff;
+          local_58 = local_c0;
+          local_4c = local_c0;
+        }
+        else if (local_35 == '\x03') {
+          local_5c = operator_new(0x68);
+          local_8 = 2;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_5c,0x68);
+          local_c4 = (esSeg *)esSegBezier::esSegBezier(local_5c);
+          local_8 = 0xffffffff;
+          local_60 = local_c4;
+          local_4c = local_c4;
+        }
+        if (local_4c != (esSeg *)0x0) {
+          esSeg::AddLines(local_4c,param_1 + local_40,local_44 - local_40);
+          if (local_3c == (esSegList *)0x0) {
+            local_64 = operator_new(0x44);
+            local_8 = 3;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_64,0x44);
+            local_a0 = (esSegList *)esSegList::esSegList(local_64);
+            local_8 = 0xffffffff;
+            local_68 = local_a0;
+            local_3c = local_a0;
+            D2DPointF::D2DPointF((D2DPointF *)&local_d0,(D2D_POINT_2F *)(param_1 + local_40));
+            local_34 = local_d0;
+            local_30 = local_cc;
+          }
+          else if ((local_2c != param_1[local_40].x) || (local_28 != param_1[local_40].y)) {
+            if (param_4 != 0) {
+              esSegList::CloseFigure(local_3c);
+            }
+            AddSegList(local_48,local_3c);
+            local_6c = operator_new(0x44);
+            local_8 = 4;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_6c,0x44);
+            local_a4 = (esSegList *)esSegList::esSegList(local_6c);
+            local_8 = 0xffffffff;
+            local_70 = local_a4;
+            local_3c = local_a4;
+            D2DPointF::D2DPointF((D2DPointF *)&local_100,(D2D_POINT_2F *)(param_1 + local_40));
+            local_34 = local_100;
+            local_30 = local_fc;
+          }
+          D2DPointF::D2DPointF((D2DPointF *)&local_d8,(D2D_POINT_2F *)(param_1 + local_44 + -1));
+          local_2c = local_d8;
+          local_28 = local_d4;
+          esSegList::AddSegObject(local_3c,local_4c,1);
+        }
+        local_40 = local_44 + -1;
+      }
+      local_35 = local_36;
+      if (local_36 == '\x03') {
+        local_44 = local_44 + 2;
+      }
+    }
+    else {
+      if (local_35 == '\0') {
+        if (local_3c != (esSegList *)0x0) {
+          FUN_10027a00(&local_24,8,2,esSegItems::esSegItems);
+          local_24.x = local_2c;
+          local_24.y = local_28;
+          D2DPointF::D2DPointF((D2DPointF *)&local_e0,(D2D_POINT_2F *)(param_1 + local_40));
+          iStack_1c = local_e0;
+          iStack_18 = local_dc;
+          esSegList::AddPts(local_3c,&local_24,2);
+          local_2c = iStack_1c;
+          local_28 = iStack_18;
+        }
+      }
+      else {
+        local_50 = (esSeg *)0x0;
+        if (local_35 == '\x01') {
+          local_74 = operator_new(0x68);
+          local_8 = 5;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_74,0x68);
+          local_a8 = (esSeg *)esSegGon::esSegGon(local_74);
+          local_8 = 0xffffffff;
+          local_78 = local_a8;
+          local_50 = local_a8;
+        }
+        else if (local_35 == '\x03') {
+          local_7c = operator_new(0x68);
+          local_8 = 6;
+          esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_7c,0x68);
+          local_ac = (esSeg *)esSegBezier::esSegBezier(local_7c);
+          local_8 = 0xffffffff;
+          local_80 = local_ac;
+          local_50 = local_ac;
+        }
+        if (local_50 != (esSeg *)0x0) {
+          esSeg::AddLines(local_50,param_1 + local_40,local_44 - local_40);
+          if (local_3c == (esSegList *)0x0) {
+            local_84 = operator_new(0x44);
+            local_8 = 7;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_84,0x44);
+            local_b0 = (esSegList *)esSegList::esSegList(local_84);
+            local_8 = 0xffffffff;
+            local_88 = local_b0;
+            local_3c = local_b0;
+            D2DPointF::D2DPointF((D2DPointF *)&local_e8,(D2D_POINT_2F *)(param_1 + local_40));
+            local_34 = local_e8;
+            local_30 = local_e4;
+          }
+          else if ((local_2c != param_1[local_40].x) || (local_28 != param_1[local_40].y)) {
+            if (param_4 != 0) {
+              esSegList::CloseFigure(local_3c);
+            }
+            AddSegList(local_48,local_3c);
+            local_8c = operator_new(0x44);
+            local_8 = 8;
+            esStyleList<esBlockStyle>::__autoclassinit2((esStyleList<esBlockStyle> *)local_8c,0x44);
+            local_c8 = (esSegList *)esSegList::esSegList(local_8c);
+            local_8 = 0xffffffff;
+            local_90 = local_c8;
+            local_3c = local_c8;
+            D2DPointF::D2DPointF((D2DPointF *)&local_f0,(D2D_POINT_2F *)(param_1 + local_40));
+            local_34 = local_f0;
+            local_30 = local_ec;
+          }
+          D2DPointF::D2DPointF((D2DPointF *)&local_f8,(D2D_POINT_2F *)(param_1 + local_44 + -1));
+          local_2c = local_f8;
+          local_28 = local_f4;
+          esSegList::AddSegObject(local_3c,local_50,1);
+        }
+      }
+      if ((local_36 == 0x80) && (local_3c != (esSegList *)0x0)) {
+        if (param_4 != 0) {
+          esSegList::CloseFigure(local_3c);
+        }
+        AddSegList(local_48,local_3c);
+        local_3c = (esSegList *)0x0;
+      }
+      local_40 = local_44;
+      local_35 = '\0';
+    }
+  }
+  if (local_3c != (esSegList *)0x0) {
+    if (param_4 != 0) {
+      esSegList::CloseFigure(local_3c);
+    }
+    AddSegList(local_48,local_3c);
+  }
+  if (*(int *)(local_48 + 0x60) == 0) {
+    local_b8 = local_48;
+    local_54 = local_48;
+    if (local_48 == (esShapePath *)0x0) {
+      local_bc = 0;
+    }
+    else {
+      local_bc = (*(code *)**(undefined4 **)local_48)(1);
+    }
+    local_48 = (esShapePath *)0x0;
+  }
+  else if (param_4 != 0) {
+    CloseFigure(local_48,1);
+  }
+  ExceptionList = local_10;
+  peVar1 = (esShapePath *)__security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return peVar1;
+}
+
+
+
+// =========================================================
+// esCanvas::AddItem
+// entry=101c45d0
+// signature=void AddItem(esCanvas * this, esShapeBase * param_1, int param_2)
+// bodyBytes=196
+// =========================================================
+
+/* public: void __thiscall esCanvas::AddItem(class esShapeBase *,int) */
+
+void __thiscall esCanvas::AddItem(esCanvas *this,esShapeBase *param_1,int param_2)
+
+{
+                    /* 0x1c45d0  3672  ?AddItem@esCanvas@@QAEXPAVesShapeBase@@H@Z */
+  if (param_2 == 0) {
+    *(undefined4 *)(param_1 + 0x44) = *(undefined4 *)(this + 0x34);
+    if (*(int *)(this + 0x38) == 0) {
+      *(esShapeBase **)(this + 0x38) = param_1;
+    }
+    else {
+      *(esShapeBase **)(*(int *)(this + 0x34) + 0x48) = param_1;
+    }
+    *(esShapeBase **)(this + 0x34) = param_1;
+  }
+  else {
+    if (*(int *)(this + 0x34) == 0) {
+      *(esShapeBase **)(this + 0x34) = param_1;
+    }
+    else {
+      *(esShapeBase **)(*(int *)(this + 0x38) + 0x44) = param_1;
+    }
+    *(undefined4 *)(param_1 + 0x48) = *(undefined4 *)(this + 0x38);
+    *(undefined4 *)(param_1 + 0x44) = 0;
+    *(esShapeBase **)(this + 0x38) = param_1;
+  }
+  esCalligraph::ResetLineWidth((esCalligraph *)param_1,(int)this);
+  if (*(int *)(param_1 + 0x3c) != 0) {
+    SetSelObj(this,param_1,2);
+    if (*(int *)(this + 0xa4) == 0) {
+      SetActive(this,param_1);
+    }
+  }
+  return;
+}
+
+
+
+// matched=8 dumped=8

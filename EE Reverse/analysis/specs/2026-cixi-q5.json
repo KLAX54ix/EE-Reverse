@@ -1,0 +1,161 @@
+{
+  "name": "2026-cixi-q5 homothety (k=-2, center O)",
+  "points": {
+    "O": [
+      0,
+      0
+    ],
+    "A": [
+      -2,
+      1
+    ],
+    "B": [
+      -3,
+      -2
+    ],
+    "C": [
+      1.5,
+      -2
+    ],
+    "A1": [
+      4,
+      -2
+    ],
+    "B1": [
+      6,
+      4
+    ],
+    "C1": [
+      -3,
+      4
+    ],
+    "A1_expected": [
+      4,
+      -2
+    ],
+    "B1_expected": [
+      6,
+      4
+    ],
+    "C1_expected": [
+      -3,
+      4
+    ]
+  },
+  "checks": [
+    {
+      "type": "point_eq",
+      "label": "A1 = -2*A",
+      "a": "A1",
+      "b": "A1_expected",
+      "tol": 1e-09
+    },
+    {
+      "type": "point_eq",
+      "label": "B1 = -2*B",
+      "a": "B1",
+      "b": "B1_expected",
+      "tol": 1e-09
+    },
+    {
+      "type": "point_eq",
+      "label": "C1 = -2*C",
+      "a": "C1",
+      "b": "C1_expected",
+      "tol": 1e-09
+    },
+    {
+      "type": "collinear",
+      "label": "O,A,A1",
+      "points": [
+        "O",
+        "A",
+        "A1"
+      ],
+      "tol": 1e-09
+    },
+    {
+      "type": "collinear",
+      "label": "O,B,B1",
+      "points": [
+        "O",
+        "B",
+        "B1"
+      ],
+      "tol": 1e-09
+    },
+    {
+      "type": "collinear",
+      "label": "O,C,C1",
+      "points": [
+        "O",
+        "C",
+        "C1"
+      ],
+      "tol": 1e-09
+    },
+    {
+      "type": "parallel",
+      "label": "AB // A1B1",
+      "a": [
+        "A",
+        "B"
+      ],
+      "b": [
+        "A1",
+        "B1"
+      ],
+      "tol_deg": 0.01
+    },
+    {
+      "type": "parallel",
+      "label": "BC // B1C1",
+      "a": [
+        "B",
+        "C"
+      ],
+      "b": [
+        "B1",
+        "C1"
+      ],
+      "tol_deg": 0.01
+    },
+    {
+      "type": "parallel",
+      "label": "CA // C1A1",
+      "a": [
+        "C",
+        "A"
+      ],
+      "b": [
+        "C1",
+        "A1"
+      ],
+      "tol_deg": 0.01
+    },
+    {
+      "type": "distance",
+      "label": "OA1 = 2*OA",
+      "a": "O",
+      "b": "A1",
+      "value": 4.47213595499958,
+      "tol_pct": 1e-06
+    },
+    {
+      "type": "distance",
+      "label": "OB1 = 2*OB",
+      "a": "O",
+      "b": "B1",
+      "value": 7.211102550927978,
+      "tol_pct": 1e-06
+    },
+    {
+      "type": "distance",
+      "label": "OC1 = 2*OC",
+      "a": "O",
+      "b": "C1",
+      "value": 5.0,
+      "tol_pct": 1e-06
+    }
+  ]
+}

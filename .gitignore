@@ -1,0 +1,16 @@
+# ===== 机密材料：禁止入库 =====
+# 试卷源文档（.wsd）与从试卷裁出的图片、答案 PDF
+*.wsd
+captures/
+answers/**/*.pdf
+answers/**/*.png
+analysis/cixi/*.png
+
+# ===== 本地工具链 / 逆向工程库（体积过大，按需本地重建）=====
+**/ghidra_12.1.4_PUBLIC/
+**/ghidra_12.1.4_PUBLIC_*.zip
+**/ghidra-proj/
+
+# ===== Python 缓存 =====
+__pycache__/
+*.pyc

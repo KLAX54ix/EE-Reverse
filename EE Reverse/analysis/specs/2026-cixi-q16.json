@@ -1,0 +1,78 @@
+{
+ "name": "2026-cixi-q16 quadrilateral BE/DE=2/3 sinBDC=1/4 AB=4 AD=6",
+ "points": {
+  "C": [
+   0,
+   0
+  ],
+  "A": [
+   4.743416490252569,
+   0
+  ],
+  "D": [
+   0,
+   3.6742346141747673
+  ],
+  "B": [
+   1.5811388300841895,
+   -2.4494897427831783
+  ],
+  "E": [
+   0.9486832980505137,
+   0
+  ]
+ },
+ "checks": [
+  {
+   "type": "angle",
+   "label": "angle ACD=90",
+   "vertex": "C",
+   "a": "A",
+   "b": "D",
+   "deg": 90,
+   "tol_deg": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "AB=4",
+   "a": "A",
+   "b": "B",
+   "value": 4.0,
+   "tol_pct": 1e-07
+  },
+  {
+   "type": "distance",
+   "label": "AD=6",
+   "a": "A",
+   "b": "D",
+   "value": 6.0,
+   "tol_pct": 1e-07
+  },
+  {
+   "type": "collinear",
+   "label": "B,E,D collinear",
+   "points": [
+    "B",
+    "E",
+    "D"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "distance",
+   "label": "BE=2/5 BD",
+   "a": "B",
+   "b": "E",
+   "value": 2.5298221281347035,
+   "tol_pct": 1e-07
+  },
+  {
+   "type": "distance",
+   "label": "DE=3/5 BD",
+   "a": "D",
+   "b": "E",
+   "value": 3.7947331922020546,
+   "tol_pct": 1e-07
+  }
+ ]
+}

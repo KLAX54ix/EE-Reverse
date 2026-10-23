@@ -1,0 +1,585 @@
+// program=Editer.exe imageBase=00400000 rva=28b9ac target=0068b9ac
+// symbol at target: vftable [Label]
+// ref from 0042656f type=DATA fn=FUN_00426480
+// ref from 0042677a type=READ fn=FUN_00426480
+// ref from 00484ada type=DATA fn=FUN_004842c0
+// total references=3 distinctFunctions=2
+
+// =========================================================
+// FUN_00426480  entry=00426480  xref@0042656f
+// signature=undefined FUN_00426480()
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void __fastcall FUN_00426480(int *param_1)
+
+{
+  esFontSheet *peVar1;
+  int iVar2;
+  undefined4 uStack_810;
+  undefined4 uStack_80c;
+  esObject *peStack_808;
+  zwstr *pzStack_804;
+  esSegLable *local_7c4;
+  esObject *local_7c0;
+  undefined1 local_7a4 [1896];
+  undefined1 local_3c [8];
+  zwstr local_34 [12];
+  esMatrix local_28 [8];
+  undefined4 local_20;
+  undefined1 local_1c [8];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00658490;
+  local_10 = ExceptionList;
+  local_14 = DAT_0072b014 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  peVar1 = (esFontSheet *)(**(code **)(*param_1 + 0x68))();
+  FUN_00402be0();
+  FUN_004254c0();
+  pzStack_804 = (zwstr *)0x4264f8;
+  FUN_00537ea0();
+  local_8 = 0;
+  zwstr::zwstr(local_34);
+  local_8._0_1_ = 1;
+  pzStack_804 = local_34;
+  peStack_808 = (esObject *)local_1c;
+  uStack_80c = 0x426527;
+  FUN_005389c0();
+  pzStack_804 = (zwstr *)0x42653f;
+  esSnapManager::GetSnapPoint((esSnapManager *)(param_1 + 0x54),(int)local_3c);
+  local_7c0 = operator_new(0x5c);
+  local_8._0_1_ = 2;
+  if (local_7c0 == (esObject *)0x0) {
+    local_7c0 = (esObject *)0x0;
+  }
+  else {
+    esShapeLine::esShapeLine((esShapeLine *)local_7c0);
+    *(undefined ***)local_7c0 = esShapeLine::vftable;
+  }
+  local_8._0_1_ = 1;
+  *(uint *)(local_7c0 + 0x34) = *(uint *)(local_7c0 + 0x34) | 0x4001007;
+  local_7c4 = operator_new(0xd8);
+  local_8._0_1_ = 3;
+  if (local_7c4 == (esSegLable *)0x0) {
+    local_7c4 = (esSegLable *)0x0;
+  }
+  else {
+    pzStack_804 = (zwstr *)local_20;
+    zwstr::zwstr((zwstr *)&uStack_810,local_34);
+    local_8._0_1_ = 4;
+    FUN_00436f00(local_3c);
+    local_8._0_1_ = 3;
+    esSegLable::esSegLable(local_7c4);
+    *(undefined ***)local_7c4 = esSegLable::vftable;
+  }
+  local_8._0_1_ = 1;
+  esSegLable::Initialize(local_7c4,peVar1);
+  iVar2 = FUN_004840e0();
+  if (iVar2 != 0) {
+    esMatrix::esMatrix(local_28);
+    local_8._0_1_ = 5;
+    pzStack_804 = (zwstr *)local_3c;
+    peStack_808 = (esObject *)0x4266cc;
+    FUN_00436f00();
+    peStack_808 = (esObject *)0x4266dc;
+    pzStack_804 = (zwstr *)iVar2;
+    esMatrix::SetViewMode(local_28);
+    pzStack_804 = (zwstr *)0x4266f8;
+    (**(code **)(*(int *)local_7c4 + 0x80))();
+    local_8._0_1_ = 1;
+    esMatrix::~esMatrix(local_28);
+  }
+  *(esSegLable **)(local_7c0 + 0x40) = local_7c4;
+  esObject::SetParent((esObject *)local_7c4,local_7c0);
+  ReleaseCapture();
+  iVar2 = (**(code **)(*param_1 + 0x54))();
+  if (iVar2 == 0) {
+    if (local_7c0 != (esObject *)0x0) {
+      pzStack_804 = (zwstr *)0x42677e;
+      (*(code *)**(undefined4 **)local_7c0)();
+    }
+    local_8 = (uint)local_8._1_3_ << 8;
+    zwstr::~zwstr(local_34);
+    local_8 = 0xffffffff;
+    FUN_00537fc0();
+    ExceptionList = local_10;
+    return;
+  }
+  pzStack_804 = (zwstr *)0x3;
+  peStack_808 = local_7c0;
+  uStack_80c = 0;
+  uStack_810 = 0x4267cc;
+  FUN_0047b440();
+  pzStack_804 = (zwstr *)0x1;
+  peStack_808 = (esObject *)0x4267e3;
+  (**(code **)(*param_1 + 0x50))();
+  pzStack_804 = (zwstr *)local_7c4;
+  peStack_808 = (esObject *)0x4267f7;
+  FUN_00426900();
+  *(undefined4 *)(local_7c0 + 0x3c) = 0;
+  iVar2 = FUN_00538f20();
+  if (iVar2 == 0) {
+    pzStack_804 = (zwstr *)local_7a4;
+    peStack_808 = (esObject *)0x42682c;
+    iVar2 = FUN_005ceea0();
+    if (iVar2 != 1) {
+      pzStack_804 = (zwstr *)0x0;
+      peStack_808 = (esObject *)0x426852;
+      FUN_00483ef0();
+      goto LAB_00426852;
+    }
+  }
+  pzStack_804 = (zwstr *)0x426841;
+  FUN_00425b90();
+LAB_00426852:
+  local_8 = (uint)local_8._1_3_ << 8;
+  zwstr::~zwstr(local_34);
+  local_8 = 0xffffffff;
+  FUN_00537fc0();
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// =========================================================
+// FUN_004842c0  entry=004842c0  xref@00484ada
+// signature=undefined FUN_004842c0()
+// =========================================================
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_004842c0(undefined4 param_1,undefined4 param_2,int *param_3)
+
+{
+  tagPOINT tVar1;
+  ushort uVar2;
+  int iVar3;
+  esPenInfo *peVar4;
+  es_curve_type eVar5;
+  esStyleSheet *peVar6;
+  esAxisObj *peVar7;
+  ushort uVar8;
+  undefined4 local_580;
+  undefined4 local_57c;
+  tagPOINT local_578;
+  tagPOINT local_570;
+  tagPOINT local_568;
+  tagPOINT local_560;
+  esSegAxis *local_558;
+  undefined4 local_554;
+  undefined4 local_550;
+  undefined4 local_54c;
+  undefined4 local_548;
+  undefined4 local_544;
+  undefined4 local_540;
+  undefined4 local_53c;
+  esShapePath *local_538;
+  undefined4 local_534;
+  undefined4 local_530;
+  esSegList *local_52c;
+  esSeg *local_528;
+  esSeg *local_524;
+  esSeg *local_520;
+  esSegGon *local_51c;
+  esSeg *local_518;
+  esSeg *local_514;
+  esSegList *local_510;
+  esShapePath *local_50c;
+  esShapeLine *local_508;
+  PointF *local_504;
+  esPenInfo *local_500;
+  esAxisObj *local_4fc;
+  esObject *local_4f8;
+  esObject *local_4f4;
+  uint local_4f0;
+  esObject *local_4ec;
+  esSegAxis *local_4e8;
+  esSegAxis *local_4e4;
+  esSegList *local_4e0;
+  int local_4dc;
+  PointF *local_4d8;
+  esSeg *local_4d4;
+  esSeg *local_4d0;
+  esSegAxis *local_4cc;
+  esShapePath *local_4c8;
+  esShapeLine *local_4c4;
+  int local_4c0;
+  PointF *local_4bc;
+  esSegList *local_4b8;
+  esShapeLine *local_4b4;
+  int local_4b0;
+  PointF *local_4ac;
+  esSegAxis *local_4a8;
+  esShapePath *local_4a4;
+  int local_4a0;
+  esSegBezier *local_49c;
+  esSeg *local_498;
+  esSegList *local_494;
+  esShapePath *local_490;
+  esShapeLine *local_48c;
+  esShapeCap *local_488;
+  esSegAxis *local_484;
+  tag_POINTD *local_480;
+  uint local_47c;
+  esSegList *local_478;
+  esObject *local_474;
+  esCurve *local_470;
+  int local_46c;
+  esShapePath *local_468;
+  PointF *local_464;
+  int *local_460;
+  esCanvas local_45c [52];
+  esObject *local_428;
+  undefined4 local_424;
+  int local_2ac;
+  undefined2 local_24;
+  esMatrix local_20 [8];
+  ushort local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0065d468;
+  local_10 = ExceptionList;
+  local_14 = DAT_0072b014 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  FUN_00483ef0();
+  epDoEvent(-1);
+  if (param_3 != (int *)0x0) {
+    (**(code **)(*(int *)param_3[0x10] + 0x68))();
+    FUN_00436f00();
+    param_1 = local_580;
+    param_2 = local_57c;
+  }
+  FUN_00402be0();
+  FUN_004254c0();
+  (**(code **)(*local_460 + 0x68))();
+  FUN_004fc8f0();
+  local_8 = 0;
+  if (param_3 != (int *)0x0) {
+    local_2ac = 0;
+    local_540 = FUN_004fd1e0();
+    local_53c = 0x1000027;
+    (**(code **)(*param_3 + 0x18))();
+  }
+  iVar3 = FUN_005ceea0();
+  if (iVar3 != 1) {
+    (**(code **)(*local_460 + 0x74))();
+    local_8 = 0xffffffff;
+    FUN_004fca00();
+    ExceptionList = local_10;
+    return;
+  }
+  iVar3 = (**(code **)(*local_460 + 0x54))();
+  if (iVar3 == 0) goto LAB_004850c1;
+  esMatrix::esMatrix(local_20);
+  local_8._0_1_ = 1;
+  esCanvas::esCanvas(local_45c);
+  local_8._0_1_ = 2;
+  if (param_3 == (int *)0x0) {
+    FUN_004370d0();
+    FUN_004840e0();
+    esMatrix::SetViewMode(local_20);
+    FUN_00437270();
+    if (local_2ac != 0) {
+      local_484 = operator_new(0x16c);
+      local_8._0_1_ = 3;
+      if (local_484 == (esSegAxis *)0x0) {
+        local_4e8 = (esSegAxis *)0x0;
+      }
+      else {
+        esSegAxis::esSegAxis(local_484);
+        *(undefined ***)local_484 = esSegAxis::vftable;
+        local_4e8 = local_484;
+      }
+      local_558 = local_4e8;
+      local_8._0_1_ = 2;
+      local_4a8 = local_4e8;
+      local_488 = operator_new(0x60);
+      local_8._0_1_ = 4;
+      if (local_488 == (esShapeCap *)0x0) {
+        local_4ec = (esObject *)0x0;
+      }
+      else {
+        esShapeCap::esShapeCap(local_488);
+        *(undefined ***)local_488 = esShapeCap::vftable;
+        local_4ec = (esObject *)local_488;
+      }
+      local_4f8 = local_4ec;
+      local_8._0_1_ = 2;
+      local_474 = local_4ec;
+      *(esSegAxis **)(local_4ec + 0x40) = local_4a8;
+      esObject::SetParent((esObject *)local_4a8,local_4ec);
+      local_18 = 0;
+      local_4fc = (esAxisObj *)FUN_004fd2a0();
+      uVar8 = local_18;
+      uVar2 = FUN_004fcbf0();
+      peVar7 = local_4fc;
+      peVar6 = (esStyleSheet *)(**(code **)(*local_460 + 0x68))();
+      esSegAxis::Initialize(local_4a8,peVar6,peVar7,uVar2,uVar8);
+      local_500 = (esPenInfo *)FUN_004fd280();
+      *(undefined2 *)(local_474 + 0x5e) = local_24;
+      peVar4 = esShapeLine::GetPenInfo((esShapeLine *)local_474);
+      esPenInfo::CopyTo(local_500,peVar4);
+      (**(code **)(*(int *)local_474 + 0x70))();
+      esCanvas::AddItem(local_45c,(esShapeBase *)local_474,1);
+    }
+  }
+  else {
+    local_554 = FUN_004fd1e0();
+    local_550 = 0x1000027;
+    (**(code **)(*param_3 + 0x1c))();
+    if (param_3[0x10] == 0) {
+LAB_004844d2:
+      local_4cc = (esSegAxis *)0x0;
+    }
+    else {
+      esSegAxis::ID();
+      iVar3 = (**(code **)(*(int *)param_3[0x10] + 8))();
+      if (iVar3 == 0) goto LAB_004844d2;
+      local_4cc = (esSegAxis *)param_3[0x10];
+    }
+    local_4e4 = local_4cc;
+    if (local_4cc == (esSegAxis *)0x0) {
+      FUN_00437270();
+    }
+    else {
+      local_548 = param_1;
+      local_544 = param_2;
+      tVar1.y._0_2_ = (short)param_2;
+      tVar1.x = param_1;
+      tVar1.y._2_2_ = (short)((uint)param_2 >> 0x10);
+      esSegAxis::GetAxisTransfrom(local_4cc,(Matrix *)local_20,tVar1);
+    }
+  }
+  for (local_4a0 = FUN_004fd4e0(); local_4a0 != 0; local_4a0 = *(int *)(local_4a0 + 0x18)) {
+    local_468 = (esShapePath *)0x0;
+    local_4dc = 1;
+    for (local_470 = *(esCurve **)(local_4a0 + 4); local_470 != (esCurve *)0x0;
+        local_470 = *(esCurve **)(local_470 + 0x24)) {
+      local_480 = esCurve::GetPoints(local_470);
+      if (local_480 != (tag_POINTD *)0x0) {
+        local_4b0 = 1;
+        local_4f0 = esCurve::GetCount(local_470);
+        local_47c = local_4f0;
+        local_4ac = operator_new__(-(uint)((int)((ulonglong)local_4f0 * 8 >> 0x20) != 0) |
+                                   (uint)((ulonglong)local_4f0 * 8));
+        local_8._0_1_ = 5;
+        if (local_4ac == (PointF *)0x0) {
+          local_4bc = (PointF *)0x0;
+        }
+        else {
+          FUN_0041f9a0();
+          local_4bc = local_4ac;
+        }
+        local_504 = local_4bc;
+        local_8._0_1_ = 2;
+        local_464 = local_4bc;
+        *(float *)local_4bc = (float)(*(double *)local_480 * DAT_006c3390);
+        *(float *)(local_4bc + 4) = (float)(*(double *)(local_480 + 8) * DAT_006c3390);
+        FUN_00436f00();
+        local_560 = ptftopt();
+        FUN_00436f00();
+        for (local_46c = 1; local_46c < (int)local_47c; local_46c = local_46c + 1) {
+          *(float *)(local_464 + local_46c * 8) =
+               (float)(*(double *)(local_480 + local_46c * 0x10) * DAT_006c3390);
+          *(float *)(local_464 + local_46c * 8 + 4) =
+               (float)(*(double *)(local_480 + local_46c * 0x10 + 8) * DAT_006c3390);
+          if (local_4b0 != 0) {
+            FUN_00436f00();
+            local_568 = ptftopt();
+            FUN_00436f00();
+            iVar3 = FUN_0041f990();
+            if ((iVar3 < 10) && (iVar3 = FUN_0041f990(), iVar3 < 10)) {
+              local_4c0 = 1;
+            }
+            else {
+              local_4c0 = 0;
+            }
+            local_4b0 = local_4c0;
+          }
+        }
+        if (local_4b0 == 0) {
+          iVar3 = esCurve::IsClosed(local_470);
+          if (iVar3 == 0) {
+            local_4dc = 0;
+          }
+          if (local_468 == (esShapePath *)0x0) {
+            local_490 = operator_new(0x74);
+            local_8._0_1_ = 7;
+            if (local_490 == (esShapePath *)0x0) {
+              local_4c8 = (esShapePath *)0x0;
+            }
+            else {
+              esShapePath::esShapePath(local_490);
+              *(undefined ***)local_490 = esShapePath::vftable;
+              local_4c8 = local_490;
+            }
+            local_50c = local_4c8;
+            local_8._0_1_ = 2;
+            local_468 = local_4c8;
+          }
+          local_494 = operator_new(0x44);
+          local_8._0_1_ = 8;
+          if (local_494 == (esSegList *)0x0) {
+            local_4e0 = (esSegList *)0x0;
+          }
+          else {
+            esSegList::esSegList(local_494);
+            *(undefined ***)local_494 = esSegList::vftable;
+            local_4e0 = local_494;
+          }
+          local_510 = local_4e0;
+          local_8._0_1_ = 2;
+          local_478 = local_4e0;
+          eVar5 = esCurve::GetCurveType(local_470);
+          if (eVar5 == 1) {
+            if (local_47c == 4) {
+              local_498 = operator_new(0x68);
+              local_8._0_1_ = 9;
+              if (local_498 == (esSeg *)0x0) {
+                local_4d0 = (esSeg *)0x0;
+              }
+              else {
+                FUN_00436f00();
+                local_570 = ptftopt();
+                FUN_00436f00();
+                local_578 = ptftopt();
+                FUN_00436f00();
+                FUN_00436f00(&local_578);
+                esSegLine::esSegLine((esSegLine *)local_498);
+                *(undefined ***)local_498 = esSegLine::vftable;
+                local_4d0 = local_498;
+              }
+              local_514 = local_4d0;
+              local_8._0_1_ = 2;
+              local_518 = local_4d0;
+              esSegList::AddSegObject(local_478,local_4d0,1);
+            }
+            else {
+              local_51c = esSegGon::FromBezer(local_464,local_47c);
+              esSegList::AddSegObject(local_478,(esSeg *)local_51c,1);
+            }
+          }
+          else {
+            eVar5 = esCurve::GetCurveType(local_470);
+            if (eVar5 == 2) {
+              local_520 = esSeg::FromBezer(local_464,local_47c);
+              esSegList::AddSegObject(local_478,local_520,1);
+            }
+            else {
+              local_49c = operator_new(0x68);
+              local_8._0_1_ = 10;
+              if (local_49c == (esSegBezier *)0x0) {
+                local_4d4 = (esSeg *)0x0;
+              }
+              else {
+                esSegBezier::esSegBezier(local_49c,local_464,local_47c);
+                *(undefined ***)local_49c = esSegBezier::vftable;
+                local_4d4 = (esSeg *)local_49c;
+              }
+              local_524 = local_4d4;
+              local_8._0_1_ = 2;
+              local_528 = local_4d4;
+              esSegList::AddSegObject(local_478,local_4d4,1);
+            }
+          }
+          if (*(int *)(local_478 + 0x34) == 0) {
+            local_52c = local_478;
+            local_4b8 = local_478;
+            if (local_478 == (esSegList *)0x0) {
+              local_530 = 0;
+            }
+            else {
+              local_530 = (*(code *)**(undefined4 **)local_478)();
+            }
+          }
+          else {
+            esShapePath::AddSegList(local_468,local_478);
+          }
+        }
+        else {
+          esSnapManager::Clear((esSnapManager *)(local_460 + 0x54));
+          FUN_00436f00();
+          esSnapManager::ResetSnapPoint((esSnapManager *)(local_460 + 0x54));
+          local_48c = operator_new(0x5c);
+          local_8._0_1_ = 6;
+          if (local_48c == (esShapeLine *)0x0) {
+            local_4c4 = (esShapeLine *)0x0;
+          }
+          else {
+            esShapeLine::esShapeLine(local_48c,(esSnapManager *)(local_460 + 0x54),0x6001,0);
+            *(undefined ***)local_48c = esShapeLine::vftable;
+            local_4c4 = local_48c;
+          }
+          local_508 = local_4c4;
+          local_8._0_1_ = 2;
+          local_4b4 = local_4c4;
+          (**(code **)(*(int *)local_4c4 + 0x70))();
+          esCanvas::AddItem(local_45c,(esShapeBase *)local_4b4,1);
+        }
+        local_4d8 = local_464;
+        operator_delete__(local_464);
+        if (local_4d8 == (PointF *)0x0) {
+          local_534 = 0;
+        }
+        else {
+          local_464 = (PointF *)0x8123;
+          local_534 = 0x8123;
+        }
+      }
+    }
+    if (local_468 != (esShapePath *)0x0) {
+      if (*(int *)(local_468 + 0x60) == 0) {
+        local_538 = local_468;
+        local_4a4 = local_468;
+        if (local_468 == (esShapePath *)0x0) {
+          local_54c = 0;
+        }
+        else {
+          local_54c = (*(code *)**(undefined4 **)local_468)();
+        }
+      }
+      else {
+        if (local_4dc != 0) {
+          esShapePath::CloseFigure(local_468,1);
+        }
+        peVar6 = (esStyleSheet *)(**(code **)(*local_460 + 0x68))();
+        esShapeBase::OnCreate((esShapeBase *)local_468,peVar6);
+        (**(code **)(*(int *)local_468 + 0x70))();
+        esCanvas::AddItem(local_45c,(esShapeBase *)local_468,1);
+      }
+    }
+  }
+  if (local_428 != (esObject *)0x0) {
+    local_4f4 = local_428;
+    esObject::SetParent(local_428,(esObject *)0x0);
+    local_424 = 0;
+    local_428 = (esObject *)0x0;
+    FUN_0047b440();
+  }
+  (**(code **)(*local_460 + 0x50))();
+  (**(code **)(*local_460 + 0x74))();
+  local_8._0_1_ = 1;
+  esCanvas::~esCanvas(local_45c);
+  local_8 = (uint)local_8._1_3_ << 8;
+  esMatrix::~esMatrix(local_20);
+LAB_004850c1:
+  local_8 = 0xffffffff;
+  FUN_004fca00();
+  ExceptionList = local_10;
+  return;
+}
+
+
+
+// dumped=2

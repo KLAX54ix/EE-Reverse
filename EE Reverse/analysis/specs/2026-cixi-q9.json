@@ -1,0 +1,85 @@
+{
+ "name": "2026-cixi-q9 inscribed triangle A=45 BC=2sqrt2",
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   0.6840402866513376,
+   1.8793852415718166
+  ],
+  "B": [
+   -1.4142135623730954,
+   -1.414213562373095
+  ],
+  "C": [
+   1.4142135623730947,
+   -1.4142135623730954
+  ],
+  "D": [
+   -3.3306690738754696e-16,
+   -1.4142135623730951
+  ],
+  "G": [
+   0.22801342888377898,
+   -0.31634729439145787
+  ],
+  "G_expected": [
+   0.22801342888377898,
+   -0.31634729439145787
+  ]
+ },
+ "checks": [
+  {
+   "type": "angle",
+   "label": "angle BAC=45",
+   "vertex": "A",
+   "a": "B",
+   "b": "C",
+   "deg": 45,
+   "tol_deg": 0.001
+  },
+  {
+   "type": "distance",
+   "label": "BC=2sqrt2",
+   "a": "B",
+   "b": "C",
+   "value": 2.8284271247461903,
+   "tol_pct": 1e-06
+  },
+  {
+   "type": "midpoint",
+   "label": "D=mid(BC)",
+   "point": "D",
+   "a": "B",
+   "b": "C",
+   "tol": 1e-09
+  },
+  {
+   "type": "point_eq",
+   "label": "G=centroid",
+   "a": "G",
+   "b": "G_expected",
+   "tol": 1e-09
+  },
+  {
+   "type": "collinear",
+   "label": "A,D,G median",
+   "points": [
+    "A",
+    "D",
+    "G"
+   ],
+   "tol": 1e-09
+  },
+  {
+   "type": "distance",
+   "label": "OB=R=2",
+   "a": "O",
+   "b": "B",
+   "value": 2.0,
+   "tol_pct": 1e-06
+  }
+ ]
+}

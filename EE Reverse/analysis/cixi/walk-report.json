@@ -1,0 +1,1223 @@
+[
+ {
+  "label": "Q4",
+  "anchor": "直线l1∥l2∥l3",
+  "steps": [
+   {
+    "i": 0,
+    "text": "4. 如图，直线l1∥l2∥l3，直线a，b分别交直线l1，l2，l3于点A，B，C，D",
+    "para": "0xa7621e8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "4. 如图，直线l1∥l2∥l3，直线a，b分别交直线l1，l2，l3于点A，B，C，D",
+    "para": "0xa7621e8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa7622f8",
+    "emb": "0xa56f5f0",
+    "canvas": "0xa7a99b0"
+   },
+   {
+    "i": 3,
+    "text": "\tA.6\tB.\tC.\tD.",
+    "para": "0xa762408",
+    "emb": "0xa56f640",
+    "canvas": "0xa7a9440"
+   },
+   {
+    "i": 4,
+    "text": "5. 如图，在直角坐标系中，△ABC与△A1B1C1是位似图形，位似中心为原点O．若点B",
+    "para": "0xa761858",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "5. 如图，在直角坐标系中，△ABC与△A1B1C1是位似图形，位似中心为原点O．若点B",
+    "para": "0xa761858",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "",
+    "para": "0xa7617d0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "\tA.(-2，1)\tB.(4，-2)\tC.(-4，2)\tD.(2，-1)",
+    "para": "0xa762490",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "6. 如图，甲同学利用尺规作图找到了一件圆形“青花瓷盘”文物瓷片的圆心O，点A，B，C均",
+    "para": "0xa762518",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "6. 如图，甲同学利用尺规作图找到了一件圆形“青花瓷盘”文物瓷片的圆心O，点A，B，C均",
+    "para": "0xa762518",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "",
+    "para": "0xa762fb8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "\tA.34°\tB.56°\tC.68°\tD.73°",
+    "para": "0xa763590",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 11,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q5",
+  "anchor": "△ABC与△A1B1C1是位似图形",
+  "steps": [
+   {
+    "i": 0,
+    "text": "5. 如图，在直角坐标系中，△ABC与△A1B1C1是位似图形，位似中心为原点O．若点B",
+    "para": "0xa761858",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "5. 如图，在直角坐标系中，△ABC与△A1B1C1是位似图形，位似中心为原点O．若点B",
+    "para": "0xa761858",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa7617d0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "\tA.(-2，1)\tB.(4，-2)\tC.(-4，2)\tD.(2，-1)",
+    "para": "0xa762490",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "6. 如图，甲同学利用尺规作图找到了一件圆形“青花瓷盘”文物瓷片的圆心O，点A，B，C均",
+    "para": "0xa762518",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "6. 如图，甲同学利用尺规作图找到了一件圆形“青花瓷盘”文物瓷片的圆心O，点A，B，C均",
+    "para": "0xa762518",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "",
+    "para": "0xa762fb8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "\tA.34°\tB.56°\tC.68°\tD.73°",
+    "para": "0xa763590",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "7. 如图，一只矩形木箱放置在斜面上，此时BD恰好与地面EF平行．已知∠CEF=α，BC",
+    "para": "0xa763480",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "7. 如图，一只矩形木箱放置在斜面上，此时BD恰好与地面EF平行．已知∠CEF=α，BC",
+    "para": "0xa763480",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "",
+    "para": "0xa762f30",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "\tA.cosα\tB.sinα\tC.tanα\tD.",
+    "para": "0xa762b78",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 15,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q6",
+  "anchor": "青花瓷盘",
+  "steps": [
+   {
+    "i": 0,
+    "text": "6. 如图，甲同学利用尺规作图找到了一件圆形“青花瓷盘”文物瓷片的圆心O，点A，B，C均",
+    "para": "0xa762518",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "6. 如图，甲同学利用尺规作图找到了一件圆形“青花瓷盘”文物瓷片的圆心O，点A，B，C均",
+    "para": "0xa762518",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa762fb8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "\tA.34°\tB.56°\tC.68°\tD.73°",
+    "para": "0xa763590",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "7. 如图，一只矩形木箱放置在斜面上，此时BD恰好与地面EF平行．已知∠CEF=α，BC",
+    "para": "0xa763480",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "7. 如图，一只矩形木箱放置在斜面上，此时BD恰好与地面EF平行．已知∠CEF=α，BC",
+    "para": "0xa763480",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "",
+    "para": "0xa762f30",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "\tA.cosα\tB.sinα\tC.tanα\tD.",
+    "para": "0xa762b78",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "8. 若二次函数y=x²-6x+c的图象经过点A(1，1)，则方程x²-6x+c=1的解",
+    "para": "0xa762c88",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "\tA.x=1\tB.x=6\tC.x=1或x=-7\tD.x=1或x=5",
+    "para": "0xa763040",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "9. 如图，△ABC内接于圆，∠A=45°，D为BC中点，G为△ABC的重心，连结GD．",
+    "para": "0xa763728",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "9. 如图，△ABC内接于圆，∠A=45°，D为BC中点，G为△ABC的重心，连结GD．",
+    "para": "0xa763728",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 19,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q7",
+  "anchor": "矩形木箱放置在斜面上",
+  "steps": [
+   {
+    "i": 0,
+    "text": "7. 如图，一只矩形木箱放置在斜面上，此时BD恰好与地面EF平行．已知∠CEF=α，BC",
+    "para": "0xa763480",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "7. 如图，一只矩形木箱放置在斜面上，此时BD恰好与地面EF平行．已知∠CEF=α，BC",
+    "para": "0xa763480",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa762f30",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "\tA.cosα\tB.sinα\tC.tanα\tD.",
+    "para": "0xa762b78",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "8. 若二次函数y=x²-6x+c的图象经过点A(1，1)，则方程x²-6x+c=1的解",
+    "para": "0xa762c88",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "\tA.x=1\tB.x=6\tC.x=1或x=-7\tD.x=1或x=5",
+    "para": "0xa763040",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "9. 如图，△ABC内接于圆，∠A=45°，D为BC中点，G为△ABC的重心，连结GD．",
+    "para": "0xa763728",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "9. 如图，△ABC内接于圆，∠A=45°，D为BC中点，G为△ABC的重心，连结GD．",
+    "para": "0xa763728",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "",
+    "para": "0xa7630c8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "\tA.\tB.\tC.\tD.",
+    "para": "0xa763150",
+    "emb": "0xa56f320",
+    "canvas": "0xa7aa490"
+   },
+   {
+    "i": 10,
+    "text": "10. 已知二次函数y=ax²-4ax+c(a，c为常数，a<0)的图象经过(x1，y1",
+    "para": "0xa763618",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "10. 已知二次函数y=ax²-4ax+c(a，c为常数，a<0)的图象经过(x1，y1",
+    "para": "0xa763618",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 23,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q9",
+  "anchor": "G为△ABC的重心",
+  "steps": [
+   {
+    "i": 0,
+    "text": "9. 如图，△ABC内接于圆，∠A=45°，D为BC中点，G为△ABC的重心，连结GD．",
+    "para": "0xa763728",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "9. 如图，△ABC内接于圆，∠A=45°，D为BC中点，G为△ABC的重心，连结GD．",
+    "para": "0xa763728",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa7630c8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "\tA.\tB.\tC.\tD.",
+    "para": "0xa763150",
+    "emb": "0xa56f320",
+    "canvas": "0xa7aa490"
+   },
+   {
+    "i": 4,
+    "text": "10. 已知二次函数y=ax²-4ax+c(a，c为常数，a<0)的图象经过(x1，y1",
+    "para": "0xa763618",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "10. 已知二次函数y=ax²-4ax+c(a，c为常数，a<0)的图象经过(x1，y1",
+    "para": "0xa763618",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "\tA.若0<m<2，则y2≥c\tB.若0<m<3，则y2>y1\tC.若0<m≤4，则y2",
+    "para": "0xa7632e8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "\tA.若0<m<2，则y2≥c\tB.若0<m<3，则y2>y1\tC.若0<m≤4，则y2",
+    "para": "0xa7632e8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "二、填空题(每小题3分，共18分)",
+    "para": "0xa762d10",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "11. 已知，则=  ．",
+    "para": "0xa762d98",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "12. 某商场门口有甲、乙两公司投放的5辆共享单车，其中3辆是甲公司的，2辆是乙公司的，",
+    "para": "0xa762af0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "12. 某商场门口有甲、乙两公司投放的5辆共享单车，其中3辆是甲公司的，2辆是乙公司的，",
+    "para": "0xa762af0",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 29,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q13",
+  "anchor": "正五边形ABCDE内接于⊙O",
+  "steps": [
+   {
+    "i": 0,
+    "text": "13. 如图，正五边形ABCDE内接于⊙O，连结AO，BO，则∠AOB的度数为  度．",
+    "para": "0xa7638c0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "",
+    "para": "0xa7633f8",
+    "emb": "0xa56fa50",
+    "canvas": "0xa7aae88"
+   },
+   {
+    "i": 2,
+    "text": "14. 小明在学习了压强的知识后，知道装有液体的瓶子侧边开一个小孔，液体喷出后的喷射距离",
+    "para": "0xa763370",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "14. 小明在学习了压强的知识后，知道装有液体的瓶子侧边开一个小孔，液体喷出后的喷射距离",
+    "para": "0xa763370",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "14. 小明在学习了压强的知识后，知道装有液体的瓶子侧边开一个小孔，液体喷出后的喷射距离",
+    "para": "0xa763370",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "14. 小明在学习了压强的知识后，知道装有液体的瓶子侧边开一个小孔，液体喷出后的喷射距离",
+    "para": "0xa763370",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "15. 如图，在半径为2的⊙O中，AB，AC为弦，∠CAB=90°，连结OA，OB，过点",
+    "para": "0xa763948",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "15. 如图，在半径为2的⊙O中，AB，AC为弦，∠CAB=90°，连结OA，OB，过点",
+    "para": "0xa763948",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "",
+    "para": "0xa7636a0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "16. 如图，在四边形ABCD中，对角线AC，BD交于点E，∠ACD=90°，，．若AB",
+    "para": "0xa7637b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "16. 如图，在四边形ABCD中，对角线AC，BD交于点E，∠ACD=90°，，．若AB",
+    "para": "0xa7637b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "",
+    "para": "0xa763838",
+    "emb": "0xa56f500",
+    "canvas": "0xa7aa918"
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 41,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q15",
+  "anchor": "AC为弦",
+  "steps": [
+   {
+    "i": 0,
+    "text": "15. 如图，在半径为2的⊙O中，AB，AC为弦，∠CAB=90°，连结OA，OB，过点",
+    "para": "0xa763948",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "15. 如图，在半径为2的⊙O中，AB，AC为弦，∠CAB=90°，连结OA，OB，过点",
+    "para": "0xa763948",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa7636a0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "16. 如图，在四边形ABCD中，对角线AC，BD交于点E，∠ACD=90°，，．若AB",
+    "para": "0xa7637b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "16. 如图，在四边形ABCD中，对角线AC，BD交于点E，∠ACD=90°，，．若AB",
+    "para": "0xa7637b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "",
+    "para": "0xa763838",
+    "emb": "0xa56f500",
+    "canvas": "0xa7aa918"
+   },
+   {
+    "i": 6,
+    "text": "三、解答题(第17-21题各8分，第22、23题各10分，第24题12分，共72分)",
+    "para": "0xa7628d0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "17. 计算：sin30°+2cos60°-tan²45°．",
+    "para": "0xa762958",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "18. 已知二次函数y=-x²+bx+c(b，c为常数)的图象经过点(0，3)，(2，3",
+    "para": "0xa7631d8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "(1)求二次函数的表达式．",
+    "para": "0xa7629e0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "(2)求二次函数图象与x轴的交点坐标．",
+    "para": "0xa762a68",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "19. 在学习频率与概率的相关知识时，小明利用AI工具制作了一个“石头、剪刀、布”游戏的",
+    "para": "0xa762c00",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 47,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q16",
+  "anchor": "对角线AC",
+  "steps": [
+   {
+    "i": 0,
+    "text": "16. 如图，在四边形ABCD中，对角线AC，BD交于点E，∠ACD=90°，，．若AB",
+    "para": "0xa7637b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "16. 如图，在四边形ABCD中，对角线AC，BD交于点E，∠ACD=90°，，．若AB",
+    "para": "0xa7637b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "",
+    "para": "0xa763838",
+    "emb": "0xa56f500",
+    "canvas": "0xa7aa918"
+   },
+   {
+    "i": 3,
+    "text": "三、解答题(第17-21题各8分，第22、23题各10分，第24题12分，共72分)",
+    "para": "0xa7628d0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "17. 计算：sin30°+2cos60°-tan²45°．",
+    "para": "0xa762958",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "18. 已知二次函数y=-x²+bx+c(b，c为常数)的图象经过点(0，3)，(2，3",
+    "para": "0xa7631d8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "(1)求二次函数的表达式．",
+    "para": "0xa7629e0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "(2)求二次函数图象与x轴的交点坐标．",
+    "para": "0xa762a68",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "19. 在学习频率与概率的相关知识时，小明利用AI工具制作了一个“石头、剪刀、布”游戏的",
+    "para": "0xa762c00",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "19. 在学习频率与概率的相关知识时，小明利用AI工具制作了一个“石头、剪刀、布”游戏的",
+    "para": "0xa762c00",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "游戏规则",
+    "para": "0xa762e20",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "•石头()击败剪刀()",
+    "para": "0xa762ea8",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 50,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q19",
+  "anchor": "利用AI工具制作",
+  "steps": [
+   {
+    "i": 0,
+    "text": "19. 在学习频率与概率的相关知识时，小明利用AI工具制作了一个“石头、剪刀、布”游戏的",
+    "para": "0xa762c00",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "19. 在学习频率与概率的相关知识时，小明利用AI工具制作了一个“石头、剪刀、布”游戏的",
+    "para": "0xa762c00",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "游戏规则",
+    "para": "0xa762e20",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "•石头()击败剪刀()",
+    "para": "0xa762ea8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "•石头()击败剪刀()",
+    "para": "0xa762ea8",
+    "emb": "0xa570590",
+    "canvas": "0xa7aaae8"
+   },
+   {
+    "i": 5,
+    "text": "•剪刀()击败布()",
+    "para": "0xa764580",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "•剪刀()击败布()",
+    "para": "0xa764580",
+    "emb": "0xa570450",
+    "canvas": "0xa7a96f8"
+   },
+   {
+    "i": 7,
+    "text": "•布()击败石头()",
+    "para": "0xa763e10",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "•布()击败石头()",
+    "para": "0xa763e10",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "•相同手势为平局",
+    "para": "0xa764718",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "",
+    "para": "0xa7647a0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "(1)根据表中试验结果，用频率估计“两位玩家平局”的概率是  ．(精确到0.001)",
+    "para": "0xa7648b0",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 58,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q20",
+  "anchor": "是由边长为1的小正方形构成的网格",
+  "steps": [
+   {
+    "i": 0,
+    "text": "20. 图1，图2是由边长为1的小正方形构成的网格，每个小正方形的顶点称为格点，△ABC",
+    "para": "0xa764a48",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "20. 图1，图2是由边长为1的小正方形构成的网格，每个小正方形的顶点称为格点，△ABC",
+    "para": "0xa764a48",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "(1)在图1中画出格点△A1B1C1，使得△A1B1C1∽△ABC，相似比为2：1；",
+    "para": "0xa7639d0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "(2)在图2中画出格点△A2B2C2，使得△A2B2C2∽△ABC，面积比为2：1．",
+    "para": "0xa764e00",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "",
+    "para": "0xa765790",
+    "emb": "0xa570040",
+    "canvas": "0xa7ab140"
+   },
+   {
+    "i": 5,
+    "text": "21. 如图，AB是⊙O的弦(非直径)，以A为圆心，OA为半径画弧，交⊙O于点C，以B为",
+    "para": "0xa765350",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "21. 如图，AB是⊙O的弦(非直径)，以A为圆心，OA为半径画弧，交⊙O于点C，以B为",
+    "para": "0xa765350",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "(1)求证：AB=CD．",
+    "para": "0xa7654e8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "(2)连结BD，若∠ABD=40°，OA=5，求的长．(结果保留π)",
+    "para": "0xa765020",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "",
+    "para": "0xa765a38",
+    "emb": "0xa56fe10",
+    "canvas": "0xae94760"
+   },
+   {
+    "i": 10,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 71,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q21",
+  "anchor": "是⊙O的弦",
+  "steps": [
+   {
+    "i": 0,
+    "text": "21. 如图，AB是⊙O的弦(非直径)，以A为圆心，OA为半径画弧，交⊙O于点C，以B为",
+    "para": "0xa765350",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "21. 如图，AB是⊙O的弦(非直径)，以A为圆心，OA为半径画弧，交⊙O于点C，以B为",
+    "para": "0xa765350",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "(1)求证：AB=CD．",
+    "para": "0xa7654e8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "(2)连结BD，若∠ABD=40°，OA=5，求的长．(结果保留π)",
+    "para": "0xa765020",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "",
+    "para": "0xa765a38",
+    "emb": "0xa56fe10",
+    "canvas": "0xae94760"
+   },
+   {
+    "i": 5,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "",
+    "para": "0xa765680",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "(1)求OD的长．",
+    "para": "0xa765708",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "(2)如图4，调节圆规的两个脚OA和OD，使得OA∥BC．调整铅笔BC的位置，圆规可以画",
+    "para": "0xa764b58",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 76,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q22",
+  "anchor": "可以调整铅笔位置的圆规",
+  "steps": [
+   {
+    "i": 0,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "22. 图1是一款可以调整铅笔位置的圆规，图2是该圆规的简易结构图，已知OA=10cm，",
+    "para": "0xa7659b0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "",
+    "para": "0xa765680",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "(1)求OD的长．",
+    "para": "0xa765708",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 6,
+    "text": "(2)如图4，调节圆规的两个脚OA和OD，使得OA∥BC．调整铅笔BC的位置，圆规可以画",
+    "para": "0xa764b58",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "(2)如图4，调节圆规的两个脚OA和OD，使得OA∥BC．调整铅笔BC的位置，圆规可以画",
+    "para": "0xa764b58",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 8,
+    "text": "23. 已知二次函数y=x²-2tx+t²+t(t为常数)．",
+    "para": "0xa764e88",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 9,
+    "text": "(1)若二次函数图象经过原点(0，0)，求t的值．",
+    "para": "0xa7652c8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 10,
+    "text": "(2)已知点P(p，m)，Q(q，n)在该二次函数图象上，若p=t-2，q=t+1，试比",
+    "para": "0xa765ac0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 11,
+    "text": "(3)当3≤x≤t+1时，函数y的最大值与最小值的差为1，求t的取值范围．",
+    "para": "0xa765818",
+    "emb": null,
+    "canvas": null
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 81,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ },
+ {
+  "label": "Q24",
+  "anchor": "P为AO上的点",
+  "steps": [
+   {
+    "i": 0,
+    "text": "24. 如图1，在⊙O中，AB为直径，P为AO上的点，过点P作AB的垂线交⊙O于C，D两",
+    "para": "0xa7658a0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 1,
+    "text": "24. 如图1，在⊙O中，AB为直径，P为AO上的点，过点P作AB的垂线交⊙O于C，D两",
+    "para": "0xa7658a0",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 2,
+    "text": "(1)请用含α的代数式表示∠ACD．",
+    "para": "0xa7651b8",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 3,
+    "text": "(2)若AF=2BF，求tanα的值．",
+    "para": "0xa764f10",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 4,
+    "text": "(3)如图2，连结AE交CD于点G，若⊙O的半径为5，CP•CG=27，求AC的长．",
+    "para": "0xa765928",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 5,
+    "text": "",
+    "para": "0xa7650a8",
+    "emb": "0xa56ff00",
+    "canvas": "0xae95240"
+   },
+   {
+    "i": 6,
+    "text": "声明：试题解析著作权属菁优网所有，未经书面同意，不得复制发布日期：2026/2/26 9",
+    "para": "0xa765b48",
+    "emb": null,
+    "canvas": null
+   },
+   {
+    "i": 7,
+    "text": "声明：试题解析著作权属菁优网所有，未经书面同意，不得复制发布日期：2026/2/26 9",
+    "para": "0xa765b48",
+    "emb": null,
+    "canvas": null,
+    "stop": "keyRet0"
+   }
+  ],
+  "goto": {
+   "ok": true,
+   "steps": 93,
+   "err": null,
+   "ui": "0xa6e9990"
+  }
+ }
+]

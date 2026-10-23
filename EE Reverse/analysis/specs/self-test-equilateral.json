@@ -1,0 +1,23 @@
+{
+  "name": "self-test equilateral + midpoint + 60deg",
+  "points": {
+    "A": [0, 0],
+    "B": [20000, 0],
+    "C": [10000, 17320.508076],
+    "D": [10000, 0],
+    "E": [15000, 8660.254038],
+    "F": [5000, 8660.254038],
+    "P": [10000, 5000]
+  },
+  "checks": [
+    {"type": "equal", "label": "AB=BC", "a": ["A", "B"], "b": ["B", "C"], "tol_pct": 0.01},
+    {"type": "equal", "label": "BC=CA", "a": ["B", "C"], "b": ["C", "A"], "tol_pct": 0.01},
+    {"type": "angle", "label": "angle A-B-C = 60", "vertex": "B", "a": "A", "b": "C", "deg": 60, "tol_deg": 0.01},
+    {"type": "midpoint", "label": "D = mid(AB)", "point": "D", "a": "A", "b": "B", "tol": 1.0},
+    {"type": "midpoint", "label": "F = mid(AC)", "point": "F", "a": "A", "b": "C", "tol": 1.0},
+    {"type": "collinear", "label": "A,D,B collinear", "points": ["A", "D", "B"], "tol": 1.0},
+    {"type": "on_segment", "label": "D on AB", "point": "D", "segment": ["A", "B"], "tol": 1.0},
+    {"type": "distance", "label": "AB = 20000", "a": "A", "b": "B", "value": 20000, "tol_pct": 0.01},
+    {"type": "perpendicular", "label": "AB perp DP", "a": ["A", "B"], "b": ["D", "P"], "tol_deg": 0.01}
+  ]
+}

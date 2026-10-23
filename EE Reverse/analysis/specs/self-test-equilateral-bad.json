@@ -1,0 +1,18 @@
+{
+  "name": "self-test NEGATIVE (C pulled down 320 units -> not equilateral)",
+  "points": {
+    "A": [0, 0],
+    "B": [20000, 0],
+    "C": [10000, 17000.508076],
+    "D": [10000, 0],
+    "E": [15000, 8500.254038],
+    "F": [5000, 8500.254038],
+    "P": [10000, 5000]
+  },
+  "checks": [
+    {"type": "equal", "label": "AB=BC", "a": ["A", "B"], "b": ["B", "C"], "tol_pct": 0.01},
+    {"type": "angle", "label": "angle A-B-C = 60", "vertex": "B", "a": "A", "b": "C", "deg": 60, "tol_deg": 0.01},
+    {"type": "midpoint", "label": "F = mid(AC)", "point": "F", "a": "A", "b": "C", "tol": 1.0},
+    {"type": "on_segment", "label": "D on AB", "point": "D", "segment": ["A", "B"], "tol": 1.0}
+  ]
+}
